@@ -43,9 +43,9 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:rgba(13,13,13,0
 .hero-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.68rem;color:var(--verde);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:1.6rem}
 .hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--verde);animation:blink 1.8s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.hero h1{font-family:var(--mono);font-weight:600;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem}
+.hero h1{font-family:var(--mono);font-weight:700;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.12;letter-spacing:0.03em;text-transform:uppercase;margin-bottom:1.25rem}
 .hl-verde{color:var(--verde)}.hl-amarelo{color:var(--amarelo)}
-.hero-sub{color:var(--texto-sec);font-size:0.92rem;max-width:440px;line-height:1.8;margin-bottom:0.9rem}
+.hero-sub{color:var(--texto-sec);font-size:1rem;max-width:460px;line-height:1.85;margin-bottom:0.9rem}
 .hero-jornada{font-family:var(--mono);font-size:0.75rem;color:var(--texto-muted);border-left:2px solid var(--verde);padding-left:0.75rem;margin-bottom:2rem;line-height:1.6}
 .hero-actions{display:flex;gap:0.85rem;flex-wrap:wrap}
 .btn-verde{background:var(--verde);color:#0D0D0D;font-family:var(--mono);font-weight:600;font-size:0.76rem;padding:0.7rem 1.35rem;border-radius:3px;text-decoration:none;letter-spacing:0.04em;border:none;cursor:pointer;transition:opacity 0.15s}
@@ -55,13 +55,17 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:rgba(13,13,13,0
 
 .hero-right{display:flex;flex-direction:column;gap:0}
 .dashboard{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:18px 18px}
-.dashboard-header{display:flex;align-items:center;justify-content:space-between;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:rgba(0,0,0,0.35)}
-.dash-dots{display:flex;gap:0.38rem;align-items:center}
-.dash-dot{width:9px;height:9px;border-radius:50%}
-.dash-dot.r{background:#FF5F57}.dash-dot.y{background:#FEBC2E}.dash-dot.g{background:#28C840}
-.dash-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.07em}
+.dashboard-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:rgba(0,0,0,0.35);gap:0.75rem}
 .dash-live{display:flex;align-items:center;gap:0.35rem;font-family:var(--mono);font-size:0.58rem;color:var(--verde);letter-spacing:0.07em}
 .dash-live-dot{width:5px;height:5px;border-radius:50%;background:var(--verde);animation:blink 1.8s infinite;flex-shrink:0}
+.dash-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.07em;flex:1}
+.dash-dots{display:flex;gap:0.38rem;align-items:center;margin-left:auto}
+.dash-dot{width:9px;height:9px;border-radius:50%;cursor:pointer;transition:transform 0.15s,filter 0.15s;position:relative}
+.dash-dot.r{background:#FF5F57}.dash-dot.y{background:#FEBC2E}.dash-dot.g{background:#28C840}
+.dash-dot:hover{transform:scale(1.25);filter:brightness(1.3)}
+.dash-dot.r:hover{box-shadow:0 0 6px rgba(255,95,87,0.7)}
+.dash-dot.y:hover{box-shadow:0 0 6px rgba(254,188,46,0.7)}
+.dash-dot.g:hover{box-shadow:0 0 6px rgba(40,200,64,0.7)}
 .dashboard-body{padding:1rem 1rem 1.2rem;display:flex;flex-direction:column;gap:0.65rem}
 .h-sec-label{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;padding:0.35rem 0;border-bottom:1px solid var(--sep)}
 .h-cards-row{display:grid;grid-template-columns:1fr 1fr;gap:0.55rem}
@@ -87,15 +91,50 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:rgba(13,13,13,0
 
 .dot-grid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.055) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;mask-image:radial-gradient(ellipse at 70% 50%,black 20%,transparent 65%)}
 .hero-glow{position:absolute;pointer-events:none;top:0;right:0;width:50%;height:100%;background:radial-gradient(ellipse at 80% 40%,rgba(0,255,106,0.03) 0%,transparent 55%)}
+.graph-texture{position:absolute;bottom:0;left:0;width:100%;height:220px;pointer-events:none;z-index:0;opacity:1}
+.h1-cursor{color:var(--verde);animation:blink 1.2s infinite;font-size:0.65em;margin-left:0.15em;vertical-align:middle;font-weight:400}
+
+.h-chart-wrap{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.75rem 1rem}
+.h-chart-caption{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem}
+.h-chart-val{font-family:var(--mono);font-size:0.72rem;font-weight:600;color:var(--verde)}
+.h-chart-sub{font-family:var(--mono);font-size:0.55rem;color:var(--texto-muted)}
+
+.cncf-bg{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
+.cncf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:1.75rem;background:var(--card-border)}
+.cncf-group{background:var(--card);padding:1.25rem 1.2rem;display:flex;flex-direction:column;gap:0.75rem}
+.cncf-group-label{font-family:var(--mono);font-size:0.6rem;color:var(--texto-muted);letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid var(--sep);padding-bottom:0.5rem}
+.cncf-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+.cncf-tag{font-family:var(--mono);font-size:0.6rem;padding:0.22rem 0.55rem;border-radius:3px;background:var(--bg);color:var(--texto-sec);border:1px solid var(--sep);transition:all 0.15s;cursor:default}
+.cncf-tag:hover{border-color:var(--verde);color:var(--verde)}
+.cncf-tag.k8s{border-color:rgba(50,108,229,0.25);color:#326CE5}
+.cncf-tag.prom{border-color:rgba(232,73,18,0.25);color:#E84812}
+.cncf-tag.tf{border-color:rgba(123,66,246,0.25);color:#7B42F6}
+.cncf-tag.argo{border-color:rgba(242,100,48,0.25);color:#F26430}
+.cncf-tag.graf{border-color:rgba(240,111,33,0.25);color:#F06F21}
+.cncf-tag.otel{border-color:rgba(0,112,243,0.25);color:#0070F3}
+
+.h-monitor{display:flex;flex-direction:column;gap:0.22rem;background:var(--bg);border:1px solid var(--card-border);border-radius:4px;padding:0.6rem 0.75rem;overflow:hidden}
+.monitor-line{display:flex;align-items:center;gap:0.45rem;font-family:var(--mono);font-size:0.56rem;color:var(--texto-muted);min-width:0}
+.monitor-line.new{animation:monitorIn 0.35s ease}
+@keyframes monitorIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.monitor-time{color:var(--texto-muted);opacity:0.5;flex-shrink:0}
+.monitor-cloud{flex-shrink:0;padding:0.07rem 0.32rem;border-radius:2px;font-size:0.53rem;font-weight:600}
+.monitor-cloud.aws{color:#FF9900;background:rgba(255,153,0,0.08)}
+.monitor-cloud.oci{color:#F5C400;background:rgba(245,196,0,0.08)}
+.monitor-cloud.gcp{color:#4285F4;background:rgba(66,133,244,0.08)}
+.monitor-cloud.azure{color:#0078D4;background:rgba(0,120,212,0.08)}
+.monitor-msg{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.monitor-ok{color:var(--verde);flex-shrink:0}
+.monitor-info{color:var(--amarelo);flex-shrink:0}
 
 section{padding:5rem 5%}
 .sec-inner{max-width:1200px;margin:0 auto}
 .sec-divider{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
 .sec-divider-label{font-family:var(--mono);font-size:0.65rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;white-space:nowrap}
 .sec-divider-line{flex:1;height:1px;background:var(--sep)}
-.sec-title{font-family:var(--mono);font-weight:600;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-0.02em;line-height:1.25;color:var(--texto)}
-.sec-title .hl{color:var(--verde)}
-.sec-sub{color:var(--texto-sec);font-size:0.87rem;line-height:1.75}
+.sec-title{font-family:var(--mono);font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:0.04em;line-height:1.2;color:var(--texto);text-transform:uppercase}
+.sec-title .hl{color:var(--verde);text-shadow:0 0 40px rgba(0,255,106,0.25)}
+.sec-sub{color:var(--texto-sec);font-size:0.95rem;line-height:1.8}
 
 .jornada{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:2.5rem 5%}
 .jornada-inner{max-width:1200px;margin:0 auto}
@@ -131,15 +170,25 @@ section{padding:5rem 5%}
 .setor-desc{font-size:0.72rem;color:var(--texto-muted);line-height:1.4}
 
 .parceiros-bg{background:var(--bg)}
-.parceiros-grid{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1.75rem}
-.parceiro-card{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.75rem 1.25rem;display:flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.78rem;font-weight:600}
-.parceiro-card.aws{color:#FF9900;border-color:rgba(255,153,0,0.2)}
-.parceiro-card.azure{color:#0078D4;border-color:rgba(0,120,212,0.2)}
-.parceiro-card.gcp{color:#4285F4;border-color:rgba(66,133,244,0.2)}
-.parceiro-card.oci{color:#F5C400;border-color:rgba(245,196,0,0.2)}
-.parceiro-card.dd{color:#7B42F6;border-color:rgba(123,66,246,0.2)}
-.parceiro-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:0.8}
-.parceiro-tier{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);font-weight:400;margin-left:0.2rem}
+.parceiros-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:1.75rem;background:var(--card-border)}
+.parceiro-card{background:var(--card);padding:1.25rem 1.1rem;display:flex;flex-direction:column;gap:0.9rem;position:relative;overflow:hidden;transition:background 0.15s}
+.parceiro-card:hover{background:var(--bg3)}
+.parceiro-top-bar{position:absolute;top:0;left:0;right:0;height:2px}
+.parceiro-card.aws .parceiro-top-bar{background:#FF9900}
+.parceiro-card.azure .parceiro-top-bar{background:#0078D4}
+.parceiro-card.gcp .parceiro-top-bar{background:#4285F4}
+.parceiro-card.oci .parceiro-top-bar{background:#F5C400}
+.parceiro-card.dd .parceiro-top-bar{background:#7B42F6}
+.parceiro-header{display:flex;flex-direction:column;gap:0.2rem;margin-top:0.3rem}
+.parceiro-name{font-family:var(--mono);font-size:0.78rem;font-weight:600}
+.parceiro-card.aws .parceiro-name{color:#FF9900}
+.parceiro-card.azure .parceiro-name{color:#0078D4}
+.parceiro-card.gcp .parceiro-name{color:#4285F4}
+.parceiro-card.oci .parceiro-name{color:#F5C400}
+.parceiro-card.dd .parceiro-name{color:#7B42F6}
+.parceiro-tier{font-family:var(--mono);font-size:0.55rem;color:var(--texto-muted);letter-spacing:0.07em;text-transform:uppercase}
+.parceiro-services{display:flex;flex-wrap:wrap;gap:0.28rem;padding-top:0.8rem;border-top:1px solid var(--sep)}
+.ps-tag{font-family:var(--mono);font-size:0.57rem;padding:0.16rem 0.44rem;border-radius:2px;background:var(--bg);color:var(--texto-muted);border:1px solid var(--sep)}
 
 .sobre-bg{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
 .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
@@ -168,7 +217,7 @@ section{padding:5rem 5%}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem}
 .btn-form{width:100%;background:var(--verde);color:#0D0D0D;font-family:var(--mono);font-weight:600;font-size:0.78rem;padding:0.78rem;border-radius:3px;border:none;cursor:pointer;letter-spacing:0.04em;transition:opacity 0.15s;margin-top:0.2rem}
 .btn-form:hover{opacity:0.85}
-.contato-side-title{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--texto);margin-bottom:0.5rem;line-height:1.4}
+.contato-side-title{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--texto);margin-bottom:0.5rem;line-height:1.4;text-transform:uppercase;letter-spacing:0.04em}
 .contato-side-sub{color:var(--texto-sec);font-size:0.82rem;line-height:1.7;margin-bottom:1.6rem}
 .info-row{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.95rem;padding-bottom:0.95rem;border-bottom:1px solid var(--sep)}
 .info-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
@@ -188,6 +237,8 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 .social-link{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--card-border);border-radius:4px;color:var(--texto-muted);transition:all 0.15s;text-decoration:none}
 .social-link:hover{border-color:var(--verde);color:var(--verde)}
 .footer-copy{font-family:var(--mono);font-size:0.65rem;color:var(--texto-muted)}
+.footer-prompt{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);order:2}
+.footer-prompt-cursor{color:var(--verde);animation:blink 1.2s infinite}
 
 @media(max-width:900px){
   .hero-inner,.sobre-grid,.contato-grid{grid-template-columns:1fr}
@@ -227,7 +278,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   <div class="hero-inner">
     <div>
       <div class="hero-tag"><span class="hero-tag-dot"></span><span data-i18n="hero.tag">Consultoria Cloud · DevOps · FinOps</span></div>
-      <h1><span data-i18n="hero.h1.line1">Infraestrutura</span><br><span class="hl-verde" data-i18n="hero.h1.line2">Nativa.</span><br><span data-i18n="hero.h1.line3">Resultado</span> <span class="hl-amarelo" data-i18n="hero.h1.line4">Real.</span></h1>
+      <h1><span data-i18n="hero.h1.line1">Infraestrutura</span><br><span class="hl-verde" data-i18n="hero.h1.line2">Nativa.</span><br><span data-i18n="hero.h1.line3">Resultado</span><br><span class="hl-amarelo" data-i18n="hero.h1.line4">Real.</span><span class="h1-cursor">▋</span></h1>
       <p class="hero-sub" data-i18n="hero.sub">Arquitetura multi-cloud, DevOps e FinOps para empresas que precisam escalar com segurança, eficiência e custo sob controle.</p>
       <p class="hero-jornada" data-i18n="hero.jornada">Independente do seu estágio na jornada cloud — do primeiro assessment à operação contínua — a Nativos.Cloud oferece suporte completo e personalizado.</p>
       <div class="hero-actions">
@@ -238,13 +289,13 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     <div class="hero-right">
       <div class="dashboard">
         <div class="dashboard-header">
-          <div class="dash-dots">
-            <span class="dash-dot r"></span>
-            <span class="dash-dot y"></span>
-            <span class="dash-dot g"></span>
-          </div>
-          <span class="dash-title">nativos.cloud — overview</span>
           <div class="dash-live"><span class="dash-live-dot"></span>LIVE</div>
+          <span class="dash-title">nativos.cloud — overview</span>
+          <div class="dash-dots">
+            <span class="dash-dot r" title="close"></span>
+            <span class="dash-dot y" title="minimize"></span>
+            <span class="dash-dot g" title="maximize"></span>
+          </div>
         </div>
         <div class="dashboard-body">
           <div class="h-sec-label" data-i18n="hero.stackLabel">// Stack multi-cloud</div>
@@ -263,6 +314,14 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
             <div class="h-status-item"><span class="h-status-dot"></span>GCP</div>
             <div class="h-status-item"><span class="h-status-dot"></span>OCI</div>
             <div class="h-status-item"><span class="h-status-dot"></span>Datadog</div>
+          </div>
+          <div class="h-sec-label">// System Monitor</div>
+          <div class="h-chart-wrap" style="position:relative;overflow:hidden;padding-bottom:0.6rem">
+            <div class="h-chart-caption">
+              <span class="h-chart-sub">cpu · network · memory</span>
+              <span class="h-chart-val" style="color:var(--verde);font-size:0.6rem">● active</span>
+            </div>
+            <canvas id="sys-monitor" style="width:100%;height:32px;display:block"></canvas>
           </div>
           <div class="h-sec-label" data-i18n="hero.metricsLabel">// Métricas</div>
           <div class="h-cards-row">
@@ -307,6 +366,8 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
               <div class="h-card-bar"><div class="h-bar-fill" style="width:100%"></div></div>
             </div>
           </div>
+          <div class="h-sec-label">// Live Monitor</div>
+          <div class="h-monitor" id="live-monitor"></div>
         </div>
       </div>
     </div>
@@ -356,7 +417,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     </div>
     <div class="servicos-header">
       <h2 class="sec-title"><span data-i18n="sol.title1">O que</span> <span class="hl" data-i18n="sol.title2">Entregamos</span></h2>
-      <p class="sec-sub" style="max-width:420px" data-i18n="sol.sub">Da consultoria inicial à operação contínua — cobrimos cada etapa da sua jornada cloud com profundidade técnica real.</p>
+      <p class="sec-sub" data-i18n="sol.sub">Da consultoria inicial à operação contínua — cobrimos cada etapa da sua jornada cloud com profundidade técnica real.</p>
     </div>
     <div class="servicos-grid">
       <div class="sc">
@@ -372,8 +433,8 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
         <div class="sc-num">02</div>
         <div class="sc-badge">Migration</div>
         <div class="sc-title" data-i18n="sol.2.title">Cloud Migration</div>
-        <div class="sc-desc" data-i18n="sol.2.desc">Lift-and-shift ou modernização completa — executamos migrações com mínimo downtime e risco controlado em qualquer cloud.</div>
-        <div class="sc-tags"><span class="sc-tag">Assessment</span><span class="sc-tag">EKS</span><span class="sc-tag">GKE</span><span class="sc-tag">AKS</span><span class="sc-tag">RDS</span><span class="sc-tag">Fargate</span></div>
+        <div class="sc-desc" data-i18n="sol.2.desc">Aplicamos os 7 R's da migração cloud — de Rehost a Refactor — para escolher a estratégia certa para cada workload, com mínimo downtime e risco controlado.</div>
+        <div class="sc-tags"><span class="sc-tag">Retire</span><span class="sc-tag">Retain</span><span class="sc-tag">Rehost</span><span class="sc-tag">Relocate</span><span class="sc-tag">Repurchase</span><span class="sc-tag">Replatform</span><span class="sc-tag">Refactor</span></div>
       </div>
       <div class="sc">
         <div class="sc-top-bar"></div>
@@ -420,11 +481,96 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     </div>
     <p class="sec-sub" data-i18n="par.sub">Em sinergia com os maiores players do mercado cloud para entregar as melhores soluções aos nossos clientes.</p>
     <div class="parceiros-grid">
-      <div class="parceiro-card aws"><span class="parceiro-dot"></span>Amazon Web Services<span class="parceiro-tier">Partner</span></div>
-      <div class="parceiro-card azure"><span class="parceiro-dot"></span>Microsoft Azure<span class="parceiro-tier">Partner</span></div>
-      <div class="parceiro-card gcp"><span class="parceiro-dot"></span>Google Cloud<span class="parceiro-tier">GCP</span></div>
-      <div class="parceiro-card oci"><span class="parceiro-dot"></span>Oracle Cloud<span class="parceiro-tier">OCI</span></div>
-      <div class="parceiro-card dd"><span class="parceiro-dot"></span>Datadog<span class="parceiro-tier">Observability</span></div>
+      <div class="parceiro-card aws">
+        <div class="parceiro-top-bar"></div>
+        <div class="parceiro-header">
+          <span class="parceiro-name">Amazon Web Services</span>
+          <span class="parceiro-tier">Partner</span>
+        </div>
+        <div class="parceiro-services">
+          <span class="ps-tag">EKS</span><span class="ps-tag">ECS Fargate</span><span class="ps-tag">RDS</span><span class="ps-tag">Aurora</span><span class="ps-tag">Route53</span><span class="ps-tag">S3</span><span class="ps-tag">CloudFront</span><span class="ps-tag">Lambda</span><span class="ps-tag">IAM</span><span class="ps-tag">Cost Explorer</span>
+        </div>
+      </div>
+      <div class="parceiro-card azure">
+        <div class="parceiro-top-bar"></div>
+        <div class="parceiro-header">
+          <span class="parceiro-name">Microsoft Azure</span>
+          <span class="parceiro-tier">Partner</span>
+        </div>
+        <div class="parceiro-services">
+          <span class="ps-tag">AKS</span><span class="ps-tag">Azure DevOps</span><span class="ps-tag">Blob Storage</span><span class="ps-tag">Azure SQL</span><span class="ps-tag">Entra ID</span><span class="ps-tag">App Service</span><span class="ps-tag">Azure Monitor</span>
+        </div>
+      </div>
+      <div class="parceiro-card gcp">
+        <div class="parceiro-top-bar"></div>
+        <div class="parceiro-header">
+          <span class="parceiro-name">Google Cloud</span>
+          <span class="parceiro-tier">GCP</span>
+        </div>
+        <div class="parceiro-services">
+          <span class="ps-tag">GKE</span><span class="ps-tag">BigQuery</span><span class="ps-tag">Cloud SQL</span><span class="ps-tag">Cloud Run</span><span class="ps-tag">Cloud CDN</span><span class="ps-tag">Pub/Sub</span><span class="ps-tag">IAM</span>
+        </div>
+      </div>
+      <div class="parceiro-card oci">
+        <div class="parceiro-top-bar"></div>
+        <div class="parceiro-header">
+          <span class="parceiro-name">Oracle Cloud</span>
+          <span class="parceiro-tier">OCI</span>
+        </div>
+        <div class="parceiro-services">
+          <span class="ps-tag">OKE</span><span class="ps-tag">HeatWave</span><span class="ps-tag">Buckets</span><span class="ps-tag">Autonomous DB</span><span class="ps-tag">VCN</span><span class="ps-tag">FastConnect</span><span class="ps-tag">WAF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOUD NATIVE -->
+<section class="cncf-bg">
+  <div class="sec-inner">
+    <div class="sec-divider">
+      <span class="sec-divider-label">N · Cloud Native &amp; Open Source</span>
+      <div class="sec-divider-line"></div>
+    </div>
+    <h2 class="sec-title" style="margin-bottom:0.75rem"><span class="hl">Nativos</span> no ecossistema</h2>
+    <p class="sec-sub">Construímos sobre os pilares do movimento cloud native e open source — CNCF, HashiCorp, GitOps e a infraestrutura que define a engenharia moderna.</p>
+    <div class="cncf-grid">
+      <div class="cncf-group">
+        <div class="cncf-group-label">// CNCF Projects</div>
+        <div class="cncf-tags">
+          <span class="cncf-tag k8s">Kubernetes</span>
+          <span class="cncf-tag prom">Prometheus</span>
+          <span class="cncf-tag graf">Grafana</span>
+          <span class="cncf-tag argo">ArgoCD</span>
+          <span class="cncf-tag otel">OpenTelemetry</span>
+          <span class="cncf-tag">Helm</span>
+          <span class="cncf-tag">Flux</span>
+          <span class="cncf-tag">Istio</span>
+          <span class="cncf-tag">Falco</span>
+        </div>
+      </div>
+      <div class="cncf-group">
+        <div class="cncf-group-label">// Infrastructure as Code</div>
+        <div class="cncf-tags">
+          <span class="cncf-tag tf">Terraform</span>
+          <span class="cncf-tag tf">Vault</span>
+          <span class="cncf-tag">Ansible</span>
+          <span class="cncf-tag">Packer</span>
+          <span class="cncf-tag">Pulumi</span>
+          <span class="cncf-tag">Crossplane</span>
+        </div>
+      </div>
+      <div class="cncf-group">
+        <div class="cncf-group-label">// CI/CD & GitOps</div>
+        <div class="cncf-tags">
+          <span class="cncf-tag">GitHub Actions</span>
+          <span class="cncf-tag">GitLab CI</span>
+          <span class="cncf-tag">Tekton</span>
+          <span class="cncf-tag">Docker</span>
+          <span class="cncf-tag">Podman</span>
+          <span class="cncf-tag">Linux</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -540,6 +686,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   </div>
   <div class="footer-bottom">
     <div class="footer-copy" data-i18n="footer.copy">© 2025 nativos.cloud</div>
+    <span class="footer-prompt">nativos@cloud:~$&nbsp;<span class="footer-prompt-cursor">▋</span></span>
     <div class="footer-social">
       <a href="#" class="social-link" aria-label="LinkedIn">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -581,7 +728,7 @@ const translations = {
     "sol.divider":"S · Soluções","sol.title1":"O que","sol.title2":"Entregamos",
     "sol.sub":"Da consultoria inicial à operação contínua — cobrimos cada etapa da sua jornada cloud com profundidade técnica real.",
     "sol.1.title":"Cloud Consulting","sol.1.desc":"Suporte completo e personalizado em todas as fases: get started, design e implantação. Da estratégia ao go-live.",
-    "sol.2.title":"Cloud Migration","sol.2.desc":"Lift-and-shift ou modernização completa — executamos migrações com mínimo downtime e risco controlado em qualquer cloud.",
+    "sol.2.title":"Cloud Migration","sol.2.desc":"Aplicamos os 7 R's da migração cloud — de Rehost a Refactor — para escolher a estratégia certa para cada workload, com mínimo downtime e risco controlado.",
     "sol.3.desc":"Pipelines CI/CD, Kubernetes, Terraform e GitOps — automação de ponta a ponta para times de engenharia de alta performance.",
     "sol.4.title":"Cloud Optimization","sol.4.desc":"Eliminação de desperdícios, rightsizing, reservas e FOCUS Reports — metodologia FinOps Foundation aplicada para reduzir custos com visibilidade e governança reais.",
     "sol.5.title":"Serviços Gerenciados","sol.5.desc":"Monitoramento 24x7, manutenção proativa, gerenciamento DevOps/DevSecOps e suporte técnico contínuo com custo fixo mensal.",
@@ -633,7 +780,7 @@ const translations = {
     "sol.divider":"S · Solutions","sol.title1":"What we","sol.title2":"Deliver",
     "sol.sub":"From initial consulting to continuous operations — we cover every step of your cloud journey with real technical depth.",
     "sol.1.title":"Cloud Consulting","sol.1.desc":"Complete, personalized support at every phase: get started, design and deployment. From strategy to go-live.",
-    "sol.2.title":"Cloud Migration","sol.2.desc":"Lift-and-shift or full modernization — we execute migrations with minimal downtime and controlled risk on any cloud.",
+    "sol.2.title":"Cloud Migration","sol.2.desc":"We apply the 7 R's of cloud migration — from Rehost to Refactor — to choose the right strategy for each workload, with minimal downtime and controlled risk.",
     "sol.3.desc":"CI/CD pipelines, Kubernetes, Terraform and GitOps — end-to-end automation for high-performance engineering teams.",
     "sol.4.title":"Cloud Optimization","sol.4.desc":"Waste elimination, rightsizing, reservations and FOCUS Reports — FinOps Foundation methodology applied to reduce costs with real visibility and governance.",
     "sol.5.title":"Managed Services","sol.5.desc":"24x7 monitoring, proactive maintenance, DevOps/DevSecOps management and continuous technical support at a fixed monthly cost.",
@@ -687,6 +834,103 @@ function setLang(lang) {
     if (t[key] !== undefined) el.placeholder = t[key];
   });
 }
+
+(function() {
+  const canvas = document.getElementById('sys-monitor');
+  if (!canvas) return;
+  const dpr = window.devicePixelRatio || 1;
+  function resize() {
+    const r = canvas.getBoundingClientRect();
+    canvas.width  = r.width  * dpr;
+    canvas.height = r.height * dpr;
+  }
+  resize();
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const streams = [
+    { data:[], color:'rgba(0,255,106,0.55)',  lw:1.2, bias:0.48 },
+    { data:[], color:'rgba(245,196,0,0.30)',  lw:1.0, bias:0.49 },
+    { data:[], color:'rgba(0,255,106,0.18)',  lw:0.8, bias:0.50 },
+  ];
+
+  const W = () => canvas.width  / dpr;
+  const H = () => canvas.height / dpr;
+
+  streams.forEach(s => {
+    let y = 0.4 + Math.random() * 0.3;
+    for (let i = 0; i < W(); i++) {
+      y = Math.max(0.15, Math.min(0.85, y + (Math.random() - s.bias) * 0.04));
+      s.data.push(y);
+    }
+  });
+
+  let frame = 0;
+  function tick() {
+    requestAnimationFrame(tick);
+    if (++frame % 6 !== 0) return;
+    const w = W(), h = H();
+    ctx.clearRect(0, 0, w, h);
+    streams.forEach(s => {
+      let last = s.data[s.data.length - 1];
+      last = Math.max(0.15, Math.min(0.85, last + (Math.random() - s.bias) * 0.04));
+      s.data.push(last);
+      if (s.data.length > w) s.data.shift();
+      ctx.beginPath();
+      ctx.strokeStyle = s.color;
+      ctx.lineWidth   = s.lw;
+      ctx.lineJoin    = 'round';
+      s.data.forEach((v, i) => {
+        const x = (i / (s.data.length - 1)) * w;
+        const y = v * h;
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+    });
+  }
+  tick();
+})();
+
+(function() {
+  const entries = [
+    { cloud:'aws',   msg:'EKS cluster health check',    ok:true  },
+    { cloud:'oci',   msg:'OKE node pool autoscaling',   ok:true  },
+    { cloud:'gcp',   msg:'GKE pod rescheduled',         ok:true  },
+    { cloud:'azure', msg:'AKS deployment rolled out',   ok:true  },
+    { cloud:'aws',   msg:'RDS backup completed',        ok:true  },
+    { cloud:'oci',   msg:'HeatWave query optimized',    ok:true  },
+    { cloud:'aws',   msg:'CloudFront cache invalidated',ok:true  },
+    { cloud:'gcp',   msg:'BigQuery job finished',       ok:true  },
+    { cloud:'azure', msg:'Blob Storage sync done',      ok:true  },
+    { cloud:'oci',   msg:'Autonomous DB self-tuning',   ok:false },
+    { cloud:'aws',   msg:'Lambda cold start detected',  ok:false },
+    { cloud:'gcp',   msg:'Cloud Run instance scaled',   ok:true  },
+    { cloud:'aws',   msg:'IAM policy audit completed',  ok:true  },
+    { cloud:'oci',   msg:'FastConnect link stable',     ok:true  },
+    { cloud:'azure', msg:'Entra ID token refreshed',    ok:true  },
+  ];
+  let idx = Math.floor(Math.random() * entries.length);
+  const el = document.getElementById('live-monitor');
+  if (!el) return;
+
+  function ts() {
+    return new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  }
+  function push() {
+    const e = entries[idx++ % entries.length];
+    const line = document.createElement('div');
+    line.className = 'monitor-line new';
+    line.innerHTML =
+      `<span class="monitor-time">${ts()}</span>` +
+      `<span class="monitor-cloud ${e.cloud}">${e.cloud.toUpperCase()}</span>` +
+      `<span class="monitor-msg">${e.msg}</span>` +
+      (e.ok ? `<span class="monitor-ok">✓ ok</span>` : `<span class="monitor-info">● info</span>`);
+    el.insertBefore(line, el.firstChild);
+    if (el.children.length > 3) el.removeChild(el.lastChild);
+  }
+  push(); push(); push();
+  setInterval(push, 2500);
+})();
 
 function sendEmail(e) {
   e.preventDefault();
