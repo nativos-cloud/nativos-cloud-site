@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="75%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#00FF6A" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#0D0D0D" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="white" fill-opacity="0.045"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0D0D0D"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Top border strip (BR flag colors) -->
+  <rect x="0" y="0" width="480" height="3" fill="#009C3B"/>
+  <rect x="480" y="0" width="240" height="3" fill="#F5C400"/>
+  <rect x="720" y="0" width="480" height="3" fill="#002776"/>
+
+  <!-- Left accent line -->
+  <rect x="80" y="120" width="2" height="390" fill="#00FF6A" opacity="0.3"/>
+
+  <!-- Tag -->
+  <rect x="100" y="120" width="8" height="8" rx="4" fill="#00FF6A"/>
+  <text x="120" y="130" font-family="monospace" font-size="13" fill="#00FF6A" letter-spacing="3" font-weight="600">CONSULTORIA CLOUD · DEVOPS · FINOPS</text>
+
+  <!-- Main title -->
+  <text x="100" y="230" font-family="monospace" font-size="72" font-weight="700" fill="#E8E8E8" letter-spacing="2">INFRAESTRUTURA</text>
+  <text x="100" y="318" font-family="monospace" font-size="72" font-weight="700" fill="#00FF6A" letter-spacing="2">NATIVA.</text>
+  <text x="100" y="406" font-family="monospace" font-size="72" font-weight="700" fill="#E8E8E8" letter-spacing="2">RESULTADO</text>
+  <text x="100" y="494" font-family="monospace" font-size="72" font-weight="700" fill="#F5C400" letter-spacing="2">REAL.</text>
+
+  <!-- Right panel -->
+  <rect x="740" y="110" width="380" height="410" rx="8" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+
+  <!-- Panel header -->
+  <rect x="740" y="110" width="380" height="42" rx="8" fill="#0D0D0D"/>
+  <rect x="740" y="130" width="380" height="22" fill="#0D0D0D"/>
+  <circle cx="1077" cy="131" r="7" fill="#FF5F57"/>
+  <circle cx="1097" cy="131" r="7" fill="#FEBC2E"/>
+  <circle cx="1117" cy="131" r="7" fill="#28C840"/>
+  <circle cx="764" cy="131" r="4" fill="#00FF6A"/>
+  <text x="774" y="135" font-family="monospace" font-size="10" fill="#00FF6A" letter-spacing="2">LIVE</text>
+  <text x="830" y="135" font-family="monospace" font-size="10" fill="#5A5E66" letter-spacing="1">nativos.cloud — overview</text>
+
+  <!-- Panel divider -->
+  <rect x="740" y="152" width="380" height="1" fill="#1A1C1F"/>
+
+  <!-- Stack label -->
+  <text x="760" y="180" font-family="monospace" font-size="10" fill="#5A5E66" letter-spacing="2">// STACK MULTI-CLOUD</text>
+  <rect x="760" y="186" width="340" height="1" fill="#1A1C1F"/>
+
+  <!-- Cloud tags -->
+  <rect x="760" y="198" width="44" height="22" rx="2" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+  <text x="782" y="213" font-family="monospace" font-size="11" fill="#FF9900" text-anchor="middle">AWS</text>
+
+  <rect x="812" y="198" width="52" height="22" rx="2" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+  <text x="838" y="213" font-family="monospace" font-size="11" fill="#0078D4" text-anchor="middle">Azure</text>
+
+  <rect x="872" y="198" width="42" height="22" rx="2" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+  <text x="893" y="213" font-family="monospace" font-size="11" fill="#4285F4" text-anchor="middle">GCP</text>
+
+  <rect x="922" y="198" width="38" height="22" rx="2" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+  <text x="941" y="213" font-family="monospace" font-size="11" fill="#F5C400" text-anchor="middle">OCI</text>
+
+  <rect x="968" y="198" width="66" height="22" rx="2" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+  <text x="1001" y="213" font-family="monospace" font-size="11" fill="#326CE5" text-anchor="middle">Kubernetes</text>
+
+  <rect x="760" y="228" width="62" height="22" rx="2" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+  <text x="791" y="243" font-family="monospace" font-size="11" fill="#7B42F6" text-anchor="middle">Terraform</text>
+
+  <rect x="830" y="228" width="48" height="22" rx="2" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+  <text x="854" y="243" font-family="monospace" font-size="11" fill="#8A8F96" text-anchor="middle">CI/CD</text>
+
+  <rect x="886" y="228" width="54" height="22" rx="2" fill="#111214" stroke="#1E2124" stroke-width="1"/>
+  <text x="913" y="243" font-family="monospace" font-size="11" fill="#8A8F96" text-anchor="middle">GitOps</text>
+
+  <!-- Metrics label -->
+  <text x="760" y="278" font-family="monospace" font-size="10" fill="#5A5E66" letter-spacing="2">// MÉTRICAS</text>
+  <rect x="760" y="284" width="340" height="1" fill="#1A1C1F"/>
+
+  <!-- Metric cards row 1 -->
+  <rect x="760" y="296" width="158" height="70" rx="4" fill="#141618" stroke="#1E2124" stroke-width="1"/>
+  <text x="776" y="314" font-family="monospace" font-size="9" fill="#5A5E66" letter-spacing="1">EXPERIÊNCIA</text>
+  <text x="776" y="348" font-family="monospace" font-size="28" font-weight="700" fill="#00FF6A">9+</text>
+  <text x="776" y="362" font-family="monospace" font-size="9" fill="#5A5E66">anos em cloud</text>
+
+  <rect x="926" y="296" width="154" height="70" rx="4" fill="#141618" stroke="#1E2124" stroke-width="1"/>
+  <text x="942" y="314" font-family="monospace" font-size="9" fill="#5A5E66" letter-spacing="1">FINOPS SAVING</text>
+  <text x="942" y="348" font-family="monospace" font-size="28" font-weight="700" fill="#00FF6A">↓35%</text>
+  <text x="942" y="362" font-family="monospace" font-size="9" fill="#5A5E66">economia média</text>
+
+  <!-- Metric cards row 2 -->
+  <rect x="760" y="374" width="158" height="70" rx="4" fill="#141618" stroke="#1E2124" stroke-width="1"/>
+  <text x="776" y="392" font-family="monospace" font-size="9" fill="#5A5E66" letter-spacing="1">SLA ALVO</text>
+  <text x="776" y="426" font-family="monospace" font-size="24" font-weight="700" fill="#00FF6A">99.9%</text>
+  <text x="776" y="440" font-family="monospace" font-size="9" fill="#5A5E66">disponibilidade</text>
+
+  <rect x="926" y="374" width="154" height="70" rx="4" fill="#141618" stroke="#1E2124" stroke-width="1"/>
+  <text x="942" y="392" font-family="monospace" font-size="9" fill="#5A5E66" letter-spacing="1">CLOUDS</text>
+  <text x="942" y="426" font-family="monospace" font-size="28" font-weight="700" fill="#F5C400">4</text>
+  <text x="942" y="440" font-family="monospace" font-size="9" fill="#5A5E66">provedores</text>
+
+  <!-- Monitor lines -->
+  <rect x="760" y="454" width="340" height="56" rx="4" fill="#0D0D0D" stroke="#1E2124" stroke-width="1"/>
+  <rect x="775" y="466" width="38" height="14" rx="2" fill="rgba(255,153,0,0.1)"/>
+  <text x="794" y="477" font-family="monospace" font-size="9" fill="#FF9900" text-anchor="middle">AWS</text>
+  <text x="820" y="477" font-family="monospace" font-size="9" fill="#5A5E66">EKS cluster health check</text>
+  <text x="1082" y="477" font-family="monospace" font-size="9" fill="#00FF6A">✓ ok</text>
+
+  <rect x="775" y="485" width="38" height="14" rx="2" fill="rgba(245,196,0,0.1)"/>
+  <text x="794" y="496" font-family="monospace" font-size="9" fill="#F5C400" text-anchor="middle">OCI</text>
+  <text x="820" y="496" font-family="monospace" font-size="9" fill="#5A5E66">HeatWave query optimized</text>
+  <text x="1082" y="496" font-family="monospace" font-size="9" fill="#00FF6A">✓ ok</text>
+
+  <!-- Bottom domain -->
+  <text x="100" y="580" font-family="monospace" font-size="16" fill="#5A5E66" letter-spacing="1">nativos</text>
+  <text x="185" y="580" font-family="monospace" font-size="16" fill="#00FF6A" letter-spacing="1">.cloud</text>
+  <text x="260" y="580" font-family="monospace" font-size="16" fill="#1A1C1F">·</text>
+  <text x="278" y="580" font-family="monospace" font-size="13" fill="#3A3E44" letter-spacing="1">Ponta Grossa, Paraná — Brasil</text>
+</svg>
