@@ -53,7 +53,7 @@
 :root{
   --bg:#0D0D0D;--bg2:#111214;--bg3:#161819;--card:#141618;--card-border:#1E2124;
   --verde:#00FF6A;--verde-muted:rgba(0,255,106,0.1);--amarelo:#F5C400;
-  --texto:#E8E8E8;--texto-muted:#5A5E66;--texto-sec:#8A8F96;--sep:#1A1C1F;
+  --texto:#E8E8E8;--texto-muted:#7A808A;--texto-sec:#8A8F96;--sep:#1A1C1F;
   --mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
@@ -356,6 +356,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   </div>
 </nav>
 
+<main>
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="dot-grid"></div>
@@ -752,13 +753,13 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
         <h2 class="sec-title" style="margin-bottom:1.5rem"><span data-i18n="contact.title1">Pronto para</span> <span class="hl" data-i18n="contact.title2">Decolar?</span></h2>
         <form id="contact-form" onsubmit="sendEmail(event)">
           <div class="form-row">
-            <div class="form-field"><label data-i18n="form.name">Nome</label><input type="text" data-i18n-placeholder="form.name.ph" placeholder="Seu nome"></div>
-            <div class="form-field"><label data-i18n="form.company">Empresa</label><input type="text" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa"></div>
+            <div class="form-field"><label for="f-name" data-i18n="form.name">Nome</label><input id="f-name" type="text" data-i18n-placeholder="form.name.ph" placeholder="Seu nome"></div>
+            <div class="form-field"><label for="f-company" data-i18n="form.company">Empresa</label><input id="f-company" type="text" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa"></div>
           </div>
-          <div class="form-field"><label data-i18n="form.email">E-mail</label><input type="email" placeholder="seu@email.com.br"></div>
+          <div class="form-field"><label for="f-email" data-i18n="form.email">E-mail</label><input id="f-email" type="email" placeholder="seu@email.com.br"></div>
           <div class="form-field">
-            <label data-i18n="form.service">Solução de interesse</label>
-            <select>
+            <label for="f-service" data-i18n="form.service">Solução de interesse</label>
+            <select id="f-service">
               <option value="" data-i18n="form.service.ph">Selecione uma solução</option>
               <option>Cloud Consulting</option>
               <option>Cloud Migration</option>
@@ -783,6 +784,8 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-top">
@@ -1066,10 +1069,10 @@ function sendEmail(e) {
   btn.textContent = '$ Enviando...';
 
   const params = {
-    name:    form.querySelectorAll('input[type=text]')[0].value,
-    company: form.querySelectorAll('input[type=text]')[1].value,
-    email:   form.querySelector('input[type=email]').value,
-    service: form.querySelector('select').value,
+    name:    document.getElementById('f-name').value,
+    company: document.getElementById('f-company').value,
+    email:   document.getElementById('f-email').value,
+    service: document.getElementById('f-service').value,
     message: form.querySelector('textarea').value,
   };
 
