@@ -269,12 +269,18 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 .footer-links{display:flex;gap:2rem}
 .footer-links a{font-family:var(--mono);font-size:0.68rem;color:var(--texto-muted);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.15s}
 .footer-links a:hover{color:var(--verde)}
-.footer-social-bar{background:#00FF6A;padding:2.2rem 5%}
-.footer-social-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
-.footer-social-label{font-family:var(--mono);font-size:0.7rem;font-weight:600;color:#0D0D0D;letter-spacing:0.1em;text-transform:uppercase}
-.footer-social-icons{display:flex;gap:0.75rem;align-items:center}
-.social-link{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:6px;background:rgba(0,0,0,0.12);color:#0D0D0D;transition:all 0.15s;text-decoration:none;border:1px solid rgba(0,0,0,0.1)}
-.social-link:hover{background:rgba(0,0,0,0.22);transform:translateY(-2px)}
+.footer-social-bar{background:#071C1A;padding:3.5rem 5%;position:relative;overflow:hidden;border-top:1px solid rgba(0,255,106,0.08)}
+.footer-social-bar::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,255,106,0.06) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.footer-social-bar::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 21px,rgba(0,255,106,0.025) 21px,rgba(0,255,106,0.025) 22px);pointer-events:none}
+.footer-social-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;position:relative;z-index:1}
+.footer-social-left{display:flex;flex-direction:column;gap:0.6rem}
+.footer-social-prompt{font-family:var(--mono);font-size:0.65rem;color:rgba(0,255,106,0.4);letter-spacing:0.08em}
+.footer-social-heading{font-family:var(--mono);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:700;color:#E8E8E8;letter-spacing:0.04em;line-height:1.2}
+.footer-social-heading em{color:var(--verde);font-style:normal}
+.footer-social-sub{font-family:var(--mono);font-size:0.65rem;color:rgba(255,255,255,0.25);letter-spacing:0.06em;margin-top:0.2rem}
+.footer-social-icons{display:flex;gap:0.65rem;align-items:center}
+.social-link{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:6px;background:rgba(0,255,106,0.05);color:rgba(255,255,255,0.55);transition:all 0.18s;text-decoration:none;border:1px solid rgba(0,255,106,0.12)}
+.social-link:hover{background:rgba(0,255,106,0.12);color:var(--verde);border-color:rgba(0,255,106,0.35);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,255,106,0.12)}
 .footer-bottom{padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-copy{font-family:var(--mono);font-size:0.65rem;color:var(--texto-muted)}
 .footer-prompt{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted)}
@@ -804,7 +810,11 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   </div>
   <div class="footer-social-bar">
     <div class="footer-social-inner">
-      <span class="footer-social-label">// Nos acompanhe</span>
+      <div class="footer-social-left">
+        <span class="footer-social-prompt">$ connect --nativos.cloud</span>
+        <div class="footer-social-heading">Nos acompanhe nas <em>redes</em></div>
+        <span class="footer-social-sub">// LinkedIn · GitHub · Instagram · YouTube · WhatsApp</span>
+      </div>
       <div class="footer-social-icons">
         <a href="#" class="social-link" aria-label="LinkedIn">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
