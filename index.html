@@ -237,6 +237,39 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 .footer-prompt{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);order:2}
 .footer-prompt-cursor{color:var(--verde);animation:blink 1.2s infinite}
 
+.metrics-strip{background:var(--bg3);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:1.6rem 5%}
+.metrics-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.metric-item{display:flex;flex-direction:column;align-items:center;gap:0.25rem;flex:1}
+.metric-val{font-family:var(--mono);font-weight:700;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--verde);line-height:1}
+.metric-label{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.09em;text-transform:uppercase;text-align:center}
+.metric-sep{width:1px;height:44px;background:var(--sep);flex-shrink:0}
+
+.testi-bg{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:2rem;background:var(--card-border)}
+.testi-card{background:var(--card);padding:1.6rem;display:flex;flex-direction:column;gap:1rem}
+.testi-body{font-family:var(--mono);font-size:0.78rem;color:var(--texto);line-height:1.75;flex:1;position:relative}
+.testi-body::before{content:'"';color:var(--verde);font-size:2rem;line-height:0;vertical-align:-0.45rem;margin-right:0.15rem;font-weight:700}
+.testi-author{border-top:1px solid var(--sep);padding-top:0.75rem}
+.testi-name{font-family:var(--mono);font-size:0.7rem;font-weight:600;color:var(--texto)}
+.testi-role{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);margin-top:0.18rem;letter-spacing:0.04em}
+
+.faq-bg{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,0.018) 39px,rgba(255,255,255,0.018) 40px)}
+.faq-list{margin-top:2rem;border:1px solid var(--card-border);border-radius:6px;overflow:hidden}
+.faq-item{border-bottom:1px solid var(--sep)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.4rem;cursor:pointer;font-family:var(--mono);font-size:0.8rem;font-weight:600;color:var(--texto);background:var(--card);transition:background 0.15s,color 0.15s;gap:1rem;user-select:none;border:none;width:100%;text-align:left}
+.faq-q:hover{background:var(--bg3)}
+.faq-q.open{color:var(--verde)}
+.faq-icon{font-family:var(--mono);font-size:1rem;color:var(--texto-muted);flex-shrink:0;transition:transform 0.2s,color 0.15s;line-height:1}
+.faq-q.open .faq-icon{transform:rotate(45deg);color:var(--verde)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.32s ease;background:var(--bg2)}
+.faq-a.open{max-height:400px}
+.faq-a-inner{padding:1rem 1.4rem 1.2rem;font-size:0.83rem;color:var(--texto-sec);line-height:1.85}
+
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,0.4);cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
 @media(max-width:900px){
   .hero-inner,.sobre-grid,.contato-grid{grid-template-columns:1fr}
   .hero-right{order:-1}
@@ -247,6 +280,9 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   .servicos-header{flex-direction:column;align-items:flex-start;gap:0.75rem}
   .cncf-grid{grid-template-columns:1fr}
   .parceiros-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .metrics-inner{flex-wrap:wrap;justify-content:center;gap:1.5rem}
+  .metric-sep{display:none}
 }
 @media(max-width:600px){
   .servicos-grid{grid-template-columns:1fr}
@@ -254,6 +290,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   .h-cards-row{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .valores-grid{grid-template-columns:1fr}
+  .metric-item{min-width:calc(50% - 1rem)}
 }
 </style>
 </head>
@@ -630,6 +667,39 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-bg">
+  <div class="sec-inner">
+    <div class="sec-divider">
+      <span class="sec-divider-label">F · perguntas frequentes</span>
+      <div class="sec-divider-line"></div>
+    </div>
+    <h2 class="sec-title" style="margin-bottom:0.5rem">Dúvidas <span class="hl">comuns</span></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Qual é o prazo típico de uma migração cloud?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Depende da complexidade do ambiente. Migrações simples (lift &amp; shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Vocês atendem empresas que ainda não usam cloud?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Atendemos desde o primeiro passo — assessments de readiness, definição de estratégia cloud, escolha do provedor mais adequado e execução da migração. Nosso processo é pensado para reduzir risco e garantir uma transição segura.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Como funciona o serviço de MSP (Managed Services)?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Oferecemos monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custos e suporte técnico com SLA definido. O contrato é mensal com escopo fixo — sem surpresas no faturamento. Utilizamos Grafana, Prometheus e as ferramentas nativas de cada cloud.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Vocês trabalham com mais de um provedor cloud simultaneamente?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>A consultoria inicial é gratuita?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTATO -->
 <section class="contato-bg" id="contato">
   <div class="sec-inner">
@@ -708,6 +778,20 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 </footer>
 
 <script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-a');
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => {
+    q.classList.remove('open');
+    q.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
 const translations = {
   pt: {
     "nav.solutions":"Soluções","nav.sectors":"Setores","nav.about":"Sobre","nav.contact":"Contato","nav.cta":"$ Falar --now",
