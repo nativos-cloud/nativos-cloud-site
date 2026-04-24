@@ -32,8 +32,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-<script>window.addEventListener('load',()=>emailjs.init("hqADwFqZvcKKnLcd_"));</script>
+<script>
+(function(){
+  const obs = new IntersectionObserver(function(entries){
+    if(!entries[0].isIntersecting) return;
+    obs.disconnect();
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+    s.onload = function(){ emailjs.init("hqADwFqZvcKKnLcd_"); };
+    document.head.appendChild(s);
+  }, {rootMargin:'300px'});
+  document.addEventListener('DOMContentLoaded',function(){
+    const el = document.getElementById('contato');
+    if(el) obs.observe(el);
+  });
+})();
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -949,12 +963,16 @@ function setLang(lang) {
   const canvas = document.getElementById('sys-monitor');
   if (!canvas) return;
   const dpr = window.devicePixelRatio || 1;
+  let cW = 0, cH = 0;
   function resize() {
     const r = canvas.getBoundingClientRect();
     canvas.width  = r.width  * dpr;
     canvas.height = r.height * dpr;
+    cW = canvas.width  / dpr;
+    cH = canvas.height / dpr;
   }
   resize();
+  window.addEventListener('resize', resize, {passive: true});
   const ctx = canvas.getContext('2d');
   ctx.scale(dpr, dpr);
 
@@ -964,12 +982,9 @@ function setLang(lang) {
     { data:[], color:'rgba(0,255,106,0.18)',  lw:0.8, bias:0.50 },
   ];
 
-  const W = () => canvas.width  / dpr;
-  const H = () => canvas.height / dpr;
-
   streams.forEach(s => {
     let y = 0.4 + Math.random() * 0.3;
-    for (let i = 0; i < W(); i++) {
+    for (let i = 0; i < cW; i++) {
       y = Math.max(0.15, Math.min(0.85, y + (Math.random() - s.bias) * 0.04));
       s.data.push(y);
     }
@@ -979,20 +994,19 @@ function setLang(lang) {
   function tick() {
     requestAnimationFrame(tick);
     if (++frame % 6 !== 0) return;
-    const w = W(), h = H();
-    ctx.clearRect(0, 0, w, h);
+    ctx.clearRect(0, 0, cW, cH);
     streams.forEach(s => {
       let last = s.data[s.data.length - 1];
       last = Math.max(0.15, Math.min(0.85, last + (Math.random() - s.bias) * 0.04));
       s.data.push(last);
-      if (s.data.length > w) s.data.shift();
+      if (s.data.length > cW) s.data.shift();
       ctx.beginPath();
       ctx.strokeStyle = s.color;
       ctx.lineWidth   = s.lw;
       ctx.lineJoin    = 'round';
       s.data.forEach((v, i) => {
-        const x = (i / (s.data.length - 1)) * w;
-        const y = v * h;
+        const x = (i / (s.data.length - 1)) * cW;
+        const y = v * cH;
         i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
       });
       ctx.stroke();
