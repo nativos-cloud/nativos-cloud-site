@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nativos.Cloud — Cloud, DevOps & FinOps</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("hqADwFqZvcKKnLcd_");</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -430,7 +432,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep);padding:1.6rem 5%;d
     <div class="contato-grid">
       <div>
         <h2 class="sec-title" style="margin-bottom:1.5rem"><span data-i18n="contact.title1">Pronto para</span> <span class="hl" data-i18n="contact.title2">Decolar?</span></h2>
-        <form onsubmit="return false">
+        <form id="contact-form" onsubmit="sendEmail(event)">
           <div class="form-row">
             <div class="form-field"><label data-i18n="form.name">Nome</label><input type="text" data-i18n-placeholder="form.name.ph" placeholder="Seu nome"></div>
             <div class="form-field"><label data-i18n="form.company">Empresa</label><input type="text" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa"></div>
@@ -449,7 +451,8 @@ footer{background:var(--bg2);border-top:1px solid var(--sep);padding:1.6rem 5%;d
             </select>
           </div>
           <div class="form-field"><label data-i18n="form.message">Mensagem</label><textarea data-i18n-placeholder="form.message.ph" placeholder="Conte seu desafio ou estágio atual na jornada cloud..."></textarea></div>
-          <button type="submit" class="btn-form" data-i18n="form.submit">$ Enviar --mensagem</button>
+          <button type="submit" class="btn-form" id="btn-submit" data-i18n="form.submit">$ Enviar --mensagem</button>
+          <div id="form-msg" style="display:none;margin-top:0.75rem;font-family:var(--mono);font-size:0.75rem;padding:0.6rem;border-radius:3px"></div>
         </form>
       </div>
       <div>
@@ -598,6 +601,39 @@ function setLang(lang) {
     const key = el.getAttribute('data-i18n-placeholder');
     if (t[key] !== undefined) el.placeholder = t[key];
   });
+}
+
+function sendEmail(e) {
+  e.preventDefault();
+  const btn = document.getElementById('btn-submit');
+  const msg = document.getElementById('form-msg');
+  const form = document.getElementById('contact-form');
+
+  btn.disabled = true;
+  btn.textContent = '$ Enviando...';
+
+  const params = {
+    name:    form.querySelectorAll('input[type=text]')[0].value,
+    company: form.querySelectorAll('input[type=text]')[1].value,
+    email:   form.querySelector('input[type=email]').value,
+    service: form.querySelector('select').value,
+    message: form.querySelector('textarea').value,
+  };
+
+  emailjs.send("service_2lczufs", "template_04427c7", params)
+    .then(() => {
+      msg.style.cssText = 'display:block;background:rgba(0,255,106,0.08);color:var(--verde);border:1px solid rgba(0,255,106,0.2)';
+      msg.textContent = '✓ Mensagem enviada! Retorno em até 24h.';
+      form.reset();
+    })
+    .catch(() => {
+      msg.style.cssText = 'display:block;background:rgba(255,80,80,0.08);color:#FF5050;border:1px solid rgba(255,80,80,0.2)';
+      msg.textContent = '✗ Erro ao enviar. Tente novamente ou use o e-mail direto.';
+    })
+    .finally(() => {
+      btn.disabled = false;
+      btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
+    });
 }
 </script>
 </body>
