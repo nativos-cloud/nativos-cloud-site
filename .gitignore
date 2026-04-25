@@ -1,0 +1,5 @@
+# Logs
+*.log
+
+# Windows Zone.Identifier metadata (WSL)
+*:Zone.Identifier
