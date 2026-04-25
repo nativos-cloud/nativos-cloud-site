@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — nativos.cloud</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D0D'/><text x='4' y='22' font-family='monospace' font-weight='700' font-size='14' fill='%2300FF6A'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0D0D0D;--bg2:#111214;--card:#141618;--card-border:#1E2124;
+  --verde:#00FF6A;--amarelo:#F5C400;
+  --texto:#E8E8E8;--texto-muted:#7A808A;--texto-sec:#8A8F96;--sep:#1A1C1F;
+  --mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--texto);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+
+.flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#F5C400 40%,#F5C400 60%,#002776 60%,#002776 100%);flex-shrink:0}
+
+nav{background:rgba(13,13,13,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--sep);height:56px;display:flex;align-items:center;padding:0 5%;flex-shrink:0}
+.nav-logo{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--texto);text-decoration:none}
+.nav-logo em{color:var(--verde);font-style:normal}
+
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:5%}
+
+.terminal{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);width:100%;max-width:600px}
+.terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:rgba(0,0,0,0.35);gap:0.75rem}
+.t-dots{display:flex;gap:0.38rem;align-items:center}
+.t-dot{width:9px;height:9px;border-radius:50%}
+.t-dot.r{background:#FF5F57}.t-dot.y{background:#FEBC2E}.t-dot.g{background:#28C840}
+.t-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.07em;flex:1;text-align:center}
+
+.terminal-body{padding:1.5rem 1.5rem 2rem;font-family:var(--mono);font-size:0.82rem;line-height:1.8}
+.line-prompt{color:var(--verde)}
+.line-cmd{color:var(--texto)}
+.line-err{color:#FF5050;margin-top:0.4rem}
+.line-info{color:var(--texto-muted);margin-top:0.2rem}
+.line-gap{margin-top:1rem}
+.line-404{font-size:3.5rem;font-weight:600;color:var(--verde);line-height:1;margin:1.2rem 0 0.4rem;letter-spacing:0.05em}
+.line-label{color:var(--texto-sec);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase}
+
+.actions{margin-top:1.6rem;display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-verde{background:var(--verde);color:#0D0D0D;font-family:var(--mono);font-weight:600;font-size:0.74rem;padding:0.6rem 1.2rem;border-radius:3px;text-decoration:none;letter-spacing:0.04em;transition:opacity 0.15s}
+.btn-verde:hover{opacity:0.85}
+.btn-ghost{color:var(--texto-sec);font-family:var(--mono);font-size:0.74rem;padding:0.6rem 1.2rem;border-radius:3px;text-decoration:none;border:1px solid var(--card-border);letter-spacing:0.04em;transition:all 0.15s}
+.btn-ghost:hover{border-color:var(--verde);color:var(--verde)}
+
+.cursor{display:inline-block;width:8px;height:1em;background:var(--verde);vertical-align:text-bottom;animation:blink 1.2s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+</style>
+</head>
+<body>
+<div class="flag-strip"></div>
+<nav>
+  <a href="/" class="nav-logo">&gt;_ <em>nativos</em>.cloud</a>
+</nav>
+<main>
+  <div class="terminal">
+    <div class="terminal-header">
+      <div class="t-dots">
+        <div class="t-dot r"></div>
+        <div class="t-dot y"></div>
+        <div class="t-dot g"></div>
+      </div>
+      <span class="t-title">bash — nativos.cloud</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="line-prompt">$</span> <span class="line-cmd">GET <span id="path"></span></span></div>
+      <div class="line-err">bash: rota não encontrada: 404 Not Found</div>
+      <div class="line-info"># O recurso solicitado não existe neste servidor.</div>
+      <div class="line-gap">
+        <div class="line-404">404</div>
+        <div class="line-label">Página não encontrada</div>
+      </div>
+      <div class="actions">
+        <a href="/" class="btn-verde">$ cd ~/ (início)</a>
+        <a href="/#contato" class="btn-ghost">$ ./contato.sh</a>
+      </div>
+      <div style="margin-top:1.4rem"><span class="line-prompt">$</span> <span class="cursor"></span></div>
+    </div>
+  </div>
+</main>
+<script>
+  document.getElementById('path').textContent = window.location.pathname;
+</script>
+</body>
+</html>
