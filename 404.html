@@ -9,27 +9,47 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>(function(){var s=localStorage.getItem('nc-theme')||'system';var resolved=s==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=resolved;})()</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0D0D0D;--bg2:#111214;--card:#141618;--card-border:#1E2124;
-  --verde:#00FF6A;--amarelo:#F5C400;
+  --bg:#0D0D0D;--bg2:#111214;--bg3:#161819;--card:#141618;--card-border:#1E2124;
+  --verde:#00FF6A;--verde-muted:rgba(0,255,106,0.1);--verde-text:#0D0D0D;--amarelo:#F5C400;
   --texto:#E8E8E8;--texto-muted:#7A808A;--texto-sec:#8A8F96;--sep:#1A1C1F;
   --mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;
+  --nav-bg:rgba(13,13,13,0.93);--nav-shadow:none;--overlay-dark:rgba(0,0,0,0.35);
+}
+[data-theme="light"]{
+  --bg:#ECEDF0;--bg2:#E2E4E8;--bg3:#D6D9DE;--card:#F4F5F7;--card-border:#C4C7CF;
+  --verde:#007A38;--verde-muted:rgba(0,122,56,0.08);--verde-text:#FFFFFF;--amarelo:#8A6800;
+  --texto:#111827;--texto-muted:#6B7280;--texto-sec:#374151;--sep:#CDD0D8;
+  --nav-bg:rgba(247,248,250,0.95);--nav-shadow:0 1px 8px rgba(0,0,0,0.08);--overlay-dark:rgba(0,0,0,0.04);
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--texto);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
 
 .flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#F5C400 40%,#F5C400 60%,#002776 60%,#002776 100%);flex-shrink:0}
 
-nav{background:rgba(13,13,13,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--sep);height:56px;display:flex;align-items:center;padding:0 5%;flex-shrink:0}
+nav{background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--sep);box-shadow:var(--nav-shadow);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;flex-shrink:0}
 .nav-logo{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--texto);text-decoration:none}
 .nav-logo em{color:var(--verde);font-style:normal}
 
+/* THEME DROPDOWN */
+.theme-select{position:relative}
+.theme-select-btn{display:flex;align-items:center;gap:0.35rem;background:var(--card);border:1px solid var(--card-border);border-radius:3px;padding:0.3rem 0.6rem;cursor:pointer;color:var(--texto-muted);font-family:var(--mono);font-size:0.75rem;transition:all 0.15s;line-height:1}
+.theme-select-btn:hover{color:var(--texto);border-color:var(--verde)}
+.theme-select-arrow{font-size:0.5rem;opacity:0.5}
+.theme-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--card);border:1px solid var(--card-border);border-radius:4px;overflow:hidden;display:none;z-index:200;min-width:108px;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.theme-menu.open{display:block}
+.theme-menu-item{display:flex;align-items:center;gap:0.5rem;width:100%;padding:0.48rem 0.75rem;background:transparent;border:none;cursor:pointer;font-family:var(--mono);font-size:0.68rem;color:var(--texto-sec);text-align:left;transition:background 0.1s,color 0.1s}
+.theme-menu-item:hover{background:var(--bg3);color:var(--texto)}
+.theme-menu-item.active{color:var(--verde)}
+.theme-menu-icon{font-size:0.82rem}
+
 main{flex:1;display:flex;align-items:center;justify-content:center;padding:5%}
 
-.terminal{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);width:100%;max-width:600px}
-.terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:rgba(0,0,0,0.35);gap:0.75rem}
+.terminal{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);width:100%;max-width:600px;box-shadow:var(--card-shadow,none)}
+.terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:var(--overlay-dark);gap:0.75rem}
 .t-dots{display:flex;gap:0.38rem;align-items:center}
 .t-dot{width:9px;height:9px;border-radius:50%}
 .t-dot.r{background:#FF5F57}.t-dot.y{background:#FEBC2E}.t-dot.g{background:#28C840}
@@ -45,7 +65,7 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:5%}
 .line-label{color:var(--texto-sec);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase}
 
 .actions{margin-top:1.6rem;display:flex;gap:0.75rem;flex-wrap:wrap}
-.btn-verde{background:var(--verde);color:#0D0D0D;font-family:var(--mono);font-weight:600;font-size:0.74rem;padding:0.6rem 1.2rem;border-radius:3px;text-decoration:none;letter-spacing:0.04em;transition:opacity 0.15s}
+.btn-verde{background:var(--verde);color:var(--verde-text);font-family:var(--mono);font-weight:600;font-size:0.74rem;padding:0.6rem 1.2rem;border-radius:3px;text-decoration:none;letter-spacing:0.04em;transition:opacity 0.15s}
 .btn-verde:hover{opacity:0.85}
 .btn-ghost{color:var(--texto-sec);font-family:var(--mono);font-size:0.74rem;padding:0.6rem 1.2rem;border-radius:3px;text-decoration:none;border:1px solid var(--card-border);letter-spacing:0.04em;transition:all 0.15s}
 .btn-ghost:hover{border-color:var(--verde);color:var(--verde)}
@@ -58,6 +78,16 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:5%}
 <div class="flag-strip"></div>
 <nav>
   <a href="/" class="nav-logo">&gt;_ <em>nativos</em>.cloud</a>
+  <div class="theme-select" id="theme-select">
+    <button class="theme-select-btn" id="theme-select-btn" onclick="toggleThemeMenu()">
+      <span id="theme-select-icon">⊙</span><span class="theme-select-arrow">▾</span>
+    </button>
+    <div class="theme-menu" id="theme-menu">
+      <button class="theme-menu-item" id="tmitem-dark" onclick="setTheme('dark');closeThemeMenu()"><span class="theme-menu-icon">◐</span>Dark</button>
+      <button class="theme-menu-item" id="tmitem-light" onclick="setTheme('light');closeThemeMenu()"><span class="theme-menu-icon">○</span>Light</button>
+      <button class="theme-menu-item" id="tmitem-system" onclick="setTheme('system');closeThemeMenu()"><span class="theme-menu-icon">⊙</span>Sistema</button>
+    </div>
+  </div>
 </nav>
 <main>
   <div class="terminal">
@@ -87,6 +117,48 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:5%}
 </main>
 <script>
   document.getElementById('path').textContent = window.location.pathname;
+
+  (function() {
+    const mq = window.matchMedia('(prefers-color-scheme: light)');
+    const KEY = 'nc-theme';
+    const icons = {dark:'◐', system:'⊙', light:'○'};
+
+    function applyTheme(pref) {
+      const resolved = pref === 'system' ? (mq.matches ? 'light' : 'dark') : pref;
+      document.documentElement.dataset.theme = resolved;
+      const iconEl = document.getElementById('theme-select-icon');
+      if (iconEl) iconEl.textContent = icons[pref];
+      ['dark','system','light'].forEach(t => {
+        const item = document.getElementById('tmitem-' + t);
+        if (item) item.classList.toggle('active', t === pref);
+      });
+    }
+
+    window.setTheme = function(pref) {
+      localStorage.setItem(KEY, pref);
+      applyTheme(pref);
+    };
+
+    window.toggleThemeMenu = function() {
+      document.getElementById('theme-menu').classList.toggle('open');
+    };
+
+    window.closeThemeMenu = function() {
+      document.getElementById('theme-menu').classList.remove('open');
+    };
+
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('theme-select').contains(e.target)) {
+        closeThemeMenu();
+      }
+    });
+
+    mq.addEventListener('change', function() {
+      if (localStorage.getItem(KEY) === 'system') applyTheme('system');
+    });
+
+    applyTheme(localStorage.getItem(KEY) || 'system');
+  })();
 </script>
 </body>
 </html>
