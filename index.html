@@ -210,7 +210,7 @@ section{padding:5rem 5%}
 .jornada-label{font-family:var(--mono);font-size:0.72rem;color:var(--verde);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2.5rem;font-weight:600}
 .jornada-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0}
 .jornada-step{padding:0 2rem;position:relative;display:flex;flex-direction:column;gap:0.55rem}
-.jornada-step:not(:last-child)::after{content:'→';position:absolute;right:-0.75rem;top:1.5rem;font-family:var(--mono);font-size:1rem;color:var(--texto-muted)}
+.jornada-step:not(:last-child)::after{content:'→';position:absolute;right:-0.75rem;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:1rem;color:var(--texto-muted)}
 .jornada-step:first-child{padding-left:0}
 .jornada-step-num{font-family:var(--mono);font-size:0.68rem;color:var(--verde);letter-spacing:0.12em;margin-bottom:0.2rem}
 .jornada-step-title{font-family:var(--mono);font-size:1rem;font-weight:600;color:var(--texto)}
