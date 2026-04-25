@@ -300,6 +300,9 @@ section{padding:5rem 5%}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem}
 .btn-form{width:100%;background:var(--verde);color:var(--verde-text);font-family:var(--mono);font-weight:600;font-size:0.78rem;padding:0.78rem;border-radius:3px;border:none;cursor:pointer;letter-spacing:0.04em;transition:opacity 0.15s;margin-top:0.2rem}
 .btn-form:hover{opacity:0.85}
+.form-msg{display:none;margin-top:1.5rem;font-family:var(--mono);font-size:0.75rem;padding:0.85rem 1rem;border-radius:3px;border-left:3px solid;line-height:1.5}
+.form-msg.ok{background:rgba(0,255,106,0.06);color:var(--verde);border-color:var(--verde)}
+.form-msg.err{background:rgba(255,80,80,0.06);color:#FF5050;border-color:#FF5050}
 .contato-side-title{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--texto);margin-bottom:0.5rem;line-height:1.4;text-transform:uppercase;letter-spacing:0.04em}
 .contato-side-sub{color:var(--texto-sec);font-size:0.82rem;line-height:1.7;margin-bottom:1.6rem}
 .info-row{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.95rem;padding-bottom:0.95rem;border-bottom:1px solid var(--sep)}
@@ -874,7 +877,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
           </div>
           <div class="form-field"><label for="f-message" data-i18n="form.message">Mensagem</label><textarea id="f-message" data-i18n-placeholder="form.message.ph" placeholder="Conte seu desafio ou estágio atual na jornada cloud..." required></textarea></div>
           <button type="submit" class="btn-form" id="btn-submit" data-i18n="form.submit">$ Enviar --mensagem</button>
-          <div id="form-msg" style="display:none;margin-top:0.75rem;font-family:var(--mono);font-size:0.75rem;padding:0.6rem;border-radius:3px"></div>
+          <div id="form-msg" class="form-msg"></div>
         </form>
       </div>
       <div>
@@ -1229,7 +1232,8 @@ function sendEmail(e) {
   const message = document.getElementById('f-message').value.trim();
 
   if (!name || !email || !message) {
-    msg.style.cssText = 'display:block;background:rgba(255,80,80,0.08);color:#FF5050;border:1px solid rgba(255,80,80,0.2)';
+    msg.className = 'form-msg err';
+    msg.style.display = 'block';
     msg.textContent = '✗ Preencha os campos obrigatórios: Nome, E-mail e Mensagem.';
     btn.disabled = false;
     btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
@@ -1246,12 +1250,14 @@ function sendEmail(e) {
 
   emailjs.send("service_2lczufs", "template_04427c7", params)
     .then(() => {
-      msg.style.cssText = 'display:block;background:rgba(0,255,106,0.08);color:var(--verde);border:1px solid rgba(0,255,106,0.2)';
+      msg.className = 'form-msg ok';
+      msg.style.display = 'block';
       msg.textContent = '✓ Mensagem enviada! Retorno em até 24h.';
       form.reset();
     })
     .catch(() => {
-      msg.style.cssText = 'display:block;background:rgba(255,80,80,0.08);color:#FF5050;border:1px solid rgba(255,80,80,0.2)';
+      msg.className = 'form-msg err';
+      msg.style.display = 'block';
       msg.textContent = '✗ Erro ao enviar. Tente novamente ou use o e-mail direto.';
     })
     .finally(() => {
