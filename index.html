@@ -145,6 +145,9 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);b
 .btn-verde:hover{opacity:0.85}
 .btn-ghost{color:var(--texto-sec);font-family:var(--mono);font-size:0.76rem;padding:0.7rem 1.35rem;border-radius:3px;text-decoration:none;border:1px solid var(--card-border);letter-spacing:0.04em;transition:all 0.15s}
 .btn-ghost:hover{border-color:var(--verde);color:var(--verde)}
+.hero-trust{display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;margin-top:1.25rem}
+.hero-trust-label{font-family:var(--mono);font-size:0.57rem;color:var(--texto-muted);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap}
+.hero-trust-badge{font-family:var(--mono);font-size:0.6rem;color:var(--texto-sec);background:var(--card);border:1px solid var(--card-border);border-radius:2px;padding:0.18rem 0.48rem;letter-spacing:0.04em}
 
 .hero-right{display:flex;flex-direction:column;gap:0}
 .dashboard{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);background-image:radial-gradient(circle,var(--dot-grid-color) 1px,transparent 1px);background-size:18px 18px}
@@ -241,7 +244,7 @@ section{padding:5rem 5%}
 .jornada-step-desc{font-size:0.8rem;color:var(--texto-muted);line-height:1.6}
 
 .logos-strip{background:var(--bg);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:3rem 0}
-.logos-strip-label{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;padding:0 5%;margin-bottom:2rem}
+.logos-strip-label{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;margin-bottom:2rem}
 .logos-marquee{overflow:hidden;position:relative}
 .logos-marquee::before,.logos-marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
 .logos-marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
@@ -389,6 +392,17 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,0.4);cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
 .wa-float svg{width:28px;height:28px;fill:#fff}
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--bg2);border-top:1px solid var(--sep);padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.25)}
+.cookie-banner.hidden{display:none}
+.cookie-text{font-family:var(--mono);font-size:0.72rem;color:var(--texto-sec);line-height:1.6;flex:1;min-width:200px}
+.cookie-text a{color:var(--verde);text-decoration:none}
+.cookie-text a:hover{text-decoration:underline}
+.cookie-actions{display:flex;gap:0.65rem;flex-shrink:0}
+.cookie-btn{font-family:var(--mono);font-size:0.68rem;padding:0.45rem 1rem;border-radius:3px;cursor:pointer;border:none;letter-spacing:0.04em;transition:all 0.15s}
+.cookie-btn.accept{background:var(--verde);color:var(--verde-text);font-weight:600}
+.cookie-btn.accept:hover{opacity:0.85}
+.cookie-btn.decline{background:transparent;color:var(--texto-muted);border:1px solid var(--card-border)}
+.cookie-btn.decline:hover{border-color:var(--texto-muted);color:var(--texto)}
 
 @media(max-width:900px){
   .hero-inner,.sobre-grid,.contato-grid{grid-template-columns:1fr}
@@ -467,12 +481,12 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   <div class="hero-inner">
     <div>
       <div class="hero-tag"><span class="hero-tag-dot"></span><span data-i18n="hero.tag">Consultoria Cloud · DevOps · FinOps</span></div>
-      <h1><span data-i18n="hero.h1.line1">Infraestrutura</span><br><span class="hl-verde" data-i18n="hero.h1.line2">Nativa.</span><br><span data-i18n="hero.h1.line3">Resultado</span><br><span class="hl-amarelo" data-i18n="hero.h1.line4">Real.</span><span class="h1-cursor">▋</span></h1>
-      <p class="hero-sub" data-i18n="hero.sub">Arquitetura multi-cloud, DevOps e FinOps para empresas que precisam escalar com segurança, eficiência e custo sob controle.</p>
-      <p class="hero-jornada" data-i18n="hero.jornada">Independentemente do seu estágio na jornada cloud — do primeiro assessment à operação contínua — a <span class="hl-verde">nativos.cloud</span> oferece suporte completo e personalizado.</p>
+      <h1><span data-i18n="hero.h1.line1">Somos</span><br><span class="hl-verde" data-i18n="hero.h1.line2">nativos.</span><br><span data-i18n="hero.h1.line3">A nuvem é</span><br><span class="hl-amarelo" data-i18n="hero.h1.line4">nossa casa.</span><span class="h1-cursor">▋</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">Kubernetes, multi-cloud e DevOps na prática. Pipelines que entregam e custo sempre sob controle.</p>
+      <p class="hero-jornada" data-i18n="hero.jornada">Seja no primeiro passo ou num ambiente crítico em escala, a <span class="hl-verde">nativos.cloud</span> entra junto com especialistas que já viveram o problema que você enfrenta.</p>
       <div class="hero-actions">
         <a href="#contato" class="btn-verde" data-i18n="hero.cta1">Falar com especialista</a>
-        <a href="#solucoes" class="btn-ghost" data-i18n="hero.cta2">Ver soluções →</a>
+        <a href="#solucoes" class="btn-ghost" data-i18n="hero.cta2">Explorar soluções →</a>
       </div>
     </div>
     <div class="hero-right">
@@ -508,9 +522,9 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
           <div class="h-cards-row">
             <div class="h-card">
               <div class="h-card-label" data-i18n="metric.exp">Experiência</div>
-              <div class="h-card-val v">9+</div>
+              <div class="h-card-val v">15+</div>
               <div class="h-card-sub" data-i18n="metric.exp.sub">anos em cloud</div>
-              <div class="h-card-bar"><div class="h-bar-fill" style="width:90%"></div></div>
+              <div class="h-card-bar"><div class="h-bar-fill" style="width:100%"></div></div>
             </div>
             <div class="h-card">
               <div class="h-card-label" data-i18n="metric.clouds">Clouds</div>
@@ -535,15 +549,15 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
           </div>
           <div class="h-cards-row">
             <div class="h-card">
-              <div class="h-card-label" data-i18n="metric.certs">Certificações</div>
-              <div class="h-card-val a">3+</div>
-              <div class="h-card-sub">AWS · OCI</div>
-              <div class="h-card-bar"><div class="h-bar-fill a" style="width:60%"></div></div>
+              <div class="h-card-label" data-i18n="metric.projects">Projetos</div>
+              <div class="h-card-val v">50+</div>
+              <div class="h-card-sub" data-i18n="metric.projects.sub">entregues</div>
+              <div class="h-card-bar"><div class="h-bar-fill" style="width:85%"></div></div>
             </div>
             <div class="h-card">
-              <div class="h-card-label" data-i18n="metric.sectors">Setores</div>
-              <div class="h-card-val v">6</div>
-              <div class="h-card-sub" data-i18n="metric.sectors.sub">segmentos</div>
+              <div class="h-card-label" data-i18n="metric.native">Especialistas</div>
+              <div class="h-card-val v">100%</div>
+              <div class="h-card-sub" data-i18n="metric.native.sub">cloud-native</div>
               <div class="h-card-bar"><div class="h-bar-fill" style="width:100%"></div></div>
             </div>
           </div>
@@ -591,7 +605,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 
 <!-- LOGOS -->
 <div class="logos-strip">
-  <div class="logos-strip-label">// Tecnologias & Plataformas</div>
+  <div class="sec-inner"><div class="logos-strip-label" data-i18n="logos.label">// Tecnologias & Plataformas</div></div>
   <div class="logos-marquee">
     <div class="logos-track">
       <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="56" height="56"><span class="logo-name">AWS</span></div>
@@ -624,7 +638,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     </div>
     <div class="servicos-header">
       <h2 class="sec-title"><span data-i18n="sol.title1">O que</span> <span class="hl" data-i18n="sol.title2">Entregamos</span></h2>
-      <p class="sec-sub" data-i18n="sol.sub">Da consultoria inicial à operação contínua — cobrimos cada etapa da sua jornada cloud com profundidade técnica real.</p>
+      <p class="sec-sub" data-i18n="sol.sub">Kubernetes, multi-cloud, FinOps e segurança — do primeiro deploy à operação crítica em produção.</p>
     </div>
     <div class="servicos-grid">
       <div class="sc">
@@ -739,8 +753,8 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
       <span class="sec-divider-label">N · Cloud Native &amp; Open Source</span>
       <div class="sec-divider-line"></div>
     </div>
-    <h2 class="sec-title" style="margin-bottom:0.75rem"><span class="hl">Nativos</span> no ecossistema</h2>
-    <p class="sec-sub">Construímos sobre os pilares do movimento cloud native e open source — CNCF, HashiCorp, GitOps e a infraestrutura que define a engenharia moderna.</p>
+    <h2 class="sec-title" style="margin-bottom:0.75rem"><span class="hl" data-i18n="cncf.title1">Nativos</span> <span data-i18n="cncf.title2">no ecossistema</span></h2>
+    <p class="sec-sub" data-i18n="cncf.sub">Construímos sobre os pilares do movimento cloud native e open source — CNCF, HashiCorp, GitOps e a infraestrutura que define a engenharia moderna.</p>
     <div class="cncf-grid">
       <div class="cncf-group">
         <div class="cncf-group-label">// CNCF Projects</div>
@@ -810,14 +824,14 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     </div>
     <div class="sobre-grid">
       <div class="sobre-body">
-        <h2 class="sec-title" style="margin-bottom:1.25rem"><span data-i18n="about.title1">Nascidos na nuvem,</span><br><span data-i18n="about.title2">feitos para</span> <span class="hl" data-i18n="about.title3">Entregar.</span></h2>
+        <h2 class="sec-title" style="margin-bottom:1.25rem"><span data-i18n="about.title1">Nascidos na nuvem.</span><br><span data-i18n="about.title2">Especialistas,</span> <span class="hl" data-i18n="about.title3">ponto.</span></h2>
         <p data-i18n="about.p1">A <span class="hl-verde">nativos.cloud</span> nasceu da prática real: anos rodando infraestrutura crítica, resolvendo problemas de produção em ambientes multi-cloud e entregando projetos de alta complexidade para empresas de diferentes segmentos.</p>
         <p data-i18n="about.p2">Não fazemos teoria. Fazemos cloud de verdade — com comprometimento técnico, comunicação direta e foco total em resultado para o seu negócio.</p>
         <div class="cert-list">
           <div class="cert-item">AWS Solutions Architect – Associate</div>
           <div class="cert-item">AWS Cloud Practitioner</div>
           <div class="cert-item">Oracle Cloud Infrastructure Certified</div>
-          <div class="cert-item" data-i18n="about.cert4">9+ anos em infraestrutura e cloud</div>
+          <div class="cert-item" data-i18n="about.cert4">15+ anos em infraestrutura e cloud</div>
           <div class="cert-item" data-i18n="about.cert5">Atuação multi-cloud: AWS, Azure, GCP e OCI</div>
         </div>
       </div>
@@ -841,30 +855,30 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 <section class="faq-bg">
   <div class="sec-inner">
     <div class="sec-divider">
-      <span class="sec-divider-label">F · perguntas frequentes</span>
+      <span class="sec-divider-label" data-i18n="faq.divider">F · perguntas frequentes</span>
       <div class="sec-divider-line"></div>
     </div>
-    <h2 class="sec-title" style="margin-bottom:0.5rem">Dúvidas <span class="hl">comuns</span></h2>
+    <h2 class="sec-title" style="margin-bottom:0.5rem"><span data-i18n="faq.title1">Dúvidas</span> <span class="hl" data-i18n="faq.title2">comuns</span></h2>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>Qual é o prazo típico de uma migração cloud?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Depende da complexidade do ambiente. Migrações simples (lift &amp; shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.</div></div>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q1">Qual é o prazo típico de uma migração cloud?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a1">Depende da complexidade do ambiente. Migrações simples (lift &amp; shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>Vocês atendem empresas que ainda não usam cloud?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Sim. Atendemos desde o primeiro passo — assessments de readiness, definição de estratégia cloud, escolha do provedor mais adequado e execução da migração. Nosso processo é pensado para reduzir risco e garantir uma transição segura.</div></div>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q2">Vocês atendem empresas que ainda não usam cloud?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a2">Sim. Atendemos desde o primeiro passo — assessments de readiness, definição de estratégia cloud, escolha do provedor mais adequado e execução da migração. Nosso processo é pensado para reduzir risco e garantir uma transição segura.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>Como funciona o serviço de MSP (Managed Services)?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Oferecemos monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custos e suporte técnico com SLA definido. O contrato é mensal com escopo fixo — sem surpresas no faturamento. Utilizamos Grafana, Prometheus e as ferramentas nativas de cada cloud.</div></div>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q3">Como funciona o serviço de MSP (Managed Services)?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a3">Oferecemos monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custos e suporte técnico com SLA definido. O contrato é mensal com escopo fixo — sem surpresas no faturamento. Utilizamos Grafana, Prometheus e as ferramentas nativas de cada cloud.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>Vocês trabalham com mais de um provedor cloud simultaneamente?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.</div></div>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q4">Vocês trabalham com mais de um provedor cloud simultaneamente?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>A consultoria inicial é gratuita?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial.</div></div>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q5">A consultoria inicial é gratuita?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a5">Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial.</div></div>
       </div>
     </div>
   </div>
@@ -879,16 +893,19 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     </div>
     <div class="contato-grid">
       <div>
-        <h2 class="sec-title" style="margin-bottom:1.5rem"><span data-i18n="contact.title1">Pronto para</span> <span class="hl" data-i18n="contact.title2">Decolar?</span></h2>
+        <h2 class="sec-title" style="margin-bottom:1.5rem"><span data-i18n="contact.title1">Seu próximo deploy</span><br><span class="hl" data-i18n="contact.title2">começa aqui.</span></h2>
         <form id="contact-form" onsubmit="sendEmail(event)">
           <div class="form-row">
             <div class="form-field"><label for="f-name" data-i18n="form.name">Nome</label><input id="f-name" type="text" data-i18n-placeholder="form.name.ph" placeholder="Seu nome" required></div>
-            <div class="form-field"><label for="f-company" data-i18n="form.company">Empresa</label><input id="f-company" type="text" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa"></div>
+            <div class="form-field"><label for="f-company" data-i18n="form.company">Empresa</label><input id="f-company" type="text" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa" required></div>
           </div>
-          <div class="form-field"><label for="f-email" data-i18n="form.email">E-mail</label><input id="f-email" type="email" placeholder="seu@email.com.br" required></div>
+          <div class="form-row">
+            <div class="form-field"><label for="f-email" data-i18n="form.email">E-mail</label><input id="f-email" type="email" placeholder="seu@email.com.br" required></div>
+            <div class="form-field"><label for="f-phone" data-i18n="form.phone">Telefone</label><input id="f-phone" type="tel" placeholder="+55 (00) 00000-0000" required pattern="^(\+55\s?)?(\(?\d{2}\)?[\s-]?)(\d{4,5}[\s-]?\d{4})$" title="Informe um telefone válido, ex: (11) 99999-9999"></div>
+          </div>
           <div class="form-field">
             <label for="f-service" data-i18n="form.service">Solução de interesse</label>
-            <select id="f-service">
+            <select id="f-service" required>
               <option value="" data-i18n="form.service.ph">Selecione uma solução</option>
               <option>Cloud Consulting</option>
               <option>Cloud Migration</option>
@@ -924,11 +941,12 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
       <a href="#setores" data-i18n="nav.sectors">Setores</a>
       <a href="#sobre" data-i18n="nav.about">Sobre</a>
       <a href="#contato" data-i18n="nav.contact">Contato</a>
+      <a href="/politica-de-privacidade.html" data-i18n="footer.privacy">Privacidade</a>
     </div>
   </div>
   <div class="footer-social-bar">
     <div class="footer-social-inner">
-      <div class="footer-social-label">// Nos acompanhe</div>
+      <div class="footer-social-label" data-i18n="footer.social">// Nos acompanhe</div>
       <div class="footer-social-icons">
         <a href="#" class="social-link" aria-label="LinkedIn">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -955,7 +973,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   </div>
   <div class="footer-bottom">
     <div></div>
-    <div class="footer-copy"><span class="hl-verde">nativos.cloud</span> © 2026. Todos os direitos reservados.</div>
+    <div class="footer-copy"><span class="hl-verde">nativos.cloud</span> © 2026. <span data-i18n="footer.rights">Todos os direitos reservados.</span></div>
     <span class="footer-prompt" style="justify-self:end">nativos@cloud:~$&nbsp;<span class="footer-prompt-cursor">▋</span></span>
   </div>
 </footer>
@@ -982,13 +1000,13 @@ const translations = {
   pt: {
     "nav.solutions":"Soluções","nav.sectors":"Setores","nav.about":"Sobre","nav.contact":"Contato","nav.cta":"$ Falar --now",
     "hero.tag":"Consultoria Cloud · DevOps · FinOps",
-    "hero.h1.line1":"Infraestrutura","hero.h1.line2":"Nativa.","hero.h1.line3":"Resultado","hero.h1.line4":"Real.",
-    "hero.sub":"Arquitetura multi-cloud, DevOps e FinOps para empresas que precisam escalar com segurança, eficiência e custo sob controle.",
-    "hero.jornada":"Independentemente do seu estágio na jornada cloud — do primeiro assessment à operação contínua — a <span class=\"hl-verde\">nativos.cloud</span> oferece suporte completo e personalizado.",
+    "hero.h1.line1":"Somos","hero.h1.line2":"nativos.","hero.h1.line3":"A nuvem é","hero.h1.line4":"nossa casa.",
+    "hero.sub":"Kubernetes, multi-cloud e DevOps na prática. Pipelines que entregam e custo sempre sob controle.",
+    "hero.jornada":"Seja no primeiro passo ou num ambiente crítico em escala, a <span class=\"hl-verde\">nativos.cloud</span> entra junto com especialistas que já viveram o problema que você enfrenta.",
     "hero.cta1":"Falar com especialista","hero.cta2":"Ver soluções →",
     "hero.stackLabel":"// Stack multi-cloud","hero.platforms":"Plataformas & ferramentas","hero.metricsLabel":"// Métricas",
     "hero.statusLabel":"// Cloud Status",
-    "metric.exp":"Experiência","metric.exp.sub":"anos em cloud","metric.clouds":"Clouds","metric.clouds.sub":"provedores","metric.certs":"Certificações","metric.sla":"SLA Alvo","metric.sla.sub":"disponibilidade","metric.finops":"FinOps Saving","metric.finops.sub":"economia média","metric.sectors":"Setores","metric.sectors.sub":"segmentos",
+    "metric.exp":"Experiência","metric.exp.sub":"anos em cloud","metric.clouds":"Clouds","metric.clouds.sub":"provedores","metric.projects":"Projetos","metric.projects.sub":"entregues","metric.sla":"SLA Alvo","metric.sla.sub":"disponibilidade","metric.finops":"FinOps Saving","metric.finops.sub":"economia média","metric.native":"Especialistas","metric.native.sub":"cloud-native",
     "journey.label":"// Sua jornada cloud",
     "journey.s1":"Análise do ambiente atual, workloads e oportunidades",
     "journey.s2":"Arquitetura Well-Architected, segurança e custos",
@@ -1029,18 +1047,37 @@ const translations = {
     "contact.side.title":"Atendimento direto,<br>sem enrolação.","contact.side.sub":"Respondemos em até 24h. Consultoria inicial gratuita para entender seu cenário.",
     "contact.email.sub":"Resposta em até 24h","contact.loc.sub":"Brasil — atendimento remoto nacional",
     "contact.hrs":"Seg–Sex, 08h–18h","contact.hrs.sub":"Horário de Brasília (BRT)",
-    "footer.copy":"© 2025 nativos.cloud"
+    "footer.copy":"© 2025 nativos.cloud",
+    "footer.social":"// Nos acompanhe",
+    "logos.label":"// Tecnologias & Plataformas",
+    "footer.privacy":"Privacidade",
+    "footer.rights":"Todos os direitos reservados.",
+    "form.phone":"Telefone",
+    "cncf.title1":"Nativos","cncf.title2":"no ecossistema",
+    "cncf.sub":"Construímos sobre os pilares do movimento cloud native e open source — CNCF, HashiCorp, GitOps e a infraestrutura que define a engenharia moderna.",
+    "faq.divider":"F · perguntas frequentes",
+    "faq.title1":"Dúvidas","faq.title2":"comuns",
+    "faq.q1":"Qual é o prazo típico de uma migração cloud?",
+    "faq.a1":"Depende da complexidade do ambiente. Migrações simples (lift & shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.",
+    "faq.q2":"Vocês atendem empresas que ainda não usam cloud?",
+    "faq.a2":"Sim. Atendemos desde o primeiro passo — assessments de readiness, definição de estratégia cloud, escolha do provedor mais adequado e execução da migração. Nosso processo é pensado para reduzir risco e garantir uma transição segura.",
+    "faq.q3":"Como funciona o serviço de MSP (Managed Services)?",
+    "faq.a3":"Oferecemos monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custos e suporte técnico com SLA definido. O contrato é mensal com escopo fixo — sem surpresas no faturamento. Utilizamos Grafana, Prometheus e as ferramentas nativas de cada cloud.",
+    "faq.q4":"Vocês trabalham com mais de um provedor cloud simultaneamente?",
+    "faq.a4":"Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.",
+    "faq.q5":"A consultoria inicial é gratuita?",
+    "faq.a5":"Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial."
   },
   en: {
     "nav.solutions":"Solutions","nav.sectors":"Industries","nav.about":"About","nav.contact":"Contact","nav.cta":"$ Talk --now",
     "hero.tag":"Cloud Consulting · DevOps · FinOps",
-    "hero.h1.line1":"Native","hero.h1.line2":"Infrastructure.","hero.h1.line3":"Real","hero.h1.line4":"Results.",
-    "hero.sub":"Multi-cloud architecture, DevOps and FinOps for companies that need to scale with security, efficiency and cost under control.",
-    "hero.jornada":"Regardless of your stage in the cloud journey — from the first assessment to continuous operations — Nativos.Cloud delivers complete, personalized support.",
-    "hero.cta1":"Talk to a specialist","hero.cta2":"See solutions →",
+    "hero.h1.line1":"We are","hero.h1.line2":"natives.","hero.h1.line3":"The cloud is","hero.h1.line4":"our home.",
+    "hero.sub":"Kubernetes, multi-cloud and DevOps in practice. Pipelines that deliver and cost always under control.",
+    "hero.jornada":"Whether it's your first step or a critical environment at scale, <span class=\"hl-verde\">nativos.cloud</span> joins you with specialists who have already faced the problem you're dealing with.",
+    "hero.cta1":"Talk to a specialist","hero.cta2":"Explore solutions →",
     "hero.stackLabel":"// Multi-cloud stack","hero.platforms":"Platforms & tools","hero.metricsLabel":"// Metrics",
     "hero.statusLabel":"// Cloud Status",
-    "metric.exp":"Experience","metric.exp.sub":"years in cloud","metric.clouds":"Clouds","metric.clouds.sub":"providers","metric.certs":"Certifications","metric.sla":"Target SLA","metric.sla.sub":"availability","metric.finops":"FinOps Saving","metric.finops.sub":"avg savings","metric.sectors":"Sectors","metric.sectors.sub":"segments",
+    "metric.exp":"Experience","metric.exp.sub":"years in cloud","metric.clouds":"Clouds","metric.clouds.sub":"providers","metric.projects":"Projects","metric.projects.sub":"delivered","metric.sla":"Target SLA","metric.sla.sub":"availability","metric.finops":"FinOps Saving","metric.finops.sub":"avg savings","metric.native":"Specialists","metric.native.sub":"cloud-native",
     "journey.label":"// Your cloud journey",
     "journey.s1":"Current environment analysis, workloads and opportunities",
     "journey.s2":"Well-Architected architecture, security and cost design",
@@ -1048,7 +1085,7 @@ const translations = {
     "journey.s4.title":"Optimization","journey.s4.desc":"FinOps, performance and continuous rightsizing",
     "journey.s5.title":"Operations","journey.s5.desc":"MSP, 24x7 monitoring and proactive support",
     "sol.divider":"S · Solutions","sol.title1":"What we","sol.title2":"Deliver",
-    "sol.sub":"From initial consulting to continuous operations — we cover every step of your cloud journey with real technical depth.",
+    "sol.sub":"Kubernetes, multi-cloud, FinOps and security — from the first deploy to critical production operations.",
     "sol.1.title":"Cloud Consulting","sol.1.desc":"Complete, personalized support at every phase: get started, design and deployment. From strategy to go-live.",
     "sol.2.title":"Cloud Migration","sol.2.desc":"We apply the 7 R's of cloud migration — from Rehost to Refactor — to choose the right strategy for each workload, with minimal downtime and controlled risk.",
     "sol.3.desc":"CI/CD pipelines, Kubernetes, Terraform and GitOps — end-to-end automation for high-performance engineering teams.",
@@ -1064,16 +1101,16 @@ const translations = {
     "set.5.name":"Logistics","set.5.desc":"Real-time tracking, data and automation",
     "set.6.name":"Startups","set.6.desc":"Cloud-native from day one",
     "about.divider":"A · About us",
-    "about.title1":"Born in the cloud,","about.title2":"built to","about.title3":"Deliver.",
+    "about.title1":"Born in the cloud.","about.title2":"Specialists,","about.title3":"full stop.",
     "about.p1":"Nativos.Cloud was born from real-world practice: years running critical infrastructure, solving production problems across multi-cloud environments, and delivering high-complexity projects for companies across different industries.",
     "about.p2":"We don't do theory. We do real cloud — with technical commitment, direct communication and complete focus on results for your business.",
-    "about.cert4":"9+ years in infrastructure and cloud","about.cert5":"Multi-cloud expertise: AWS, Azure, GCP and OCI",
+    "about.cert4":"15+ years in infrastructure and cloud","about.cert5":"Multi-cloud expertise: AWS, Azure, GCP and OCI",
     "about.quote":"\"We deliver cloud the way it should be — no bureaucracy, real results.\"",
     "val.1.t":"Results-driven","val.1.d":"Every delivery oriented to real business impact",
     "val.2.t":"Transparency","val.2.d":"Direct communication, no fine print",
     "val.3.t":"Speed","val.3.d":"Agile delivery without sacrificing quality",
     "val.4.t":"Reliability","val.4.d":"Stable, secure and monitored environments",
-    "contact.divider":"C · Contact","contact.title1":"Ready to","contact.title2":"Take off?",
+    "contact.divider":"C · Contact","contact.title1":"Your next deploy","contact.title2":"starts here.",
     "form.name":"Name","form.name.ph":"Your name","form.company":"Company","form.company.ph":"Your company",
     "form.email":"E-mail","form.service":"Solution of interest","form.service.ph":"Select a solution",
     "form.opt.finops":"Cloud Optimization / FinOps","form.opt.msp":"Managed Services (MSP)","form.opt.sec":"Security & Compliance",
@@ -1081,7 +1118,26 @@ const translations = {
     "contact.side.title":"Direct support,<br>no runaround.","contact.side.sub":"We respond within 24h. Free initial consulting to understand your scenario.",
     "contact.email.sub":"Response within 24h","contact.loc.sub":"Brazil — nationwide remote support",
     "contact.hrs":"Mon–Fri, 08am–06pm","contact.hrs.sub":"Brasília time (BRT)",
-    "footer.copy":"© 2025 nativos.cloud"
+    "footer.copy":"© 2025 nativos.cloud",
+    "footer.social":"// Follow us",
+    "logos.label":"// Technologies & Platforms",
+    "footer.privacy":"Privacy",
+    "footer.rights":"All rights reserved.",
+    "form.phone":"Phone",
+    "cncf.title1":"Native","cncf.title2":"in the ecosystem",
+    "cncf.sub":"We build on the pillars of the cloud native and open source movement — CNCF, HashiCorp, GitOps and the infrastructure that defines modern engineering.",
+    "faq.divider":"F · frequently asked questions",
+    "faq.title1":"Common","faq.title2":"questions",
+    "faq.q1":"What is the typical timeline for a cloud migration?",
+    "faq.a1":"It depends on the complexity of the environment. Simple migrations (lift & shift of smaller workloads) take 2 to 4 weeks. Larger projects involving refactoring, security and integration can take 2 to 6 months. We always start with an assessment to estimate accurately.",
+    "faq.q2":"Do you work with companies that don't use cloud yet?",
+    "faq.a2":"Yes. We support from the very first step — readiness assessments, cloud strategy definition, provider selection and migration execution. Our process is designed to reduce risk and ensure a safe transition.",
+    "faq.q3":"How does the MSP (Managed Services) offering work?",
+    "faq.a3":"We provide 24x7 monitoring, proactive incident management, continuous cost optimization and technical support with a defined SLA. The contract is monthly with a fixed scope — no billing surprises. We use Grafana, Prometheus and the native tools of each cloud provider.",
+    "faq.q4":"Do you work with more than one cloud provider at the same time?",
+    "faq.a4":"Yes, we specialize in multi-cloud environments. We work with AWS, Azure, GCP and OCI — and frequently help companies distribute workloads across providers to improve cost, availability and performance.",
+    "faq.q5":"Is the initial consulting free?",
+    "faq.a5":"Yes. The first conversation is always at no cost. Our goal is to understand your scenario, identify the main challenges and propose the most suitable approach before any commercial commitment."
   }
 };
 
@@ -1222,21 +1278,52 @@ function setLang(lang) {
 
 (function() {
   const entries = [
-    { cloud:'aws',   msg:'EKS cluster health check',    ok:true  },
-    { cloud:'oci',   msg:'OKE node pool autoscaling',   ok:true  },
-    { cloud:'gcp',   msg:'GKE pod rescheduled',         ok:true  },
-    { cloud:'azure', msg:'AKS deployment rolled out',   ok:true  },
-    { cloud:'aws',   msg:'RDS backup completed',        ok:true  },
-    { cloud:'oci',   msg:'HeatWave query optimized',    ok:true  },
-    { cloud:'aws',   msg:'CloudFront cache invalidated',ok:true  },
-    { cloud:'gcp',   msg:'BigQuery job finished',       ok:true  },
-    { cloud:'azure', msg:'Blob Storage sync done',      ok:true  },
-    { cloud:'oci',   msg:'Autonomous DB self-tuning',   ok:false },
-    { cloud:'aws',   msg:'Lambda cold start detected',  ok:false },
-    { cloud:'gcp',   msg:'Cloud Run instance scaled',   ok:true  },
-    { cloud:'aws',   msg:'IAM policy audit completed',  ok:true  },
-    { cloud:'oci',   msg:'FastConnect link stable',     ok:true  },
-    { cloud:'azure', msg:'Entra ID token refreshed',    ok:true  },
+    { cloud:'aws',   msg:'EKS cluster health check',           ok:true  },
+    { cloud:'oci',   msg:'OKE node pool autoscaling',          ok:true  },
+    { cloud:'gcp',   msg:'GKE pod rescheduled',                ok:true  },
+    { cloud:'azure', msg:'AKS deployment rolled out',          ok:true  },
+    { cloud:'aws',   msg:'RDS backup completed',               ok:true  },
+    { cloud:'oci',   msg:'HeatWave query optimized',           ok:true  },
+    { cloud:'aws',   msg:'CloudFront cache invalidated',       ok:true  },
+    { cloud:'gcp',   msg:'BigQuery job finished',              ok:true  },
+    { cloud:'azure', msg:'Blob Storage sync done',             ok:true  },
+    { cloud:'oci',   msg:'Autonomous DB self-tuning',          ok:false },
+    { cloud:'aws',   msg:'Lambda cold start detected',         ok:false },
+    { cloud:'gcp',   msg:'Cloud Run instance scaled',          ok:true  },
+    { cloud:'aws',   msg:'IAM policy audit completed',         ok:true  },
+    { cloud:'oci',   msg:'FastConnect link stable',            ok:true  },
+    { cloud:'azure', msg:'Entra ID token refreshed',           ok:true  },
+    { cloud:'aws',   msg:'EKS pod OOMKilled — restarted',      ok:false },
+    { cloud:'azure', msg:'AKS HPA scaled to 8 replicas',       ok:true  },
+    { cloud:'gcp',   msg:'GKE node NotReady — cordoned',       ok:false },
+    { cloud:'aws',   msg:'Helm rollback triggered v2→v1',      ok:false },
+    { cloud:'aws',   msg:'ArgoCD sync completed',              ok:true  },
+    { cloud:'gcp',   msg:'Flux reconciliation drift detected', ok:false },
+    { cloud:'aws',   msg:'Savings Plan utilization 94%',       ok:true  },
+    { cloud:'azure', msg:'Reserved instance expiring in 7d',   ok:false },
+    { cloud:'gcp',   msg:'Committed use discount applied',     ok:true  },
+    { cloud:'oci',   msg:'Cost anomaly detected +23%',         ok:false },
+    { cloud:'aws',   msg:'GitHub Actions pipeline passed',     ok:true  },
+    { cloud:'gcp',   msg:'GitLab CI stage failed: test',       ok:false },
+    { cloud:'aws',   msg:'Terraform plan: 3 add, 1 destroy',   ok:false },
+    { cloud:'azure', msg:'Ansible playbook: 12 hosts done',    ok:true  },
+    { cloud:'aws',   msg:'GuardDuty: suspicious API call',     ok:false },
+    { cloud:'aws',   msg:'Vault secret rotated successfully',  ok:true  },
+    { cloud:'azure', msg:'Defender alert resolved',            ok:true  },
+    { cloud:'aws',   msg:'Prometheus alert: high CPU p95',     ok:false },
+    { cloud:'azure', msg:'Grafana dashboard updated',          ok:true  },
+    { cloud:'aws',   msg:'Datadog anomaly: p99 latency spike', ok:false },
+    { cloud:'oci',   msg:'Logging ingestion lag cleared',          ok:true  },
+    { cloud:'aws',   msg:'MySQL binlog replication: in sync',      ok:true  },
+    { cloud:'azure', msg:'MySQL replica lag: 0s — healthy',        ok:true  },
+    { cloud:'gcp',   msg:'Binlog position advancing — no gap',     ok:true  },
+    { cloud:'oci',   msg:'MySQL GTID replication: consistent',     ok:true  },
+    { cloud:'aws',   msg:'RDS replica: Seconds_Behind_Master 0',   ok:true  },
+    { cloud:'azure', msg:'Binlog retention set to 7d — compliant', ok:true  },
+    { cloud:'gcp',   msg:'MySQL replica lag spike: 42s',           ok:false },
+    { cloud:'aws',   msg:'Binlog event: DDL detected on prod',     ok:false },
+    { cloud:'oci',   msg:'Replica I/O thread stopped — alert',     ok:false },
+    { cloud:'aws',   msg:'Binlog purge: freed 18GB on primary',    ok:true  },
   ];
   let idx = Math.floor(Math.random() * entries.length);
   const el = document.getElementById('live-monitor');
@@ -1272,12 +1359,26 @@ function sendEmail(e) {
 
   const name    = document.getElementById('f-name').value.trim();
   const email   = document.getElementById('f-email').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const company = document.getElementById('f-company').value.trim();
+  const service = document.getElementById('f-service').value;
   const message = document.getElementById('f-message').value.trim();
 
-  if (!name || !email || !message) {
+  const phoneRegex = /^(\+55\s?)?(\(?\d{2}\)?[\s-]?)(\d{4,5}[\s-]?\d{4})$/;
+
+  if (!name || !email || !phone || !company || !service || !message) {
     msg.className = 'form-msg err';
     msg.style.display = 'block';
-    msg.textContent = '✗ Preencha os campos obrigatórios: Nome, E-mail e Mensagem.';
+    msg.textContent = '✗ Preencha todos os campos obrigatórios.';
+    btn.disabled = false;
+    btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
+    return;
+  }
+
+  if (!phoneRegex.test(phone)) {
+    msg.className = 'form-msg err';
+    msg.style.display = 'block';
+    msg.textContent = '✗ Telefone inválido. Use o formato (11) 99999-9999.';
     btn.disabled = false;
     btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
     return;
@@ -1285,9 +1386,10 @@ function sendEmail(e) {
 
   const params = {
     name,
-    company: document.getElementById('f-company').value,
+    company,
     email,
-    service: document.getElementById('f-service').value,
+    phone,
+    service,
     message,
   };
 
@@ -1308,6 +1410,25 @@ function sendEmail(e) {
       btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
     });
 }
+
+// Cookie consent
+function cookieConsent(choice) {
+  localStorage.setItem('cookie_consent', choice);
+  document.getElementById('cookie-banner').classList.add('hidden');
+}
+document.addEventListener('DOMContentLoaded', function() {
+  if (!localStorage.getItem('cookie_consent')) {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+});
 </script>
+
+<div class="cookie-banner hidden" id="cookie-banner" role="region" aria-label="Aviso de cookies">
+  <p class="cookie-text">Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn accept" onclick="cookieConsent('accept')">Aceitar</button>
+    <button class="cookie-btn decline" onclick="cookieConsent('decline')">Recusar</button>
+  </div>
+</div>
 </body>
 </html>
