@@ -215,15 +215,21 @@ section{padding:5rem 5%}
 .jornada-step-title{font-family:var(--mono);font-size:0.95rem;font-weight:600;color:var(--texto)}
 .jornada-step-desc{font-size:0.8rem;color:var(--texto-muted);line-height:1.6}
 
-.logos-strip{background:var(--bg);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:2.5rem 5%}
-.logos-inner{max-width:1200px;margin:0 auto}
-.logos-label{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;margin-bottom:1.75rem}
-.logos-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem 2rem}
-.logo-item{display:flex;flex-direction:column;align-items:center;gap:0.55rem;opacity:0.55;transition:opacity 0.2s,transform 0.2s;cursor:default}
-.logo-item:hover{opacity:1;transform:translateY(-2px)}
-.logo-img{width:36px;height:36px;object-fit:contain}
-.logo-name{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.07em;text-align:center}
-[data-theme="light"] .logo-img{filter:brightness(0.8)}
+.logos-strip{background:var(--bg);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:2rem 0}
+.logos-strip-label{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;padding:0 5%;margin-bottom:1.5rem}
+.logos-marquee{overflow:hidden;position:relative}
+.logos-marquee::before,.logos-marquee::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.logos-marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.logos-marquee::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.logos-track{display:flex;align-items:center;gap:3.5rem;width:max-content;animation:marquee 28s linear infinite;padding:0.25rem 0}
+.logos-marquee:hover .logos-track{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.logo-item{display:flex;flex-direction:column;align-items:center;gap:0.5rem;flex-shrink:0;cursor:default}
+.logo-img{width:34px;height:34px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.45;transition:opacity 0.2s}
+.logo-item:hover .logo-img{opacity:1}
+.logo-name{font-family:var(--mono);font-size:0.56rem;color:var(--texto-muted);letter-spacing:0.07em;opacity:0.6}
+[data-theme="light"] .logo-img{filter:brightness(0);opacity:0.4}
+[data-theme="light"] .logo-item:hover .logo-img{opacity:0.75}
 
 .servicos-bg{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,var(--line-grid-color) 39px,var(--line-grid-color) 40px)}
 .servicos-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
@@ -546,18 +552,28 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 
 <!-- LOGOS -->
 <div class="logos-strip">
-  <div class="logos-inner">
-    <div class="logos-label">// Tecnologias & Plataformas</div>
-    <div class="logos-grid">
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/amazonwebservices" alt="AWS" width="36" height="36" loading="lazy"><span class="logo-name">AWS</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/microsoftazure" alt="Azure" width="36" height="36" loading="lazy"><span class="logo-name">Azure</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/oracle" alt="OCI" width="36" height="36" loading="lazy"><span class="logo-name">OCI</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/googlecloud" alt="Google Cloud" width="36" height="36" loading="lazy"><span class="logo-name">Google Cloud</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes" width="36" height="36" loading="lazy"><span class="logo-name">Kubernetes</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/argo" alt="ArgoCD" width="36" height="36" loading="lazy"><span class="logo-name">ArgoCD</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/terraform" alt="Terraform" width="36" height="36" loading="lazy"><span class="logo-name">Terraform</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/gitlab" alt="GitLab CI" width="36" height="36" loading="lazy"><span class="logo-name">GitLab CI</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/azuredevops" alt="Azure DevOps" width="36" height="36" loading="lazy"><span class="logo-name">Azure DevOps</span></div>
+  <div class="logos-strip-label">// Tecnologias & Plataformas</div>
+  <div class="logos-marquee">
+    <div class="logos-track">
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="34" height="34"><span class="logo-name">AWS</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="34" height="34"><span class="logo-name">Azure</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="OCI" width="34" height="34"><span class="logo-name">OCI</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="34" height="34"><span class="logo-name">Google Cloud</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg" alt="Kubernetes" width="34" height="34"><span class="logo-name">Kubernetes</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/argo.svg" alt="ArgoCD" width="34" height="34"><span class="logo-name">ArgoCD</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg" alt="Terraform" width="34" height="34"><span class="logo-name">Terraform</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="GitLab CI" width="34" height="34"><span class="logo-name">GitLab CI</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/azuredevops.svg" alt="Azure DevOps" width="34" height="34"><span class="logo-name">Azure DevOps</span></div>
+      <!-- duplicado para loop contínuo -->
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="34" height="34"><span class="logo-name">AWS</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="34" height="34"><span class="logo-name">Azure</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="OCI" width="34" height="34"><span class="logo-name">OCI</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="34" height="34"><span class="logo-name">Google Cloud</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg" alt="Kubernetes" width="34" height="34"><span class="logo-name">Kubernetes</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/argo.svg" alt="ArgoCD" width="34" height="34"><span class="logo-name">ArgoCD</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg" alt="Terraform" width="34" height="34"><span class="logo-name">Terraform</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="GitLab CI" width="34" height="34"><span class="logo-name">GitLab CI</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/azuredevops.svg" alt="Azure DevOps" width="34" height="34"><span class="logo-name">Azure DevOps</span></div>
     </div>
   </div>
 </div>
