@@ -11,13 +11,14 @@ Site institucional da [nativos.cloud](https://nativos.cloud) — consultoria esp
 ## Estrutura
 
 ```
-index.html       # Página principal
-404.html         # Página de erro customizada
-favicon.svg      # Favicon (crawlável pelo Google)
-og-image.png     # Imagem Open Graph (redes sociais / cards)
-robots.txt       # Diretivas para crawlers
-sitemap.xml      # Sitemap para indexação
-serve.py         # Servidor local de desenvolvimento
+index.html                      # Página principal
+404.html                        # Página de erro customizada
+politica-de-privacidade.html    # Política de privacidade (LGPD)
+favicon.svg                     # Favicon (crawlável pelo Google)
+og-image.png                    # Imagem Open Graph (redes sociais / cards)
+robots.txt                      # Diretivas para crawlers
+sitemap.xml                     # Sitemap para indexação
+serve.py                        # Servidor local de desenvolvimento
 ```
 
 ## Desenvolvimento local
