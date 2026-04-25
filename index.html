@@ -221,9 +221,9 @@ section{padding:5rem 5%}
 .logos-marquee::before,.logos-marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
 .logos-marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
 .logos-marquee::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
-.logos-track{display:flex;align-items:center;gap:10rem;width:max-content;animation:marquee 55s linear infinite;padding:0.5rem 0}
+.logos-track{display:flex;align-items:center;width:max-content;animation:marquee 55s linear infinite;padding:0.5rem 0}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.logo-item{display:flex;flex-direction:column;align-items:center;gap:0.6rem;flex-shrink:0;cursor:default}
+.logo-item{display:flex;flex-direction:column;align-items:center;gap:0.6rem;flex-shrink:0;cursor:default;padding-right:10rem}
 .logo-img{width:56px;height:56px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.45;transition:opacity 0.2s}
 .logo-item:hover .logo-img{opacity:1}
 .logo-name{font-family:var(--mono);font-size:0.6rem;color:var(--texto-muted);letter-spacing:0.07em;opacity:0.6}
