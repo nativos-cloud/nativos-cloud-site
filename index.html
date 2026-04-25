@@ -9,6 +9,9 @@
 <meta name="author" content="Nativos.Cloud">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nativos.cloud/">
+<link rel="alternate" hreflang="pt-BR" href="https://nativos.cloud/">
+<link rel="alternate" hreflang="en" href="https://nativos.cloud/">
+<link rel="alternate" hreflang="x-default" href="https://nativos.cloud/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -28,6 +31,28 @@
 <meta name="twitter:image" content="https://nativos.cloud/og-image.png">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "nativos.cloud",
+  "url": "https://nativos.cloud",
+  "logo": "https://nativos.cloud/og-image.png",
+  "description": "Consultoria cloud especializada em DevOps, FinOps e arquitetura multi-cloud. Migração, automação e gestão de ambientes AWS, Azure, GCP e OCI para empresas brasileiras.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ponta Grossa",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contato@nativos.cloud",
+    "contactType": "customer service",
+    "availableLanguage": ["Portuguese", "English"]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -105,6 +130,11 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);b
 
 .nav-cta{font-family:var(--mono);font-size:0.74rem;font-weight:500;border:1px solid var(--verde);color:var(--verde);background:transparent;padding:0.4rem 1rem;border-radius:3px;cursor:pointer;letter-spacing:0.04em;transition:all 0.15s}
 .nav-cta:hover{background:var(--verde);color:var(--verde-text)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:transparent;border:none;cursor:pointer;padding:0.4rem;border-radius:3px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--texto);border-radius:1px;transition:transform 0.2s,opacity 0.2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 .hero{min-height:100vh;padding:100px 5% 80px;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
@@ -368,7 +398,9 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 @media(max-width:900px){
   .hero-inner,.sobre-grid,.contato-grid{grid-template-columns:1fr}
   .hero-right{order:-1}
-  nav .nav-links{display:none}
+  nav .nav-links{display:none;position:fixed;top:59px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--sep);padding:1.25rem 5%;flex-direction:column;gap:1.25rem;z-index:99}
+  nav .nav-links.open{display:flex}
+  .hamburger{display:flex}
   .jornada-steps{grid-template-columns:1fr 1fr}
   .servicos-grid{grid-template-columns:repeat(2,1fr)}
   .servicos-header{flex-direction:column;align-items:flex-start;gap:0.75rem}
@@ -403,8 +435,11 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
   </ul>
   <div class="nav-right">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
     <div class="theme-select" id="theme-select">
-      <button class="theme-select-btn" id="theme-select-btn" onclick="toggleThemeMenu()">
+      <button class="theme-select-btn" id="theme-select-btn" aria-label="Alternar tema" aria-haspopup="true" aria-expanded="false" onclick="toggleThemeMenu()">
         <span id="theme-select-icon">⊙</span><span class="theme-select-arrow">▾</span>
       </button>
       <div class="theme-menu" id="theme-menu">
@@ -414,9 +449,9 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
       </div>
     </div>
     <div class="lang-toggle">
-      <button class="lang-btn active" id="btn-pt" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn active" id="btn-pt" aria-label="Português" aria-pressed="true" onclick="setLang('pt')">PT</button>
       <div class="lang-sep"></div>
-      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-en" aria-label="English" aria-pressed="false" onclick="setLang('en')">EN</button>
     </div>
     <button class="nav-cta" data-i18n="nav.cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">$ Falar --now</button>
   </div>
@@ -557,41 +592,23 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   <div class="logos-strip-label">// Tecnologias & Plataformas</div>
   <div class="logos-marquee">
     <div class="logos-track">
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="56" height="56"><span class="logo-name">AWS</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="56" height="56"><span class="logo-name">Azure</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="OCI" width="56" height="56"><span class="logo-name">OCI</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="56" height="56"><span class="logo-name">Google Cloud</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg" alt="Kubernetes" width="56" height="56"><span class="logo-name">Kubernetes</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg" alt="Docker" width="56" height="56"><span class="logo-name">Docker</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/helm.svg" alt="Helm" width="56" height="56"><span class="logo-name">Helm</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/argo.svg" alt="ArgoCD" width="56" height="56"><span class="logo-name">ArgoCD</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg" alt="Terraform" width="56" height="56"><span class="logo-name">Terraform</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubactions.svg" alt="GitHub Actions" width="56" height="56"><span class="logo-name">GitHub Actions</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="GitLab CI" width="56" height="56"><span class="logo-name">GitLab CI</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/azuredevops.svg" alt="Azure DevOps" width="56" height="56"><span class="logo-name">Azure DevOps</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/prometheus.svg" alt="Prometheus" width="56" height="56"><span class="logo-name">Prometheus</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/grafana.svg" alt="Grafana" width="56" height="56"><span class="logo-name">Grafana</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/datadog.svg" alt="Datadog" width="56" height="56"><span class="logo-name">Datadog</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ansible.svg" alt="Ansible" width="56" height="56"><span class="logo-name">Ansible</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/flux.svg" alt="Flux" width="56" height="56"><span class="logo-name">Flux</span></div>
-      <!-- duplicado para loop contínuo -->
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="56" height="56"><span class="logo-name">AWS</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="56" height="56"><span class="logo-name">Azure</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="OCI" width="56" height="56"><span class="logo-name">OCI</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="56" height="56"><span class="logo-name">Google Cloud</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg" alt="Kubernetes" width="56" height="56"><span class="logo-name">Kubernetes</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg" alt="Docker" width="56" height="56"><span class="logo-name">Docker</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/helm.svg" alt="Helm" width="56" height="56"><span class="logo-name">Helm</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/argo.svg" alt="ArgoCD" width="56" height="56"><span class="logo-name">ArgoCD</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg" alt="Terraform" width="56" height="56"><span class="logo-name">Terraform</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubactions.svg" alt="GitHub Actions" width="56" height="56"><span class="logo-name">GitHub Actions</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="GitLab CI" width="56" height="56"><span class="logo-name">GitLab CI</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/azuredevops.svg" alt="Azure DevOps" width="56" height="56"><span class="logo-name">Azure DevOps</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/prometheus.svg" alt="Prometheus" width="56" height="56"><span class="logo-name">Prometheus</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/grafana.svg" alt="Grafana" width="56" height="56"><span class="logo-name">Grafana</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/datadog.svg" alt="Datadog" width="56" height="56"><span class="logo-name">Datadog</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ansible.svg" alt="Ansible" width="56" height="56"><span class="logo-name">Ansible</span></div>
-      <div class="logo-item"><img class="logo-img" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/flux.svg" alt="Flux" width="56" height="56"><span class="logo-name">Flux</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="56" height="56"><span class="logo-name">AWS</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="56" height="56"><span class="logo-name">Azure</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="OCI" width="56" height="56"><span class="logo-name">OCI</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="56" height="56"><span class="logo-name">Google Cloud</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg" alt="Kubernetes" width="56" height="56"><span class="logo-name">Kubernetes</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg" alt="Docker" width="56" height="56"><span class="logo-name">Docker</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/helm.svg" alt="Helm" width="56" height="56"><span class="logo-name">Helm</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/argo.svg" alt="ArgoCD" width="56" height="56"><span class="logo-name">ArgoCD</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg" alt="Terraform" width="56" height="56"><span class="logo-name">Terraform</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubactions.svg" alt="GitHub Actions" width="56" height="56"><span class="logo-name">GitHub Actions</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="GitLab CI" width="56" height="56"><span class="logo-name">GitLab CI</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/azuredevops.svg" alt="Azure DevOps" width="56" height="56"><span class="logo-name">Azure DevOps</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/prometheus.svg" alt="Prometheus" width="56" height="56"><span class="logo-name">Prometheus</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/grafana.svg" alt="Grafana" width="56" height="56"><span class="logo-name">Grafana</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/datadog.svg" alt="Datadog" width="56" height="56"><span class="logo-name">Datadog</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ansible.svg" alt="Ansible" width="56" height="56"><span class="logo-name">Ansible</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/flux.svg" alt="Flux" width="56" height="56"><span class="logo-name">Flux</span></div>
     </div>
   </div>
 </div>
@@ -828,23 +845,23 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     <h2 class="sec-title" style="margin-bottom:0.5rem">Dúvidas <span class="hl">comuns</span></h2>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span>Qual é o prazo típico de uma migração cloud?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>Qual é o prazo típico de uma migração cloud?</span><span class="faq-icon">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Depende da complexidade do ambiente. Migrações simples (lift &amp; shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span>Vocês atendem empresas que ainda não usam cloud?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>Vocês atendem empresas que ainda não usam cloud?</span><span class="faq-icon">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Sim. Atendemos desde o primeiro passo — assessments de readiness, definição de estratégia cloud, escolha do provedor mais adequado e execução da migração. Nosso processo é pensado para reduzir risco e garantir uma transição segura.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span>Como funciona o serviço de MSP (Managed Services)?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>Como funciona o serviço de MSP (Managed Services)?</span><span class="faq-icon">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Oferecemos monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custos e suporte técnico com SLA definido. O contrato é mensal com escopo fixo — sem surpresas no faturamento. Utilizamos Grafana, Prometheus e as ferramentas nativas de cada cloud.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span>Vocês trabalham com mais de um provedor cloud simultaneamente?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>Vocês trabalham com mais de um provedor cloud simultaneamente?</span><span class="faq-icon">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span>A consultoria inicial é gratuita?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span>A consultoria inicial é gratuita?</span><span class="faq-icon">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial.</div></div>
       </div>
     </div>
@@ -948,13 +965,34 @@ function toggleFaq(btn) {
   const isOpen = btn.classList.contains('open');
   document.querySelectorAll('.faq-q.open').forEach(q => {
     q.classList.remove('open');
+    q.setAttribute('aria-expanded', 'false');
     q.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
   });
   if (!isOpen) {
     btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
     answer.classList.add('open');
   }
 }
+
+function toggleNav() {
+  const links = document.querySelector('.nav-links');
+  const btn = document.getElementById('hamburger');
+  const isOpen = links.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.remove('open');
+      const btn = document.getElementById('hamburger');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
 
 const translations = {
   pt: {
@@ -1087,7 +1125,8 @@ let currentLang = 'pt';
   };
 
   window.toggleThemeMenu = function() {
-    document.getElementById('theme-menu').classList.toggle('open');
+    const isOpen = document.getElementById('theme-menu').classList.toggle('open');
+    document.getElementById('theme-select-btn').setAttribute('aria-expanded', isOpen);
   };
 
   window.closeThemeMenu = function() {
@@ -1111,7 +1150,9 @@ function setLang(lang) {
   currentLang = lang;
   const t = translations[lang];
   document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+  document.getElementById('btn-pt').setAttribute('aria-pressed', lang === 'pt');
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1157,8 +1198,9 @@ function setLang(lang) {
   });
 
   let frame = 0;
+  let animId = null;
   function tick() {
-    requestAnimationFrame(tick);
+    animId = requestAnimationFrame(tick);
     if (++frame % 6 !== 0) return;
     ctx.clearRect(0, 0, cW, cH);
     streams.forEach(s => {
@@ -1178,7 +1220,20 @@ function setLang(lang) {
       ctx.stroke();
     });
   }
-  tick();
+  const canvasObs = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting) {
+      if (!animId) tick();
+    } else {
+      cancelAnimationFrame(animId);
+      animId = null;
+    }
+  });
+  canvasObs.observe(canvas);
+})();
+
+(function() {
+  const track = document.querySelector('.logos-track');
+  if (track) track.innerHTML += track.innerHTML;
 })();
 
 (function() {
