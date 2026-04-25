@@ -210,16 +210,20 @@ section{padding:5rem 5%}
 .jornada-label{font-family:var(--mono);font-size:0.72rem;color:var(--verde);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2.5rem;font-weight:600}
 .jornada-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0}
 .jornada-step{padding:0 1.5rem;position:relative;display:flex;flex-direction:column;gap:0.5rem}
-.jornada-step:not(:last-child)::after{content:'→';position:absolute;right:-0.6rem;top:0;font-family:var(--mono);font-size:0.65rem;line-height:1;color:var(--texto-muted)}
 .jornada-step:first-child{padding-left:0}
-.jornada-step:nth-child(1){z-index:5}
-.jornada-step:nth-child(2){z-index:4}
-.jornada-step:nth-child(3){z-index:3}
-.jornada-step:nth-child(4){z-index:2}
-.jornada-step:nth-child(5){z-index:1}
 .jornada-step-num{font-family:var(--mono);font-size:0.65rem;line-height:1;color:var(--verde);letter-spacing:0.12em}
 .jornada-step-title{font-family:var(--mono);font-size:0.95rem;font-weight:600;color:var(--texto)}
 .jornada-step-desc{font-size:0.8rem;color:var(--texto-muted);line-height:1.6}
+
+.logos-strip{background:var(--bg);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:2.5rem 5%}
+.logos-inner{max-width:1200px;margin:0 auto}
+.logos-label{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;margin-bottom:1.75rem}
+.logos-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem 2rem}
+.logo-item{display:flex;flex-direction:column;align-items:center;gap:0.55rem;opacity:0.55;transition:opacity 0.2s,transform 0.2s;cursor:default}
+.logo-item:hover{opacity:1;transform:translateY(-2px)}
+.logo-img{width:36px;height:36px;object-fit:contain}
+.logo-name{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.07em;text-align:center}
+[data-theme="light"] .logo-img{filter:brightness(0.8)}
 
 .servicos-bg{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,var(--line-grid-color) 39px,var(--line-grid-color) 40px)}
 .servicos-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
@@ -357,7 +361,6 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   .hero-inner,.sobre-grid,.contato-grid{grid-template-columns:1fr}
   .hero-right{order:-1}
   nav .nav-links{display:none}
-  .jornada-step:not(:last-child)::after{display:none}
   .jornada-steps{grid-template-columns:1fr 1fr}
   .servicos-grid{grid-template-columns:repeat(2,1fr)}
   .servicos-header{flex-direction:column;align-items:flex-start;gap:0.75rem}
@@ -537,6 +540,24 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
         <span class="jornada-step-title" data-i18n="journey.s5.title">Operação</span>
         <span class="jornada-step-desc" data-i18n="journey.s5.desc">MSP, monitoramento 24x7 e suporte proativo</span>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOS -->
+<div class="logos-strip">
+  <div class="logos-inner">
+    <div class="logos-label">// Tecnologias & Plataformas</div>
+    <div class="logos-grid">
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS" width="36" height="36" loading="lazy"><span class="logo-name">AWS</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/microsoftazure/0078D4" alt="Azure" width="36" height="36" loading="lazy"><span class="logo-name">Azure</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/oracle/F80000" alt="OCI" width="36" height="36" loading="lazy"><span class="logo-name">OCI</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud" width="36" height="36" loading="lazy"><span class="logo-name">Google Cloud</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes" width="36" height="36" loading="lazy"><span class="logo-name">Kubernetes</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/argo/EF7B4D" alt="ArgoCD" width="36" height="36" loading="lazy"><span class="logo-name">ArgoCD</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/terraform/7B42F6" alt="Terraform" width="36" height="36" loading="lazy"><span class="logo-name">Terraform</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/gitlab/FC6D26" alt="GitLab CI" width="36" height="36" loading="lazy"><span class="logo-name">GitLab CI</span></div>
+      <div class="logo-item"><img class="logo-img" src="https://cdn.simpleicons.org/azuredevops/0078D4" alt="Azure DevOps" width="36" height="36" loading="lazy"><span class="logo-name">Azure DevOps</span></div>
     </div>
   </div>
 </div>
