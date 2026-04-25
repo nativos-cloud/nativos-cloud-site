@@ -209,12 +209,12 @@ section{padding:5rem 5%}
 .jornada-inner{max-width:1200px;margin:0 auto}
 .jornada-label{font-family:var(--mono);font-size:0.72rem;color:var(--verde);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2.5rem;font-weight:600}
 .jornada-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0}
-.jornada-step{padding:0 2rem;position:relative;display:flex;flex-direction:column;gap:0.55rem}
-.jornada-step:not(:last-child)::after{content:'→';position:absolute;right:-0.75rem;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:1rem;color:var(--texto-muted)}
+.jornada-step{padding:0 1.5rem;position:relative;display:flex;flex-direction:column;gap:0.5rem}
+.jornada-step:not(:last-child)::after{content:'→';position:absolute;right:-0.6rem;top:0.2rem;font-family:var(--mono);font-size:0.9rem;color:var(--texto-muted);z-index:1}
 .jornada-step:first-child{padding-left:0}
-.jornada-step-num{font-family:var(--mono);font-size:0.68rem;color:var(--verde);letter-spacing:0.12em;margin-bottom:0.2rem}
-.jornada-step-title{font-family:var(--mono);font-size:1rem;font-weight:600;color:var(--texto)}
-.jornada-step-desc{font-size:0.82rem;color:var(--texto-muted);line-height:1.6}
+.jornada-step-num{font-family:var(--mono);font-size:0.65rem;color:var(--verde);letter-spacing:0.12em}
+.jornada-step-title{font-family:var(--mono);font-size:0.95rem;font-weight:600;color:var(--texto)}
+.jornada-step-desc{font-size:0.8rem;color:var(--texto-muted);line-height:1.6}
 
 .servicos-bg{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,var(--line-grid-color) 39px,var(--line-grid-color) 40px)}
 .servicos-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
