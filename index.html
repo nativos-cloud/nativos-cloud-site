@@ -856,10 +856,10 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
         <h2 class="sec-title" style="margin-bottom:1.5rem"><span data-i18n="contact.title1">Pronto para</span> <span class="hl" data-i18n="contact.title2">Decolar?</span></h2>
         <form id="contact-form" onsubmit="sendEmail(event)">
           <div class="form-row">
-            <div class="form-field"><label for="f-name" data-i18n="form.name">Nome</label><input id="f-name" type="text" data-i18n-placeholder="form.name.ph" placeholder="Seu nome"></div>
+            <div class="form-field"><label for="f-name" data-i18n="form.name">Nome</label><input id="f-name" type="text" data-i18n-placeholder="form.name.ph" placeholder="Seu nome" required></div>
             <div class="form-field"><label for="f-company" data-i18n="form.company">Empresa</label><input id="f-company" type="text" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa"></div>
           </div>
-          <div class="form-field"><label for="f-email" data-i18n="form.email">E-mail</label><input id="f-email" type="email" placeholder="seu@email.com.br"></div>
+          <div class="form-field"><label for="f-email" data-i18n="form.email">E-mail</label><input id="f-email" type="email" placeholder="seu@email.com.br" required></div>
           <div class="form-field">
             <label for="f-service" data-i18n="form.service">Solução de interesse</label>
             <select id="f-service">
@@ -872,7 +872,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
               <option data-i18n="form.opt.sec">Segurança &amp; Compliance</option>
             </select>
           </div>
-          <div class="form-field"><label data-i18n="form.message">Mensagem</label><textarea data-i18n-placeholder="form.message.ph" placeholder="Conte seu desafio ou estágio atual na jornada cloud..."></textarea></div>
+          <div class="form-field"><label for="f-message" data-i18n="form.message">Mensagem</label><textarea id="f-message" data-i18n-placeholder="form.message.ph" placeholder="Conte seu desafio ou estágio atual na jornada cloud..." required></textarea></div>
           <button type="submit" class="btn-form" id="btn-submit" data-i18n="form.submit">$ Enviar --mensagem</button>
           <div id="form-msg" style="display:none;margin-top:0.75rem;font-family:var(--mono);font-size:0.75rem;padding:0.6rem;border-radius:3px"></div>
         </form>
@@ -1224,12 +1224,24 @@ function sendEmail(e) {
   btn.disabled = true;
   btn.textContent = '$ Enviando...';
 
+  const name    = document.getElementById('f-name').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const message = document.getElementById('f-message').value.trim();
+
+  if (!name || !email || !message) {
+    msg.style.cssText = 'display:block;background:rgba(255,80,80,0.08);color:#FF5050;border:1px solid rgba(255,80,80,0.2)';
+    msg.textContent = '✗ Preencha os campos obrigatórios: Nome, E-mail e Mensagem.';
+    btn.disabled = false;
+    btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
+    return;
+  }
+
   const params = {
-    name:    document.getElementById('f-name').value,
+    name,
     company: document.getElementById('f-company').value,
-    email:   document.getElementById('f-email').value,
+    email,
     service: document.getElementById('f-service').value,
-    message: form.querySelector('textarea').value,
+    message,
   };
 
   emailjs.send("service_2lczufs", "template_04427c7", params)
