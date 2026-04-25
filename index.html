@@ -210,8 +210,13 @@ section{padding:5rem 5%}
 .jornada-label{font-family:var(--mono);font-size:0.72rem;color:var(--verde);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2.5rem;font-weight:600}
 .jornada-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0}
 .jornada-step{padding:0 1.5rem;position:relative;display:flex;flex-direction:column;gap:0.5rem}
-.jornada-step:not(:first-child)::before{content:'→';position:absolute;left:-0.6rem;top:0;font-family:var(--mono);font-size:0.65rem;line-height:1;color:var(--texto-muted)}
+.jornada-step:not(:last-child)::after{content:'→';position:absolute;right:-0.6rem;top:0;font-family:var(--mono);font-size:0.65rem;line-height:1;color:var(--texto-muted)}
 .jornada-step:first-child{padding-left:0}
+.jornada-step:nth-child(1){z-index:5}
+.jornada-step:nth-child(2){z-index:4}
+.jornada-step:nth-child(3){z-index:3}
+.jornada-step:nth-child(4){z-index:2}
+.jornada-step:nth-child(5){z-index:1}
 .jornada-step-num{font-family:var(--mono);font-size:0.65rem;line-height:1;color:var(--verde);letter-spacing:0.12em}
 .jornada-step-title{font-family:var(--mono);font-size:0.95rem;font-weight:600;color:var(--texto)}
 .jornada-step-desc{font-size:0.8rem;color:var(--texto-muted);line-height:1.6}
@@ -352,7 +357,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   .hero-inner,.sobre-grid,.contato-grid{grid-template-columns:1fr}
   .hero-right{order:-1}
   nav .nav-links{display:none}
-  .jornada-step:not(:first-child)::before{display:none}
+  .jornada-step:not(:last-child)::after{display:none}
   .jornada-steps{grid-template-columns:1fr 1fr}
   .servicos-grid{grid-template-columns:repeat(2,1fr)}
   .servicos-header{flex-direction:column;align-items:flex-start;gap:0.75rem}
