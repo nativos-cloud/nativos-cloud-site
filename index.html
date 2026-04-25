@@ -130,11 +130,6 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);b
 
 .nav-cta{font-family:var(--mono);font-size:0.74rem;font-weight:500;border:1px solid var(--verde);color:var(--verde);background:transparent;padding:0.4rem 1rem;border-radius:3px;cursor:pointer;letter-spacing:0.04em;transition:all 0.15s}
 .nav-cta:hover{background:var(--verde);color:var(--verde-text)}
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:transparent;border:none;cursor:pointer;padding:0.4rem;border-radius:3px}
-.hamburger span{display:block;width:20px;height:2px;background:var(--texto);border-radius:1px;transition:transform 0.2s,opacity 0.2s}
-.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 .hero{min-height:100vh;padding:100px 5% 80px;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
@@ -398,9 +393,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 @media(max-width:900px){
   .hero-inner,.sobre-grid,.contato-grid{grid-template-columns:1fr}
   .hero-right{order:-1}
-  nav .nav-links{display:none;position:fixed;top:59px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--sep);padding:1.25rem 5%;flex-direction:column;gap:1.25rem;z-index:99}
-  nav .nav-links.open{display:flex}
-  .hamburger{display:flex}
+  nav .nav-links{display:none}
   .jornada-steps{grid-template-columns:1fr 1fr}
   .servicos-grid{grid-template-columns:repeat(2,1fr)}
   .servicos-header{flex-direction:column;align-items:flex-start;gap:0.75rem}
@@ -435,9 +428,6 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
   </ul>
   <div class="nav-right">
-    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </button>
     <div class="theme-select" id="theme-select">
       <button class="theme-select-btn" id="theme-select-btn" aria-label="Alternar tema" aria-haspopup="true" aria-expanded="false" onclick="toggleThemeMenu()">
         <span id="theme-select-icon">⊙</span><span class="theme-select-arrow">▾</span>
@@ -975,24 +965,6 @@ function toggleFaq(btn) {
   }
 }
 
-function toggleNav() {
-  const links = document.querySelector('.nav-links');
-  const btn = document.getElementById('hamburger');
-  const isOpen = links.classList.toggle('open');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen);
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.nav-links a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.remove('open');
-      const btn = document.getElementById('hamburger');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-  });
-});
 
 const translations = {
   pt: {
