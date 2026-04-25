@@ -3,3 +3,6 @@
 
 # Windows Zone.Identifier metadata (WSL)
 *:Zone.Identifier
+
+# Local dev server
+serve.py
