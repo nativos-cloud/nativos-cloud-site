@@ -9,6 +9,8 @@
 
 Site institucional da [nativos.cloud](https://nativos.cloud) — consultoria especializada em Cloud, DevOps e FinOps para empresas brasileiras.
 
+![Preview do site nativos.cloud](og-image.png)
+
 ## Stack
 
 - HTML, CSS e JavaScript puros — sem frameworks ou dependências de build
@@ -28,6 +30,10 @@ sitemap.xml                     # Sitemap para indexação
 serve.py                        # Servidor local de desenvolvimento
 ```
 
+## Pré-requisitos
+
+- Python 3 (para o servidor local)
+
 ## Desenvolvimento local
 
 ```bash
@@ -35,6 +41,26 @@ python3 serve.py
 ```
 
 Abre em `http://localhost:8080`. A página 404 customizada também funciona localmente.
+
+O servidor aplica os mesmos headers de segurança de produção (CSP, `X-Frame-Options`, `Referrer-Policy`, etc.), garantindo paridade entre os ambientes.
+
+## Configuração do EmailJS
+
+O formulário de contato usa [EmailJS](https://www.emailjs.com/). Para funcionar em ambiente local ou em um fork, são necessárias três credenciais configuradas diretamente no `index.html`:
+
+| Variável | Onde encontrar no painel do EmailJS |
+|---|---|
+| `publicKey` | Account → API Keys |
+| `service_id` | Email Services → Service ID |
+| `template_id` | Email Templates → Template ID |
+
+Substitua os valores nas linhas correspondentes do `index.html`:
+
+```js
+emailjs.init("SUA_PUBLIC_KEY");
+// ...
+emailjs.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", params)
+```
 
 ## Deploy
 
