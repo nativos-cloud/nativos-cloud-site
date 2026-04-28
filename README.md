@@ -1,5 +1,12 @@
 # nativos.cloud
 
+[![Deploy](https://github.com/nativos-cloud/nativos-cloud-site/actions/workflows/static.yml/badge.svg)](https://github.com/nativos-cloud/nativos-cloud-site/actions/workflows/static.yml)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fnativos.cloud&label=nativos.cloud)](https://nativos.cloud)
+[![GitHub last commit](https://img.shields.io/github/last-commit/nativos-cloud/nativos-cloud-site)](https://github.com/nativos-cloud/nativos-cloud-site/commits/main)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+
 Site institucional da [nativos.cloud](https://nativos.cloud) — consultoria especializada em Cloud, DevOps e FinOps para empresas brasileiras.
 
 ## Stack
