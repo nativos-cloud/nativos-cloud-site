@@ -60,8 +60,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 <script>(function(){var s=localStorage.getItem('nc-theme')||'system';var resolved=s==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=resolved;})()</script>
 <script>
 (function(){
@@ -82,36 +82,36 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0D0D0D;--bg2:#111214;--bg3:#161819;--card:#141618;--card-border:#1E2124;
-  --verde:#00FF6A;--verde-muted:rgba(0,255,106,0.1);--verde-text:#0D0D0D;--amarelo:#F5C400;
-  --texto:#E8E8E8;--texto-muted:#7A808A;--texto-sec:#8A8F96;--sep:#1A1C1F;
-  --mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;
-  --nav-bg:rgba(13,13,13,0.93);--nav-shadow:none;
-  --dot-grid-color:rgba(255,255,255,0.055);--line-grid-color:rgba(255,255,255,0.018);
+  --bg:#020201;--bg2:#0c0a07;--bg3:#181410;--card:#110f0c;--card-border:#2e2a24;
+  --verde:#00FF6A;--verde-muted:rgba(0,255,106,0.1);--verde-text:#020201;--amarelo:#ffea68;
+  --texto:#f2eee6;--texto-muted:#9c988e;--texto-sec:#b5b0a8;--sep:#221e18;
+  --mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;--display:'Bebas Neue',sans-serif;
+  --nav-bg:rgba(2,2,1,0.93);--nav-shadow:none;
+  --dot-grid-color:rgba(242,238,230,0.065);--line-grid-color:rgba(242,238,230,0.02);
   --overlay-dark:rgba(0,0,0,0.35);--card-shadow:none;--card-shadow-hover:none;
-  --footer-social-bg:#0F1115;--social-card-bg:#161A1F;--social-card-border:#252A30;--social-card-hover:#1C2128;
+  --footer-social-bg:#0a0805;--social-card-bg:#161210;--social-card-border:#2e2a24;--social-card-hover:#1c1a16;
 }
 [data-theme="light"]{
-  --bg:#ECEDF0;--bg2:#E2E4E8;--bg3:#D6D9DE;--card:#F4F5F7;--card-border:#C4C7CF;
-  --verde:#007A38;--verde-muted:rgba(0,122,56,0.08);--verde-text:#FFFFFF;--amarelo:#8A6800;
-  --texto:#111827;--texto-muted:#6B7280;--texto-sec:#374151;--sep:#CDD0D8;
-  --nav-bg:rgba(247,248,250,0.95);--nav-shadow:0 1px 8px rgba(0,0,0,0.08);
-  --dot-grid-color:rgba(0,0,0,0.07);--line-grid-color:rgba(0,0,0,0.04);
-  --overlay-dark:rgba(0,0,0,0.04);
+  --bg:#F5F0E8;--bg2:#EDE8DF;--bg3:#E3DDD3;--card:#FDFAF5;--card-border:#D4CEC4;
+  --verde:#006B30;--verde-muted:rgba(0,107,48,0.08);--verde-text:#FFFFFF;--amarelo:#8A6A00;
+  --texto:#1A1714;--texto-muted:#6B6560;--texto-sec:#3D3830;--sep:#D4CEC4;
+  --nav-bg:rgba(245,240,232,0.95);--nav-shadow:0 1px 8px rgba(0,0,0,0.08);
+  --dot-grid-color:rgba(0,0,0,0.05);--line-grid-color:rgba(0,0,0,0.03);
+  --overlay-dark:rgba(0,0,0,0.03);
   --card-shadow:0 1px 3px rgba(0,0,0,0.07),0 0 0 1px rgba(0,0,0,0.04);
   --card-shadow-hover:0 4px 12px rgba(0,0,0,0.1),0 0 0 1px rgba(0,0,0,0.06);
-  --footer-social-bg:#EDEEF1;--social-card-bg:#FFFFFF;--social-card-border:#D0D3DA;--social-card-hover:#F0F1F4;
+  --footer-social-bg:#EDE8DF;--social-card-bg:#FDFAF5;--social-card-border:#D4CEC4;--social-card-hover:#F0EBE0;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--texto);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
 
-.flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#F5C400 40%,#F5C400 60%,#002776 60%,#002776 100%)}
+.flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#ffea68 40%,#ffea68 60%,#002776 60%,#002776 100%)}
 
 nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--sep);box-shadow:var(--nav-shadow);height:56px;display:flex;align-items:center;padding:0 5%;justify-content:space-between}
 .nav-logo{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--texto)}
 .nav-logo em{color:var(--verde);font-style:normal}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{color:var(--texto);text-decoration:none;font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;transition:color 0.15s,text-shadow 0.15s;font-family:var(--mono)}
+.nav-links a{color:var(--texto);text-decoration:none;font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:400;transition:color 0.15s,text-shadow 0.15s;font-family:var(--display)}
 .nav-links a:hover{color:var(--verde);text-shadow:0 0 12px rgba(0,255,106,0.35)}
 .nav-right{display:flex;align-items:center;gap:0.75rem}
 
@@ -133,20 +133,20 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);b
 .theme-menu-item.active{color:var(--verde)}
 .theme-menu-icon{font-size:0.82rem}
 
-.nav-cta{font-family:var(--mono);font-size:0.74rem;font-weight:500;border:1px solid var(--verde);color:var(--verde);background:transparent;padding:0.4rem 1rem;border-radius:3px;cursor:pointer;letter-spacing:0.04em;transition:all 0.15s}
-.nav-cta:hover{background:var(--verde);color:var(--verde-text)}
+.nav-cta{font-family:var(--mono);font-size:0.74rem;font-weight:500;border:1px solid var(--amarelo);color:var(--amarelo);background:transparent;padding:0.4rem 1rem;border-radius:3px;cursor:pointer;letter-spacing:0.04em;transition:all 0.15s}
+.nav-cta:hover{background:var(--amarelo);color:#020201}
 
 .hero{min-height:100vh;padding:100px 5% 80px;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.68rem;color:var(--verde);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:1.6rem}
-.hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--verde);animation:blink 1.8s infinite}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.68rem;color:var(--amarelo);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:1.6rem}
+.hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--amarelo);animation:blink 1.8s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.hero h1{font-family:var(--mono);font-weight:700;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.12;letter-spacing:0.03em;text-transform:uppercase;margin-bottom:1.25rem}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,6.5vw,5rem);line-height:1.0;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem}
 .hl-verde{color:var(--verde)}.hl-amarelo{color:var(--amarelo)}
 .hero-sub{color:var(--texto-sec);font-size:1rem;max-width:460px;line-height:1.85;margin-bottom:0.9rem}
 .hero-jornada{font-family:var(--mono);font-size:0.75rem;color:var(--texto-muted);border-left:2px solid var(--verde);padding-left:0.75rem;margin-bottom:2rem;line-height:1.6}
 .hero-actions{display:flex;gap:0.85rem;flex-wrap:wrap}
-.btn-verde{background:var(--verde);color:var(--verde-text);font-family:var(--mono);font-weight:600;font-size:0.76rem;padding:0.7rem 1.35rem;border-radius:3px;text-decoration:none;letter-spacing:0.04em;border:none;cursor:pointer;transition:opacity 0.15s}
+.btn-verde{background:var(--amarelo);color:#020201;font-family:var(--mono);font-weight:600;font-size:0.76rem;padding:0.7rem 1.35rem;border-radius:3px;text-decoration:none;letter-spacing:0.04em;border:none;cursor:pointer;transition:opacity 0.15s}
 .btn-verde:hover{opacity:0.85}
 .btn-ghost{color:var(--texto-sec);font-family:var(--mono);font-size:0.76rem;padding:0.7rem 1.35rem;border-radius:3px;text-decoration:none;border:1px solid var(--card-border);letter-spacing:0.04em;transition:all 0.15s}
 .btn-ghost:hover{border-color:var(--verde);color:var(--verde)}
@@ -182,13 +182,16 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);b
 .ctag{font-family:var(--mono);font-size:0.62rem;padding:0.2rem 0.52rem;border-radius:2px;border:1px solid var(--card-border);color:var(--texto-sec);background:var(--bg)}
 .ctag.aws{border-color:rgba(255,153,0,0.25);color:#FF9900}
 .ctag.azure{border-color:rgba(0,120,212,0.25);color:#0078D4}
-.ctag.oci{border-color:rgba(245,196,0,0.25);color:#F5C400}
+.ctag.oci{border-color:rgba(255,234,104,0.25);color:var(--amarelo)}
 .ctag.gcp{border-color:rgba(66,133,244,0.25);color:#4285F4}
 .ctag.k8s{border-color:rgba(50,108,229,0.2);color:#326CE5}
 .ctag.tf{border-color:rgba(123,66,246,0.25);color:#7B42F6}
 
-.dot-grid{position:absolute;inset:0;background-image:radial-gradient(circle,var(--dot-grid-color) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;mask-image:radial-gradient(ellipse at 70% 50%,black 20%,transparent 65%)}
+.hero-grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px;opacity:0.12;mix-blend-mode:soft-light}
+[data-theme="light"] .hero-grain{opacity:0.06;mix-blend-mode:multiply}
+.dot-grid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(242,238,230,0.055) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;mask-image:radial-gradient(ellipse at 40% 50%,black 40%,transparent 80%)}
 .hero-glow{position:absolute;pointer-events:none;top:0;right:0;width:50%;height:100%;background:radial-gradient(ellipse at 80% 40%,rgba(0,255,106,0.03) 0%,transparent 55%)}
+.hero-glow-text{position:absolute;pointer-events:none;top:0;left:0;width:60%;height:100%;background:radial-gradient(ellipse at 25% 45%,rgba(255,234,104,0.07) 0%,transparent 60%)}
 .graph-texture{position:absolute;bottom:0;left:0;width:100%;height:220px;pointer-events:none;z-index:0;opacity:1}
 .h1-cursor{color:var(--verde);animation:blink 1.2s infinite;font-size:0.65em;margin-left:0.15em;vertical-align:middle;font-weight:400}
 
@@ -218,7 +221,7 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);b
 .monitor-time{color:var(--texto-muted);opacity:0.5;flex-shrink:0}
 .monitor-cloud{flex-shrink:0;padding:0.07rem 0.32rem;border-radius:2px;font-size:0.53rem;font-weight:600}
 .monitor-cloud.aws{color:#FF9900;background:rgba(255,153,0,0.08)}
-.monitor-cloud.oci{color:#F5C400;background:rgba(245,196,0,0.08)}
+.monitor-cloud.oci{color:var(--amarelo);background:rgba(255,234,104,0.08)}
 .monitor-cloud.gcp{color:#4285F4;background:rgba(66,133,244,0.08)}
 .monitor-cloud.azure{color:#0078D4;background:rgba(0,120,212,0.08)}
 .monitor-msg{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -228,14 +231,17 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);b
 section{padding:5rem 5%}
 .sec-inner{max-width:1200px;margin:0 auto}
 .sec-divider{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
-.sec-divider-label{font-family:var(--mono);font-size:0.65rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;white-space:nowrap}
+.sec-divider-label{font-family:var(--display);font-size:0.9rem;color:var(--amarelo);letter-spacing:0.2em;text-transform:uppercase;white-space:nowrap}
 .sec-divider-line{flex:1;height:1px;background:var(--sep)}
-.sec-title{font-family:var(--mono);font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:0.04em;line-height:1.2;color:var(--texto);text-transform:uppercase}
+.sec-title{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.5vw,3rem);letter-spacing:0.06em;line-height:1.1;color:var(--texto);text-transform:uppercase}
 .sec-title .hl{color:var(--verde);text-shadow:0 0 40px rgba(0,255,106,0.25)}
 [data-theme="light"] .sec-title .hl{text-shadow:0 2px 8px rgba(0,122,56,0.15)}
 [data-theme="light"] .nav-links a:hover{text-shadow:0 0 12px rgba(0,122,56,0.2)}
-[data-theme="light"] .metrics-strip{background:#C2C5CE}
-[data-theme="light"] .hero{background:#D4D6DC}
+[data-theme="light"] .metrics-strip{background:#C4BCAF}
+[data-theme="light"] .hero{background:#D8D2C8}
+[data-theme="light"] .btn-verde{background:var(--verde);color:#FFFFFF}
+[data-theme="light"] .nav-cta{border-color:var(--verde);color:var(--verde)}
+[data-theme="light"] .nav-cta:hover{background:var(--verde);color:#FFFFFF}
 .sec-sub{color:var(--texto-sec);font-size:0.95rem;line-height:1.8}
 
 .jornada{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:4rem 5%}
@@ -244,7 +250,7 @@ section{padding:5rem 5%}
 .jornada-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0}
 .jornada-step{padding:0 1.5rem;position:relative;display:flex;flex-direction:column;gap:0.5rem}
 .jornada-step:first-child{padding-left:0}
-.jornada-step-num{font-family:var(--mono);font-size:0.65rem;line-height:1;color:var(--verde);letter-spacing:0.12em}
+.jornada-step-num{font-family:var(--mono);font-size:0.65rem;line-height:1;color:var(--amarelo);letter-spacing:0.12em}
 .jornada-step-title{font-family:var(--mono);font-size:0.95rem;font-weight:600;color:var(--texto)}
 .jornada-step-desc{font-size:0.8rem;color:var(--texto-muted);line-height:1.6}
 
@@ -267,9 +273,9 @@ section{padding:5rem 5%}
 .servicos-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
 .servicos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden}
 .sc{background:var(--card);padding:1.6rem;transition:background 0.2s,box-shadow 0.2s;cursor:default;position:relative;box-shadow:var(--card-shadow)}
-.sc:hover{background:var(--bg3);box-shadow:var(--card-shadow-hover)}
-.sc:hover .sc-top-bar{opacity:1}
-.sc-top-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--verde),transparent);opacity:0;transition:opacity 0.2s}
+.sc:hover{background:var(--bg3);box-shadow:var(--card-shadow-hover);border-top-color:var(--amarelo)}
+.sc:hover .sc-top-bar{width:100%}
+.sc-top-bar{position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--amarelo) 70%,rgba(255,234,104,0.3) 100%);transition:width 0.5s ease-out}
 .sc-num{font-family:var(--mono);font-size:0.6rem;color:var(--texto-muted);letter-spacing:0.1em;margin-bottom:0.9rem}
 .sc-title{font-family:var(--mono);font-weight:600;font-size:0.88rem;color:var(--texto);margin-bottom:0.55rem}
 .sc-desc{font-size:0.82rem;color:var(--texto-sec);line-height:1.7;margin-bottom:1rem}
@@ -289,18 +295,24 @@ section{padding:5rem 5%}
 .parceiros-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:1.75rem;background:var(--card-border)}
 .parceiro-card{background:var(--card);padding:1.25rem 1.1rem;display:flex;flex-direction:column;gap:0.9rem;position:relative;overflow:hidden;transition:background 0.15s}
 .parceiro-card:hover{background:var(--bg3)}
-.parceiro-top-bar{position:absolute;top:0;left:0;right:0;height:2px}
+.parceiro-top-bar{position:absolute;top:0;left:0;right:0;height:2px;transition:height 0.25s ease,box-shadow 0.25s ease}
 .parceiro-card.aws .parceiro-top-bar{background:#FF9900}
 .parceiro-card.azure .parceiro-top-bar{background:#0078D4}
 .parceiro-card.gcp .parceiro-top-bar{background:#4285F4}
-.parceiro-card.oci .parceiro-top-bar{background:#F5C400}
+.parceiro-card.oci .parceiro-top-bar{background:var(--amarelo)}
 .parceiro-card.dd .parceiro-top-bar{background:#7B42F6}
+.parceiro-card:hover .parceiro-top-bar{height:3px}
+.parceiro-card.aws:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(255,153,0,0.45)}
+.parceiro-card.azure:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(0,120,212,0.45)}
+.parceiro-card.gcp:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(66,133,244,0.45)}
+.parceiro-card.oci:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(255,234,104,0.45)}
+.parceiro-card.dd:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(123,66,246,0.45)}
 .parceiro-header{display:flex;flex-direction:column;gap:0.2rem;margin-top:0.3rem}
 .parceiro-name{font-family:var(--mono);font-size:0.78rem;font-weight:600}
 .parceiro-card.aws .parceiro-name{color:#FF9900}
 .parceiro-card.azure .parceiro-name{color:#0078D4}
 .parceiro-card.gcp .parceiro-name{color:#4285F4}
-.parceiro-card.oci .parceiro-name{color:#F5C400}
+.parceiro-card.oci .parceiro-name{color:var(--amarelo)}
 .parceiro-card.dd .parceiro-name{color:#7B42F6}
 .parceiro-tier{font-family:var(--mono);font-size:0.55rem;color:var(--texto-muted);letter-spacing:0.07em;text-transform:uppercase}
 .parceiro-services{display:flex;flex-wrap:wrap;gap:0.28rem;padding-top:0.8rem;border-top:1px solid var(--sep)}
@@ -386,17 +398,27 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 .testi-role{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);margin-top:0.18rem;letter-spacing:0.04em}
 
 .faq-bg{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,var(--line-grid-color) 39px,var(--line-grid-color) 40px)}
-.faq-list{margin-top:2rem;border:1px solid var(--card-border);border-radius:6px;overflow:hidden}
-.faq-item{border-bottom:1px solid var(--sep)}
+.faq-terminal{margin-top:2rem;border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2)}
+.faq-terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:var(--bg3);gap:0.75rem}
+.faq-terminal-dots{display:flex;gap:6px}
+.faq-terminal-dots span{width:11px;height:11px;border-radius:50%;display:block}
+.faq-terminal-dots .dot-r{background:#ff5f57}.faq-terminal-dots .dot-y{background:#febc2e}.faq-terminal-dots .dot-g{background:#28c840}
+.faq-terminal-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.04em;flex:1;text-align:center}
+.faq-item{border-bottom:1px solid var(--sep);border-left:2px solid transparent;transition:border-left-color 0.2s}
 .faq-item:last-child{border-bottom:none}
-.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.4rem;cursor:pointer;font-family:var(--mono);font-size:0.8rem;font-weight:600;color:var(--texto);background:var(--card);transition:background 0.15s,color 0.15s;gap:1rem;user-select:none;border:none;width:100%;text-align:left}
-.faq-q:hover{background:var(--bg3)}
-.faq-q.open{color:var(--verde)}
-.faq-icon{font-family:var(--mono);font-size:1rem;color:var(--texto-muted);flex-shrink:0;transition:transform 0.2s,color 0.15s;line-height:1}
-.faq-q.open .faq-icon{transform:rotate(45deg);color:var(--verde)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.32s ease;background:var(--bg2)}
-.faq-a.open{max-height:400px}
-.faq-a-inner{padding:1rem 1.4rem 1.2rem;font-size:0.83rem;color:var(--texto-sec);line-height:1.85}
+.faq-item:hover{border-left-color:rgba(0,255,106,0.5)}
+.faq-q{display:flex;align-items:baseline;padding:0.95rem 1.25rem;cursor:pointer;font-family:var(--mono);font-size:0.78rem;color:var(--texto);background:transparent;transition:background 0.2s,color 0.15s;gap:0;user-select:none;border:none;width:100%;text-align:left}
+.faq-q::before{content:'$';color:var(--verde);flex-shrink:0;font-weight:700;transition:color 0.15s;margin-right:0.65rem}
+.faq-q span:first-child{flex:1}
+.faq-q:hover{background:rgba(0,255,106,0.04)}
+.faq-q.open{color:var(--amarelo)}
+.faq-q.open::before{color:var(--amarelo)}
+.faq-icon{font-family:var(--mono);font-size:0.72rem;color:var(--texto-muted);flex-shrink:0;transition:color 0.15s;line-height:1;margin-left:1rem}
+.faq-q.open .faq-icon{color:var(--amarelo)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.32s ease}
+.faq-a.open{max-height:500px}
+.faq-a-inner{position:relative;padding:0.4rem 1.25rem 1rem 3.25rem;font-family:var(--mono);font-size:0.76rem;color:var(--texto-sec);line-height:1.9}
+.faq-a-inner::before{content:'>';position:absolute;left:1.25rem;top:0.4rem;color:var(--verde);font-weight:700}
 
 .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,0.4);cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
@@ -433,6 +455,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   .metric-sep{display:none}
 }
 @media(max-width:600px){
+  .sec-divider-label{font-size:0.72rem;letter-spacing:0.12em}
   .servicos-grid{grid-template-columns:1fr}
   .parceiros-grid{grid-template-columns:1fr}
   .h-cards-row{grid-template-columns:1fr 1fr}
@@ -485,8 +508,10 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 <main>
 <!-- HERO -->
 <section class="hero" id="hero">
+  <div class="hero-grain"></div>
   <div class="dot-grid"></div>
   <div class="hero-glow"></div>
+  <div class="hero-glow-text"></div>
   <div class="hero-inner">
     <div>
       <div class="hero-tag"><span class="hero-tag-dot"></span><span data-i18n="hero.tag">Consultoria Cloud · DevOps · FinOps</span></div>
@@ -759,7 +784,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 <section class="cncf-bg">
   <div class="sec-inner">
     <div class="sec-divider">
-      <span class="sec-divider-label">N · Cloud Native &amp; Open Source</span>
+      <span class="sec-divider-label" data-i18n="cncf.divider">C · Cloud Native</span>
       <div class="sec-divider-line"></div>
     </div>
     <h2 class="sec-title" style="margin-bottom:0.75rem"><span class="hl" data-i18n="cncf.title1">Nativos</span> <span data-i18n="cncf.title2">no ecossistema</span></h2>
@@ -809,9 +834,10 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 <section class="setores-bg" id="setores">
   <div class="sec-inner">
     <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="set.divider">T · setores atendidos</span>
+      <span class="sec-divider-label" data-i18n="set.divider">S · Setores</span>
       <div class="sec-divider-line"></div>
     </div>
+    <h2 class="sec-title" style="margin-bottom:1.25rem"><span data-i18n="set.title1">Setores</span> <span class="hl" data-i18n="set.title2">que Atendemos</span></h2>
     <p class="sec-sub" data-i18n="set.sub">Soluções cloud especializadas para os principais segmentos do mercado brasileiro.</p>
     <div class="setores-grid">
       <div class="setor-item"><div class="setor-icon">🏦</div><div class="setor-name" data-i18n="set.1.name">Financeiro</div><div class="setor-desc" data-i18n="set.1.desc">Compliance, segurança e alta disponibilidade</div></div>
@@ -868,25 +894,28 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
       <div class="sec-divider-line"></div>
     </div>
     <h2 class="sec-title" style="margin-bottom:0.5rem"><span data-i18n="faq.title1">Dúvidas</span> <span class="hl" data-i18n="faq.title2">comuns</span></h2>
-    <div class="faq-list">
+    <div class="faq-terminal">
+      <div class="faq-terminal-header">
+        <span class="faq-terminal-title">nativos@cloud:~/faq</span>
+      </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q1">Qual é o prazo típico de uma migração cloud?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q1">Qual é o prazo típico de uma migração cloud?</span><span class="faq-icon">▸</span></button>
         <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a1">Depende da complexidade do ambiente. Migrações simples (lift &amp; shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q2">Vocês atendem empresas que ainda não usam cloud?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q2">Vocês atendem empresas que ainda não usam cloud?</span><span class="faq-icon">▸</span></button>
         <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a2">Sim. Atendemos desde o primeiro passo — assessments de readiness, definição de estratégia cloud, escolha do provedor mais adequado e execução da migração. Nosso processo é pensado para reduzir risco e garantir uma transição segura.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q3">Como funciona o serviço de MSP (Managed Services)?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q3">Como funciona o serviço de MSP (Managed Services)?</span><span class="faq-icon">▸</span></button>
         <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a3">Oferecemos monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custos e suporte técnico com SLA definido. O contrato é mensal com escopo fixo — sem surpresas no faturamento. Utilizamos Grafana, Prometheus e as ferramentas nativas de cada cloud.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q4">Vocês trabalham com mais de um provedor cloud simultaneamente?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q4">Vocês trabalham com mais de um provedor cloud simultaneamente?</span><span class="faq-icon">▸</span></button>
         <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q5">A consultoria inicial é gratuita?</span><span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q5">A consultoria inicial é gratuita?</span><span class="faq-icon">▸</span></button>
         <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a5">Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial.</div></div>
       </div>
     </div>
@@ -1009,11 +1038,13 @@ function toggleFaq(btn) {
     q.classList.remove('open');
     q.setAttribute('aria-expanded', 'false');
     q.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
+    q.querySelector('.faq-icon').textContent = '▸';
   });
   if (!isOpen) {
     btn.classList.add('open');
     btn.setAttribute('aria-expanded', 'true');
     answer.classList.add('open');
+    btn.querySelector('.faq-icon').textContent = '▾';
   }
 }
 
@@ -1044,7 +1075,7 @@ const translations = {
     "sol.5.title":"Serviços Gerenciados","sol.5.desc":"Monitoramento 24x7, manutenção proativa, gerenciamento DevOps/DevSecOps e suporte técnico contínuo com custo fixo mensal.",
     "sol.6.title":"Segurança & Compliance","sol.6.desc":"IAM, políticas de acesso, VPN/IPSec, Zero Trust e hardening de ambientes para conformidade e proteção real.",
     "par.divider":"P · Parceiros & plataformas","par.sub":"Em sinergia com os maiores players do mercado cloud para entregar as melhores soluções aos nossos clientes.",
-    "set.divider":"T · Setores atendidos","set.sub":"Soluções cloud especializadas para os principais segmentos do mercado brasileiro.",
+    "set.divider":"S · Setores","set.title1":"Setores","set.title2":"que Atendemos","set.sub":"Soluções cloud especializadas para os principais segmentos do mercado brasileiro.",
     "set.1.name":"Financeiro","set.1.desc":"Compliance, segurança e alta disponibilidade",
     "set.2.name":"Varejo","set.2.desc":"Escalabilidade para picos de demanda",
     "set.3.name":"Indústria","set.3.desc":"Modernização e integração de sistemas",
@@ -1061,7 +1092,7 @@ const translations = {
     "val.2.t":"Transparência","val.2.d":"Comunicação direta, sem letras miúdas",
     "val.3.t":"Velocidade","val.3.d":"Entrega ágil sem abrir mão da qualidade",
     "val.4.t":"Confiabilidade","val.4.d":"Ambientes estáveis, seguros e observados",
-    "contact.divider":"C · Contato","contact.title1":"Pronto para","contact.title2":"Decolar?",
+    "contact.divider":"C · Contato","contact.title1":"Seu próximo deploy","contact.title2":"começa aqui.",
     "form.name":"Nome","form.name.ph":"Seu nome","form.company":"Empresa","form.company.ph":"Sua empresa",
     "form.email":"E-mail","form.service":"Solução de interesse","form.service.ph":"Selecione uma solução",
     "form.opt.finops":"Cloud Optimization / FinOps","form.opt.msp":"Serviços Gerenciados (MSP)","form.opt.sec":"Segurança & Compliance",
@@ -1075,6 +1106,7 @@ const translations = {
     "footer.privacy":"Privacidade",
     "footer.rights":"Todos os direitos reservados.",
     "form.phone":"Telefone",
+    "cncf.divider":"C · Cloud Native",
     "cncf.title1":"Nativos","cncf.title2":"no ecossistema",
     "cncf.sub":"Construímos sobre os pilares do movimento cloud native e open source — CNCF, HashiCorp, GitOps e a infraestrutura que define a engenharia moderna.",
     "faq.divider":"F · perguntas frequentes",
@@ -1115,7 +1147,7 @@ const translations = {
     "sol.5.title":"Managed Services","sol.5.desc":"24x7 monitoring, proactive maintenance, DevOps/DevSecOps management and continuous technical support at a fixed monthly cost.",
     "sol.6.title":"Security & Compliance","sol.6.desc":"IAM, access policies, VPN/IPSec, Zero Trust and environment hardening for real conformance and protection.",
     "par.divider":"P · Partners & platforms","par.sub":"In partnership with the biggest cloud market players to deliver the best solutions to our clients.",
-    "set.divider":"I · Industries","set.sub":"Specialized cloud solutions for the main market segments.",
+    "set.divider":"I · Industries","set.title1":"Industries","set.title2":"We Serve","set.sub":"Specialized cloud solutions for the main market segments.",
     "set.1.name":"Financial","set.1.desc":"Compliance, security and high availability",
     "set.2.name":"Retail","set.2.desc":"Scalability for demand peaks",
     "set.3.name":"Industry","set.3.desc":"Modernization and systems integration",
@@ -1146,6 +1178,7 @@ const translations = {
     "footer.privacy":"Privacy",
     "footer.rights":"All rights reserved.",
     "form.phone":"Phone",
+    "cncf.divider":"C · Cloud Native",
     "cncf.title1":"Native","cncf.title2":"in the ecosystem",
     "cncf.sub":"We build on the pillars of the cloud native and open source movement — CNCF, HashiCorp, GitOps and the infrastructure that defines modern engineering.",
     "faq.divider":"F · frequently asked questions",
@@ -1227,6 +1260,8 @@ function setLang(lang) {
     if (t[key] !== undefined) el.placeholder = t[key];
   });
 }
+
+document.addEventListener('DOMContentLoaded', function(){ setLang('pt'); });
 
 (function() {
   const canvas = document.getElementById('sys-monitor');
