@@ -283,6 +283,26 @@ section{padding:5rem 5%}
 .sc-tag{font-family:var(--mono);font-size:0.58rem;padding:0.16rem 0.42rem;border-radius:2px;background:var(--bg);color:var(--texto-muted);border:1px solid var(--sep)}
 .sc-badge{display:inline-block;font-family:var(--mono);font-size:0.58rem;color:var(--verde);background:var(--verde-muted);border:1px solid rgba(0,255,106,0.15);border-radius:2px;padding:0.15rem 0.4rem;margin-bottom:0.9rem}
 
+.produtos-bg{background:var(--bg);background-image:radial-gradient(circle,var(--dot-grid-color) 1px,transparent 1px);background-size:28px 28px;border-top:1px solid var(--sep)}
+.produtos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.produto-card{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);box-shadow:var(--card-shadow);transition:box-shadow 0.2s,border-color 0.2s,transform 0.2s}
+.produto-card:hover{border-color:rgba(0,255,106,0.4);box-shadow:var(--card-shadow-hover);transform:translateY(-2px)}
+.produto-terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:var(--bg3);gap:0.75rem}
+.produto-terminal-dots{display:flex;gap:6px}
+.produto-terminal-dots span{width:11px;height:11px;border-radius:50%;display:block}
+.produto-terminal-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.04em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.produto-body{padding:1.5rem 1.5rem 1.75rem}
+.produto-badge{display:inline-block;font-family:var(--mono);font-size:0.58rem;color:var(--verde);background:var(--verde-muted);border:1px solid rgba(0,255,106,0.15);border-radius:2px;padding:0.15rem 0.4rem;margin-bottom:0.9rem}
+.produto-name{font-family:var(--mono);font-weight:700;font-size:1.15rem;color:var(--texto);margin-bottom:0.55rem;letter-spacing:0.02em}
+.produto-desc{font-size:0.82rem;color:var(--texto-sec);line-height:1.75;margin-bottom:1.25rem}
+.produto-features{list-style:none;margin:0 0 1.25rem;display:flex;flex-direction:column;gap:0.45rem}
+.produto-features li{font-family:var(--mono);font-size:0.73rem;color:var(--texto-sec);display:flex;align-items:baseline;gap:0.55rem;line-height:1.5}
+.produto-features li::before{content:'$';color:var(--verde);font-weight:700;flex-shrink:0}
+.produto-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.4rem}
+.produto-tag{font-family:var(--mono);font-size:0.58rem;padding:0.16rem 0.42rem;border-radius:2px;background:var(--bg);color:var(--texto-muted);border:1px solid var(--sep)}
+.produto-link{font-family:var(--mono);font-size:0.72rem;color:var(--verde);text-decoration:none;border:1px solid rgba(0,255,106,0.35);padding:0.42rem 0.95rem;border-radius:3px;display:inline-block;transition:all 0.15s;letter-spacing:0.03em}
+.produto-link:hover{background:var(--verde);color:#020201;border-color:var(--verde)}
+
 .setores-bg{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
 .setores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:2rem}
 .setor-item{background:var(--card);padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:0.3rem;transition:background 0.15s}
@@ -448,6 +468,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   .jornada-step:last-child{border-bottom:none}
   .servicos-grid{grid-template-columns:repeat(2,1fr)}
   .servicos-header{flex-direction:column;align-items:flex-start;gap:0.75rem}
+  .produtos-grid{grid-template-columns:1fr}
   .cncf-grid{grid-template-columns:1fr}
   .parceiros-grid{grid-template-columns:repeat(2,1fr)}
   .testi-grid{grid-template-columns:1fr}
@@ -481,6 +502,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   <div class="nav-logo">nativos<em>.cloud</em></div>
   <ul class="nav-links">
     <li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li>
+    <li><a href="#produtos" data-i18n="nav.products">Produtos</a></li>
     <li><a href="#setores" data-i18n="nav.sectors">Setores</a></li>
     <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
     <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
@@ -922,6 +944,65 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
   </div>
 </section>
 
+<!-- PRODUTOS -->
+<section class="produtos-bg" id="produtos">
+  <div class="sec-inner">
+    <div class="sec-divider">
+      <span class="sec-divider-label" data-i18n="prod.divider">P · Produtos</span>
+      <div class="sec-divider-line"></div>
+    </div>
+    <h2 class="sec-title" style="margin-bottom:0.5rem"><span data-i18n="prod.title1">Nossos</span> <span class="hl" data-i18n="prod.title2">Produtos</span></h2>
+    <p class="sec-sub" data-i18n="prod.sub">Ferramentas open source construídas pela nativos.cloud para resolver problemas reais de segurança e operações de time.</p>
+    <div class="produtos-grid">
+
+      <div class="produto-card">
+        <div class="produto-terminal-header">
+          <div class="produto-terminal-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <span class="produto-terminal-title">nativos@cloud:~/produtos/vanishd</span>
+        </div>
+        <div class="produto-body">
+          <div class="produto-badge">Security</div>
+          <div class="produto-name">vanishd</div>
+          <p class="produto-desc" data-i18n="prod.vanishd.desc">Plataforma de compartilhamento de segredos com zero-knowledge. O servidor nunca vê o conteúdo — toda a cifragem acontece no cliente, e os links se autodestruem após o primeiro acesso.</p>
+          <ul class="produto-features">
+            <li data-i18n="prod.vanishd.f1">AES-256-GCM client-side via Web Crypto API</li>
+            <li data-i18n="prod.vanishd.f2">Chave de decifragem no fragmento da URL (invisível ao servidor)</li>
+            <li data-i18n="prod.vanishd.f3">Proteção por senha com PBKDF2 e deleção atômica na primeira leitura</li>
+            <li data-i18n="prod.vanishd.f4">Rate limiting por IP e headers de segurança com CSP</li>
+          </ul>
+          <div class="produto-tags">
+            <span class="produto-tag">Python</span><span class="produto-tag">Flask</span><span class="produto-tag">Web Crypto API</span><span class="produto-tag">AES-256-GCM</span><span class="produto-tag">Docker</span><span class="produto-tag">SQLite</span>
+          </div>
+          <a class="produto-link" href="https://github.com/NatanRigailo/vanishd" target="_blank" rel="noopener noreferrer" data-i18n="prod.gh">$ ver no GitHub →</a>
+        </div>
+      </div>
+
+      <div class="produto-card">
+        <div class="produto-terminal-header">
+          <div class="produto-terminal-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <span class="produto-terminal-title">nativos@cloud:~/produtos/mfa-app</span>
+        </div>
+        <div class="produto-body">
+          <div class="produto-badge">DevOps</div>
+          <div class="produto-name">mfa-app</div>
+          <p class="produto-desc" data-i18n="prod.mfa.desc">Plataforma web centralizada para gestão de tokens TOTP em times. Geração de códigos em tempo real com timer de 30 segundos e modo demo para onboarding rápido.</p>
+          <ul class="produto-features">
+            <li data-i18n="prod.mfa.f1">Registro de tokens via leitura de QR Code</li>
+            <li data-i18n="prod.mfa.f2">Modo de edição protegido por senha</li>
+            <li data-i18n="prod.mfa.f3">Atualizações de código TOTP ao vivo com indicadores de progresso</li>
+            <li data-i18n="prod.mfa.f4">Deploy imediato com SQLite ou MySQL via Docker Compose</li>
+          </ul>
+          <div class="produto-tags">
+            <span class="produto-tag">Python</span><span class="produto-tag">Flask</span><span class="produto-tag">TOTP</span><span class="produto-tag">Docker</span><span class="produto-tag">SQLite</span><span class="produto-tag">MySQL</span>
+          </div>
+          <a class="produto-link" href="https://github.com/NatanRigailo/mfa-app" target="_blank" rel="noopener noreferrer" data-i18n="prod.gh">$ ver no GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTATO -->
 <section class="contato-bg" id="contato">
   <div class="sec-inner">
@@ -989,6 +1070,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
     <div class="footer-logo">nativos<em>.cloud</em></div>
     <div class="footer-links">
       <a href="#solucoes" data-i18n="nav.solutions">Soluções</a>
+      <a href="#produtos" data-i18n="nav.products">Produtos</a>
       <a href="#setores" data-i18n="nav.sectors">Setores</a>
       <a href="#sobre" data-i18n="nav.about">Sobre</a>
       <a href="#contato" data-i18n="nav.contact">Contato</a>
@@ -1051,7 +1133,7 @@ function toggleFaq(btn) {
 
 const translations = {
   pt: {
-    "nav.solutions":"Soluções","nav.sectors":"Setores","nav.about":"Sobre","nav.contact":"Contato","nav.cta":"$ Falar --now",
+    "nav.solutions":"Soluções","nav.products":"Produtos","nav.sectors":"Setores","nav.about":"Sobre","nav.contact":"Contato","nav.cta":"$ Falar --now",
     "hero.tag":"Consultoria Cloud · DevOps · FinOps",
     "hero.h1.line1":"Somos","hero.h1.line2":"nativos.","hero.h1.line3":"A nuvem é","hero.h1.line4":"nossa casa.",
     "hero.sub":"Kubernetes, multi-cloud e DevOps na prática. Pipelines que entregam e custo sempre sob controle.",
@@ -1120,10 +1202,24 @@ const translations = {
     "faq.q4":"Vocês trabalham com mais de um provedor cloud simultaneamente?",
     "faq.a4":"Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.",
     "faq.q5":"A consultoria inicial é gratuita?",
-    "faq.a5":"Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial."
+    "faq.a5":"Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial.",
+    "prod.divider":"P · Produtos",
+    "prod.title1":"Nossos","prod.title2":"Produtos",
+    "prod.sub":"Ferramentas open source construídas pela nativos.cloud para resolver problemas reais de segurança e operações de time.",
+    "prod.vanishd.desc":"Plataforma de compartilhamento de segredos com zero-knowledge. O servidor nunca vê o conteúdo — toda a cifragem acontece no cliente, e os links se autodestruem após o primeiro acesso.",
+    "prod.vanishd.f1":"AES-256-GCM client-side via Web Crypto API",
+    "prod.vanishd.f2":"Chave de decifragem no fragmento da URL (invisível ao servidor)",
+    "prod.vanishd.f3":"Proteção por senha com PBKDF2 e deleção atômica na primeira leitura",
+    "prod.vanishd.f4":"Rate limiting por IP e headers de segurança com CSP",
+    "prod.mfa.desc":"Plataforma web centralizada para gestão de tokens TOTP em times. Geração de códigos em tempo real com timer de 30 segundos e modo demo para onboarding rápido.",
+    "prod.mfa.f1":"Registro de tokens via leitura de QR Code",
+    "prod.mfa.f2":"Modo de edição protegido por senha",
+    "prod.mfa.f3":"Atualizações de código TOTP ao vivo com indicadores de progresso",
+    "prod.mfa.f4":"Deploy imediato com SQLite ou MySQL via Docker Compose",
+    "prod.gh":"$ ver no GitHub →"
   },
   en: {
-    "nav.solutions":"Solutions","nav.sectors":"Industries","nav.about":"About","nav.contact":"Contact","nav.cta":"$ Talk --now",
+    "nav.solutions":"Solutions","nav.products":"Products","nav.sectors":"Industries","nav.about":"About","nav.contact":"Contact","nav.cta":"$ Talk --now",
     "hero.tag":"Cloud Consulting · DevOps · FinOps",
     "hero.h1.line1":"We are","hero.h1.line2":"natives.","hero.h1.line3":"The cloud is","hero.h1.line4":"our home.",
     "hero.sub":"Kubernetes, multi-cloud and DevOps in practice. Pipelines that deliver and cost always under control.",
@@ -1192,7 +1288,21 @@ const translations = {
     "faq.q4":"Do you work with more than one cloud provider at the same time?",
     "faq.a4":"Yes, we specialize in multi-cloud environments. We work with AWS, Azure, GCP and OCI — and frequently help companies distribute workloads across providers to improve cost, availability and performance.",
     "faq.q5":"Is the initial consulting free?",
-    "faq.a5":"Yes. The first conversation is always at no cost. Our goal is to understand your scenario, identify the main challenges and propose the most suitable approach before any commercial commitment."
+    "faq.a5":"Yes. The first conversation is always at no cost. Our goal is to understand your scenario, identify the main challenges and propose the most suitable approach before any commercial commitment.",
+    "prod.divider":"P · Products",
+    "prod.title1":"Our","prod.title2":"Products",
+    "prod.sub":"Open source tools built by nativos.cloud to solve real security and team operations problems.",
+    "prod.vanishd.desc":"A zero-knowledge secret sharing platform. The server never sees the content — all encryption happens on the client, and links self-destruct after the first access.",
+    "prod.vanishd.f1":"Client-side AES-256-GCM encryption via Web Crypto API",
+    "prod.vanishd.f2":"Decryption key stored in URL fragment (invisible to server)",
+    "prod.vanishd.f3":"Password protection via PBKDF2 and atomic deletion on first read",
+    "prod.vanishd.f4":"Per-IP rate limiting and security headers with CSP",
+    "prod.mfa.desc":"Centralized web platform for managing TOTP tokens across teams. Real-time code generation with a 30-second timer and demo mode for quick onboarding.",
+    "prod.mfa.f1":"Token registration via QR Code scanning",
+    "prod.mfa.f2":"Password-protected edit mode",
+    "prod.mfa.f3":"Live TOTP code updates with progress indicators",
+    "prod.mfa.f4":"Instant deploy with SQLite or MySQL via Docker Compose",
+    "prod.gh":"$ view on GitHub →"
   }
 };
 
