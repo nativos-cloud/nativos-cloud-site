@@ -3,162 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 - nativos.cloud</title>
+<meta name="theme-color" content="#100E0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)">
+<title>404 — nativos.cloud</title>
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D0D'/><text x='4' y='22' font-family='monospace' font-weight='700' font-size='14' fill='%2300FF6A'>&gt;_</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23100E0A'/><text x='4' y='22' font-family='monospace' font-weight='700' font-size='14' fill='%233FBF75'>&gt;_</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>(function(){var s=localStorage.getItem('nc-theme')||'system';var resolved=s==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=resolved;})()</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+*:focus-visible{outline:2px solid var(--verde);outline-offset:2px;border-radius:2px}
 :root{
-  --bg:#0D0D0D;--bg2:#111214;--bg3:#161819;--card:#141618;--card-border:#1E2124;
-  --verde:#00FF6A;--verde-muted:rgba(0,255,106,0.1);--verde-text:#0D0D0D;--amarelo:#F5C400;
-  --texto:#E8E8E8;--texto-muted:#7A808A;--texto-sec:#8A8F96;--sep:#1A1C1F;
-  --mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;
-  --nav-bg:rgba(13,13,13,0.93);--nav-shadow:none;--overlay-dark:rgba(0,0,0,0.35);
+  color-scheme:dark light;
+  --bg:#100E0A;--bg2:#17140F;--card:#191511;--card-border:#2E2A24;--sep:#262219;
+  --verde:#3FBF75;--texto:#F2EEE6;--texto-muted:#9C988E;--texto-sec:#B5B0A8;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:'JetBrains Mono',var(--mono);
+  --overlay-dark:rgba(0,0,0,0.35);
 }
 [data-theme="light"]{
-  --bg:#ECEDF0;--bg2:#E2E4E8;--bg3:#D6D9DE;--card:#F4F5F7;--card-border:#C4C7CF;
-  --verde:#007A38;--verde-muted:rgba(0,122,56,0.08);--verde-text:#FFFFFF;--amarelo:#8A6800;
-  --texto:#111827;--texto-muted:#6B7280;--texto-sec:#374151;--sep:#CDD0D8;
-  --nav-bg:rgba(247,248,250,0.95);--nav-shadow:0 1px 8px rgba(0,0,0,0.08);--overlay-dark:rgba(0,0,0,0.04);
+  color-scheme:light;
+  --bg:#F5F0E8;--bg2:#EDE8DF;--card:#FDFAF5;--card-border:#D4CEC4;--sep:#D4CEC4;
+  --verde:#1F7A48;--texto:#1A1714;--texto-muted:#6B6560;--texto-sec:#3D3830;
+  --overlay-dark:rgba(0,0,0,0.03);
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--texto);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
-
-.flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#F5C400 40%,#F5C400 60%,#002776 60%,#002776 100%);flex-shrink:0}
-
-nav{background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--sep);box-shadow:var(--nav-shadow);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;flex-shrink:0}
-.nav-logo{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--texto);text-decoration:none}
+.flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#F2C94C 40%,#F2C94C 60%,#002776 60%,#002776 100%);flex-shrink:0}
+nav{background:var(--bg2);border-bottom:1px solid var(--sep);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;flex-shrink:0}
+.nav-logo{font-family:var(--sans);font-weight:700;font-size:1rem;color:var(--texto);text-decoration:none;letter-spacing:-0.01em}
 .nav-logo em{color:var(--verde);font-style:normal}
-
-/* THEME DROPDOWN */
-.theme-select{position:relative}
-.theme-select-btn{display:flex;align-items:center;gap:0.35rem;background:var(--card);border:1px solid var(--card-border);border-radius:3px;padding:0.3rem 0.6rem;cursor:pointer;color:var(--texto-muted);font-family:var(--mono);font-size:0.75rem;transition:all 0.15s;line-height:1}
-.theme-select-btn:hover{color:var(--texto);border-color:var(--verde)}
-.theme-select-arrow{font-size:0.5rem;opacity:0.5}
-.theme-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--card);border:1px solid var(--card-border);border-radius:4px;overflow:hidden;display:none;z-index:200;min-width:108px;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
-.theme-menu.open{display:block}
-.theme-menu-item{display:flex;align-items:center;gap:0.5rem;width:100%;padding:0.48rem 0.75rem;background:transparent;border:none;cursor:pointer;font-family:var(--mono);font-size:0.68rem;color:var(--texto-sec);text-align:left;transition:background 0.1s,color 0.1s}
-.theme-menu-item:hover{background:var(--bg3);color:var(--texto)}
-.theme-menu-item.active{color:var(--verde)}
-.theme-menu-icon{font-size:0.82rem}
-
 main{flex:1;display:flex;align-items:center;justify-content:center;padding:5%}
-
-.terminal{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);width:100%;max-width:600px;box-shadow:var(--card-shadow,none)}
+.terminal{border:1px solid var(--card-border);border-radius:6px;overflow:hidden;background:var(--bg2);width:100%;max-width:600px}
 .terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:var(--overlay-dark);gap:0.75rem}
-.t-dots{display:flex;gap:0.38rem;align-items:center}
-.t-dot{width:9px;height:9px;border-radius:50%}
-.t-dot.r{background:#FF5F57}.t-dot.y{background:#FEBC2E}.t-dot.g{background:#28C840}
-.t-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.07em;flex:1;text-align:center}
-
-.terminal-body{padding:1.5rem 1.5rem 2rem;font-family:var(--mono);font-size:0.82rem;line-height:1.8}
+.t-title{font-family:var(--mono);font-size:0.72rem;color:var(--texto-muted);letter-spacing:0;flex:1}
+.terminal-body{padding:1.5rem 1.5rem 2rem;font-family:var(--mono);font-size:0.88rem;line-height:1.8}
 .line-prompt{color:var(--verde)}
 .line-cmd{color:var(--texto)}
 .line-err{color:#FF5050;margin-top:0.4rem}
 .line-info{color:var(--texto-muted);margin-top:0.2rem}
 .line-gap{margin-top:1rem}
-.line-404{font-size:3.5rem;font-weight:600;color:var(--verde);line-height:1;margin:1.2rem 0 0.4rem;letter-spacing:0.05em}
-.line-label{color:var(--texto-sec);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase}
-
+.line-404{font-family:var(--sans);font-size:4rem;font-weight:800;color:var(--verde);line-height:1;margin:1.2rem 0 0.4rem;letter-spacing:-0.03em}
+.line-label{color:var(--texto-sec);font-size:0.85rem}
 .actions{margin-top:1.6rem;display:flex;gap:0.75rem;flex-wrap:wrap}
-.btn-verde{background:var(--verde);color:var(--verde-text);font-family:var(--mono);font-weight:600;font-size:0.74rem;padding:0.6rem 1.2rem;border-radius:3px;text-decoration:none;letter-spacing:0.04em;transition:opacity 0.15s}
-.btn-verde:hover{opacity:0.85}
-.btn-ghost{color:var(--texto-sec);font-family:var(--mono);font-size:0.74rem;padding:0.6rem 1.2rem;border-radius:3px;text-decoration:none;border:1px solid var(--card-border);letter-spacing:0.04em;transition:all 0.15s}
+.btn-verde{background:var(--verde);color:#0B0908;font-family:var(--sans);font-weight:600;font-size:0.85rem;padding:0.65rem 1.2rem;border-radius:3px;text-decoration:none;letter-spacing:0;transition:opacity 0.15s}
+.btn-verde:hover{opacity:0.88}
+.btn-ghost{color:var(--texto);font-family:var(--sans);font-size:0.85rem;padding:0.65rem 1.2rem;border-radius:3px;text-decoration:none;border:1px solid var(--card-border);letter-spacing:0;transition:border-color 0.15s,color 0.15s}
 .btn-ghost:hover{border-color:var(--verde);color:var(--verde)}
-
-.cursor{display:inline-block;width:8px;height:1em;background:var(--verde);vertical-align:text-bottom;animation:blink 1.2s step-end infinite}
+.cursor{display:inline-block;width:8px;height:1em;background:var(--verde);vertical-align:text-bottom;animation:blink 1.2s steps(2) infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.cursor{animation:none}html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0.01ms!important}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
 </head>
 <body>
-<div class="flag-strip"></div>
+<div class="flag-strip" aria-hidden="true"></div>
 <nav>
-  <a href="/" class="nav-logo">&gt;_ <em>nativos</em>.cloud</a>
-  <div class="theme-select" id="theme-select">
-    <button class="theme-select-btn" id="theme-select-btn" onclick="toggleThemeMenu()">
-      <span id="theme-select-icon">⊙</span><span class="theme-select-arrow">▾</span>
-    </button>
-    <div class="theme-menu" id="theme-menu">
-      <button class="theme-menu-item" id="tmitem-dark" onclick="setTheme('dark');closeThemeMenu()"><span class="theme-menu-icon">◐</span>Dark</button>
-      <button class="theme-menu-item" id="tmitem-light" onclick="setTheme('light');closeThemeMenu()"><span class="theme-menu-icon">○</span>Light</button>
-      <button class="theme-menu-item" id="tmitem-system" onclick="setTheme('system');closeThemeMenu()"><span class="theme-menu-icon">⊙</span>Sistema</button>
-    </div>
-  </div>
+  <a href="/" class="nav-logo"><span translate="no">nativos<em>.cloud</em></span></a>
 </nav>
 <main>
+  <h1 class="sr-only">Página não encontrada</h1>
   <div class="terminal">
     <div class="terminal-header">
-      <div class="t-dots">
-        <div class="t-dot r"></div>
-        <div class="t-dot y"></div>
-        <div class="t-dot g"></div>
-      </div>
-      <span class="t-title">bash — nativos.cloud</span>
+      <span class="t-title">nativos@cloud: ~ $</span>
     </div>
     <div class="terminal-body">
       <div><span class="line-prompt">$</span> <span class="line-cmd">GET <span id="path"></span></span></div>
-      <div class="line-err">bash: rota não encontrada: 404 Not Found</div>
-      <div class="line-info"># O recurso solicitado não existe neste servidor.</div>
+      <div class="line-err">rota não encontrada: 404 Not Found</div>
+      <div class="line-info"># o recurso solicitado não existe neste servidor.</div>
       <div class="line-gap">
-        <div class="line-404">404</div>
-        <div class="line-label">Página não encontrada</div>
+        <div class="line-404" aria-hidden="true">404</div>
+        <div class="line-label">Página não encontrada.</div>
       </div>
       <div class="actions">
-        <a href="/" class="btn-verde">$ cd ~/ (home)</a>
-        <a href="/#contato" class="btn-ghost">$ ./contato.sh</a>
+        <a href="/" class="btn-verde">Voltar para a home</a>
+        <a href="/#contato" class="btn-ghost">Falar com a gente</a>
       </div>
-      <div style="margin-top:1.4rem"><span class="line-prompt">$</span> <span class="cursor"></span></div>
+      <div style="margin-top:1.4rem"><span class="line-prompt">$</span> <span class="cursor" aria-hidden="true"></span></div>
     </div>
   </div>
 </main>
 <script>
   document.getElementById('path').textContent = window.location.pathname;
-
-  (function() {
-    const mq = window.matchMedia('(prefers-color-scheme: light)');
-    const KEY = 'nc-theme';
-    const icons = {dark:'◐', system:'⊙', light:'○'};
-
-    function applyTheme(pref) {
-      const resolved = pref === 'system' ? (mq.matches ? 'light' : 'dark') : pref;
-      document.documentElement.dataset.theme = resolved;
-      const iconEl = document.getElementById('theme-select-icon');
-      if (iconEl) iconEl.textContent = icons[pref];
-      ['dark','system','light'].forEach(t => {
-        const item = document.getElementById('tmitem-' + t);
-        if (item) item.classList.toggle('active', t === pref);
-      });
-    }
-
-    window.setTheme = function(pref) {
-      localStorage.setItem(KEY, pref);
-      applyTheme(pref);
-    };
-
-    window.toggleThemeMenu = function() {
-      document.getElementById('theme-menu').classList.toggle('open');
-    };
-
-    window.closeThemeMenu = function() {
-      document.getElementById('theme-menu').classList.remove('open');
-    };
-
-    document.addEventListener('click', function(e) {
-      if (!document.getElementById('theme-select').contains(e.target)) {
-        closeThemeMenu();
-      }
-    });
-
-    mq.addEventListener('change', function() {
-      if (localStorage.getItem(KEY) === 'system') applyTheme('system');
-    });
-
-    applyTheme(localStorage.getItem(KEY) || 'system');
-  })();
 </script>
 </body>
 </html>

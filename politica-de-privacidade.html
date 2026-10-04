@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100E0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)">
 <title>Política de Privacidade — nativos.cloud</title>
 <meta name="description" content="Política de Privacidade e uso de cookies da nativos.cloud, em conformidade com a LGPD (Lei 13.709/2018).">
 <meta name="robots" content="index, follow">
@@ -12,122 +14,92 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>(function(){var s=localStorage.getItem('nc-theme')||'system';var resolved=s==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=resolved;})()</script>
 <style>
-  :root {
-    --bg: #0D0D0D;
-    --bg2: #111111;
-    --texto: #E8E8E8;
-    --texto-sec: #A0A0A0;
-    --verde: #00FF6A;
-    --sep: rgba(255,255,255,0.08);
-    --mono: 'Courier New', Courier, monospace;
+  :root{
+    color-scheme:dark light;
+    --bg:#100E0A;--card:#191511;--card-border:#2E2A24;--sep:#262219;
+    --texto:#F2EEE6;--texto-sec:#B5B0A8;--texto-muted:#9C988E;
+    --verde:#3FBF75;--amarelo:#F2C94C;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'JetBrains Mono',var(--mono);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    color: var(--texto);
-    font-family: var(--mono);
-    font-size: 0.88rem;
-    line-height: 1.8;
-    padding: 0 5%;
+  [data-theme="light"]{
+    color-scheme:light;
+    --bg:#F5F0E8;--card:#FDFAF5;--card-border:#D4CEC4;--sep:#D4CEC4;
+    --texto:#1A1714;--texto-sec:#3D3830;--texto-muted:#6B6560;
+    --verde:#1F7A48;--amarelo:#8A6A00;
   }
-  header {
-    padding: 2rem 0 1.5rem;
-    border-bottom: 1px solid var(--sep);
-    margin-bottom: 2.5rem;
-  }
-  header a {
-    color: var(--verde);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-  }
-  main {
-    max-width: 780px;
-    margin: 0 auto;
-    padding-bottom: 4rem;
-  }
-  h1 {
-    font-size: 1.4rem;
-    color: var(--verde);
-    margin-bottom: 0.4rem;
-  }
-  .updated {
-    font-size: 0.72rem;
-    color: var(--texto-sec);
-    margin-bottom: 2.5rem;
-  }
-  h2 {
-    font-size: 0.95rem;
-    color: var(--verde);
-    margin: 2rem 0 0.6rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  p { margin-bottom: 0.8rem; color: var(--texto-sec); }
-  ul { margin: 0.5rem 0 0.8rem 1.5rem; color: var(--texto-sec); }
-  li { margin-bottom: 0.3rem; }
-  a { color: var(--verde); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .back {
-    display: inline-block;
-    margin-top: 3rem;
-    padding: 0.5rem 1.2rem;
-    border: 1px solid var(--sep);
-    border-radius: 3px;
-    color: var(--texto-sec);
-    font-size: 0.78rem;
-    transition: border-color 0.15s, color 0.15s;
-  }
-  .back:hover { border-color: var(--verde); color: var(--verde); text-decoration: none; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  *:focus-visible{outline:2px solid var(--verde);outline-offset:2px;border-radius:2px}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--texto);font-family:var(--sans);font-size:0.95rem;line-height:1.65;padding:0 5%}
+  .flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#F2C94C 40%,#F2C94C 60%,#002776 60%,#002776 100%);margin:0 -5% 2rem}
+  header{padding:1rem 0 1.5rem;border-bottom:1px solid var(--sep);margin-bottom:2.5rem}
+  header a{color:var(--verde);text-decoration:none;font-size:1rem;font-weight:700;letter-spacing:-0.01em;font-family:var(--sans)}
+  main{max-width:720px;margin:0 auto;padding-bottom:4rem}
+  h1{font-size:1.75rem;color:var(--texto);margin-bottom:0.4rem;font-weight:700;letter-spacing:-0.02em;line-height:1.2}
+  .updated{font-size:0.78rem;color:var(--texto-muted);margin-bottom:2.5rem;font-family:var(--mono)}
+  h2{font-size:1rem;color:var(--verde);margin:2rem 0 0.6rem;font-weight:600;letter-spacing:0;font-family:var(--sans)}
+  p{margin-bottom:0.8rem;color:var(--texto-sec)}
+  ul{margin:0.5rem 0 0.8rem 1.5rem;color:var(--texto-sec)}
+  li{margin-bottom:0.3rem}
+  a{color:var(--verde);text-decoration:underline;text-decoration-color:rgba(63,191,117,0.4);text-underline-offset:3px}
+  a:hover{text-decoration-color:var(--verde)}
+  .back{display:inline-block;margin-top:3rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:3px;color:var(--texto);font-size:0.82rem;font-family:var(--sans);text-decoration:none;transition:border-color 0.15s,color 0.15s}
+  .back:hover{border-color:var(--verde);color:var(--verde);text-decoration:none}
+  strong{color:var(--texto);font-weight:600}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0.01ms!important}}
 </style>
 </head>
 <body>
+<div class="flag-strip" aria-hidden="true"></div>
 <header>
-  <a href="/">nativos.cloud</a>
+  <a href="/" translate="no">nativos.cloud</a>
 </header>
 <main>
-  <h1>Política de Privacidade</h1>
-  <p class="updated">Última atualização: abril de 2026</p>
+  <h1>Política de privacidade</h1>
+  <p class="updated">Última atualização: <time datetime="2026-10-03">3 de outubro de 2026</time></p>
 
-  <p>A <strong>nativos.cloud</strong> ("[RAZÃO SOCIAL]", CNPJ [CNPJ]) respeita sua privacidade e está comprometida com a proteção dos seus dados pessoais, em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>.</p>
+  <p>A <strong translate="no">nativos.cloud</strong> respeita sua privacidade e trata dados pessoais em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>.</p>
 
   <h2>1. Dados que coletamos</h2>
-  <p>Ao utilizar nosso site ou formulário de contato, podemos coletar:</p>
+  <p>Ao utilizar o site ou o formulário de contato, podemos coletar:</p>
   <ul>
-    <li><strong>Dados de identificação:</strong> nome, e-mail e empresa (quando fornecidos voluntariamente no formulário de contato).</li>
-    <li><strong>Dados de navegação:</strong> endereço IP, tipo de navegador, páginas acessadas e tempo de visita — coletados automaticamente por cookies de análise (quando aceitos).</li>
+    <li><strong>Identificação:</strong> nome, e-mail, empresa e telefone, fornecidos voluntariamente no formulário.</li>
+    <li><strong>Navegação:</strong> endereço IP, tipo de navegador, páginas acessadas e tempo de visita, coletados por cookies de análise quando aceitos.</li>
   </ul>
 
   <h2>2. Finalidade do tratamento</h2>
-  <p>Utilizamos seus dados para:</p>
+  <p>Usamos seus dados para:</p>
   <ul>
-    <li>Responder às suas mensagens e solicitações de contato.</li>
-    <li>Melhorar a experiência de navegação no site.</li>
+    <li>Responder suas mensagens e solicitações.</li>
+    <li>Melhorar a experiência de navegação.</li>
     <li>Cumprir obrigações legais.</li>
   </ul>
-  <p>Não utilizamos seus dados para marketing não solicitado nem os compartilhamos com terceiros para fins comerciais.</p>
+  <p>Não usamos seus dados para marketing não solicitado nem os compartilhamos com terceiros para fins comerciais.</p>
 
   <h2>3. Cookies</h2>
-  <p>Nosso site utiliza cookies estritamente necessários para o funcionamento adequado das páginas. Cookies de análise e de desempenho são utilizados somente após seu consentimento explícito.</p>
-  <p>Você pode retirar seu consentimento a qualquer momento limpando os dados de navegação do seu browser ou clicando em "Recusar" no banner de cookies.</p>
+  <p>Usamos cookies estritamente necessários ao funcionamento do site. Cookies de análise e desempenho só são carregados após seu consentimento explícito no banner.</p>
+  <p>Você pode retirar o consentimento a qualquer momento limpando os dados do navegador ou clicando em “Recusar” no banner de cookies.</p>
 
   <h2>4. Base legal</h2>
-  <p>O tratamento dos dados ocorre com base em:</p>
   <ul>
-    <li><strong>Consentimento</strong> (art. 7º, I da LGPD) — para cookies de análise.</li>
-    <li><strong>Legítimo interesse</strong> (art. 7º, IX da LGPD) — para responder contatos e melhorar o site.</li>
+    <li><strong>Consentimento</strong> (art. 7º, I) — para cookies de análise.</li>
+    <li><strong>Legítimo interesse</strong> (art. 7º, IX) — para responder contatos e melhorar o site.</li>
   </ul>
 
   <h2>5. Compartilhamento de dados</h2>
-  <p>Seus dados podem ser processados pela plataforma <strong>EmailJS</strong> exclusivamente para o envio do seu contato. Não vendemos nem cedemos seus dados a terceiros.</p>
+  <p>O conteúdo do formulário é processado pela plataforma <strong translate="no">EmailJS</strong> exclusivamente para envio da sua mensagem. Não vendemos nem cedemos seus dados a terceiros.</p>
 
   <h2>6. Retenção dos dados</h2>
-  <p>Os dados enviados pelo formulário de contato são retidos pelo tempo necessário para atender à sua solicitação e por até 5 anos para fins de registro legal, conforme a LGPD.</p>
+  <p>Dados enviados pelo formulário são retidos pelo tempo necessário para atender à solicitação e por até 5 anos para fins de registro legal, conforme a LGPD.</p>
 
   <h2>7. Seus direitos</h2>
-  <p>Como titular de dados, você tem direito a:</p>
+  <p>Como titular, você pode:</p>
   <ul>
     <li>Confirmar a existência de tratamento;</li>
     <li>Acessar seus dados;</li>
@@ -135,17 +107,16 @@
     <li>Solicitar anonimização, bloqueio ou eliminação;</li>
     <li>Revogar consentimento a qualquer momento.</li>
   </ul>
-  <p>Para exercer seus direitos, entre em contato pelo e-mail: <a href="mailto:[E-MAIL DE PRIVACIDADE]">[E-MAIL DE PRIVACIDADE]</a></p>
+  <p>Para exercer esses direitos, escreva para <a href="mailto:contato@nativos.cloud">contato@nativos.cloud</a>.</p>
 
   <h2>8. Segurança</h2>
   <p>Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados contra acesso não autorizado, perda ou divulgação indevida.</p>
 
   <h2>9. Alterações nesta política</h2>
-  <p>Esta política pode ser atualizada periodicamente. A data de última atualização sempre será indicada no topo desta página.</p>
+  <p>Esta política pode ser atualizada periodicamente. A data da última atualização estará sempre indicada no topo da página.</p>
 
   <h2>10. Contato</h2>
-  <p>Dúvidas sobre esta política ou sobre o tratamento dos seus dados:<br>
-  <a href="mailto:contato@nativos.cloud">contato@nativos.cloud</a></p>
+  <p>Dúvidas sobre esta política ou sobre o tratamento dos seus dados: <a href="mailto:contato@nativos.cloud">contato@nativos.cloud</a></p>
 
   <a class="back" href="/">← Voltar ao site</a>
 </main>

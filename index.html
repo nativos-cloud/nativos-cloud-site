@@ -3,31 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nativos.cloud — Consultoria Cloud, DevOps & FinOps</title>
-<meta name="description" content="Consultoria cloud especializada em DevOps, FinOps e arquitetura multi-cloud. Migração, automação e gestão de ambientes AWS, Azure, GCP e OCI para empresas brasileiras.">
-<meta name="keywords" content="consultoria cloud, devops, finops, kubernetes, terraform, migração cloud, aws, azure, gcp, oci, cloud native, infraestrutura, brasil">
-<meta name="author" content="Nativos.Cloud">
+<meta name="theme-color" content="#0E100F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EDEAE2" media="(prefers-color-scheme: light)">
+<title>nativos.cloud — consultoria cloud + MSP</title>
+<meta name="description" content="Consultoria cloud + MSP. A gente projeta, migra e opera Kubernetes, AWS, Azure, GCP e OCI em produção. Direto com engenheiro.">
+<meta name="keywords" content="consultoria cloud, msp cloud, kubernetes, devops, finops, terraform, aws, azure, gcp, oci, brasil, ponta grossa">
+<meta name="author" content="nativos.cloud">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nativos.cloud/">
 <link rel="alternate" hreflang="pt-BR" href="https://nativos.cloud/">
 <link rel="alternate" hreflang="en" href="https://nativos.cloud/">
 <link rel="alternate" hreflang="x-default" href="https://nativos.cloud/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nativos.cloud/">
-<meta property="og:title" content="nativos.cloud — Consultoria Cloud, DevOps & FinOps">
-<meta property="og:description" content="Consultoria cloud especializada em DevOps, FinOps e arquitetura multi-cloud. Migração, automação e gestão de ambientes AWS, Azure, GCP e OCI.">
+<meta property="og:title" content="nativos.cloud — consultoria cloud + MSP">
+<meta property="og:description" content="Consultoria cloud + MSP. A gente projeta, migra e opera Kubernetes, AWS, Azure, GCP e OCI em produção.">
 <meta property="og:image" content="https://nativos.cloud/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="nativos.cloud">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="nativos.cloud — Consultoria Cloud, DevOps & FinOps">
-<meta name="twitter:description" content="Consultoria cloud especializada em DevOps, FinOps e arquitetura multi-cloud. AWS, Azure, GCP e OCI.">
+<meta name="twitter:title" content="nativos.cloud — consultoria cloud + MSP">
+<meta name="twitter:description" content="Consultoria + MSP cloud. A gente projeta, migra e opera. Direto com engenheiro, sem PPT.">
 <meta name="twitter:image" content="https://nativos.cloud/og-image.png">
 
 <link rel="icon" href="/favicon.ico">
@@ -36,6 +36,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
 <link rel="manifest" href="/site.webmanifest">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,7 +44,7 @@
   "name": "nativos.cloud",
   "url": "https://nativos.cloud",
   "logo": "https://nativos.cloud/og-image.png",
-  "description": "Consultoria cloud especializada em DevOps, FinOps e arquitetura multi-cloud. Migração, automação e gestão de ambientes AWS, Azure, GCP e OCI para empresas brasileiras.",
+  "description": "Consultoria cloud e MSP. Projetamos, migramos e operamos Kubernetes e multi-cloud (AWS, Azure, GCP, OCI) em produção.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Ponta Grossa",
@@ -58,11 +59,13 @@
   }
 }
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
 <script>(function(){var s=localStorage.getItem('nc-theme')||'system';var resolved=s==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=resolved;})()</script>
+
 <script>
 (function(){
   const obs = new IntersectionObserver(function(entries){
@@ -79,141 +82,369 @@
   });
 })();
 </script>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+/* ─── TOKENS ─────────────────────────────────────────────────────────── */
 :root{
-  --bg:#020201;--bg2:#0c0a07;--bg3:#181410;--card:#110f0c;--card-border:#2e2a24;
-  --verde:#00FF6A;--verde-muted:rgba(0,255,106,0.1);--verde-text:#020201;--amarelo:#ffea68;
-  --texto:#f2eee6;--texto-muted:#9c988e;--texto-sec:#b5b0a8;--sep:#221e18;
-  --mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;--display:'Bebas Neue',sans-serif;
-  --nav-bg:rgba(2,2,1,0.93);--nav-shadow:none;
-  --dot-grid-color:rgba(242,238,230,0.065);--line-grid-color:rgba(242,238,230,0.02);
-  --overlay-dark:rgba(0,0,0,0.35);--card-shadow:none;--card-shadow-hover:none;
-  --footer-social-bg:#0a0805;--social-card-bg:#161210;--social-card-border:#2e2a24;--social-card-hover:#1c1a16;
+  color-scheme: dark light;
+  --bg: #0E100F;
+  --bg-elev: #15181A;
+  --bg-sunk: #0A0C0B;
+  --border: #262B2E;
+  --sep: #1C2022;
+  --texto: #E6E4DC;
+  --texto-sec: #9A978E;
+  --texto-muted: #6A6962;
+  --verde: #4FB07A;
+  --verde-text: #0A0C0B;
+  --marcador: #D9A441;
+  --amarelo: #D9A441;
+  --card: #15181A;
+  --card-border: #262B2E;
+  --bg2: #121415;
+  --card-shadow: none;
+  --overlay-dark: rgba(0,0,0,0.28);
+  --dot-grid-color: rgba(230,228,220,0.045);
+  --display: 'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --maxw: 72rem;
+  --prose: 36rem;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
 }
 [data-theme="light"]{
-  --bg:#F5F0E8;--bg2:#EDE8DF;--bg3:#E3DDD3;--card:#FDFAF5;--card-border:#D4CEC4;
-  --verde:#006B30;--verde-muted:rgba(0,107,48,0.08);--verde-text:#FFFFFF;--amarelo:#8A6A00;
-  --texto:#1A1714;--texto-muted:#6B6560;--texto-sec:#3D3830;--sep:#D4CEC4;
-  --nav-bg:rgba(245,240,232,0.95);--nav-shadow:0 1px 8px rgba(0,0,0,0.08);
-  --dot-grid-color:rgba(0,0,0,0.05);--line-grid-color:rgba(0,0,0,0.03);
-  --overlay-dark:rgba(0,0,0,0.03);
-  --card-shadow:0 1px 3px rgba(0,0,0,0.07),0 0 0 1px rgba(0,0,0,0.04);
-  --card-shadow-hover:0 4px 12px rgba(0,0,0,0.1),0 0 0 1px rgba(0,0,0,0.06);
-  --footer-social-bg:#EDE8DF;--social-card-bg:#FDFAF5;--social-card-border:#D4CEC4;--social-card-hover:#F0EBE0;
+  color-scheme: light;
+  --bg: #EDEAE2;
+  --bg-elev: #F6F3EB;
+  --bg-sunk: #E3DED3;
+  --border: #CFC8BC;
+  --sep: #DAD4C8;
+  --texto: #141513;
+  --texto-sec: #3A3A35;
+  --texto-muted: #6E6E66;
+  --verde: #1F7A48;
+  --verde-text: #FFFFFF;
+  --marcador: #8A6A00;
+  --amarelo: #8A6A00;
+  --card: #F6F3EB;
+  --card-border: #CFC8BC;
+  --bg2: #E8E2D4;
+  --overlay-dark: rgba(0,0,0,0.03);
+  --dot-grid-color: rgba(0,0,0,0.04);
 }
+
+/* ─── RESET + GLOBALS ────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*:focus-visible{outline:2px solid var(--verde);outline-offset:2px;border-radius:2px}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--texto);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
+body{
+  background:var(--bg);
+  color:var(--texto);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  font-feature-settings:'kern','ss01';
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  position:relative;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--grain);
+  background-repeat:repeat;
+  background-size:180px 180px;
+  opacity:0.035;
+  mix-blend-mode:overlay;
+  z-index:1;
+}
+[data-theme="light"] body::before{opacity:0.05;mix-blend-mode:multiply}
+nav,main,footer,.cookie-banner,.skip-link{position:relative;z-index:2}
+::selection{background:var(--amarelo);color:var(--bg-sunk)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:0;left:0;padding:0.6rem 1rem;background:var(--verde);color:var(--verde-text);font-family:var(--mono);font-size:0.82rem;font-weight:500;z-index:1000;text-decoration:none;transform:translateY(-120%);transition:transform 0.15s}
+.skip-link:focus{transform:translateY(0)}
+section[id],main[id]{scroll-margin-top:5rem}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+}
 
-.flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#ffea68 40%,#ffea68 60%,#002776 60%,#002776 100%)}
-
-nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--sep);box-shadow:var(--nav-shadow);height:56px;display:flex;align-items:center;padding:0 5%;justify-content:space-between}
-.nav-logo{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--texto)}
+/* ─── NAV ────────────────────────────────────────────────────────────── */
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:color-mix(in oklab, var(--bg) 92%, transparent);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--sep);
+}
+.nav-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.75rem 1.5rem;
+  min-height:3.5rem;
+}
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:0.55rem;
+  font-weight:700;
+  font-size:0.95rem;
+  letter-spacing:-0.015em;
+  color:var(--texto);
+  text-decoration:none;
+}
 .nav-logo em{color:var(--verde);font-style:normal}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{color:var(--texto);text-decoration:none;font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:400;transition:color 0.15s,text-shadow 0.15s;font-family:var(--display)}
-.nav-links a:hover{color:var(--verde);text-shadow:0 0 12px rgba(0,255,106,0.35)}
-.nav-right{display:flex;align-items:center;gap:0.75rem}
+.logo-mark{width:20px;height:20px;color:var(--verde);flex-shrink:0}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:var(--texto-sec);text-decoration:none;font-size:0.86rem;font-weight:500;transition:color 0.15s}
+.nav-links a:hover{color:var(--texto)}
+.nav-right{display:flex;align-items:center;gap:0.4rem}
 
-/* LANG TOGGLE */
-.lang-toggle{display:flex;align-items:center;background:var(--card);border:1px solid var(--card-border);border-radius:3px;overflow:hidden;font-family:var(--mono);font-size:0.68rem}
-.lang-btn{padding:0.3rem 0.6rem;cursor:pointer;color:var(--texto-muted);background:transparent;border:none;transition:all 0.15s;letter-spacing:0.05em;font-family:var(--mono);font-size:0.68rem}
-.lang-btn.active{background:var(--verde);color:var(--verde-text);font-weight:600}
-.lang-sep{width:1px;height:16px;background:var(--card-border)}
+/* Unified control family: same height, same family */
+.ctl-btn,.lang-btn,.nav-cta{
+  height:30px;
+  padding:0 0.75rem;
+  border-radius:4px;
+  font-family:var(--mono);
+  font-size:0.72rem;
+  font-weight:500;
+  letter-spacing:0;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  cursor:pointer;
+  background:transparent;
+  color:var(--texto-sec);
+  border:1px solid var(--border);
+  transition:background 0.15s, color 0.15s, border-color 0.15s;
+}
+.ctl-btn:hover{color:var(--texto);border-color:var(--texto-muted)}
 
-/* THEME DROPDOWN */
 .theme-select{position:relative}
-.theme-select-btn{display:flex;align-items:center;gap:0.35rem;background:var(--card);border:1px solid var(--card-border);border-radius:3px;padding:0.3rem 0.6rem;cursor:pointer;color:var(--texto-muted);font-family:var(--mono);font-size:0.75rem;transition:all 0.15s;line-height:1}
-.theme-select-btn:hover{color:var(--texto);border-color:var(--verde)}
-.theme-select-arrow{font-size:0.5rem;opacity:0.5}
-.theme-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--card);border:1px solid var(--card-border);border-radius:4px;overflow:hidden;display:none;z-index:200;min-width:108px;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.theme-select-caret{opacity:0.5;font-size:0.6rem;margin-left:-0.1rem}
+.theme-select-icon{font-size:0.72rem;line-height:1}
+.theme-select-label{color:inherit}
+.theme-menu{
+  position:absolute;
+  top:calc(100% + 6px);
+  right:0;
+  background:var(--bg-elev);
+  border:1px solid var(--border);
+  border-radius:5px;
+  display:none;
+  min-width:140px;
+  z-index:100;
+  overflow:hidden;
+  padding:0.25rem;
+  box-shadow:0 6px 20px rgba(0,0,0,0.25);
+}
 .theme-menu.open{display:block}
-.theme-menu-item{display:flex;align-items:center;gap:0.5rem;width:100%;padding:0.48rem 0.75rem;background:transparent;border:none;cursor:pointer;font-family:var(--mono);font-size:0.68rem;color:var(--texto-sec);text-align:left;transition:background 0.1s,color 0.1s}
-.theme-menu-item:hover{background:var(--bg3);color:var(--texto)}
-.theme-menu-item.active{color:var(--verde)}
-.theme-menu-icon{font-size:0.82rem}
+.theme-menu button{
+  display:flex;
+  align-items:center;
+  gap:0.55rem;
+  width:100%;
+  padding:0.45rem 0.6rem;
+  background:transparent;
+  border:0;
+  border-radius:3px;
+  text-align:left;
+  cursor:pointer;
+  font-family:var(--mono);
+  font-size:0.72rem;
+  color:var(--texto-sec);
+  transition:background 0.1s, color 0.1s;
+}
+.theme-menu button:hover{background:var(--bg-sunk);color:var(--texto)}
+.theme-menu button.active{color:var(--verde)}
+.theme-menu button .tm-icon{width:1rem;display:inline-block;opacity:0.7}
 
-.nav-cta{font-family:var(--mono);font-size:0.74rem;font-weight:500;border:1px solid var(--amarelo);color:var(--amarelo);background:transparent;padding:0.4rem 1rem;border-radius:3px;cursor:pointer;letter-spacing:0.04em;transition:all 0.15s}
-.nav-cta:hover{background:var(--amarelo);color:#020201}
+.lang-toggle{
+  display:flex;
+  border:1px solid var(--border);
+  border-radius:4px;
+  overflow:hidden;
+  height:30px;
+  padding:0;
+}
+.lang-btn{
+  height:100%;
+  border:0;
+  border-radius:0;
+  padding:0 0.6rem;
+  color:var(--texto-muted);
+  gap:0;
+  background:transparent;
+  font-weight:500;
+  font-size:0.68rem;
+  letter-spacing:0.03em;
+}
+.lang-btn + .lang-btn{border-left:1px solid var(--border)}
+.lang-btn:hover{color:var(--texto)}
+.lang-btn.active{background:var(--texto);color:var(--bg)}
 
-.hero{min-height:100vh;padding:100px 5% 80px;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.68rem;color:var(--amarelo);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:1.6rem}
-.hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--amarelo);animation:blink 1.8s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,6.5vw,5rem);line-height:1.0;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem}
-.hl-verde{color:var(--verde)}.hl-amarelo{color:var(--amarelo)}
-.hero-sub{color:var(--texto-sec);font-size:1rem;max-width:460px;line-height:1.85;margin-bottom:0.9rem}
-.hero-jornada{font-family:var(--mono);font-size:0.75rem;color:var(--texto-muted);border-left:2px solid var(--verde);padding-left:0.75rem;margin-bottom:2rem;line-height:1.6}
-.hero-actions{display:flex;gap:0.85rem;flex-wrap:wrap}
-.btn-verde{background:var(--amarelo);color:#020201;font-family:var(--mono);font-weight:600;font-size:0.76rem;padding:0.7rem 1.35rem;border-radius:3px;text-decoration:none;letter-spacing:0.04em;border:none;cursor:pointer;transition:opacity 0.15s}
-.btn-verde:hover{opacity:0.85}
-.btn-ghost{color:var(--texto-sec);font-family:var(--mono);font-size:0.76rem;padding:0.7rem 1.35rem;border-radius:3px;text-decoration:none;border:1px solid var(--card-border);letter-spacing:0.04em;transition:all 0.15s}
-.btn-ghost:hover{border-color:var(--verde);color:var(--verde)}
-.hero-trust{display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;margin-top:1.25rem}
-.hero-trust-label{font-family:var(--mono);font-size:0.57rem;color:var(--texto-muted);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap}
-.hero-trust-badge{font-family:var(--mono);font-size:0.6rem;color:var(--texto-sec);background:var(--card);border:1px solid var(--card-border);border-radius:2px;padding:0.18rem 0.48rem;letter-spacing:0.04em}
+.nav-cta{
+  background:var(--verde);
+  color:var(--verde-text);
+  border-color:var(--verde);
+  font-weight:600;
+  padding:0 0.95rem;
+}
+.nav-cta::before{content:"$";opacity:0.55;margin-right:0.1rem;font-weight:500}
+.nav-cta:hover{background:transparent;color:var(--verde);border-color:var(--verde)}
+.nav-cta:hover::before{opacity:1}
 
-.hero-right{display:flex;flex-direction:column;gap:0}
-.dashboard{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);background-image:radial-gradient(circle,var(--dot-grid-color) 1px,transparent 1px);background-size:18px 18px}
-.dashboard-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:var(--overlay-dark);gap:0.75rem}
+/* ─── LAYOUT PRIMITIVES ──────────────────────────────────────────────── */
+section{padding:5rem 1.5rem}
+.wrap{max-width:var(--maxw);margin:0 auto}
+.prose{max-width:var(--prose)}
+
+.sec-label{
+  font-family:var(--mono);
+  font-size:0.76rem;
+  color:var(--texto-muted);
+  margin-bottom:0.75rem;
+  letter-spacing:0;
+}
+
+h1,h2,h3,h4{
+  font-family:var(--display);
+  color:var(--texto);
+  letter-spacing:-0.015em;
+  text-wrap:balance;
+}
+h2{
+  font-size:clamp(1.5rem, 2.2vw, 2rem);
+  font-weight:500;
+  line-height:1.15;
+  margin-bottom:1rem;
+  max-width:34ch;
+}
+h3{font-family:var(--display);font-size:1rem;font-weight:500;line-height:1.3}
+.sub{color:var(--texto-sec);font-size:1.02rem;line-height:1.65;max-width:var(--prose);margin-bottom:1rem}
+
+/* ─── HERO (bold moment: text left, technical panel right) ───────────── */
+.hero{
+  padding:3rem 1.5rem 2.75rem;
+  border-bottom:1px solid var(--sep);
+}
+.hero-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+  gap:3rem;
+  align-items:start;
+}
+.hero-text{min-width:0;display:flex;flex-direction:column}
+.hero-kicker{
+  font-family:var(--mono);
+  font-size:0.72rem;
+  color:var(--texto-muted);
+  margin-bottom:1.2rem;
+  letter-spacing:0;
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+}
+.hero-kicker::before{
+  content:"[";
+  color:var(--texto-muted);
+  opacity:0.5;
+}
+.hero-kicker::after{
+  content:"]";
+  color:var(--texto-muted);
+  opacity:0.5;
+}
+.hero h1{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(2.1rem, 3.9vw, 3.2rem);
+  line-height:1.02;
+  letter-spacing:-0.02em;
+  margin-bottom:1.1rem;
+  max-width:18ch;
+  color:var(--texto);
+}
+.hero h1 em{font-style:normal;color:var(--verde);font-weight:700}
+.hero-lede{
+  font-size:clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height:1.5;
+  color:var(--texto);
+  margin-bottom:0.7rem;
+  font-weight:500;
+}
+.hero-sublede{
+  color:var(--texto-sec);
+  font-size:0.92rem;
+  line-height:1.55;
+  margin-bottom:1.4rem;
+  max-width:32rem;
+}
+.hero-cta{display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem}
+
+/* ─── HERO DASHBOARD ─────────────────────────────────────────────────── */
+.hero-right{display:flex;flex-direction:column;gap:0;min-width:0}
+.dashboard{
+  border:1px solid var(--card-border);
+  border-radius:8px;
+  overflow:hidden;
+  background:var(--bg2);
+  background-image:radial-gradient(circle,var(--dot-grid-color) 1px,transparent 1px);
+  background-size:18px 18px;
+  position:sticky;
+  top:4rem;
+}
+.dashboard-header{
+  display:flex;align-items:center;
+  padding:0.55rem 1rem;
+  border-bottom:1px solid var(--card-border);
+  background:var(--overlay-dark);
+  gap:0.75rem;
+}
 .dash-live{display:flex;align-items:center;gap:0.35rem;font-family:var(--mono);font-size:0.58rem;color:var(--verde);letter-spacing:0.07em}
 .dash-live-dot{width:5px;height:5px;border-radius:50%;background:var(--verde);animation:blink 1.8s infinite;flex-shrink:0}
 .dash-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.07em;flex:1}
 .dash-dots{display:flex;gap:0.38rem;align-items:center;margin-left:auto}
-.dash-dot{width:9px;height:9px;border-radius:50%;cursor:pointer;transition:transform 0.15s,filter 0.15s;position:relative}
+.dash-dot{width:9px;height:9px;border-radius:50%;cursor:default;position:relative}
 .dash-dot.r{background:#FF5F57}.dash-dot.y{background:#FEBC2E}.dash-dot.g{background:#28C840}
-.dash-dot:hover{transform:scale(1.25);filter:brightness(1.3)}
-.dash-dot.r:hover{box-shadow:0 0 6px rgba(255,95,87,0.7)}
-.dash-dot.y:hover{box-shadow:0 0 6px rgba(254,188,46,0.7)}
-.dash-dot.g:hover{box-shadow:0 0 6px rgba(40,200,64,0.7)}
-.dashboard-body{padding:1rem 1rem 1.2rem;display:flex;flex-direction:column;gap:0.65rem}
-.h-sec-label{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;padding:0.35rem 0;border-bottom:1px solid var(--sep)}
-.h-cards-row{display:grid;grid-template-columns:1fr 1fr;gap:0.55rem}
-.h-card{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.85rem 1rem;box-shadow:var(--card-shadow)}
-.h-card-label{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem}
-.h-card-val{font-family:var(--mono);font-weight:600;font-size:1.4rem;line-height:1}
-.h-card-val.v{color:var(--verde)}.h-card-val.a{color:var(--amarelo)}.h-card-val.sm{font-size:0.85rem;color:var(--texto-sec)}
-.h-card-bar{height:2px;background:var(--sep);border-radius:2px;margin-top:0.7rem;overflow:hidden}
+.dashboard-body{padding:0.8rem 0.9rem 0.95rem;display:flex;flex-direction:column;gap:0.5rem}
+.h-sec-label{font-family:var(--mono);font-size:0.56rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;padding:0.25rem 0;border-bottom:1px solid var(--sep)}
+.h-cards-row{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
+.h-card{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.65rem 0.8rem}
+.h-card-label{font-family:var(--mono);font-size:0.56rem;color:var(--texto-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem}
+.h-card-val{font-family:var(--mono);font-weight:600;font-size:1.2rem;line-height:1;font-variant-numeric:tabular-nums}
+.h-card-val.v{color:var(--verde)}.h-card-val.a{color:var(--amarelo)}
+.h-card-bar{height:2px;background:var(--sep);border-radius:2px;margin-top:0.55rem;overflow:hidden}
 .h-bar-fill{height:100%;border-radius:2px;background:var(--verde)}.h-bar-fill.a{background:var(--amarelo)}
-.h-card-wide{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.85rem 1rem;box-shadow:var(--card-shadow)}
-.h-card-sub{font-family:var(--mono);font-size:0.6rem;color:var(--texto-muted);margin-top:0.22rem}
+.h-card-wide{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.65rem 0.8rem}
+.h-card-sub{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);margin-top:0.2rem}
 .cloud-tags{display:flex;gap:0.38rem;flex-wrap:wrap;margin-top:0.5rem}
 .ctag{font-family:var(--mono);font-size:0.62rem;padding:0.2rem 0.52rem;border-radius:2px;border:1px solid var(--card-border);color:var(--texto-sec);background:var(--bg)}
 .ctag.aws{border-color:rgba(255,153,0,0.25);color:#FF9900}
 .ctag.azure{border-color:rgba(0,120,212,0.25);color:#0078D4}
-.ctag.oci{border-color:rgba(255,234,104,0.25);color:var(--amarelo)}
 .ctag.gcp{border-color:rgba(66,133,244,0.25);color:#4285F4}
+.ctag.oci{border-color:rgba(217,164,65,0.3);color:var(--amarelo)}
 .ctag.k8s{border-color:rgba(50,108,229,0.2);color:#326CE5}
 .ctag.tf{border-color:rgba(123,66,246,0.25);color:#7B42F6}
-
-.hero-grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px;opacity:0.12;mix-blend-mode:soft-light}
-[data-theme="light"] .hero-grain{opacity:0.06;mix-blend-mode:multiply}
-.dot-grid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(242,238,230,0.055) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;mask-image:radial-gradient(ellipse at 40% 50%,black 40%,transparent 80%)}
-.hero-glow{position:absolute;pointer-events:none;top:0;right:0;width:50%;height:100%;background:radial-gradient(ellipse at 80% 40%,rgba(0,255,106,0.03) 0%,transparent 55%)}
-.hero-glow-text{position:absolute;pointer-events:none;top:0;left:0;width:60%;height:100%;background:radial-gradient(ellipse at 25% 45%,rgba(255,234,104,0.07) 0%,transparent 60%)}
-.graph-texture{position:absolute;bottom:0;left:0;width:100%;height:220px;pointer-events:none;z-index:0;opacity:1}
-.h1-cursor{color:var(--verde);animation:blink 1.2s infinite;font-size:0.65em;margin-left:0.15em;vertical-align:middle;font-weight:400}
-
-.h-chart-wrap{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.75rem 1rem;box-shadow:var(--card-shadow)}
+.h-chart-wrap{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.55rem 0.8rem}
 .h-chart-caption{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem}
 .h-chart-val{font-family:var(--mono);font-size:0.72rem;font-weight:600;color:var(--verde)}
 .h-chart-sub{font-family:var(--mono);font-size:0.55rem;color:var(--texto-muted)}
-
-.cncf-bg{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
-.cncf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:1.75rem;background:var(--card-border)}
-.cncf-group{background:var(--card);padding:1.25rem 1.2rem;display:flex;flex-direction:column;gap:0.75rem}
-.cncf-group-label{font-family:var(--mono);font-size:0.6rem;color:var(--texto-muted);letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid var(--sep);padding-bottom:0.5rem}
-.cncf-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
-.cncf-tag{font-family:var(--mono);font-size:0.6rem;padding:0.22rem 0.55rem;border-radius:3px;background:var(--bg);color:var(--texto-sec);border:1px solid var(--sep);transition:all 0.15s;cursor:default}
-.cncf-tag:hover{border-color:var(--verde);color:var(--verde)}
-.cncf-tag.k8s{border-color:rgba(50,108,229,0.25);color:#326CE5}
-.cncf-tag.prom{border-color:rgba(232,73,18,0.25);color:#E84812}
-.cncf-tag.tf{border-color:rgba(123,66,246,0.25);color:#7B42F6}
-.cncf-tag.argo{border-color:rgba(242,100,48,0.25);color:#F26430}
-.cncf-tag.graf{border-color:rgba(240,111,33,0.25);color:#F06F21}
-.cncf-tag.otel{border-color:rgba(0,112,243,0.25);color:#0070F3}
-
 .h-monitor{display:flex;flex-direction:column;gap:0.22rem;background:var(--bg);border:1px solid var(--card-border);border-radius:4px;padding:0.6rem 0.75rem;overflow:hidden}
 .monitor-line{display:flex;align-items:center;gap:0.45rem;font-family:var(--mono);font-size:0.56rem;color:var(--texto-muted);min-width:0}
 .monitor-line.new{animation:monitorIn 0.35s ease}
@@ -221,356 +452,681 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:var(--nav-bg);b
 .monitor-time{color:var(--texto-muted);opacity:0.5;flex-shrink:0}
 .monitor-cloud{flex-shrink:0;padding:0.07rem 0.32rem;border-radius:2px;font-size:0.53rem;font-weight:600}
 .monitor-cloud.aws{color:#FF9900;background:rgba(255,153,0,0.08)}
-.monitor-cloud.oci{color:var(--amarelo);background:rgba(255,234,104,0.08)}
+.monitor-cloud.oci{color:var(--amarelo);background:rgba(217,164,65,0.08)}
 .monitor-cloud.gcp{color:#4285F4;background:rgba(66,133,244,0.08)}
 .monitor-cloud.azure{color:#0078D4;background:rgba(0,120,212,0.08)}
 .monitor-msg{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .monitor-ok{color:var(--verde);flex-shrink:0}
 .monitor-info{color:var(--amarelo);flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+@media (prefers-reduced-motion: reduce){
+  .dash-live-dot{animation:none}
+  .monitor-line.new{animation:none}
+}
 
-section{padding:5rem 5%}
-.sec-inner{max-width:1200px;margin:0 auto}
-.sec-divider{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
-.sec-divider-label{font-family:var(--display);font-size:0.9rem;color:var(--amarelo);letter-spacing:0.2em;text-transform:uppercase;white-space:nowrap}
-.sec-divider-line{flex:1;height:1px;background:var(--sep)}
-.sec-title{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.5vw,3rem);letter-spacing:0.06em;line-height:1.1;color:var(--texto);text-transform:uppercase}
-.sec-title .hl{color:var(--verde);text-shadow:0 0 40px rgba(0,255,106,0.25)}
-[data-theme="light"] .sec-title .hl{text-shadow:0 2px 8px rgba(0,122,56,0.15)}
-[data-theme="light"] .nav-links a:hover{text-shadow:0 0 12px rgba(0,122,56,0.2)}
-[data-theme="light"] .metrics-strip{background:#C4BCAF}
-[data-theme="light"] .hero{background:#D8D2C8}
-[data-theme="light"] .btn-verde{background:var(--verde);color:#FFFFFF}
-[data-theme="light"] .nav-cta{border-color:var(--verde);color:var(--verde)}
-[data-theme="light"] .nav-cta:hover{background:var(--verde);color:#FFFFFF}
-.sec-sub{color:var(--texto-sec);font-size:0.95rem;line-height:1.8}
-
-.jornada{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:4rem 5%}
-.jornada-inner{max-width:1200px;margin:0 auto}
-.jornada-label{font-family:var(--mono);font-size:0.72rem;color:var(--verde);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2.5rem;font-weight:600}
-.jornada-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0}
-.jornada-step{padding:0 1.5rem;position:relative;display:flex;flex-direction:column;gap:0.5rem}
-.jornada-step:first-child{padding-left:0}
-.jornada-step-num{font-family:var(--mono);font-size:0.65rem;line-height:1;color:var(--amarelo);letter-spacing:0.12em}
-.jornada-step-title{font-family:var(--mono);font-size:0.95rem;font-weight:600;color:var(--texto)}
-.jornada-step-desc{font-size:0.8rem;color:var(--texto-muted);line-height:1.6}
-
-.logos-strip{background:var(--bg);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:3rem 0}
-.logos-strip-label{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.13em;text-transform:uppercase;margin-bottom:2rem}
+/* ─── LOGOS MARQUEE ──────────────────────────────────────────────────── */
+.logos-strip{
+  background:var(--bg);
+  border-top:1px solid var(--sep);
+  border-bottom:1px solid var(--sep);
+  padding:3rem 0;
+}
+.logos-strip-label{
+  font-family:var(--mono);
+  font-size:0.78rem;
+  color:var(--texto-muted);
+  margin:0 auto 2rem;
+  padding:0 1.5rem;
+  max-width:var(--maxw);
+  letter-spacing:0;
+}
 .logos-marquee{overflow:hidden;position:relative}
-.logos-marquee::before,.logos-marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.logos-marquee::before,
+.logos-marquee::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:120px;
+  z-index:2;
+  pointer-events:none;
+}
 .logos-marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
 .logos-marquee::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
-.logos-track{display:flex;align-items:center;width:max-content;animation:marquee 55s linear infinite;padding:0.5rem 0}
+.logos-track{
+  display:flex;
+  align-items:center;
+  width:max-content;
+  animation:marquee 55s linear infinite;
+  padding:0.5rem 0;
+}
+.logos-marquee:hover .logos-track{animation-play-state:paused}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.logo-item{display:flex;flex-direction:column;align-items:center;gap:0.6rem;flex-shrink:0;cursor:default;padding-right:10rem}
-.logo-img{width:56px;height:56px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.45;transition:opacity 0.2s}
+@media (prefers-reduced-motion: reduce){.logos-track{animation:none}}
+.logo-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.6rem;
+  flex-shrink:0;
+  padding-right:7rem;
+}
+.logo-img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:0.4;
+  transition:opacity 0.2s;
+}
 .logo-item:hover .logo-img{opacity:1}
-.logo-name{font-family:var(--mono);font-size:0.6rem;color:var(--texto-muted);letter-spacing:0.07em;opacity:0.6}
-[data-theme="light"] .logo-img{filter:brightness(0);opacity:0.4}
-[data-theme="light"] .logo-item:hover .logo-img{opacity:0.75}
+.logo-name{
+  font-family:var(--mono);
+  font-size:0.68rem;
+  color:var(--texto-muted);
+  opacity:0.7;
+}
+[data-theme="light"] .logo-img{filter:brightness(0);opacity:0.5}
+[data-theme="light"] .logo-item:hover .logo-img{opacity:0.9}
+.btn-primary{
+  background:var(--amarelo);
+  color:var(--bg-sunk);
+  padding:0.72rem 1.3rem;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.9rem;
+  border:0;
+  cursor:pointer;
+  transition:opacity 0.15s;
+  font-family:var(--sans);
+}
+.btn-primary:hover{opacity:0.9}
+.btn-ghost{
+  background:transparent;
+  color:var(--texto);
+  padding:0.72rem 1.3rem;
+  border-radius:4px;
+  border:1px solid var(--border);
+  text-decoration:none;
+  font-weight:500;
+  font-size:0.9rem;
+  cursor:pointer;
+  transition:border-color 0.15s, color 0.15s;
+  font-family:var(--sans);
+}
+.btn-ghost:hover{border-color:var(--texto-muted);color:var(--texto)}
 
-.servicos-bg{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,var(--line-grid-color) 39px,var(--line-grid-color) 40px)}
-.servicos-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
-.servicos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden}
-.sc{background:var(--card);padding:1.6rem;transition:background 0.2s,box-shadow 0.2s;cursor:default;position:relative;box-shadow:var(--card-shadow)}
-.sc:hover{background:var(--bg3);box-shadow:var(--card-shadow-hover);border-top-color:var(--amarelo)}
-.sc:hover .sc-top-bar{width:100%}
-.sc-top-bar{position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--amarelo) 70%,rgba(255,234,104,0.3) 100%);transition:width 0.5s ease-out}
-.sc-num{font-family:var(--mono);font-size:0.6rem;color:var(--texto-muted);letter-spacing:0.1em;margin-bottom:0.9rem}
-.sc-title{font-family:var(--mono);font-weight:600;font-size:0.88rem;color:var(--texto);margin-bottom:0.55rem}
-.sc-desc{font-size:0.82rem;color:var(--texto-sec);line-height:1.7;margin-bottom:1rem}
-.sc-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
-.sc-tag{font-family:var(--mono);font-size:0.58rem;padding:0.16rem 0.42rem;border-radius:2px;background:var(--bg);color:var(--texto-muted);border:1px solid var(--sep)}
-.sc-badge{display:inline-block;font-family:var(--mono);font-size:0.58rem;color:var(--verde);background:var(--verde-muted);border:1px solid rgba(0,255,106,0.15);border-radius:2px;padding:0.15rem 0.4rem;margin-bottom:0.9rem}
+/* ─── SERVICES (vertical editorial list with service code anchor) ────── */
+.services-list{
+  list-style:none;
+  margin-top:2.25rem;
+  display:flex;
+  flex-direction:column;
+  counter-reset:none;
+}
+.services-list > li{
+  display:grid;
+  grid-template-columns:4.5rem 1fr;
+  gap:1.25rem;
+  padding:1.75rem 0;
+  border-bottom:1px solid var(--sep);
+  align-items:start;
+}
+.services-list > li:first-child{padding-top:0.75rem}
+.services-list > li:last-child{border-bottom:0}
+.svc-code{
+  font-family:var(--mono);
+  font-size:0.68rem;
+  font-weight:700;
+  color:var(--texto-muted);
+  letter-spacing:0.14em;
+  padding-top:0.42rem;
+  display:flex;
+  align-items:center;
+  gap:0.45rem;
+}
+.svc-code::before{
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--verde);
+  flex-shrink:0;
+  opacity:0.55;
+}
+.svc-body h3{margin-bottom:0.4rem;font-size:1.05rem;font-weight:600;letter-spacing:-0.015em}
+.svc-body p{color:var(--texto-sec);line-height:1.6;max-width:var(--prose);margin-bottom:0.75rem}
+.svc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.1rem}
+.svc-tags .ctag{font-size:0.6rem;padding:0.18rem 0.5rem}
+.svc-end{display:flex;justify-content:flex-start;margin-top:2.5rem}
+.svc-end-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  font-family:var(--mono);
+  font-size:0.78rem;
+  color:var(--verde);
+  text-decoration:none;
+  padding:0.65rem 1.1rem;
+  border:1px solid var(--verde);
+  border-radius:4px;
+  background:transparent;
+  transition:background 0.15s, color 0.15s;
+}
+.svc-end-cta::before{content:"$";opacity:0.6;font-weight:400}
+.svc-end-cta:hover{background:var(--verde);color:var(--verde-text)}
+.svc-end-cta:hover::before{opacity:1;color:var(--verde-text)}
 
-.produtos-bg{background:var(--bg);background-image:radial-gradient(circle,var(--dot-grid-color) 1px,transparent 1px);background-size:28px 28px;border-top:1px solid var(--sep)}
-.produtos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
-.produto-card{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);box-shadow:var(--card-shadow);transition:box-shadow 0.2s,border-color 0.2s,transform 0.2s}
-.produto-card:hover{border-color:rgba(0,255,106,0.4);box-shadow:var(--card-shadow-hover);transform:translateY(-2px)}
-.produto-terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:var(--bg3);gap:0.75rem}
-.produto-terminal-dots{display:flex;gap:6px}
-.produto-terminal-dots span{width:11px;height:11px;border-radius:50%;display:block}
-.produto-terminal-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.04em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.produto-body{padding:1.5rem 1.5rem 1.75rem}
-.produto-badge{display:inline-block;font-family:var(--mono);font-size:0.58rem;color:var(--verde);background:var(--verde-muted);border:1px solid rgba(0,255,106,0.15);border-radius:2px;padding:0.15rem 0.4rem;margin-bottom:0.9rem}
-.produto-name{font-family:var(--mono);font-weight:700;font-size:1.15rem;color:var(--texto);margin-bottom:0.55rem;letter-spacing:0.02em}
-.produto-desc{font-size:0.82rem;color:var(--texto-sec);line-height:1.75;margin-bottom:1.25rem}
-.produto-features{list-style:none;margin:0 0 1.25rem;display:flex;flex-direction:column;gap:0.45rem}
-.produto-features li{font-family:var(--mono);font-size:0.73rem;color:var(--texto-sec);display:flex;align-items:baseline;gap:0.55rem;line-height:1.5}
-.produto-features li::before{content:'$';color:var(--verde);font-weight:700;flex-shrink:0}
-.produto-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.4rem}
-.produto-tag{font-family:var(--mono);font-size:0.58rem;padding:0.16rem 0.42rem;border-radius:2px;background:var(--bg);color:var(--texto-muted);border:1px solid var(--sep)}
-.produto-link{font-family:var(--mono);font-size:0.72rem;color:var(--verde);text-decoration:none;border:1px solid rgba(0,255,106,0.35);padding:0.42rem 0.95rem;border-radius:3px;display:inline-block;transition:all 0.15s;letter-spacing:0.03em}
-.produto-link:hover{background:var(--verde);color:#020201;border-color:var(--verde)}
+/* ─── JOURNEY (vertical timeline) ────────────────────────────────────── */
+.journey-wrap{background:var(--bg-elev);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
+.journey{
+  list-style:none;
+  margin-top:2.5rem;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+.journey li{
+  display:grid;
+  grid-template-columns:4.5rem 1fr;
+  gap:1.25rem;
+  padding:1.75rem 0;
+  border-bottom:1px solid var(--sep);
+  align-items:start;
+}
+.journey li:first-child{padding-top:1rem}
+.journey li:last-child{border-bottom:0}
+.journey .step-num{
+  font-family:var(--mono);
+  font-size:0.72rem;
+  font-weight:700;
+  color:var(--texto-muted);
+  letter-spacing:0.14em;
+  padding-top:0.3rem;
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  font-variant-numeric:tabular-nums;
+}
+.journey .step-num::before{
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--verde);
+  opacity:0.55;
+  flex-shrink:0;
+}
+.step-body{display:flex;flex-direction:column;gap:0.5rem}
+.journey h3{font-size:1.05rem;font-weight:600;letter-spacing:-0.015em;margin:0}
+.journey p{color:var(--texto-sec);font-size:0.92rem;line-height:1.6;margin:0;max-width:var(--prose)}
+.step-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.4rem 1.1rem;
+  margin-top:0.35rem;
+  font-family:var(--mono);
+  font-size:0.68rem;
+  color:var(--texto-muted);
+  letter-spacing:0.03em;
+}
+.step-meta .label{color:var(--texto-muted);opacity:0.6;margin-right:0.3rem;text-transform:uppercase;letter-spacing:0.1em;font-size:0.62rem}
+.step-meta .val{color:var(--texto-sec);font-weight:500}
+.step-meta .val.verde{color:var(--verde)}
 
-.setores-bg{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
-.setores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:2rem}
-.setor-item{background:var(--card);padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:0.3rem;transition:background 0.15s}
-.setor-item:hover{background:var(--bg3)}
-.setor-icon{font-size:1rem;margin-bottom:0.2rem}
-.setor-name{font-family:var(--mono);font-size:0.75rem;font-weight:600;color:var(--texto)}
-.setor-desc{font-size:0.72rem;color:var(--texto-muted);line-height:1.4}
+/* ─── PARTNERS / STACK (provider cards + categorized stack) ──────────── */
+.partners-prose{color:var(--texto-sec);font-size:1rem;line-height:1.7;max-width:52rem;margin-bottom:2.25rem}
+.partners-prose strong{color:var(--texto);font-weight:600}
+.providers-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:0.75rem;
+  margin-bottom:3rem;
+}
+.provider-card{
+  background:var(--bg-elev);
+  border:1px solid var(--card-border);
+  border-radius:6px;
+  padding:1.1rem 1.1rem 1rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.55rem;
+}
+.provider-head{display:flex;align-items:center;gap:0.55rem}
+.provider-head img{
+  width:20px;height:20px;flex-shrink:0;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:0.85;
+}
+[data-theme="light"] .provider-head img{filter:brightness(0);opacity:0.7}
+.provider-head .name{font-family:var(--mono);font-size:0.82rem;font-weight:700;color:var(--texto);letter-spacing:0}
+.provider-note{font-family:var(--mono);font-size:0.68rem;color:var(--texto-muted);line-height:1.55}
+.provider-tag{
+  font-family:var(--mono);
+  font-size:0.56rem;
+  color:var(--texto-muted);
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:0.18rem 0.42rem;
+  border:1px solid var(--sep);
+  border-radius:3px;
+  display:inline-block;
+  width:fit-content;
+}
+.provider-card.aws .provider-tag{color:#FF9900;border-color:rgba(255,153,0,0.3)}
+.provider-card.azure .provider-tag{color:#0078D4;border-color:rgba(0,120,212,0.3)}
+.provider-card.gcp .provider-tag{color:#4285F4;border-color:rgba(66,133,244,0.3)}
+.provider-card.oci .provider-tag{color:var(--amarelo);border-color:rgba(217,164,65,0.3)}
 
-.parceiros-bg{background:var(--bg)}
-.parceiros-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:1.75rem;background:var(--card-border)}
-.parceiro-card{background:var(--card);padding:1.25rem 1.1rem;display:flex;flex-direction:column;gap:0.9rem;position:relative;overflow:hidden;transition:background 0.15s}
-.parceiro-card:hover{background:var(--bg3)}
-.parceiro-top-bar{position:absolute;top:0;left:0;right:0;height:2px;transition:height 0.25s ease,box-shadow 0.25s ease}
-.parceiro-card.aws .parceiro-top-bar{background:#FF9900}
-.parceiro-card.azure .parceiro-top-bar{background:#0078D4}
-.parceiro-card.gcp .parceiro-top-bar{background:#4285F4}
-.parceiro-card.oci .parceiro-top-bar{background:var(--amarelo)}
-.parceiro-card.dd .parceiro-top-bar{background:#7B42F6}
-.parceiro-card:hover .parceiro-top-bar{height:3px}
-.parceiro-card.aws:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(255,153,0,0.45)}
-.parceiro-card.azure:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(0,120,212,0.45)}
-.parceiro-card.gcp:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(66,133,244,0.45)}
-.parceiro-card.oci:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(255,234,104,0.45)}
-.parceiro-card.dd:hover .parceiro-top-bar{box-shadow:0 0 14px 3px rgba(123,66,246,0.45)}
-.parceiro-header{display:flex;flex-direction:column;gap:0.2rem;margin-top:0.3rem}
-.parceiro-name{font-family:var(--mono);font-size:0.78rem;font-weight:600}
-.parceiro-card.aws .parceiro-name{color:#FF9900}
-.parceiro-card.azure .parceiro-name{color:#0078D4}
-.parceiro-card.gcp .parceiro-name{color:#4285F4}
-.parceiro-card.oci .parceiro-name{color:var(--amarelo)}
-.parceiro-card.dd .parceiro-name{color:#7B42F6}
-.parceiro-tier{font-family:var(--mono);font-size:0.55rem;color:var(--texto-muted);letter-spacing:0.07em;text-transform:uppercase}
-.parceiro-services{display:flex;flex-wrap:wrap;gap:0.28rem;padding-top:0.8rem;border-top:1px solid var(--sep)}
-.ps-tag{font-family:var(--mono);font-size:0.57rem;padding:0.16rem 0.44rem;border-radius:2px;background:var(--bg);color:var(--texto-muted);border:1px solid var(--sep)}
+.stack-groups{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:1.25rem 2rem;
+  margin-top:0.5rem;
+  padding-top:2rem;
+  border-top:1px solid var(--sep);
+}
+.stack-group-label{
+  font-family:var(--mono);
+  font-size:0.62rem;
+  color:var(--texto-muted);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  margin-bottom:0.7rem;
+  opacity:0.75;
+}
+.stack-group-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+.stack-group-tags .ctag{font-size:0.62rem;padding:0.18rem 0.5rem}
 
-.sobre-bg{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
-.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.sobre-body p{color:var(--texto-sec);font-size:0.88rem;line-height:1.8;margin-bottom:1rem}
-.cert-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:0.45rem}
-.cert-item{display:flex;align-items:center;gap:0.65rem;font-family:var(--mono);font-size:0.72rem;color:var(--texto-sec)}
-.cert-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--verde);flex-shrink:0}
-.sobre-side{display:flex;flex-direction:column;gap:0.6rem}
-.sobre-quote{background:var(--card);border:1px solid var(--card-border);border-left:2px solid var(--verde);border-radius:0 5px 5px 0;padding:1.25rem 1.4rem;box-shadow:var(--card-shadow)}
-.sobre-quote p{font-family:var(--mono);font-size:0.84rem;color:var(--texto);line-height:1.6;font-weight:500}
-.sobre-quote span{display:block;font-size:0.68rem;color:var(--texto-muted);margin-top:0.5rem;letter-spacing:0.04em}
-.valores-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.55rem}
-.valor-card{background:var(--card);border:1px solid var(--card-border);border-radius:5px;padding:0.9rem 1rem;box-shadow:var(--card-shadow)}
-.valor-bar{height:1px;background:var(--verde);width:18px;margin-bottom:0.5rem;opacity:0.5}
-.valor-title{font-family:var(--mono);font-size:0.74rem;font-weight:600;color:var(--texto);margin-bottom:0.18rem}
-.valor-desc{font-size:0.74rem;color:var(--texto-muted);line-height:1.5}
+@media (max-width: 900px){
+  .providers-grid{grid-template-columns:repeat(2,1fr)}
+  .journey li{grid-template-columns:1fr;gap:0.4rem}
+  .journey .step-num{padding-top:0;font-size:0.65rem}
+}
 
-.contato-bg{background:var(--bg);background-image:repeating-linear-gradient(135deg,transparent,transparent 24px,var(--line-grid-color) 24px,var(--line-grid-color) 25px)}
-.contato-grid{display:grid;grid-template-columns:3fr 2fr;gap:5rem;align-items:start}
-.form-terminal{border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2);background-image:radial-gradient(circle,var(--dot-grid-color) 1px,transparent 1px);background-size:18px 18px;margin-bottom:0}
-.form-terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:var(--overlay-dark);gap:0.75rem}
-.form-terminal-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.04em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.form-terminal-body{padding:1.5rem}
-.form-field{margin-bottom:0.85rem}
-.form-field label{display:block;font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:0.38rem}
-.form-field input,.form-field textarea,.form-field select{width:100%;background:var(--card);border:1px solid var(--card-border);border-radius:3px;padding:0.75rem 1rem;color:var(--texto);font-family:var(--mono);font-size:0.82rem;outline:none;transition:border-color 0.15s;-webkit-appearance:none}
-.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--verde)}
-.form-field textarea{min-height:150px;resize:vertical}
-.form-field select option{background:var(--card)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem}
-.btn-form{width:100%;background:var(--verde);color:var(--verde-text);font-family:var(--mono);font-weight:600;font-size:0.78rem;padding:0.78rem;border-radius:3px;border:none;cursor:pointer;letter-spacing:0.04em;transition:opacity 0.15s;margin-top:0.2rem}
-.btn-form:hover{opacity:0.85}
-.form-msg{display:none;margin-top:1.5rem;font-family:var(--mono);font-size:0.75rem;padding:0.85rem 1rem;border-radius:3px;border-left:3px solid;line-height:1.5}
-.form-msg.ok{background:rgba(0,255,106,0.06);color:var(--verde);border-color:var(--verde)}
-.form-msg.err{background:rgba(255,80,80,0.06);color:#FF5050;border-color:#FF5050}
-.contato-side-title{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--texto);margin-bottom:0.5rem;line-height:1.4;text-transform:uppercase;letter-spacing:0.04em}
-.contato-side-sub{color:var(--texto-sec);font-size:0.82rem;line-height:1.7;margin-bottom:1.6rem}
-.info-row{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.95rem;padding-bottom:0.95rem;border-bottom:1px solid var(--sep)}
-.info-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.info-icon{font-family:var(--mono);font-size:0.58rem;color:var(--verde);background:var(--verde-muted);border:1px solid rgba(0,255,106,0.14);border-radius:2px;padding:0.26rem 0.42rem;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0}
-.info-text strong{display:block;font-family:var(--mono);font-size:0.74rem;font-weight:600;color:var(--texto);margin-bottom:0.1rem}
-.info-text span{font-size:0.76rem;color:var(--texto-muted)}
+/* ─── ABOUT ──────────────────────────────────────────────────────────── */
+.about-wrap{background:var(--bg-elev);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
+.about-body > p{color:var(--texto-sec);line-height:1.75;margin-bottom:1rem;max-width:var(--prose)}
+.about-body > p:first-of-type{color:var(--texto);font-size:1.08rem}
+blockquote{
+  border-left:3px solid var(--amarelo);
+  padding:0.25rem 0 0.25rem 1.25rem;
+  margin:2rem 0;
+  font-size:1.1rem;
+  line-height:1.5;
+  color:var(--texto);
+  max-width:36rem;
+  font-weight:500;
+}
+.certs{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:0.4rem}
+.certs li{
+  font-family:var(--mono);
+  font-size:0.82rem;
+  color:var(--texto-sec);
+  padding-left:1.1rem;
+  position:relative;
+}
+.certs li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0.55rem;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--verde);
+}
 
-footer{background:var(--bg2);border-top:1px solid var(--sep)}
-.footer-top{padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-bottom:1px solid var(--sep)}
-.footer-logo{font-family:var(--mono);font-weight:600;font-size:0.95rem;color:var(--texto)}
+/* ─── FAQ (native details) ───────────────────────────────────────────── */
+.faq{margin-top:1.5rem;display:flex;flex-direction:column}
+.faq details{border-bottom:1px solid var(--sep)}
+.faq details:last-child{border-bottom:0}
+.faq summary{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:1rem;
+  padding:1.1rem 0;
+  cursor:pointer;
+  list-style:none;
+  font-weight:500;
+  color:var(--texto);
+  font-size:1rem;
+  line-height:1.4;
+  transition:color 0.15s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";
+  font-family:var(--mono);
+  color:var(--texto-muted);
+  font-size:1.3rem;
+  line-height:1;
+  flex-shrink:0;
+  transition:transform 0.2s;
+  margin-top:0.1em;
+}
+.faq details[open] summary{color:var(--verde)}
+.faq details[open] summary::after{content:"−";color:var(--verde)}
+.faq .faq-a{
+  padding:0 0 1.3rem;
+  color:var(--texto-sec);
+  line-height:1.7;
+  max-width:var(--prose);
+  font-size:0.95rem;
+}
+.faq summary:hover{color:var(--verde)}
+
+/* ─── PRODUCTS ───────────────────────────────────────────────────────── */
+.products-wrap{background:var(--bg-elev);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
+.products{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  margin-top:2rem;
+}
+.product{padding:1.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg);transition:border-color 0.15s}
+.product:hover{border-color:var(--texto-muted)}
+.product h3{
+  font-family:var(--mono);
+  font-size:1rem;
+  letter-spacing:0;
+  margin-bottom:0.3rem;
+  color:var(--texto);
+}
+.product-sub{font-size:0.78rem;color:var(--texto-muted);margin-bottom:1rem;font-family:var(--mono)}
+.product-desc{color:var(--texto-sec);line-height:1.6;margin-bottom:1.1rem;font-size:0.95rem}
+.product-features{list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-bottom:1.25rem}
+.product-features li{font-family:var(--mono);font-size:0.78rem;color:var(--texto-sec);line-height:1.5;padding-left:1rem;position:relative}
+.product-features li::before{content:"—";position:absolute;left:0;color:var(--texto-muted)}
+.product-stack{font-family:var(--mono);font-size:0.74rem;color:var(--texto-muted);margin-bottom:1rem}
+.product-link{
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  color:var(--verde);
+  font-family:var(--mono);
+  font-size:0.82rem;
+  text-decoration:none;
+  border-bottom:1px solid rgba(75,174,120,0.3);
+  padding-bottom:1px;
+}
+.product-link:hover{border-color:var(--verde)}
+.product-link::after{content:"↗";font-size:0.9em}
+
+/* ─── CONTACT ────────────────────────────────────────────────────────── */
+.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;margin-top:2rem;align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.form-field{display:flex;flex-direction:column;gap:0.35rem}
+.form-field label{
+  font-family:var(--mono);
+  font-size:0.76rem;
+  color:var(--texto-muted);
+}
+.form-field input,
+.form-field textarea,
+.form-field select{
+  width:100%;
+  background:var(--bg-elev);
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:0.72rem 0.85rem;
+  color:var(--texto);
+  font-family:var(--sans);
+  font-size:0.95rem;
+  outline:none;
+  transition:border-color 0.15s;
+  -webkit-appearance:none;
+}
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus{border-color:var(--verde)}
+.form-field textarea{min-height:140px;resize:vertical;font-family:var(--sans)}
+.form-field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--texto-muted) 50%),linear-gradient(135deg,var(--texto-muted) 50%,transparent 50%);background-position:calc(100% - 15px) center,calc(100% - 10px) center;background-size:5px 5px;background-repeat:no-repeat;padding-right:2rem}
+.btn-submit{
+  background:var(--verde);
+  color:var(--verde-text);
+  padding:0.85rem;
+  border-radius:4px;
+  border:0;
+  cursor:pointer;
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:0.95rem;
+  margin-top:0.5rem;
+  transition:opacity 0.15s;
+}
+.btn-submit:hover{opacity:0.9}
+.btn-submit:disabled{opacity:0.6;cursor:wait}
+.form-msg{
+  display:none;
+  padding:0.75rem 1rem;
+  border-radius:4px;
+  border-left:3px solid;
+  font-family:var(--mono);
+  font-size:0.86rem;
+  line-height:1.5;
+  margin-top:0.5rem;
+}
+.form-msg.ok{background:rgba(75,174,120,0.08);color:var(--verde);border-color:var(--verde);display:block}
+.form-msg.err{background:rgba(192,76,76,0.08);color:#C04B4C;border-color:#C04B4C;display:block}
+
+.contact-info h3{font-size:1.15rem;margin-bottom:0.4rem;letter-spacing:-0.015em}
+.contact-info > p{color:var(--texto-sec);line-height:1.65;font-size:0.95rem;margin-bottom:1.5rem}
+.contact-dl{display:flex;flex-direction:column;gap:1.1rem}
+.contact-dl > div{
+  padding-bottom:1.1rem;
+  border-bottom:1px solid var(--sep);
+}
+.contact-dl > div:last-child{border-bottom:0;padding-bottom:0}
+.contact-dl dt{
+  font-family:var(--mono);
+  font-size:0.74rem;
+  color:var(--texto-muted);
+  margin-bottom:0.3rem;
+}
+.contact-dl dd{color:var(--texto);font-weight:500;font-size:0.95rem;line-height:1.5}
+.contact-dl dd a{color:var(--verde);text-decoration:underline;text-decoration-color:rgba(75,174,120,0.3);text-underline-offset:3px}
+.contact-dl dd a:hover{text-decoration-color:var(--verde)}
+.contact-dl dd span{display:block;color:var(--texto-muted);font-size:0.82rem;font-family:var(--mono);margin-top:0.2rem}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────── */
+footer{
+  border-top:1px solid var(--sep);
+  padding:3rem 1.5rem 2rem;
+  background:transparent;
+}
+.footer-inner{max-width:var(--maxw);margin:0 auto}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:3rem;
+  margin-bottom:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--sep);
+}
+.footer-brand{display:flex;flex-direction:column;gap:0.6rem}
+.footer-logo{font-size:1rem;font-weight:700;letter-spacing:-0.015em;color:var(--texto)}
 .footer-logo em{color:var(--verde);font-style:normal}
-.footer-links{display:flex;gap:2rem}
-.footer-links a{font-family:var(--mono);font-size:0.68rem;color:var(--texto-muted);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.15s}
-.footer-links a:hover{color:var(--verde)}
-.footer-social-bar{background:var(--footer-social-bg);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:8rem 5%;position:relative;overflow:hidden}
-.footer-social-bar::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,var(--dot-grid-color) 1px,transparent 1px);background-size:20px 20px;mask-image:radial-gradient(ellipse 55% 70% at 50% 50%,black 30%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 55% 70% at 50% 50%,black 30%,transparent 100%);pointer-events:none}
-.footer-social-inner{max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:2.5rem;position:relative;z-index:1}
-.footer-social-label{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.14em;text-transform:uppercase;display:flex;align-items:center;gap:0.75rem}
-.footer-social-label::before,.footer-social-label::after{content:'';height:1px;background:var(--sep);width:80px}
-.footer-social-icons{display:flex;gap:1rem;align-items:stretch;flex-wrap:wrap;justify-content:center}
-.social-link{display:flex;flex-direction:column;align-items:center;gap:0.65rem;padding:1.4rem 1.8rem;border-radius:8px;background:var(--social-card-bg);color:var(--texto-sec);transition:all 0.2s;text-decoration:none;border:1px solid var(--social-card-border);min-width:96px;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
-.social-link:hover{background:var(--social-card-hover);color:var(--verde);border-color:rgba(0,255,106,0.3);transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,0.2),0 0 0 1px rgba(0,255,106,0.15)}
-.social-link-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
-.footer-bottom{padding:1.2rem 5%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
-.footer-copy{font-family:var(--mono);font-size:0.8rem;color:var(--texto-muted);text-align:center}
-.footer-prompt{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted)}
-.footer-prompt-cursor{color:var(--verde);animation:blink 1.2s infinite}
+.footer-tagline{font-family:var(--mono);font-size:0.78rem;color:var(--texto-muted);line-height:1.55}
+.footer-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.8rem 1.5rem;
+  align-items:center;
+  justify-content:flex-end;
+}
+.footer-nav a{
+  color:var(--texto-sec);
+  text-decoration:none;
+  font-size:0.82rem;
+  font-family:var(--mono);
+  letter-spacing:0;
+  transition:color 0.15s;
+  white-space:nowrap;
+}
+.footer-nav a:hover{color:var(--texto)}
+@media (max-width: 900px){
+  .footer-nav{justify-content:flex-start;gap:0.8rem 1.25rem}
+}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1rem;
+  font-family:var(--mono);
+  font-size:0.76rem;
+  color:var(--texto-muted);
+}
+.footer-bottom a{color:var(--texto-sec);text-decoration:none;transition:color 0.15s}
+.footer-bottom a:hover{color:var(--texto)}
 
-.metrics-strip{background:var(--bg3);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep);padding:1.6rem 5%}
-.metrics-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.metric-item{display:flex;flex-direction:column;align-items:center;gap:0.25rem;flex:1}
-.metric-val{font-family:var(--mono);font-weight:700;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--verde);line-height:1}
-.metric-label{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.09em;text-transform:uppercase;text-align:center}
-.metric-sep{width:1px;height:44px;background:var(--sep);flex-shrink:0}
-
-.testi-bg{background:var(--bg2);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-top:2rem;background:var(--card-border)}
-.testi-card{background:var(--card);padding:1.6rem;display:flex;flex-direction:column;gap:1rem;box-shadow:var(--card-shadow)}
-.testi-body{font-family:var(--mono);font-size:0.78rem;color:var(--texto);line-height:1.75;flex:1;position:relative}
-.testi-body::before{content:'"';color:var(--verde);font-size:2rem;line-height:0;vertical-align:-0.45rem;margin-right:0.15rem;font-weight:700}
-.testi-author{border-top:1px solid var(--sep);padding-top:0.75rem}
-.testi-name{font-family:var(--mono);font-size:0.7rem;font-weight:600;color:var(--texto)}
-.testi-role{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);margin-top:0.18rem;letter-spacing:0.04em}
-
-.faq-bg{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,var(--line-grid-color) 39px,var(--line-grid-color) 40px)}
-.faq-terminal{margin-top:2rem;border:1px solid var(--card-border);border-radius:8px;overflow:hidden;background:var(--bg2)}
-.faq-terminal-header{display:flex;align-items:center;padding:0.55rem 1rem;border-bottom:1px solid var(--card-border);background:var(--bg3);gap:0.75rem}
-.faq-terminal-dots{display:flex;gap:6px}
-.faq-terminal-dots span{width:11px;height:11px;border-radius:50%;display:block}
-.faq-terminal-dots .dot-r{background:#ff5f57}.faq-terminal-dots .dot-y{background:#febc2e}.faq-terminal-dots .dot-g{background:#28c840}
-.faq-terminal-title{font-family:var(--mono);font-size:0.58rem;color:var(--texto-muted);letter-spacing:0.04em;flex:1;text-align:center}
-.faq-item{border-bottom:1px solid var(--sep);border-left:2px solid transparent;transition:border-left-color 0.2s}
-.faq-item:last-child{border-bottom:none}
-.faq-item:hover{border-left-color:rgba(0,255,106,0.5)}
-.faq-q{display:flex;align-items:baseline;padding:0.95rem 1.25rem;cursor:pointer;font-family:var(--mono);font-size:0.78rem;color:var(--texto);background:transparent;transition:background 0.2s,color 0.15s;gap:0;user-select:none;border:none;width:100%;text-align:left}
-.faq-q::before{content:'$';color:var(--verde);flex-shrink:0;font-weight:700;transition:color 0.15s;margin-right:0.65rem}
-.faq-q span:first-child{flex:1}
-.faq-q:hover{background:rgba(0,255,106,0.04)}
-.faq-q.open{color:var(--amarelo)}
-.faq-q.open::before{color:var(--amarelo)}
-.faq-icon{font-family:var(--mono);font-size:0.72rem;color:var(--texto-muted);flex-shrink:0;transition:color 0.15s;line-height:1;margin-left:1rem}
-.faq-q.open .faq-icon{color:var(--amarelo)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.32s ease}
-.faq-a.open{max-height:500px}
-.faq-a-inner{position:relative;padding:0.4rem 1.25rem 1rem 3.25rem;font-family:var(--mono);font-size:0.76rem;color:var(--texto-sec);line-height:1.9}
-.faq-a-inner::before{content:'>';position:absolute;left:1.25rem;top:0.4rem;color:var(--verde);font-weight:700}
-
-.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,0.4);cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
-.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
-.wa-float svg{width:28px;height:28px;fill:#fff}
-.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--bg2);border-top:1px solid var(--sep);padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.25)}
+/* ─── COOKIE BANNER ──────────────────────────────────────────────────── */
+.cookie-banner{
+  position:fixed;
+  bottom:1rem;
+  left:1rem;
+  right:1rem;
+  max-width:36rem;
+  margin:0 auto;
+  z-index:500;
+  background:var(--bg-elev);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:1rem 1.1rem;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  flex-wrap:wrap;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
 .cookie-banner.hidden{display:none}
-.cookie-text{font-family:var(--mono);font-size:0.72rem;color:var(--texto-sec);line-height:1.6;flex:1;min-width:200px}
-.cookie-text a{color:var(--verde);text-decoration:none}
-.cookie-text a:hover{text-decoration:underline}
-.cookie-actions{display:flex;gap:0.65rem;flex-shrink:0}
-.cookie-btn{font-family:var(--mono);font-size:0.68rem;padding:0.45rem 1rem;border-radius:3px;cursor:pointer;border:none;letter-spacing:0.04em;transition:all 0.15s}
+.cookie-text{font-family:var(--mono);font-size:0.78rem;color:var(--texto-sec);line-height:1.5;flex:1;min-width:200px}
+.cookie-text a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.cookie-actions{display:flex;gap:0.5rem;flex-shrink:0}
+.cookie-btn{
+  font-family:var(--mono);
+  font-size:0.76rem;
+  padding:0.42rem 0.9rem;
+  border-radius:4px;
+  cursor:pointer;
+  border:0;
+  transition:background 0.15s, border-color 0.15s;
+}
 .cookie-btn.accept{background:var(--verde);color:var(--verde-text);font-weight:600}
-.cookie-btn.accept:hover{opacity:0.85}
-.cookie-btn.decline{background:transparent;color:var(--texto-muted);border:1px solid var(--card-border)}
+.cookie-btn.accept:hover{opacity:0.9}
+.cookie-btn.decline{background:transparent;color:var(--texto-sec);border:1px solid var(--border)}
 .cookie-btn.decline:hover{border-color:var(--texto-muted);color:var(--texto)}
 
-@media(max-width:900px){
-  .hero-inner,.sobre-grid,.contato-grid{grid-template-columns:1fr}
-  .hero-right{order:-1}
-  nav .nav-links{display:none}
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────── */
+@media (max-width: 900px){
+  section{padding:3.5rem 1.25rem}
+  .nav-links{display:none}
   .nav-cta{display:none}
-  .lang-btn{padding:0.45rem 0.85rem}
-  .theme-select-btn{padding:0.45rem 0.75rem}
-  .jornada-steps{grid-template-columns:1fr}
-  .jornada-step{padding:1rem 0;border-bottom:1px solid var(--sep)}
-  .jornada-step:first-child{padding-top:0}
-  .jornada-step:last-child{border-bottom:none}
-  .servicos-grid{grid-template-columns:repeat(2,1fr)}
-  .servicos-header{flex-direction:column;align-items:flex-start;gap:0.75rem}
-  .produtos-grid{grid-template-columns:1fr}
-  .cncf-grid{grid-template-columns:1fr}
-  .parceiros-grid{grid-template-columns:repeat(2,1fr)}
-  .testi-grid{grid-template-columns:1fr}
-  .metrics-inner{flex-wrap:wrap;justify-content:center;gap:1.5rem}
-  .metric-sep{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .dashboard{position:static;top:auto}
+  .hero-right{min-width:0;overflow-x:auto}
+  .journey{grid-template-columns:1fr;gap:1.25rem}
+  .journey li{padding-bottom:1.25rem;border-bottom:1px solid var(--sep)}
+  .journey li:last-child{border-bottom:0;padding-bottom:0}
+  .products{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:2rem}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .hero{padding:3rem 1.25rem 3rem}
+  .hero h1{font-size:clamp(2rem, 7.5vw, 2.8rem);max-width:none}
 }
-@media(max-width:600px){
-  .sec-divider-label{font-size:0.72rem;letter-spacing:0.12em}
-  .servicos-grid{grid-template-columns:1fr}
-  .parceiros-grid{grid-template-columns:1fr}
-  .h-cards-row{grid-template-columns:1fr 1fr}
+@media (max-width: 540px){
   .form-row{grid-template-columns:1fr}
-  .valores-grid{grid-template-columns:1fr}
-  .metric-item{min-width:calc(50% - 1rem)}
-  .footer-social-inner{gap:1.5rem}
-  .footer-social-icons{display:grid;grid-template-columns:repeat(2,1fr);width:100%}
-  .footer-social-icons .social-link:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 0.5rem)}
-  .footer-top{flex-direction:column;align-items:flex-start}
-  .footer-prompt{display:none}
-  .footer-bottom{grid-template-columns:1fr}
-  .hero-actions{flex-direction:column}
-  .hero-actions .btn-verde,.hero-actions .btn-ghost{text-align:center;width:100%}
+  .services-list > li{grid-template-columns:1fr;gap:0.5rem;padding:1.4rem 0}
+  .svc-code{padding-top:0;font-size:0.62rem}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-ghost{text-align:center}
 }
 </style>
 </head>
 <body>
 
-<div class="flag-strip"></div>
+<a href="#main" class="skip-link">Ir para o conteúdo</a>
 
 <nav>
-  <div class="nav-logo">nativos<em>.cloud</em></div>
-  <ul class="nav-links">
-    <li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li>
-    <li><a href="#setores" data-i18n="nav.sectors">Setores</a></li>
-    <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
-    <li><a href="#produtos" data-i18n="nav.products">Produtos</a></li>
-    <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="theme-select" id="theme-select">
-      <button class="theme-select-btn" id="theme-select-btn" aria-label="Alternar tema" aria-haspopup="true" aria-expanded="false" onclick="toggleThemeMenu()">
-        <span id="theme-select-icon">⊙</span><span class="theme-select-arrow">▾</span>
-      </button>
-      <div class="theme-menu" id="theme-menu">
-        <button class="theme-menu-item" id="tmitem-dark" onclick="setTheme('dark');closeThemeMenu()"><span class="theme-menu-icon">◐</span>Dark</button>
-        <button class="theme-menu-item" id="tmitem-light" onclick="setTheme('light');closeThemeMenu()"><span class="theme-menu-icon">○</span>Light</button>
-        <button class="theme-menu-item" id="tmitem-system" onclick="setTheme('system');closeThemeMenu()"><span class="theme-menu-icon">⊙</span>Sistema</button>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L18.93 8L18.93 16L12 20L5.07 16L5.07 8Z"/><circle cx="12" cy="4" r="1.4" fill="currentColor" stroke="none"/><circle cx="18.93" cy="8" r="1.4" fill="currentColor" stroke="none"/><circle cx="18.93" cy="16" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="5.07" cy="16" r="1.4" fill="currentColor" stroke="none"/><circle cx="5.07" cy="8" r="1.4" fill="currentColor" stroke="none"/></svg>
+      <span translate="no">nativos<em>.cloud</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li>
+      <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="#produtos" data-i18n="nav.products">Produtos</a></li>
+      <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="theme-select" id="theme-select">
+        <button class="ctl-btn" id="theme-select-btn" aria-label="Alternar tema" aria-haspopup="true" aria-expanded="false" onclick="toggleThemeMenu()">
+          <span class="theme-select-icon" id="theme-select-icon">◐</span>
+          <span class="theme-select-label" id="theme-select-label">Dark</span>
+          <span class="theme-select-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="theme-menu" id="theme-menu">
+          <button id="tmitem-dark" onclick="setTheme('dark');closeThemeMenu()"><span class="tm-icon">◐</span>Dark</button>
+          <button id="tmitem-light" onclick="setTheme('light');closeThemeMenu()"><span class="tm-icon">○</span>Light</button>
+          <button id="tmitem-system" onclick="setTheme('system');closeThemeMenu()" data-i18n="theme.system"><span class="tm-icon">⊙</span>Sistema</button>
+        </div>
       </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-pt" aria-label="Português" aria-pressed="true" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" id="btn-en" aria-label="English" aria-pressed="false" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="nav-cta" data-i18n="nav.cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Mandar e-mail</button>
     </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="btn-pt" aria-label="Português" aria-pressed="true" onclick="setLang('pt')">PT</button>
-      <div class="lang-sep"></div>
-      <button class="lang-btn" id="btn-en" aria-label="English" aria-pressed="false" onclick="setLang('en')">EN</button>
-    </div>
-    <button class="nav-cta" data-i18n="nav.cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">$ Falar --now</button>
   </div>
 </nav>
 
-<main>
+<main id="main">
+
 <!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-grain"></div>
-  <div class="dot-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow-text"></div>
+<section class="hero">
   <div class="hero-inner">
-    <div>
-      <div class="hero-tag"><span class="hero-tag-dot"></span><span data-i18n="hero.tag">Consultoria Cloud · DevOps · FinOps</span></div>
-      <h1><span data-i18n="hero.h1.line1">Somos</span><br><span class="hl-verde" data-i18n="hero.h1.line2">nativos.</span><br><span data-i18n="hero.h1.line3">A nuvem é</span><br><span class="hl-amarelo" data-i18n="hero.h1.line4">nossa casa.</span><span class="h1-cursor">▋</span></h1>
-      <p class="hero-sub" data-i18n="hero.sub">Kubernetes, multi-cloud e DevOps na prática. Pipelines que entregam e custo sempre sob controle.</p>
-      <p class="hero-jornada" data-i18n="hero.jornada">Seja no primeiro passo ou num ambiente crítico em escala, a <span class="hl-verde">nativos.cloud</span> entra junto com especialistas que já viveram o problema que você enfrenta.</p>
-      <div class="hero-actions">
-        <a href="#contato" class="btn-verde" data-i18n="hero.cta1">Falar com especialista</a>
-        <a href="#solucoes" class="btn-ghost" data-i18n="hero.cta2">Explorar soluções →</a>
+    <div class="hero-text">
+      <p class="hero-kicker" data-i18n="hero.kicker">Ponta Grossa, PR</p>
+      <h1 data-i18n="hero.h1">Somos <em>nativos.</em> A nuvem é nossa casa.</h1>
+      <p class="hero-lede" data-i18n="hero.lede">Kubernetes, multi-cloud e DevOps em produção. Pipeline que entrega, fatura que fecha.</p>
+      <p class="hero-sublede" data-i18n="hero.sublede">Primeiro deploy ou produção em chamas. Você fala com engenheiro que já resolveu essa mesma dor.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn-primary" data-i18n="hero.cta1">Pedir diagnóstico por e-mail</a>
+        <a href="#solucoes" class="btn-ghost" data-i18n="hero.cta2">Ver o que a gente faz</a>
       </div>
     </div>
     <div class="hero-right">
-      <div class="dashboard">
+      <div class="dashboard" aria-label="Operações nativos.cloud">
         <div class="dashboard-header">
           <div class="dash-live"><span class="dash-live-dot"></span>LIVE</div>
-          <span class="dash-title">nativos.cloud — overview</span>
-          <div class="dash-dots">
-            <span class="dash-dot r" title="close"></span>
-            <span class="dash-dot y" title="minimize"></span>
-            <span class="dash-dot g" title="maximize"></span>
+          <span class="dash-title" translate="no">nativos.cloud — overview</span>
+          <div class="dash-dots" aria-hidden="true">
+            <span class="dash-dot r"></span>
+            <span class="dash-dot y"></span>
+            <span class="dash-dot g"></span>
           </div>
         </div>
         <div class="dashboard-body">
           <div class="h-sec-label" data-i18n="hero.stackLabel">// Stack multi-cloud</div>
           <div class="h-card-wide">
-            <div class="h-card-label" data-i18n="hero.platforms">Plataformas &amp; ferramentas</div>
-            <div class="cloud-tags">
+            <div class="h-card-label" data-i18n="hero.platforms">Plataformas & ferramentas</div>
+            <div class="cloud-tags" translate="no">
               <span class="ctag aws">AWS</span><span class="ctag azure">Azure</span><span class="ctag gcp">GCP</span>
               <span class="ctag oci">OCI</span><span class="ctag k8s">Kubernetes</span><span class="ctag tf">Terraform</span>
               <span class="ctag">CI/CD</span><span class="ctag">Ansible</span><span class="ctag">GitOps</span>
             </div>
           </div>
           <div class="h-sec-label">// System Monitor</div>
-          <div class="h-chart-wrap" style="position:relative;overflow:hidden;padding-bottom:0.6rem">
+          <div class="h-chart-wrap">
             <div class="h-chart-caption">
-              <span class="h-chart-sub">cpu · network · memory</span>
-              <span class="h-chart-val" style="color:var(--verde);font-size:0.6rem"><span style="animation:blink 1.8s infinite;display:inline-block">●</span> active</span>
+              <span class="h-chart-sub">cpu, network, memory</span>
+              <span class="h-chart-val"><span class="dash-live-dot" style="display:inline-block;vertical-align:middle;margin-right:4px"></span>active</span>
             </div>
             <canvas id="sys-monitor" style="width:100%;height:32px;display:block"></canvas>
           </div>
@@ -579,7 +1135,7 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
             <div class="h-card">
               <div class="h-card-label" data-i18n="metric.exp">Experiência</div>
               <div class="h-card-val v">15+</div>
-              <div class="h-card-sub" data-i18n="metric.exp.sub">anos em cloud</div>
+              <div class="h-card-sub" data-i18n="metric.exp.sub">anos engenheiros</div>
               <div class="h-card-bar"><div class="h-bar-fill" style="width:100%"></div></div>
             </div>
             <div class="h-card">
@@ -591,474 +1147,419 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
           </div>
           <div class="h-cards-row">
             <div class="h-card">
-              <div class="h-card-label" data-i18n="metric.sla">SLA Alvo</div>
-              <div class="h-card-val v">99.9%</div>
-              <div class="h-card-sub" data-i18n="metric.sla.sub">disponibilidade</div>
-              <div class="h-card-bar"><div class="h-bar-fill" style="width:99%"></div></div>
+              <div class="h-card-label" data-i18n="metric.resp">Resposta</div>
+              <div class="h-card-val v">≤ 24h</div>
+              <div class="h-card-sub" data-i18n="metric.resp.sub">no e-mail</div>
+              <div class="h-card-bar"><div class="h-bar-fill" style="width:92%"></div></div>
             </div>
             <div class="h-card">
-              <div class="h-card-label" data-i18n="metric.finops">FinOps Saving</div>
+              <div class="h-card-label" data-i18n="metric.finops">FinOps saving</div>
               <div class="h-card-val v">↓35%</div>
               <div class="h-card-sub" data-i18n="metric.finops.sub">economia média</div>
               <div class="h-card-bar"><div class="h-bar-fill" style="width:70%"></div></div>
             </div>
           </div>
-          <div class="h-cards-row">
-            <div class="h-card">
-              <div class="h-card-label" data-i18n="metric.projects">Projetos</div>
-              <div class="h-card-val v">50+</div>
-              <div class="h-card-sub" data-i18n="metric.projects.sub">entregues</div>
-              <div class="h-card-bar"><div class="h-bar-fill" style="width:85%"></div></div>
-            </div>
-            <div class="h-card">
-              <div class="h-card-label" data-i18n="metric.native">Especialistas</div>
-              <div class="h-card-val v">100%</div>
-              <div class="h-card-sub" data-i18n="metric.native.sub">cloud-native</div>
-              <div class="h-card-bar"><div class="h-bar-fill" style="width:100%"></div></div>
-            </div>
-          </div>
           <div class="h-sec-label">// Live Monitor</div>
-          <div class="h-monitor" id="live-monitor"></div>
+          <div class="h-monitor" id="live-monitor" aria-hidden="true"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- JORNADA -->
-<div class="jornada">
-  <div class="jornada-inner">
-    <div class="jornada-label" data-i18n="journey.label">// Sua jornada cloud</div>
-    <div class="jornada-steps">
-      <div class="jornada-step">
-        <span class="jornada-step-num">01</span>
-        <span class="jornada-step-title">Assessment</span>
-        <span class="jornada-step-desc" data-i18n="journey.s1">Análise do ambiente atual, workloads e oportunidades</span>
-      </div>
-      <div class="jornada-step">
-        <span class="jornada-step-num">02</span>
-        <span class="jornada-step-title">Design</span>
-        <span class="jornada-step-desc" data-i18n="journey.s2">Arquitetura Well-Architected, segurança e custos</span>
-      </div>
-      <div class="jornada-step">
-        <span class="jornada-step-num">03</span>
-        <span class="jornada-step-title" data-i18n="journey.s3.title">Migração</span>
-        <span class="jornada-step-desc" data-i18n="journey.s3.desc">Execução com mínimo downtime e risco controlado</span>
-      </div>
-      <div class="jornada-step">
-        <span class="jornada-step-num">04</span>
-        <span class="jornada-step-title" data-i18n="journey.s4.title">Otimização</span>
-        <span class="jornada-step-desc" data-i18n="journey.s4.desc">FinOps, performance e rightsizing contínuos</span>
-      </div>
-      <div class="jornada-step">
-        <span class="jornada-step-num">05</span>
-        <span class="jornada-step-title" data-i18n="journey.s5.title">Operação</span>
-        <span class="jornada-step-desc" data-i18n="journey.s5.desc">MSP, monitoramento 24x7 e suporte proativo</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LOGOS -->
-<div class="logos-strip">
-  <div class="sec-inner"><div class="logos-strip-label" data-i18n="logos.label">// Tecnologias & Plataformas</div></div>
+<!-- STACK MARQUEE -->
+<section class="logos-strip" aria-label="Stack e tecnologias">
+  <p class="logos-strip-label" data-i18n="logos.label">stack rodando em produção</p>
   <div class="logos-marquee">
-    <div class="logos-track">
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="56" height="56"><span class="logo-name">AWS</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="56" height="56"><span class="logo-name">Azure</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="OCI" width="56" height="56"><span class="logo-name">OCI</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="56" height="56"><span class="logo-name">Google Cloud</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg" alt="Kubernetes" width="56" height="56"><span class="logo-name">Kubernetes</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg" alt="Docker" width="56" height="56"><span class="logo-name">Docker</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/helm.svg" alt="Helm" width="56" height="56"><span class="logo-name">Helm</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/argo.svg" alt="ArgoCD" width="56" height="56"><span class="logo-name">ArgoCD</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg" alt="Terraform" width="56" height="56"><span class="logo-name">Terraform</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubactions.svg" alt="GitHub Actions" width="56" height="56"><span class="logo-name">GitHub Actions</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="GitLab CI" width="56" height="56"><span class="logo-name">GitLab CI</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/azuredevops.svg" alt="Azure DevOps" width="56" height="56"><span class="logo-name">Azure DevOps</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/prometheus.svg" alt="Prometheus" width="56" height="56"><span class="logo-name">Prometheus</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/grafana.svg" alt="Grafana" width="56" height="56"><span class="logo-name">Grafana</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/datadog.svg" alt="Datadog" width="56" height="56"><span class="logo-name">Datadog</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ansible.svg" alt="Ansible" width="56" height="56"><span class="logo-name">Ansible</span></div>
-      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/flux.svg" alt="Flux" width="56" height="56"><span class="logo-name">Flux</span></div>
+    <div class="logos-track" translate="no">
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="48" height="48"><span class="logo-name">AWS</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="48" height="48"><span class="logo-name">Azure</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="48" height="48"><span class="logo-name">Google Cloud</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="Oracle Cloud" width="48" height="48"><span class="logo-name">OCI</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg" alt="Kubernetes" width="48" height="48"><span class="logo-name">Kubernetes</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg" alt="Terraform" width="48" height="48"><span class="logo-name">Terraform</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/argo.svg" alt="Argo CD" width="48" height="48"><span class="logo-name">Argo CD</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/helm.svg" alt="Helm" width="48" height="48"><span class="logo-name">Helm</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg" alt="Docker" width="48" height="48"><span class="logo-name">Docker</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/prometheus.svg" alt="Prometheus" width="48" height="48"><span class="logo-name">Prometheus</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/grafana.svg" alt="Grafana" width="48" height="48"><span class="logo-name">Grafana</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/opentelemetry.svg" alt="OpenTelemetry" width="48" height="48"><span class="logo-name">OpenTelemetry</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/datadog.svg" alt="Datadog" width="48" height="48"><span class="logo-name">Datadog</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubactions.svg" alt="GitHub Actions" width="48" height="48"><span class="logo-name">GitHub Actions</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="GitLab CI" width="48" height="48"><span class="logo-name">GitLab CI</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ansible.svg" alt="Ansible" width="48" height="48"><span class="logo-name">Ansible</span></div>
+      <div class="logo-item"><img class="logo-img" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vault.svg" alt="Vault" width="48" height="48"><span class="logo-name">Vault</span></div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- SOLUÇÕES -->
-<section class="servicos-bg" id="solucoes">
-  <div class="sec-inner">
-    <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="sol.divider">S · soluções</span>
-      <div class="sec-divider-line"></div>
-    </div>
-    <div class="servicos-header">
-      <h2 class="sec-title"><span data-i18n="sol.title1">O que</span> <span class="hl" data-i18n="sol.title2">Entregamos</span></h2>
-      <p class="sec-sub" data-i18n="sol.sub">Kubernetes, multi-cloud, FinOps e segurança — do primeiro deploy à operação crítica em produção.</p>
-    </div>
-    <div class="servicos-grid">
-      <div class="sc">
-        <div class="sc-top-bar"></div>
-        <div class="sc-num">01</div>
-        <div class="sc-badge">Advisory</div>
-        <div class="sc-title" data-i18n="sol.1.title">Cloud Consulting</div>
-        <div class="sc-desc" data-i18n="sol.1.desc">Suporte completo e personalizado em todas as fases: get started, design e implantação. Da estratégia ao go-live.</div>
-        <div class="sc-tags"><span class="sc-tag">Well-Architected</span><span class="sc-tag">AWS</span><span class="sc-tag">Azure</span><span class="sc-tag">GCP</span><span class="sc-tag">OCI</span></div>
-      </div>
-      <div class="sc">
-        <div class="sc-top-bar"></div>
-        <div class="sc-num">02</div>
-        <div class="sc-badge">Migration</div>
-        <div class="sc-title" data-i18n="sol.2.title">Cloud Migration</div>
-        <div class="sc-desc" data-i18n="sol.2.desc">Aplicamos os 7 R's da migração cloud — de Rehost a Refactor — para escolher a estratégia certa para cada workload, com mínimo downtime e risco controlado.</div>
-        <div class="sc-tags"><span class="sc-tag">Retire</span><span class="sc-tag">Retain</span><span class="sc-tag">Rehost</span><span class="sc-tag">Relocate</span><span class="sc-tag">Repurchase</span><span class="sc-tag">Replatform</span><span class="sc-tag">Refactor</span></div>
-      </div>
-      <div class="sc">
-        <div class="sc-top-bar"></div>
-        <div class="sc-num">03</div>
-        <div class="sc-badge">DevOps</div>
-        <div class="sc-title">DevOps &amp; Platform Engineering</div>
-        <div class="sc-desc" data-i18n="sol.3.desc">Pipelines CI/CD, Kubernetes, Terraform e GitOps — automação de ponta a ponta para times de engenharia de alta performance.</div>
-        <div class="sc-tags"><span class="sc-tag">Kubernetes</span><span class="sc-tag">Terraform</span><span class="sc-tag">GitHub Actions</span><span class="sc-tag">Ansible</span></div>
-      </div>
-      <div class="sc">
-        <div class="sc-top-bar"></div>
-        <div class="sc-num">04</div>
-        <div class="sc-badge">FinOps</div>
-        <div class="sc-title" data-i18n="sol.4.title">Cloud Optimization</div>
-        <div class="sc-desc" data-i18n="sol.4.desc">Eliminação de desperdícios, rightsizing, reservas e FOCUS Reports — metodologia FinOps Foundation aplicada para reduzir custos com visibilidade e governança reais.</div>
-        <div class="sc-tags"><span class="sc-tag">FinOps Foundation</span><span class="sc-tag">FOCUS Report</span><span class="sc-tag">Rightsizing</span><span class="sc-tag">Reservas</span><span class="sc-tag">Cost Explorer</span></div>
-      </div>
-      <div class="sc">
-        <div class="sc-top-bar"></div>
-        <div class="sc-num">05</div>
-        <div class="sc-badge">MSP</div>
-        <div class="sc-title" data-i18n="sol.5.title">Serviços Gerenciados</div>
-        <div class="sc-desc" data-i18n="sol.5.desc">Monitoramento 24x7, manutenção proativa, gerenciamento DevOps/DevSecOps e suporte técnico contínuo com custo fixo mensal.</div>
-        <div class="sc-tags"><span class="sc-tag">Datadog</span><span class="sc-tag">Prometheus</span><span class="sc-tag">Grafana</span><span class="sc-tag">Cloud Monitoring</span></div>
-      </div>
-      <div class="sc">
-        <div class="sc-top-bar"></div>
-        <div class="sc-num">06</div>
-        <div class="sc-badge">SecOps</div>
-        <div class="sc-title" data-i18n="sol.6.title">Segurança &amp; Compliance</div>
-        <div class="sc-desc" data-i18n="sol.6.desc">IAM, políticas de acesso, VPN/IPSec, Zero Trust e hardening de ambientes para conformidade e proteção real.</div>
-        <div class="sc-tags"><span class="sc-tag">IAM</span><span class="sc-tag">VPN/IPSec</span><span class="sc-tag">Zero Trust</span><span class="sc-tag">MSSP</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARCEIROS -->
-<section class="parceiros-bg">
-  <div class="sec-inner">
-    <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="par.divider">P · parceiros &amp; plataformas</span>
-      <div class="sec-divider-line"></div>
-    </div>
-    <p class="sec-sub" data-i18n="par.sub">Em sinergia com os maiores players do mercado cloud para entregar as melhores soluções aos nossos clientes.</p>
-    <div class="parceiros-grid">
-      <div class="parceiro-card aws">
-        <div class="parceiro-top-bar"></div>
-        <div class="parceiro-header">
-          <span class="parceiro-name">Amazon Web Services</span>
-          <span class="parceiro-tier">Partner</span>
+<section id="solucoes">
+  <div class="wrap">
+    <h2 data-i18n="sol.title">O que a gente opera</h2>
+    <p class="sub" data-i18n="sol.sub">6 áreas que a gente opera direto. Cada uma com engenheiro responsável, não gerente de conta.</p>
+    <ol class="services-list">
+      <li>
+        <div class="svc-code" translate="no" aria-hidden="true">CSV</div>
+        <div class="svc-body">
+          <h3 data-i18n="sol.1.title">Cloud Consulting</h3>
+          <p data-i18n="sol.1.desc">Da primeira call ao go-live. Arquitetura e implantação com engenheiro no e-mail, não gerente de conta.</p>
+          <div class="svc-tags" translate="no">
+            <span class="ctag">Well-Architected</span><span class="ctag aws">AWS</span><span class="ctag azure">Azure</span><span class="ctag gcp">GCP</span><span class="ctag oci">OCI</span>
+          </div>
         </div>
-        <div class="parceiro-services">
-          <span class="ps-tag">EKS</span><span class="ps-tag">ECS Fargate</span><span class="ps-tag">RDS</span><span class="ps-tag">Aurora</span><span class="ps-tag">Route53</span><span class="ps-tag">S3</span><span class="ps-tag">CloudFront</span><span class="ps-tag">Lambda</span><span class="ps-tag">IAM</span><span class="ps-tag">Cost Explorer</span>
+      </li>
+      <li>
+        <div class="svc-code" translate="no" aria-hidden="true">MIG</div>
+        <div class="svc-body">
+          <h3 data-i18n="sol.2.title">Cloud Migration</h3>
+          <p data-i18n="sol.2.desc">7 R's na prática: Rehost, Replatform, Refactor e cia. Estratégia por workload, menor downtime possível, risco mapeado antes.</p>
+          <div class="svc-tags" translate="no">
+            <span class="ctag">7 R's</span><span class="ctag">Rehost</span><span class="ctag">Replatform</span><span class="ctag">Refactor</span><span class="ctag">Relocate</span><span class="ctag">Retire</span>
+          </div>
         </div>
-      </div>
-      <div class="parceiro-card azure">
-        <div class="parceiro-top-bar"></div>
-        <div class="parceiro-header">
-          <span class="parceiro-name">Microsoft Azure</span>
-          <span class="parceiro-tier">Partner</span>
+      </li>
+      <li>
+        <div class="svc-code" translate="no" aria-hidden="true">OPS</div>
+        <div class="svc-body">
+          <h3 data-i18n="sol.3.title">DevOps &amp; Platform Engineering</h3>
+          <p data-i18n="sol.3.desc">Pipeline do commit ao deploy. Kubernetes, Terraform, GitOps. Entrega rápido sem quebrar prod.</p>
+          <div class="svc-tags" translate="no">
+            <span class="ctag k8s">Kubernetes</span><span class="ctag tf">Terraform</span><span class="ctag">GitHub Actions</span><span class="ctag">GitLab CI</span><span class="ctag">Argo CD</span><span class="ctag">Ansible</span>
+          </div>
         </div>
-        <div class="parceiro-services">
-          <span class="ps-tag">AKS</span><span class="ps-tag">Azure DevOps</span><span class="ps-tag">Blob Storage</span><span class="ps-tag">Azure SQL</span><span class="ps-tag">Entra ID</span><span class="ps-tag">App Service</span><span class="ps-tag">Azure Monitor</span>
+      </li>
+      <li>
+        <div class="svc-code" translate="no" aria-hidden="true">FIN</div>
+        <div class="svc-body">
+          <h3 data-i18n="sol.4.title">Cloud Optimization &amp; FinOps</h3>
+          <p data-i18n="sol.4.desc">Rightsizing, reservas, FOCUS Reports. FinOps Foundation aplicada até a governança virar coisa de board.</p>
+          <div class="svc-tags" translate="no">
+            <span class="ctag">FinOps Foundation</span><span class="ctag">FOCUS</span><span class="ctag">Rightsizing</span><span class="ctag">Reservas</span><span class="ctag">Cost Explorer</span>
+          </div>
         </div>
-      </div>
-      <div class="parceiro-card gcp">
-        <div class="parceiro-top-bar"></div>
-        <div class="parceiro-header">
-          <span class="parceiro-name">Google Cloud</span>
-          <span class="parceiro-tier">GCP</span>
+      </li>
+      <li>
+        <div class="svc-code" translate="no" aria-hidden="true">MSP</div>
+        <div class="svc-body">
+          <h3 data-i18n="sol.5.title">MSP — operação cloud 24x7</h3>
+          <p data-i18n="sol.5.desc">Plantão 24x7. DevOps gerenciado. Mensalidade fixa, sem fatura surpresa.</p>
+          <div class="svc-tags" translate="no">
+            <span class="ctag">Datadog</span><span class="ctag">Prometheus</span><span class="ctag">Grafana</span><span class="ctag">OpenTelemetry</span><span class="ctag">SLA mensal</span>
+          </div>
         </div>
-        <div class="parceiro-services">
-          <span class="ps-tag">GKE</span><span class="ps-tag">BigQuery</span><span class="ps-tag">Cloud SQL</span><span class="ps-tag">Cloud Run</span><span class="ps-tag">Cloud CDN</span><span class="ps-tag">Pub/Sub</span><span class="ps-tag">IAM</span>
+      </li>
+      <li>
+        <div class="svc-code" translate="no" aria-hidden="true">SEC</div>
+        <div class="svc-body">
+          <h3 data-i18n="sol.6.title">Segurança e compliance</h3>
+          <p data-i18n="sol.6.desc">IAM, VPN/IPSec, Zero Trust, hardening. Postura que aguenta auditoria e pentest.</p>
+          <div class="svc-tags" translate="no">
+            <span class="ctag">IAM</span><span class="ctag">VPN/IPSec</span><span class="ctag">Zero Trust</span><span class="ctag">Vault</span><span class="ctag">Falco</span><span class="ctag">MSSP</span>
+          </div>
         </div>
-      </div>
-      <div class="parceiro-card oci">
-        <div class="parceiro-top-bar"></div>
-        <div class="parceiro-header">
-          <span class="parceiro-name">Oracle Cloud</span>
-          <span class="parceiro-tier">OCI</span>
-        </div>
-        <div class="parceiro-services">
-          <span class="ps-tag">OKE</span><span class="ps-tag">HeatWave</span><span class="ps-tag">Buckets</span><span class="ps-tag">Autonomous DB</span><span class="ps-tag">VCN</span><span class="ps-tag">FastConnect</span><span class="ps-tag">WAF</span>
-        </div>
-      </div>
+      </li>
+    </ol>
+    <div class="svc-end">
+      <a href="#contato" class="svc-end-cta" data-i18n="sol.cta">pedir orçamento por e-mail</a>
     </div>
   </div>
 </section>
 
-<!-- CLOUD NATIVE -->
-<section class="cncf-bg">
-  <div class="sec-inner">
-    <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="cncf.divider">C · Cloud Native</span>
-      <div class="sec-divider-line"></div>
-    </div>
-    <h2 class="sec-title" style="margin-bottom:0.75rem"><span class="hl" data-i18n="cncf.title1">Nativos</span> <span data-i18n="cncf.title2">no ecossistema</span></h2>
-    <p class="sec-sub" data-i18n="cncf.sub">Construímos sobre os pilares do movimento cloud native e open source — CNCF, HashiCorp, GitOps e a infraestrutura que define a engenharia moderna.</p>
-    <div class="cncf-grid">
-      <div class="cncf-group">
-        <div class="cncf-group-label">// CNCF Projects</div>
-        <div class="cncf-tags">
-          <span class="cncf-tag k8s">Kubernetes</span>
-          <span class="cncf-tag prom">Prometheus</span>
-          <span class="cncf-tag graf">Grafana</span>
-          <span class="cncf-tag argo">ArgoCD</span>
-          <span class="cncf-tag otel">OpenTelemetry</span>
-          <span class="cncf-tag">Helm</span>
-          <span class="cncf-tag">Flux</span>
-          <span class="cncf-tag">Istio</span>
-          <span class="cncf-tag">Falco</span>
+<!-- JOURNEY -->
+<div class="journey-wrap">
+<section>
+  <div class="wrap">
+    <h2 data-i18n="journey.title">Como a gente trabalha</h2>
+    <p class="sub" data-i18n="journey.sub">Processo repetível. Do assessment à operação em produção.</p>
+    <ol class="journey">
+      <li>
+        <span class="step-num" translate="no" aria-hidden="true">S1</span>
+        <div class="step-body">
+          <h3 data-i18n="journey.s1.title">Assessment</h3>
+          <p data-i18n="journey.s1.desc">Análise do ambiente atual, workloads e oportunidades.</p>
+          <div class="step-meta">
+            <span><span class="label" data-i18n="journey.meta.duration">duração</span><span class="val" data-i18n="journey.s1.time">1–2 semanas</span></span>
+            <span><span class="label" data-i18n="journey.meta.output">entregável</span><span class="val" data-i18n="journey.s1.out">assessment report + roadmap</span></span>
+          </div>
         </div>
-      </div>
-      <div class="cncf-group">
-        <div class="cncf-group-label">// Infrastructure as Code</div>
-        <div class="cncf-tags">
-          <span class="cncf-tag tf">Terraform</span>
-          <span class="cncf-tag tf">Vault</span>
-          <span class="cncf-tag">Ansible</span>
-          <span class="cncf-tag">Packer</span>
-          <span class="cncf-tag">Pulumi</span>
-          <span class="cncf-tag">Crossplane</span>
+      </li>
+      <li>
+        <span class="step-num" translate="no" aria-hidden="true">S2</span>
+        <div class="step-body">
+          <h3 data-i18n="journey.s2.title">Design</h3>
+          <p data-i18n="journey.s2.desc">Arquitetura Well-Architected, segurança e custos.</p>
+          <div class="step-meta">
+            <span><span class="label" data-i18n="journey.meta.duration">duração</span><span class="val" data-i18n="journey.s2.time">2–4 semanas</span></span>
+            <span><span class="label" data-i18n="journey.meta.output">entregável</span><span class="val" data-i18n="journey.s2.out">arquitetura + plano de custo</span></span>
+          </div>
         </div>
-      </div>
-      <div class="cncf-group">
-        <div class="cncf-group-label">// CI/CD & GitOps</div>
-        <div class="cncf-tags">
-          <span class="cncf-tag">GitHub Actions</span>
-          <span class="cncf-tag">GitLab CI</span>
-          <span class="cncf-tag">Tekton</span>
-          <span class="cncf-tag">Docker</span>
-          <span class="cncf-tag">Podman</span>
-          <span class="cncf-tag">Linux</span>
+      </li>
+      <li>
+        <span class="step-num" translate="no" aria-hidden="true">S3</span>
+        <div class="step-body">
+          <h3 data-i18n="journey.s3.title">Migração</h3>
+          <p data-i18n="journey.s3.desc">Cutover ensaiado, sem surpresa no dia.</p>
+          <div class="step-meta">
+            <span><span class="label" data-i18n="journey.meta.duration">duração</span><span class="val" data-i18n="journey.s3.time">4–16 semanas</span></span>
+            <span><span class="label" data-i18n="journey.meta.output">entregável</span><span class="val" data-i18n="journey.s3.out">workloads em produção</span></span>
+          </div>
         </div>
-      </div>
-    </div>
+      </li>
+      <li>
+        <span class="step-num" translate="no" aria-hidden="true">S4</span>
+        <div class="step-body">
+          <h3 data-i18n="journey.s4.title">Otimização</h3>
+          <p data-i18n="journey.s4.desc">FinOps, performance e rightsizing contínuos.</p>
+          <div class="step-meta">
+            <span><span class="label" data-i18n="journey.meta.duration">duração</span><span class="val" data-i18n="journey.s4.time">ciclos mensais</span></span>
+            <span><span class="label" data-i18n="journey.meta.output">entregável</span><span class="val verde" data-i18n="journey.s4.out">↓ custo médio em 90d</span></span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="step-num" translate="no" aria-hidden="true">S5</span>
+        <div class="step-body">
+          <h3 data-i18n="journey.s5.title">Operação</h3>
+          <p data-i18n="journey.s5.desc">MSP, monitoramento 24x7 e suporte proativo.</p>
+          <div class="step-meta">
+            <span><span class="label" data-i18n="journey.meta.duration">duração</span><span class="val" data-i18n="journey.s5.time">contínuo</span></span>
+            <span><span class="label" data-i18n="journey.meta.output">entregável</span><span class="val" data-i18n="journey.s5.out">SLA mensal, incidentes resolvidos</span></span>
+          </div>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
+</div>
 
-<!-- SETORES -->
-<section class="setores-bg" id="setores">
-  <div class="sec-inner">
-    <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="set.divider">S · Setores</span>
-      <div class="sec-divider-line"></div>
+<!-- PARTNERS + STACK -->
+<section>
+  <div class="wrap">
+    <h2 data-i18n="par.title">Com quem a gente fala direto</h2>
+    <p class="partners-prose" data-i18n="par.p1">Direto com os quatro grandes: <strong translate="no">AWS, Azure, GCP e OCI</strong>. Vira suporte técnico mais rápido, acesso a programas de migração e condição comercial melhor pro cliente.</p>
+    <div class="providers-grid" translate="no">
+      <div class="provider-card aws">
+        <div class="provider-head">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="22" height="22" loading="lazy">
+          <span class="name">AWS</span>
+        </div>
+        <span class="provider-tag">partner</span>
+        <p class="provider-note" data-i18n="par.aws.note" translate="yes">EKS, RDS, CloudFront, Well-Architected Review.</p>
+      </div>
+      <div class="provider-card azure">
+        <div class="provider-head">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="22" height="22" loading="lazy">
+          <span class="name">Azure</span>
+        </div>
+        <span class="provider-tag">partner</span>
+        <p class="provider-note" data-i18n="par.azure.note" translate="yes">AKS, Entra ID, Defender, Blob Storage.</p>
+      </div>
+      <div class="provider-card gcp">
+        <div class="provider-head">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="22" height="22" loading="lazy">
+          <span class="name">Google Cloud</span>
+        </div>
+        <span class="provider-tag">partner</span>
+        <p class="provider-note" data-i18n="par.gcp.note" translate="yes">GKE, BigQuery, Cloud Run, FinOps.</p>
+      </div>
+      <div class="provider-card oci">
+        <div class="provider-head">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="Oracle Cloud" width="22" height="22" loading="lazy">
+          <span class="name">Oracle Cloud</span>
+        </div>
+        <span class="provider-tag">partner</span>
+        <p class="provider-note" data-i18n="par.oci.note" translate="yes">OKE, HeatWave, Autonomous DB, FastConnect.</p>
+      </div>
     </div>
-    <h2 class="sec-title" style="margin-bottom:1.25rem"><span data-i18n="set.title1">Setores</span> <span class="hl" data-i18n="set.title2">que Atendemos</span></h2>
-    <p class="sec-sub" data-i18n="set.sub">Soluções cloud especializadas para os principais segmentos do mercado brasileiro.</p>
-    <div class="setores-grid">
-      <div class="setor-item"><div class="setor-icon">🏦</div><div class="setor-name" data-i18n="set.1.name">Financeiro</div><div class="setor-desc" data-i18n="set.1.desc">Compliance, segurança e alta disponibilidade</div></div>
-      <div class="setor-item"><div class="setor-icon">🛒</div><div class="setor-name" data-i18n="set.2.name">Varejo</div><div class="setor-desc" data-i18n="set.2.desc">Escalabilidade para picos de demanda</div></div>
-      <div class="setor-item"><div class="setor-icon">🏭</div><div class="setor-name" data-i18n="set.3.name">Indústria</div><div class="setor-desc" data-i18n="set.3.desc">Modernização e integração de sistemas</div></div>
-      <div class="setor-item"><div class="setor-icon">🎓</div><div class="setor-name" data-i18n="set.4.name">Educação</div><div class="setor-desc" data-i18n="set.4.desc">Plataformas resilientes e de baixo custo</div></div>
-      <div class="setor-item"><div class="setor-icon">🚚</div><div class="setor-name" data-i18n="set.5.name">Logística</div><div class="setor-desc" data-i18n="set.5.desc">Rastreio, dados e automação em tempo real</div></div>
-      <div class="setor-item"><div class="setor-icon">🚀</div><div class="setor-name" data-i18n="set.6.name">Startups</div><div class="setor-desc" data-i18n="set.6.desc">Cloud-native desde o primeiro dia</div></div>
+    <div class="stack-groups" translate="no" aria-label="Stack cloud-native">
+      <div>
+        <div class="stack-group-label" data-i18n="par.stack.k8s">Container &amp; orchestration</div>
+        <div class="stack-group-tags">
+          <span class="ctag k8s">Kubernetes</span><span class="ctag">Helm</span><span class="ctag">Docker</span>
+        </div>
+      </div>
+      <div>
+        <div class="stack-group-label" data-i18n="par.stack.iac">IaC &amp; config</div>
+        <div class="stack-group-tags">
+          <span class="ctag tf">Terraform</span><span class="ctag">Packer</span><span class="ctag">Ansible</span>
+        </div>
+      </div>
+      <div>
+        <div class="stack-group-label" data-i18n="par.stack.cicd">GitOps &amp; CI/CD</div>
+        <div class="stack-group-tags">
+          <span class="ctag">Argo CD</span><span class="ctag">Flux</span><span class="ctag">GitHub Actions</span><span class="ctag">GitLab CI</span><span class="ctag">Azure DevOps</span>
+        </div>
+      </div>
+      <div>
+        <div class="stack-group-label" data-i18n="par.stack.obs">Observability</div>
+        <div class="stack-group-tags">
+          <span class="ctag">Prometheus</span><span class="ctag">Grafana</span><span class="ctag">Datadog</span><span class="ctag">OpenTelemetry</span>
+        </div>
+      </div>
+      <div>
+        <div class="stack-group-label" data-i18n="par.stack.sec">Secrets &amp; base</div>
+        <div class="stack-group-tags">
+          <span class="ctag">Vault</span><span class="ctag">Linux</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- SOBRE -->
-<section class="sobre-bg" id="sobre">
-  <div class="sec-inner">
-    <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="about.divider">Q · quem somos</span>
-      <div class="sec-divider-line"></div>
-    </div>
-    <div class="sobre-grid">
-      <div class="sobre-body">
-        <h2 class="sec-title" style="margin-bottom:1.25rem"><span data-i18n="about.title1">Nascidos na nuvem.</span><br><span data-i18n="about.title2">Especialistas,</span> <span class="hl" data-i18n="about.title3">ponto.</span></h2>
-        <p data-i18n="about.p1">A <span class="hl-verde">nativos.cloud</span> nasceu da prática real: anos rodando infraestrutura crítica, resolvendo problemas de produção em ambientes multi-cloud e entregando projetos de alta complexidade para empresas de diferentes segmentos.</p>
-        <p data-i18n="about.p2">Não fazemos teoria. Fazemos cloud de verdade — com comprometimento técnico, comunicação direta e foco total em resultado para o seu negócio.</p>
-        <div class="cert-list">
-          <div class="cert-item">AWS Solutions Architect – Associate</div>
-          <div class="cert-item">AWS Cloud Practitioner</div>
-          <div class="cert-item">Oracle Cloud Infrastructure Certified</div>
-          <div class="cert-item" data-i18n="about.cert4">15+ anos em infraestrutura e cloud</div>
-          <div class="cert-item" data-i18n="about.cert5">Atuação multi-cloud: AWS, Azure, GCP e OCI</div>
-        </div>
-      </div>
-      <div class="sobre-side">
-        <div class="sobre-quote">
-          <p data-i18n="about.quote">"Entregamos cloud do jeito que deveria ser — sem burocracia, com resultado."</p>
-          <span>— team <span class="hl-verde">nativos.cloud</span></span>
-        </div>
-        <div class="valores-grid">
-          <div class="valor-card"><div class="valor-bar"></div><div class="valor-title" data-i18n="val.1.t">foco em resultado</div><div class="valor-desc" data-i18n="val.1.d">cada entrega orientada ao impacto real no negócio</div></div>
-          <div class="valor-card"><div class="valor-bar"></div><div class="valor-title" data-i18n="val.2.t">transparência</div><div class="valor-desc" data-i18n="val.2.d">comunicação direta, sem letras miúdas</div></div>
-          <div class="valor-card"><div class="valor-bar"></div><div class="valor-title" data-i18n="val.3.t">velocidade</div><div class="valor-desc" data-i18n="val.3.d">entrega ágil sem abrir mão da qualidade</div></div>
-          <div class="valor-card"><div class="valor-bar"></div><div class="valor-title" data-i18n="val.4.t">confiabilidade</div><div class="valor-desc" data-i18n="val.4.d">ambientes estáveis, seguros e observados</div></div>
-        </div>
-      </div>
+<div class="about-wrap">
+<section id="sobre">
+  <div class="wrap">
+    <h2 data-i18n="about.title">Feitos em produção, não em slide.</h2>
+    <div class="about-body prose">
+      <p data-i18n="about.p1">A <span translate="no">nativos.cloud</span> nasceu no plantão. Anos rodando infra crítica, apagando incêndio em prod multi-cloud e entregando projeto grande pra cliente de porte bem diferente.</p>
+      <p data-i18n="about.p2">A gente não vende slide. Faz cloud rodar, fala direto e assume o que entrega.</p>
+      <p data-i18n="about.sectors">Já operamos infra pra times de financeiro, varejo, indústria, educação, logística e startups. Cada setor cobra coisa diferente do ambiente.</p>
+      <blockquote data-i18n="about.quote">Cloud entregue como quem opera: sem PPT bonito, com engenheiro atendendo quando o pager toca.</blockquote>
+      <ul class="certs">
+        <li translate="no">AWS Solutions Architect – Associate</li>
+        <li translate="no">AWS Cloud Practitioner</li>
+        <li translate="no">Oracle Cloud Infrastructure Certified</li>
+        <li data-i18n="about.cert4">Engenheiros com 15+ anos em infra e cloud</li>
+        <li data-i18n="about.cert5">Atuação multi-cloud: AWS, Azure, GCP e OCI</li>
+      </ul>
     </div>
   </div>
 </section>
+</div>
 
 <!-- FAQ -->
-<section class="faq-bg">
-  <div class="sec-inner">
-    <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="faq.divider">F · perguntas frequentes</span>
-      <div class="sec-divider-line"></div>
-    </div>
-    <h2 class="sec-title" style="margin-bottom:0.5rem"><span data-i18n="faq.title1">Dúvidas</span> <span class="hl" data-i18n="faq.title2">comuns</span></h2>
-    <div class="faq-terminal">
-      <div class="faq-terminal-header">
-        <span class="faq-terminal-title">nativos@cloud:~/faq</span>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q1">Qual é o prazo típico de uma migração cloud?</span><span class="faq-icon">▸</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a1">Depende da complexidade do ambiente. Migrações simples (lift &amp; shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q2">Vocês atendem empresas que ainda não usam cloud?</span><span class="faq-icon">▸</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a2">Sim. Atendemos desde o primeiro passo — assessments de readiness, definição de estratégia cloud, escolha do provedor mais adequado e execução da migração. Nosso processo é pensado para reduzir risco e garantir uma transição segura.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q3">Como funciona o serviço de MSP (Managed Services)?</span><span class="faq-icon">▸</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a3">Oferecemos monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custos e suporte técnico com SLA definido. O contrato é mensal com escopo fixo — sem surpresas no faturamento. Utilizamos Grafana, Prometheus e as ferramentas nativas de cada cloud.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q4">Vocês trabalham com mais de um provedor cloud simultaneamente?</span><span class="faq-icon">▸</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span data-i18n="faq.q5">A consultoria inicial é gratuita?</span><span class="faq-icon">▸</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a5">Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial.</div></div>
-      </div>
+<section>
+  <div class="wrap">
+    <h2 data-i18n="faq.title">Perguntas frequentes</h2>
+    <div class="faq">
+      <details>
+        <summary data-i18n="faq.q1">Qual é o prazo típico de uma migração cloud?</summary>
+        <div class="faq-a" data-i18n="faq.a1">Depende da complexidade do ambiente. Migrações simples (lift &amp; shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.</div>
+      </details>
+      <details>
+        <summary data-i18n="faq.q2">Vocês atendem empresas que ainda não usam cloud?</summary>
+        <div class="faq-a" data-i18n="faq.a2">Sim. A gente começa do zero: readiness assessment, escolha do provedor, desenho da estratégia e execução da migração. O processo foi feito pra reduzir risco em cada etapa, não pra empilhar burocracia.</div>
+      </details>
+      <details>
+        <summary data-i18n="faq.q3">Como funciona o serviço de MSP (managed services)?</summary>
+        <div class="faq-a" data-i18n="faq.a3">Monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custo e suporte técnico com SLA. Contrato mensal, escopo fixo, então a fatura não te surpreende. A stack é Grafana, Prometheus e o observability nativo de cada cloud.</div>
+      </details>
+      <details>
+        <summary data-i18n="faq.q4">Vocês trabalham com mais de um provedor cloud simultaneamente?</summary>
+        <div class="faq-a" data-i18n="faq.a4">Sim. Multi-cloud é nosso dia a dia, com AWS, Azure, GCP e OCI. Boa parte dos clientes distribui workload entre dois provedores por custo, redundância ou requisito de compliance.</div>
+      </details>
+      <details>
+        <summary data-i18n="faq.q5">A consultoria inicial é gratuita?</summary>
+        <div class="faq-a" data-i18n="faq.a5">Sim. A primeira call serve pra entender o cenário, mapear o que dói e propor um caminho. Nada é cobrado nessa fase.</div>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- PRODUTOS -->
-<section class="produtos-bg" id="produtos">
-  <div class="sec-inner">
-    <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="prod.divider">P · Produtos</span>
-      <div class="sec-divider-line"></div>
-    </div>
-    <h2 class="sec-title" style="margin-bottom:0.5rem"><span data-i18n="prod.title1">Nossos</span> <span class="hl" data-i18n="prod.title2">Produtos</span></h2>
-    <p class="sec-sub" data-i18n="prod.sub">Ferramentas open source construídas pela nativos.cloud para resolver problemas reais de segurança e operações de time.</p>
-    <div class="produtos-grid">
-
-      <div class="produto-card">
-        <div class="produto-terminal-header">
-          <div class="produto-terminal-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <span class="produto-terminal-title">nativos@cloud:~/produtos/vanishd</span>
-        </div>
-        <div class="produto-body">
-          <div class="produto-badge">Security</div>
-          <div class="produto-name">vanishd</div>
-          <p class="produto-desc" data-i18n="prod.vanishd.desc">Plataforma de compartilhamento de segredos com zero-knowledge. O servidor nunca vê o conteúdo — toda a cifragem acontece no cliente, e os links se autodestruem após o primeiro acesso.</p>
-          <ul class="produto-features">
-            <li data-i18n="prod.vanishd.f1">AES-256-GCM client-side via Web Crypto API</li>
-            <li data-i18n="prod.vanishd.f2">Chave de decifragem no fragmento da URL (invisível ao servidor)</li>
-            <li data-i18n="prod.vanishd.f3">Proteção por senha com PBKDF2 e deleção atômica na primeira leitura</li>
-            <li data-i18n="prod.vanishd.f4">Rate limiting por IP e headers de segurança com CSP</li>
-          </ul>
-          <div class="produto-tags">
-            <span class="produto-tag">Python</span><span class="produto-tag">Flask</span><span class="produto-tag">Web Crypto API</span><span class="produto-tag">AES-256-GCM</span><span class="produto-tag">Docker</span><span class="produto-tag">SQLite</span>
-          </div>
-          <a class="produto-link" href="https://github.com/NatanRigailo/vanishd" target="_blank" rel="noopener noreferrer" data-i18n="prod.gh">$ ver no GitHub →</a>
-        </div>
-      </div>
-
-      <div class="produto-card">
-        <div class="produto-terminal-header">
-          <div class="produto-terminal-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <span class="produto-terminal-title">nativos@cloud:~/produtos/mfa-app</span>
-        </div>
-        <div class="produto-body">
-          <div class="produto-badge">DevOps</div>
-          <div class="produto-name">mfa-app</div>
-          <p class="produto-desc" data-i18n="prod.mfa.desc">Plataforma web centralizada para gestão de tokens TOTP em times. Geração de códigos em tempo real com timer de 30 segundos e modo demo para onboarding rápido.</p>
-          <ul class="produto-features">
-            <li data-i18n="prod.mfa.f1">Registro de tokens via leitura de QR Code</li>
-            <li data-i18n="prod.mfa.f2">Modo de edição protegido por senha</li>
-            <li data-i18n="prod.mfa.f3">Atualizações de código TOTP ao vivo com indicadores de progresso</li>
-            <li data-i18n="prod.mfa.f4">Deploy imediato com SQLite ou MySQL via Docker Compose</li>
-          </ul>
-          <div class="produto-tags">
-            <span class="produto-tag">Python</span><span class="produto-tag">Flask</span><span class="produto-tag">TOTP</span><span class="produto-tag">Docker</span><span class="produto-tag">SQLite</span><span class="produto-tag">MySQL</span>
-          </div>
-          <a class="produto-link" href="https://github.com/NatanRigailo/mfa-app" target="_blank" rel="noopener noreferrer" data-i18n="prod.gh">$ ver no GitHub →</a>
-        </div>
-      </div>
-
+<div class="products-wrap">
+<section id="produtos">
+  <div class="wrap">
+    <h2 data-i18n="prod.title">Produtos open source</h2>
+    <p class="sub" data-i18n="prod.sub">Open source que a gente escreveu porque precisava internamente. Depois abriu.</p>
+    <div class="products">
+      <article class="product">
+        <h3 translate="no">vanishd</h3>
+        <p class="product-sub" data-i18n="prod.vanishd.sub">zero-knowledge secret sharing</p>
+        <p class="product-desc" data-i18n="prod.vanishd.desc">Compartilhamento de segredo em que o servidor nunca vê o conteúdo. A cifragem acontece no navegador do remetente e o link se autodestrói na primeira leitura.</p>
+        <ul class="product-features">
+          <li data-i18n="prod.vanishd.f1">AES-256-GCM client-side via Web Crypto API</li>
+          <li data-i18n="prod.vanishd.f2">Chave de decifragem no fragmento da URL (invisível ao servidor)</li>
+          <li data-i18n="prod.vanishd.f3">Proteção por senha com PBKDF2 e deleção atômica na primeira leitura</li>
+          <li data-i18n="prod.vanishd.f4">Rate limiting por IP e headers de segurança com CSP</li>
+        </ul>
+        <p class="product-stack" translate="no">Python, Flask, Web Crypto API, Docker, SQLite</p>
+        <a class="product-link" href="https://github.com/NatanRigailo/vanishd" target="_blank" rel="noopener noreferrer" translate="no">github.com/NatanRigailo/vanishd</a>
+      </article>
+      <article class="product">
+        <h3 translate="no">mfa-app</h3>
+        <p class="product-sub" data-i18n="prod.mfa.sub">gestão centralizada de tokens TOTP</p>
+        <p class="product-desc" data-i18n="prod.mfa.desc">Gestor de TOTP pra time. Códigos ao vivo com timer de 30s, modo demo pra onboarding.</p>
+        <ul class="product-features">
+          <li data-i18n="prod.mfa.f1">Registro de tokens via leitura de QR Code</li>
+          <li data-i18n="prod.mfa.f2">Modo de edição protegido por senha</li>
+          <li data-i18n="prod.mfa.f3">Códigos TOTP ao vivo, com barra de progresso</li>
+          <li data-i18n="prod.mfa.f4">Deploy imediato com SQLite ou MySQL via Docker Compose</li>
+        </ul>
+        <p class="product-stack" translate="no">Python, Flask, TOTP, Docker, SQLite, MySQL</p>
+        <a class="product-link" href="https://github.com/NatanRigailo/mfa-app" target="_blank" rel="noopener noreferrer" translate="no">github.com/NatanRigailo/mfa-app</a>
+      </article>
     </div>
   </div>
 </section>
+</div>
 
 <!-- CONTATO -->
-<section class="contato-bg" id="contato">
-  <div class="sec-inner">
-    <div class="sec-divider">
-      <span class="sec-divider-label" data-i18n="contact.divider">C · contato</span>
-      <div class="sec-divider-line"></div>
-    </div>
-    <div class="contato-grid">
-      <div>
-        <h2 class="sec-title" style="margin-bottom:1.5rem"><span data-i18n="contact.title1">Seu próximo deploy</span><br><span class="hl" data-i18n="contact.title2">começa aqui.</span></h2>
-        <div class="form-terminal">
-          <div class="form-terminal-header">
-            <span class="form-terminal-title">nativos@cloud: ~ $ contact --new-session</span>
-            <div class="dash-live"><span class="dash-live-dot"></span>LIVE</div>
-            <div class="dash-dots">
-              <span class="dash-dot r"></span>
-              <span class="dash-dot y"></span>
-              <span class="dash-dot g"></span>
-            </div>
+<section id="contato">
+  <div class="wrap">
+    <h2 data-i18n="contact.title">Seu próximo deploy começa aqui.</h2>
+    <p class="sub" data-i18n="contact.sub">Resposta em até 24h. Primeira call é de graça, pra entender onde dói.</p>
+    <div class="contact-grid">
+      <form class="contact-form" id="contact-form" onsubmit="sendEmail(event)" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-name" data-i18n="form.name">Nome</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" data-i18n-placeholder="form.name.ph" placeholder="Seu nome" required>
           </div>
-          <div class="form-terminal-body">
-            <form id="contact-form" onsubmit="sendEmail(event)">
-              <div class="form-row">
-                <div class="form-field"><label for="f-name" data-i18n="form.name">Nome</label><input id="f-name" type="text" data-i18n-placeholder="form.name.ph" placeholder="Seu nome" required></div>
-                <div class="form-field"><label for="f-company" data-i18n="form.company">Empresa</label><input id="f-company" type="text" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa" required></div>
-              </div>
-              <div class="form-row">
-                <div class="form-field"><label for="f-email" data-i18n="form.email">E-mail</label><input id="f-email" type="email" placeholder="seu@email.com.br" required></div>
-                <div class="form-field"><label for="f-phone" data-i18n="form.phone">Telefone</label><input id="f-phone" type="tel" placeholder="+55 (00) 00000-0000" required pattern="^(\+55\s?)?(\(?\d{2}\)?[\s-]?)(\d{4,5}[\s-]?\d{4})$" title="Informe um telefone válido, ex: (11) 99999-9999"></div>
-              </div>
-              <div class="form-field">
-                <label for="f-service" data-i18n="form.service">Solução de interesse</label>
-                <select id="f-service" required>
-                  <option value="" data-i18n="form.service.ph">Selecione uma solução</option>
-                  <option>Cloud Consulting</option>
-                  <option>Cloud Migration</option>
-                  <option>DevOps &amp; Platform Engineering</option>
-                  <option data-i18n="form.opt.finops">Cloud Optimization / FinOps</option>
-                  <option data-i18n="form.opt.msp">Serviços Gerenciados (MSP)</option>
-                  <option data-i18n="form.opt.sec">Segurança &amp; Compliance</option>
-                </select>
-              </div>
-              <div class="form-field"><label for="f-message" data-i18n="form.message">Mensagem</label><textarea id="f-message" data-i18n-placeholder="form.message.ph" placeholder="Conte seu desafio ou estágio atual na jornada cloud..." required></textarea></div>
-              <button type="submit" class="btn-form" id="btn-submit" data-i18n="form.submit">$ Enviar --mensagem</button>
-              <div id="form-msg" class="form-msg"></div>
-            </form>
+          <div class="form-field">
+            <label for="f-company" data-i18n="form.company">Empresa</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa" required>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="contato-side-title" data-i18n="contact.side.title">Atendimento direto,<br>sem enrolação.</div>
-        <div class="contato-side-sub" data-i18n="contact.side.sub">Respondemos em até 24h. Consultoria inicial gratuita para entender seu cenário.</div>
-        <div class="info-row"><span class="info-icon">EMAIL</span><div class="info-text"><strong>contato@nativos.cloud</strong><span data-i18n="contact.email.sub">Resposta em até 24h</span></div></div>
-        <div class="info-row"><span class="info-icon">LOC</span><div class="info-text"><strong>Ponta Grossa, Paraná</strong><span data-i18n="contact.loc.sub">Brasil — atendimento remoto nacional</span></div></div>
-        <div class="info-row"><span class="info-icon">HRS</span><div class="info-text"><strong data-i18n="contact.hrs">Seg–Sex, 08h–18h</strong><span data-i18n="contact.hrs.sub">Horário de Brasília (BRT)</span></div></div>
-      </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-email" data-i18n="form.email">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="seu@email.com.br" required>
+          </div>
+          <div class="form-field">
+            <label for="f-phone" data-i18n="form.phone">Telefone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+55 11 99999-9999" required pattern="^[+()\d][\d()\s\-+]{7,}$" title="Informe um telefone válido com DDI/DDD">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="f-service" data-i18n="form.service">O que você precisa</label>
+          <select id="f-service" name="service" required>
+            <option value="" data-i18n="form.service.ph">Selecione uma opção</option>
+            <option translate="no">Cloud Consulting</option>
+            <option translate="no">Cloud Migration</option>
+            <option translate="no">DevOps &amp; Platform Engineering</option>
+            <option data-i18n="form.opt.finops">Cloud Optimization / FinOps</option>
+            <option data-i18n="form.opt.msp">Serviços gerenciados (MSP)</option>
+            <option data-i18n="form.opt.sec">Segurança e compliance</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-message" data-i18n="form.message">Mensagem</label>
+          <textarea id="f-message" name="message" data-i18n-placeholder="form.message.ph" placeholder="Conta o que tá pegando ou em que estágio você tá…" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="btn-submit" data-i18n="form.submit">Enviar mensagem</button>
+        <div id="form-msg" class="form-msg" aria-live="polite" role="status"></div>
+      </form>
+      <aside class="contact-info">
+        <h3 data-i18n="contact.aside.title">Atendimento direto, sem enrolação.</h3>
+        <p data-i18n="contact.aside.sub">Primeira call é pra entender onde dói e propor um caminho. Nada é cobrado nessa fase.</p>
+        <dl class="contact-dl">
+          <div>
+            <dt data-i18n="contact.email">E-mail</dt>
+            <dd><a href="mailto:contato@nativos.cloud">contato@nativos.cloud</a><span data-i18n="contact.email.sub">resposta em até 24h</span></dd>
+          </div>
+          <div>
+            <dt data-i18n="contact.loc">Localização</dt>
+            <dd>Ponta Grossa, Paraná<span data-i18n="contact.loc.sub">Brasil — atendimento remoto nacional</span></dd>
+          </div>
+          <div>
+            <dt data-i18n="contact.hrs">Horário</dt>
+            <dd data-i18n="contact.hrs.val">Segunda a sexta, 08h às 18h<span data-i18n="contact.hrs.sub">horário de Brasília (BRT)</span></dd>
+          </div>
+        </dl>
+      </aside>
     </div>
   </div>
 </section>
@@ -1066,292 +1567,257 @@ footer{background:var(--bg2);border-top:1px solid var(--sep)}
 </main>
 
 <footer>
-  <div class="footer-top">
-    <div class="footer-logo">nativos<em>.cloud</em></div>
-    <div class="footer-links">
-      <a href="#solucoes" data-i18n="nav.solutions">Soluções</a>
-      <a href="#setores" data-i18n="nav.sectors">Setores</a>
-      <a href="#sobre" data-i18n="nav.about">Sobre</a>
-      <a href="#produtos" data-i18n="nav.products">Produtos</a>
-      <a href="#contato" data-i18n="nav.contact">Contato</a>
-      <a href="/politica-de-privacidade.html" data-i18n="footer.privacy">Privacidade</a>
-    </div>
-  </div>
-  <div class="footer-social-bar">
-    <div class="footer-social-inner">
-      <div class="footer-social-label" data-i18n="footer.social">// Nos acompanhe</div>
-      <div class="footer-social-icons">
-        <a href="#" class="social-link" aria-label="LinkedIn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <span class="social-link-label">LinkedIn</span>
-        </a>
-        <a href="#" class="social-link" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          <span class="social-link-label">GitHub</span>
-        </a>
-        <a href="#" class="social-link" aria-label="Instagram">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <span class="social-link-label">Instagram</span>
-        </a>
-        <a href="#" class="social-link" aria-label="YouTube">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--social-card-bg)"/></svg>
-          <span class="social-link-label">YouTube</span>
-        </a>
-        <a href="#" class="social-link" aria-label="WhatsApp">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          <span class="social-link-label">WhatsApp</span>
-        </a>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo"><span translate="no">nativos<em>.cloud</em></span></span>
+        <p class="footer-tagline" data-i18n="footer.tagline">Consultoria cloud + MSP. Ponta Grossa, PR.</p>
       </div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="#solucoes" data-i18n="nav.solutions">Soluções</a>
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#produtos" data-i18n="nav.products">Produtos</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+        <a href="/politica-de-privacidade.html" data-i18n="footer.privacy">Privacidade</a>
+      </nav>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <div></div>
-    <div class="footer-copy"><span class="hl-verde">nativos.cloud</span> © 2026. <span data-i18n="footer.rights">Todos os direitos reservados.</span></div>
-    <span class="footer-prompt" style="justify-self:end">nativos@cloud:~$&nbsp;<span class="footer-prompt-cursor">▋</span></span>
+    <div class="footer-bottom">
+      <span>© 2026 <span translate="no">nativos.cloud</span>. <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
+      <a href="mailto:contato@nativos.cloud" translate="no">contato@nativos.cloud</a>
+    </div>
   </div>
 </footer>
 
+<div class="cookie-banner hidden" id="cookie-banner" role="region" aria-label="Aviso de cookies">
+  <p class="cookie-text" data-i18n="cookie.text">Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="/politica-de-privacidade.html">política de privacidade</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn decline" onclick="cookieConsent('decline')" data-i18n="cookie.decline">Recusar</button>
+    <button class="cookie-btn accept" onclick="cookieConsent('accept')" data-i18n="cookie.accept">Aceitar</button>
+  </div>
+</div>
+
 <script>
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const answer = item.querySelector('.faq-a');
-  const isOpen = btn.classList.contains('open');
-  document.querySelectorAll('.faq-q.open').forEach(q => {
-    q.classList.remove('open');
-    q.setAttribute('aria-expanded', 'false');
-    q.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
-    q.querySelector('.faq-icon').textContent = '▸';
-  });
-  if (!isOpen) {
-    btn.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-    answer.classList.add('open');
-    btn.querySelector('.faq-icon').textContent = '▾';
-  }
-}
-
-
 const translations = {
   pt: {
-    "nav.solutions":"Soluções","nav.products":"Produtos","nav.sectors":"Setores","nav.about":"Sobre","nav.contact":"Contato","nav.cta":"$ Falar --now",
-    "hero.tag":"Consultoria Cloud · DevOps · FinOps",
-    "hero.h1.line1":"Somos","hero.h1.line2":"nativos.","hero.h1.line3":"A nuvem é","hero.h1.line4":"nossa casa.",
-    "hero.sub":"Kubernetes, multi-cloud e DevOps na prática. Pipelines que entregam e custo sempre sob controle.",
-    "hero.jornada":"Seja no primeiro passo ou num ambiente crítico em escala, a <span class=\"hl-verde\">nativos.cloud</span> entra junto com especialistas que já viveram o problema que você enfrenta.",
-    "hero.cta1":"Falar com especialista","hero.cta2":"Ver soluções →",
+    "nav.solutions":"Soluções","nav.about":"Sobre","nav.products":"Produtos","nav.contact":"Contato","nav.cta":"Mandar e-mail","theme.system":"Sistema",
+    "hero.kicker":"Ponta Grossa, PR",
+    "hero.h1":"Somos <em>nativos.</em> A nuvem é nossa casa.",
+    "hero.lede":"Kubernetes, multi-cloud e DevOps em produção. Pipeline que entrega, fatura que fecha.",
+    "hero.sublede":"Primeiro deploy ou produção em chamas. Você fala com engenheiro que já resolveu essa mesma dor.",
+    "hero.cta1":"Pedir diagnóstico por e-mail","hero.cta2":"Ver o que a gente faz",
     "hero.stackLabel":"// Stack multi-cloud","hero.platforms":"Plataformas & ferramentas","hero.metricsLabel":"// Métricas",
-    "hero.statusLabel":"// Cloud Status",
-    "metric.exp":"Experiência","metric.exp.sub":"anos em cloud","metric.clouds":"Clouds","metric.clouds.sub":"provedores","metric.projects":"Projetos","metric.projects.sub":"entregues","metric.sla":"SLA Alvo","metric.sla.sub":"disponibilidade","metric.finops":"FinOps Saving","metric.finops.sub":"economia média","metric.native":"Especialistas","metric.native.sub":"cloud-native",
-    "journey.label":"// Sua jornada cloud",
-    "journey.s1":"Análise do ambiente atual, workloads e oportunidades",
-    "journey.s2":"Arquitetura Well-Architected, segurança e custos",
-    "journey.s3.title":"Migração","journey.s3.desc":"Execução com mínimo downtime e risco controlado",
-    "journey.s4.title":"Otimização","journey.s4.desc":"FinOps, performance e rightsizing contínuos",
-    "journey.s5.title":"Operação","journey.s5.desc":"MSP, monitoramento 24x7 e suporte proativo",
-    "sol.divider":"S · Soluções","sol.title1":"O que","sol.title2":"Entregamos",
-    "sol.sub":"Da consultoria inicial à operação contínua — cobrimos cada etapa da sua jornada cloud com profundidade técnica real.",
-    "sol.1.title":"Cloud Consulting","sol.1.desc":"Suporte completo e personalizado em todas as fases: get started, design e implantação. Da estratégia ao go-live.",
-    "sol.2.title":"Cloud Migration","sol.2.desc":"Aplicamos os 7 R's da migração cloud — de Rehost a Refactor — para escolher a estratégia certa para cada workload, com mínimo downtime e risco controlado.",
-    "sol.3.desc":"Pipelines CI/CD, Kubernetes, Terraform e GitOps — automação de ponta a ponta para times de engenharia de alta performance.",
-    "sol.4.title":"Cloud Optimization","sol.4.desc":"Eliminação de desperdícios, rightsizing, reservas e FOCUS Reports — metodologia FinOps Foundation aplicada para reduzir custos com visibilidade e governança reais.",
-    "sol.5.title":"Serviços Gerenciados","sol.5.desc":"Monitoramento 24x7, manutenção proativa, gerenciamento DevOps/DevSecOps e suporte técnico contínuo com custo fixo mensal.",
-    "sol.6.title":"Segurança & Compliance","sol.6.desc":"IAM, políticas de acesso, VPN/IPSec, Zero Trust e hardening de ambientes para conformidade e proteção real.",
-    "par.divider":"P · Parceiros & plataformas","par.sub":"Em sinergia com os maiores players do mercado cloud para entregar as melhores soluções aos nossos clientes.",
-    "set.divider":"S · Setores","set.title1":"Setores","set.title2":"que Atendemos","set.sub":"Soluções cloud especializadas para os principais segmentos do mercado brasileiro.",
-    "set.1.name":"Financeiro","set.1.desc":"Compliance, segurança e alta disponibilidade",
-    "set.2.name":"Varejo","set.2.desc":"Escalabilidade para picos de demanda",
-    "set.3.name":"Indústria","set.3.desc":"Modernização e integração de sistemas",
-    "set.4.name":"Educação","set.4.desc":"Plataformas resilientes e de baixo custo",
-    "set.5.name":"Logística","set.5.desc":"Rastreio, dados e automação em tempo real",
-    "set.6.name":"Startups","set.6.desc":"Cloud-native desde o primeiro dia",
-    "about.divider":"Q · Quem somos",
-    "about.title1":"Nascidos na nuvem,","about.title2":"feitos para","about.title3":"Entregar.",
-    "about.p1":"A <span class=\"hl-verde\">nativos.cloud</span> nasceu da prática real: anos rodando infraestrutura crítica, resolvendo problemas de produção em ambientes multi-cloud e entregando projetos de alta complexidade para empresas de diferentes segmentos.",
-    "about.p2":"Não fazemos teoria. Fazemos cloud de verdade — com comprometimento técnico, comunicação direta e foco total em resultado para o seu negócio.",
-    "about.cert4":"9+ anos em infraestrutura e cloud","about.cert5":"Atuação multi-cloud: AWS, Azure, GCP e OCI",
-    "about.quote":"\"Entregamos cloud do jeito que deveria ser — sem burocracia, com resultado.\"",
-    "val.1.t":"Foco em resultado","val.1.d":"Cada entrega orientada ao impacto real no negócio",
-    "val.2.t":"Transparência","val.2.d":"Comunicação direta, sem letras miúdas",
-    "val.3.t":"Velocidade","val.3.d":"Entrega ágil sem abrir mão da qualidade",
-    "val.4.t":"Confiabilidade","val.4.d":"Ambientes estáveis, seguros e observados",
-    "contact.divider":"C · Contato","contact.title1":"Seu próximo deploy","contact.title2":"começa aqui.",
-    "form.name":"Nome","form.name.ph":"Seu nome","form.company":"Empresa","form.company.ph":"Sua empresa",
-    "form.email":"E-mail","form.service":"Solução de interesse","form.service.ph":"Selecione uma solução",
-    "form.opt.finops":"Cloud Optimization / FinOps","form.opt.msp":"Serviços Gerenciados (MSP)","form.opt.sec":"Segurança & Compliance",
-    "form.message":"Mensagem","form.message.ph":"Conte seu desafio ou estágio atual na jornada cloud...","form.submit":"$ Enviar --mensagem",
-    "contact.side.title":"Atendimento direto,<br>sem enrolação.","contact.side.sub":"Respondemos em até 24h. Consultoria inicial gratuita para entender seu cenário.",
-    "contact.email.sub":"Resposta em até 24h","contact.loc.sub":"Brasil — atendimento remoto nacional",
-    "contact.hrs":"Seg–Sex, 08h–18h","contact.hrs.sub":"Horário de Brasília (BRT)",
-    "footer.copy":"© 2025 nativos.cloud",
-    "footer.social":"// Nos acompanhe",
-    "logos.label":"// Tecnologias & Plataformas",
-    "footer.privacy":"Privacidade",
-    "footer.rights":"Todos os direitos reservados.",
-    "form.phone":"Telefone",
-    "cncf.divider":"C · Cloud Native",
-    "cncf.title1":"Nativos","cncf.title2":"no ecossistema",
-    "cncf.sub":"Construímos sobre os pilares do movimento cloud native e open source — CNCF, HashiCorp, GitOps e a infraestrutura que define a engenharia moderna.",
-    "faq.divider":"F · perguntas frequentes",
-    "faq.title1":"Dúvidas","faq.title2":"comuns",
+    "metric.exp":"Experiência","metric.exp.sub":"anos engenheiros",
+    "metric.clouds":"Clouds","metric.clouds.sub":"provedores",
+    "metric.resp":"Resposta","metric.resp.sub":"no e-mail",
+    "metric.finops":"FinOps saving","metric.finops.sub":"economia média",
+    "logos.label":"stack rodando em produção",
+    "sol.title":"O que a gente opera",
+    "sol.sub":"6 áreas que a gente opera direto. Cada uma com engenheiro responsável, não gerente de conta.",
+    "sol.cta":"pedir orçamento por e-mail",
+    "sol.1.title":"Cloud Consulting","sol.1.desc":"Da primeira call ao go-live. Arquitetura e implantação com engenheiro no e-mail, não gerente de conta.",
+    "sol.2.title":"Cloud Migration","sol.2.desc":"7 R's na prática: Rehost, Replatform, Refactor e cia. Estratégia por workload, menor downtime possível, risco mapeado antes.",
+    "sol.3.title":"DevOps & Platform Engineering","sol.3.desc":"Pipeline do commit ao deploy. Kubernetes, Terraform, GitOps. Entrega rápido sem quebrar prod.",
+    "sol.4.title":"Cloud Optimization & FinOps","sol.4.desc":"Rightsizing, reservas, FOCUS Reports. FinOps Foundation aplicada até a governança virar coisa de board.",
+    "sol.5.title":"MSP — operação cloud 24x7","sol.5.desc":"Plantão 24x7. DevOps gerenciado. Mensalidade fixa, sem fatura surpresa.",
+    "sol.6.title":"Segurança e compliance","sol.6.desc":"IAM, VPN/IPSec, Zero Trust, hardening. Postura que aguenta auditoria e pentest.",
+    "journey.title":"Como a gente trabalha","journey.sub":"Processo repetível. Do assessment à operação em produção.",
+    "journey.meta.duration":"duração","journey.meta.output":"entregável",
+    "journey.s1.title":"Assessment","journey.s1.desc":"Análise do ambiente atual, workloads e oportunidades.","journey.s1.time":"1–2 semanas","journey.s1.out":"assessment report + roadmap",
+    "journey.s2.title":"Design","journey.s2.desc":"Arquitetura Well-Architected, segurança e custos.","journey.s2.time":"2–4 semanas","journey.s2.out":"arquitetura + plano de custo",
+    "journey.s3.title":"Migração","journey.s3.desc":"Cutover ensaiado, sem surpresa no dia.","journey.s3.time":"4–16 semanas","journey.s3.out":"workloads em produção",
+    "journey.s4.title":"Otimização","journey.s4.desc":"FinOps, performance e rightsizing contínuos.","journey.s4.time":"ciclos mensais","journey.s4.out":"↓ custo médio em 90d",
+    "journey.s5.title":"Operação","journey.s5.desc":"MSP, monitoramento 24x7 e suporte proativo.","journey.s5.time":"contínuo","journey.s5.out":"SLA mensal, incidentes resolvidos",
+    "par.title":"Com quem a gente fala direto",
+    "par.p1":"Direto com os quatro grandes: <strong translate=\"no\">AWS, Azure, GCP e OCI</strong>. Vira suporte técnico mais rápido, acesso a programas de migração e condição comercial melhor pro cliente.",
+    "par.aws.note":"EKS, RDS, CloudFront, Well-Architected Review.",
+    "par.azure.note":"AKS, Entra ID, Defender, Blob Storage.",
+    "par.gcp.note":"GKE, BigQuery, Cloud Run, FinOps.",
+    "par.oci.note":"OKE, HeatWave, Autonomous DB, FastConnect.",
+    "par.stack.k8s":"Container &amp; orchestration",
+    "par.stack.iac":"IaC &amp; config",
+    "par.stack.cicd":"GitOps &amp; CI/CD",
+    "par.stack.obs":"Observability",
+    "par.stack.sec":"Secrets &amp; base",
+    "about.title":"Feitos em produção, não em slide.",
+    "about.p1":"A <span translate=\"no\">nativos.cloud</span> nasceu no plantão. Anos rodando infra crítica, apagando incêndio em prod multi-cloud e entregando projeto grande pra cliente de porte bem diferente.",
+    "about.p2":"A gente não vende slide. Faz cloud rodar, fala direto e assume o que entrega.",
+    "about.sectors":"Já operamos infra pra times de financeiro, varejo, indústria, educação, logística e startups. Cada setor cobra coisa diferente do ambiente.",
+    "about.quote":"Cloud entregue como quem opera: sem PPT bonito, com engenheiro atendendo quando o pager toca.",
+    "about.cert4":"Engenheiros com 15+ anos em infra e cloud","about.cert5":"Atuação multi-cloud: AWS, Azure, GCP e OCI",
+    "faq.title":"Perguntas frequentes",
     "faq.q1":"Qual é o prazo típico de uma migração cloud?",
     "faq.a1":"Depende da complexidade do ambiente. Migrações simples (lift & shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.",
     "faq.q2":"Vocês atendem empresas que ainda não usam cloud?",
-    "faq.a2":"Sim. Atendemos desde o primeiro passo — assessments de readiness, definição de estratégia cloud, escolha do provedor mais adequado e execução da migração. Nosso processo é pensado para reduzir risco e garantir uma transição segura.",
-    "faq.q3":"Como funciona o serviço de MSP (Managed Services)?",
-    "faq.a3":"Oferecemos monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custos e suporte técnico com SLA definido. O contrato é mensal com escopo fixo — sem surpresas no faturamento. Utilizamos Grafana, Prometheus e as ferramentas nativas de cada cloud.",
+    "faq.a2":"Sim. A gente começa do zero: readiness assessment, escolha do provedor, desenho da estratégia e execução da migração. O processo foi feito pra reduzir risco em cada etapa, não pra empilhar burocracia.",
+    "faq.q3":"Como funciona o serviço de MSP (managed services)?",
+    "faq.a3":"Monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custo e suporte técnico com SLA. Contrato mensal, escopo fixo, então a fatura não te surpreende. A stack é Grafana, Prometheus e o observability nativo de cada cloud.",
     "faq.q4":"Vocês trabalham com mais de um provedor cloud simultaneamente?",
-    "faq.a4":"Sim, somos especialistas em ambientes multi-cloud. Trabalhamos com AWS, Azure, GCP e OCI — e frequentemente ajudamos empresas a distribuir workloads entre provedores para melhorar custo, disponibilidade e performance.",
+    "faq.a4":"Sim. Multi-cloud é nosso dia a dia, com AWS, Azure, GCP e OCI. Boa parte dos clientes distribui workload entre dois provedores por custo, redundância ou requisito de compliance.",
     "faq.q5":"A consultoria inicial é gratuita?",
-    "faq.a5":"Sim. A primeira conversa é sempre sem custo. Nosso objetivo é entender seu cenário, identificar os principais desafios e propor a abordagem mais adequada antes de qualquer compromisso comercial.",
-    "prod.divider":"P · Produtos",
-    "prod.title1":"Nossos","prod.title2":"Produtos",
-    "prod.sub":"Ferramentas open source construídas pela nativos.cloud para resolver problemas reais de segurança e operações de time.",
-    "prod.vanishd.desc":"Plataforma de compartilhamento de segredos com zero-knowledge. O servidor nunca vê o conteúdo — toda a cifragem acontece no cliente, e os links se autodestruem após o primeiro acesso.",
+    "faq.a5":"Sim. A primeira call serve pra entender o cenário, mapear o que dói e propor um caminho. Nada é cobrado nessa fase.",
+    "prod.title":"Produtos open source",
+    "prod.sub":"Open source que a gente escreveu porque precisava internamente. Depois abriu.",
+    "prod.vanishd.sub":"zero-knowledge secret sharing",
+    "prod.vanishd.desc":"Compartilhamento de segredo em que o servidor nunca vê o conteúdo. A cifragem acontece no navegador do remetente e o link se autodestrói na primeira leitura.",
     "prod.vanishd.f1":"AES-256-GCM client-side via Web Crypto API",
     "prod.vanishd.f2":"Chave de decifragem no fragmento da URL (invisível ao servidor)",
     "prod.vanishd.f3":"Proteção por senha com PBKDF2 e deleção atômica na primeira leitura",
     "prod.vanishd.f4":"Rate limiting por IP e headers de segurança com CSP",
-    "prod.mfa.desc":"Plataforma web centralizada para gestão de tokens TOTP em times. Geração de códigos em tempo real com timer de 30 segundos e modo demo para onboarding rápido.",
+    "prod.mfa.sub":"gestão centralizada de tokens TOTP",
+    "prod.mfa.desc":"Gestor de TOTP pra time. Códigos ao vivo com timer de 30s, modo demo pra onboarding.",
     "prod.mfa.f1":"Registro de tokens via leitura de QR Code",
     "prod.mfa.f2":"Modo de edição protegido por senha",
-    "prod.mfa.f3":"Atualizações de código TOTP ao vivo com indicadores de progresso",
+    "prod.mfa.f3":"Códigos TOTP ao vivo, com barra de progresso",
     "prod.mfa.f4":"Deploy imediato com SQLite ou MySQL via Docker Compose",
-    "prod.gh":"$ ver no GitHub →"
+    "contact.title":"Seu próximo deploy começa aqui.",
+    "contact.sub":"Resposta em até 24h. Primeira call é de graça, pra entender onde dói.",
+    "form.name":"Nome","form.name.ph":"Seu nome","form.company":"Empresa","form.company.ph":"Sua empresa",
+    "form.email":"E-mail","form.phone":"Telefone",
+    "form.service":"O que você precisa","form.service.ph":"Selecione uma opção",
+    "form.opt.finops":"Cloud Optimization / FinOps","form.opt.msp":"Serviços gerenciados (MSP)","form.opt.sec":"Segurança e compliance",
+    "form.message":"Mensagem","form.message.ph":"Conta o que tá pegando ou em que estágio você tá…","form.submit":"Enviar mensagem",
+    "contact.aside.title":"Atendimento direto, sem enrolação.","contact.aside.sub":"Primeira call é pra entender onde dói e propor um caminho. Nada é cobrado nessa fase.",
+    "contact.email":"E-mail","contact.email.sub":"resposta em até 24h",
+    "contact.loc":"Localização","contact.loc.sub":"Brasil — atendimento remoto nacional",
+    "contact.hrs":"Horário","contact.hrs.val":"Segunda a sexta, 08h às 18h","contact.hrs.sub":"horário de Brasília (BRT)",
+    "footer.tagline":"Consultoria cloud + MSP. Ponta Grossa, PR.",
+    "footer.privacy":"Privacidade","footer.rights":"Todos os direitos reservados.",
+    "cookie.text":"Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href=\"/politica-de-privacidade.html\">política de privacidade</a>.",
+    "cookie.accept":"Aceitar","cookie.decline":"Recusar"
   },
   en: {
-    "nav.solutions":"Solutions","nav.products":"Products","nav.sectors":"Industries","nav.about":"About","nav.contact":"Contact","nav.cta":"$ Talk --now",
-    "hero.tag":"Cloud Consulting · DevOps · FinOps",
-    "hero.h1.line1":"We are","hero.h1.line2":"natives.","hero.h1.line3":"The cloud is","hero.h1.line4":"our home.",
-    "hero.sub":"Kubernetes, multi-cloud and DevOps in practice. Pipelines that deliver and cost always under control.",
-    "hero.jornada":"Whether it's your first step or a critical environment at scale, <span class=\"hl-verde\">nativos.cloud</span> joins you with specialists who have already faced the problem you're dealing with.",
-    "hero.cta1":"Talk to a specialist","hero.cta2":"Explore solutions →",
+    "nav.solutions":"Solutions","nav.about":"About","nav.products":"Products","nav.contact":"Contact","nav.cta":"Email us","theme.system":"System",
+    "hero.kicker":"Ponta Grossa, PR",
+    "hero.h1":"We're <em>natives.</em> Cloud is where we live.",
+    "hero.lede":"Kubernetes, multi-cloud and DevOps in production. Pipelines that ship, invoices that stay in check.",
+    "hero.sublede":"First deploy or prod on fire — you get an engineer who's already fixed this exact thing.",
+    "hero.cta1":"Email us for a diagnostic","hero.cta2":"See what we do",
     "hero.stackLabel":"// Multi-cloud stack","hero.platforms":"Platforms & tools","hero.metricsLabel":"// Metrics",
-    "hero.statusLabel":"// Cloud Status",
-    "metric.exp":"Experience","metric.exp.sub":"years in cloud","metric.clouds":"Clouds","metric.clouds.sub":"providers","metric.projects":"Projects","metric.projects.sub":"delivered","metric.sla":"Target SLA","metric.sla.sub":"availability","metric.finops":"FinOps Saving","metric.finops.sub":"avg savings","metric.native":"Specialists","metric.native.sub":"cloud-native",
-    "journey.label":"// Your cloud journey",
-    "journey.s1":"Current environment analysis, workloads and opportunities",
-    "journey.s2":"Well-Architected architecture, security and cost design",
-    "journey.s3.title":"Migration","journey.s3.desc":"Execution with minimal downtime and controlled risk",
-    "journey.s4.title":"Optimization","journey.s4.desc":"FinOps, performance and continuous rightsizing",
-    "journey.s5.title":"Operations","journey.s5.desc":"MSP, 24x7 monitoring and proactive support",
-    "sol.divider":"S · Solutions","sol.title1":"What we","sol.title2":"Deliver",
-    "sol.sub":"Kubernetes, multi-cloud, FinOps and security — from the first deploy to critical production operations.",
-    "sol.1.title":"Cloud Consulting","sol.1.desc":"Complete, personalized support at every phase: get started, design and deployment. From strategy to go-live.",
-    "sol.2.title":"Cloud Migration","sol.2.desc":"We apply the 7 R's of cloud migration — from Rehost to Refactor — to choose the right strategy for each workload, with minimal downtime and controlled risk.",
-    "sol.3.desc":"CI/CD pipelines, Kubernetes, Terraform and GitOps — end-to-end automation for high-performance engineering teams.",
-    "sol.4.title":"Cloud Optimization","sol.4.desc":"Waste elimination, rightsizing, reservations and FOCUS Reports — FinOps Foundation methodology applied to reduce costs with real visibility and governance.",
-    "sol.5.title":"Managed Services","sol.5.desc":"24x7 monitoring, proactive maintenance, DevOps/DevSecOps management and continuous technical support at a fixed monthly cost.",
-    "sol.6.title":"Security & Compliance","sol.6.desc":"IAM, access policies, VPN/IPSec, Zero Trust and environment hardening for real conformance and protection.",
-    "par.divider":"P · Partners & platforms","par.sub":"In partnership with the biggest cloud market players to deliver the best solutions to our clients.",
-    "set.divider":"I · Industries","set.title1":"Industries","set.title2":"We Serve","set.sub":"Specialized cloud solutions for the main market segments.",
-    "set.1.name":"Financial","set.1.desc":"Compliance, security and high availability",
-    "set.2.name":"Retail","set.2.desc":"Scalability for demand peaks",
-    "set.3.name":"Industry","set.3.desc":"Modernization and systems integration",
-    "set.4.name":"Education","set.4.desc":"Resilient and low-cost platforms",
-    "set.5.name":"Logistics","set.5.desc":"Real-time tracking, data and automation",
-    "set.6.name":"Startups","set.6.desc":"Cloud-native from day one",
-    "about.divider":"A · About us",
-    "about.title1":"Born in the cloud.","about.title2":"Specialists,","about.title3":"full stop.",
-    "about.p1":"Nativos.Cloud was born from real-world practice: years running critical infrastructure, solving production problems across multi-cloud environments, and delivering high-complexity projects for companies across different industries.",
-    "about.p2":"We don't do theory. We do real cloud — with technical commitment, direct communication and complete focus on results for your business.",
-    "about.cert4":"15+ years in infrastructure and cloud","about.cert5":"Multi-cloud expertise: AWS, Azure, GCP and OCI",
-    "about.quote":"\"We deliver cloud the way it should be — no bureaucracy, real results.\"",
-    "val.1.t":"Results-driven","val.1.d":"Every delivery oriented to real business impact",
-    "val.2.t":"Transparency","val.2.d":"Direct communication, no fine print",
-    "val.3.t":"Speed","val.3.d":"Agile delivery without sacrificing quality",
-    "val.4.t":"Reliability","val.4.d":"Stable, secure and monitored environments",
-    "contact.divider":"C · Contact","contact.title1":"Your next deploy","contact.title2":"starts here.",
-    "form.name":"Name","form.name.ph":"Your name","form.company":"Company","form.company.ph":"Your company",
-    "form.email":"E-mail","form.service":"Solution of interest","form.service.ph":"Select a solution",
-    "form.opt.finops":"Cloud Optimization / FinOps","form.opt.msp":"Managed Services (MSP)","form.opt.sec":"Security & Compliance",
-    "form.message":"Message","form.message.ph":"Tell us about your challenge or current cloud journey stage...","form.submit":"$ Send --message",
-    "contact.side.title":"Direct support,<br>no runaround.","contact.side.sub":"We respond within 24h. Free initial consulting to understand your scenario.",
-    "contact.email.sub":"Response within 24h","contact.loc.sub":"Brazil — nationwide remote support",
-    "contact.hrs":"Mon–Fri, 08am–06pm","contact.hrs.sub":"Brasília time (BRT)",
-    "footer.copy":"© 2025 nativos.cloud",
-    "footer.social":"// Follow us",
-    "logos.label":"// Technologies & Platforms",
-    "footer.privacy":"Privacy",
-    "footer.rights":"All rights reserved.",
-    "form.phone":"Phone",
-    "cncf.divider":"C · Cloud Native",
-    "cncf.title1":"Native","cncf.title2":"in the ecosystem",
-    "cncf.sub":"We build on the pillars of the cloud native and open source movement — CNCF, HashiCorp, GitOps and the infrastructure that defines modern engineering.",
-    "faq.divider":"F · frequently asked questions",
-    "faq.title1":"Common","faq.title2":"questions",
+    "metric.exp":"Experience","metric.exp.sub":"engineer years",
+    "metric.clouds":"Clouds","metric.clouds.sub":"providers",
+    "metric.resp":"Response","metric.resp.sub":"by email",
+    "metric.finops":"FinOps saving","metric.finops.sub":"average",
+    "logos.label":"stack running in production",
+    "sol.title":"What we run",
+    "sol.sub":"6 areas we operate directly. Every one has an engineer in charge — not an account manager.",
+    "sol.cta":"email us for a quote",
+    "sol.1.title":"Cloud Consulting","sol.1.desc":"From first call to go-live. Architecture, build, and an engineer on email — not an account manager.",
+    "sol.2.title":"Cloud Migration","sol.2.desc":"We apply the 7 R's of cloud migration (from Rehost to Refactor) to pick the right strategy per workload, with the lowest downtime possible and risks mapped before execution.",
+    "sol.3.title":"DevOps & Platform Engineering","sol.3.desc":"Commit to deploy: CI/CD, Kubernetes, Terraform, GitOps. Ship fast without blowing up prod.",
+    "sol.4.title":"Cloud Optimization & FinOps","sol.4.desc":"Rightsizing, reservations, FOCUS Reports and waste hunting. FinOps Foundation applied until cost governance lands in the board deck.",
+    "sol.5.title":"MSP — managed cloud ops","sol.5.desc":"24x7 on-call. Managed DevOps. Flat monthly bill, no surprises.",
+    "sol.6.title":"Security and compliance","sol.6.desc":"IAM, access policies, VPN/IPSec, Zero Trust and environment hardening. Security posture that stands up to audit and pentest.",
+    "journey.title":"How we work","journey.sub":"A repeatable process. From initial assessment to production operations.",
+    "journey.meta.duration":"duration","journey.meta.output":"deliverable",
+    "journey.s1.title":"Assessment","journey.s1.desc":"Analysis of the current environment, workloads and opportunities.","journey.s1.time":"1–2 weeks","journey.s1.out":"assessment report + roadmap",
+    "journey.s2.title":"Design","journey.s2.desc":"Well-Architected architecture, security and cost design.","journey.s2.time":"2–4 weeks","journey.s2.out":"architecture + cost plan",
+    "journey.s3.title":"Migration","journey.s3.desc":"Rehearsed cutover, no surprises on the day.","journey.s3.time":"4–16 weeks","journey.s3.out":"workloads live in production",
+    "journey.s4.title":"Optimization","journey.s4.desc":"FinOps, performance and continuous rightsizing.","journey.s4.time":"monthly cycles","journey.s4.out":"↓ avg cost in 90 days",
+    "journey.s5.title":"Operations","journey.s5.desc":"MSP, 24x7 monitoring and proactive support.","journey.s5.time":"continuous","journey.s5.out":"monthly SLA, incidents resolved",
+    "par.title":"Who we talk to directly",
+    "par.p1":"We work directly with the four major providers — <strong translate=\"no\">AWS, Microsoft Azure, Google Cloud and Oracle Cloud</strong>. In practice, that means faster technical support, access to migration programs and better commercial terms for the client.",
+    "par.aws.note":"EKS, RDS, CloudFront, Well-Architected Review.",
+    "par.azure.note":"AKS, Entra ID, Defender, Blob Storage.",
+    "par.gcp.note":"GKE, BigQuery, Cloud Run, FinOps.",
+    "par.oci.note":"OKE, HeatWave, Autonomous DB, FastConnect.",
+    "par.stack.k8s":"Container &amp; orchestration",
+    "par.stack.iac":"IaC &amp; config",
+    "par.stack.cicd":"GitOps &amp; CI/CD",
+    "par.stack.obs":"Observability",
+    "par.stack.sec":"Secrets &amp; base",
+    "about.title":"Built in production, not on slides.",
+    "about.p1":"<span translate=\"no\">nativos.cloud</span> grew out of on-call rotations: years running critical infrastructure, fighting production fires across multi-cloud environments, and shipping heavy projects for companies of very different sizes and industries.",
+    "about.p2":"We don't ship decks. We ship cloud that runs, talk straight, and own what we deliver.",
+    "about.sectors":"We've already operated infra for teams in financial services, retail, industry, education, logistics and startups — each sector asks something very different of the environment.",
+    "about.quote":"Cloud delivered by people who actually operate it: no polished decks, engineer on the pager when it goes off.",
+    "about.cert4":"Engineers with 15+ years in infra and cloud","about.cert5":"Multi-cloud expertise: AWS, Azure, GCP and OCI",
+    "faq.title":"Frequently asked questions",
     "faq.q1":"What is the typical timeline for a cloud migration?",
     "faq.a1":"It depends on the complexity of the environment. Simple migrations (lift & shift of smaller workloads) take 2 to 4 weeks. Larger projects involving refactoring, security and integration can take 2 to 6 months. We always start with an assessment to estimate accurately.",
     "faq.q2":"Do you work with companies that don't use cloud yet?",
-    "faq.a2":"Yes. We support from the very first step — readiness assessments, cloud strategy definition, provider selection and migration execution. Our process is designed to reduce risk and ensure a safe transition.",
-    "faq.q3":"How does the MSP (Managed Services) offering work?",
-    "faq.a3":"We provide 24x7 monitoring, proactive incident management, continuous cost optimization and technical support with a defined SLA. The contract is monthly with a fixed scope — no billing surprises. We use Grafana, Prometheus and the native tools of each cloud provider.",
+    "faq.a2":"Yes. We start from zero: readiness assessment, provider selection, strategy design and migration execution. The process is built to reduce risk at every step, not to pile on paperwork.",
+    "faq.q3":"How does the MSP (managed services) offering work?",
+    "faq.a3":"24x7 monitoring, proactive incident management, continuous cost optimization and technical support with an SLA. Monthly contract, fixed scope, so the invoice doesn't surprise you. The stack is Grafana, Prometheus and each cloud's native observability.",
     "faq.q4":"Do you work with more than one cloud provider at the same time?",
-    "faq.a4":"Yes, we specialize in multi-cloud environments. We work with AWS, Azure, GCP and OCI — and frequently help companies distribute workloads across providers to improve cost, availability and performance.",
+    "faq.a4":"Yes. Multi-cloud is our day-to-day, with AWS, Azure, GCP and OCI. Most clients distribute workloads across two providers for cost, redundancy or compliance reasons.",
     "faq.q5":"Is the initial consulting free?",
-    "faq.a5":"Yes. The first conversation is always at no cost. Our goal is to understand your scenario, identify the main challenges and propose the most suitable approach before any commercial commitment.",
-    "prod.divider":"P · Products",
-    "prod.title1":"Our","prod.title2":"Products",
-    "prod.sub":"Open source tools built by nativos.cloud to solve real security and team operations problems.",
-    "prod.vanishd.desc":"A zero-knowledge secret sharing platform. The server never sees the content — all encryption happens on the client, and links self-destruct after the first access.",
+    "faq.a5":"Yes. The first call is for us to understand the situation, map what hurts and propose a path. Nothing is charged at that stage.",
+    "prod.title":"Open source products",
+    "prod.sub":"Open source we wrote because we needed it internally. Then opened it up.",
+    "prod.vanishd.sub":"zero-knowledge secret sharing",
+    "prod.vanishd.desc":"Zero-knowledge secret sharing where the server never sees the content. Encryption happens in the sender's browser and the link self-destructs on first read.",
     "prod.vanishd.f1":"Client-side AES-256-GCM encryption via Web Crypto API",
     "prod.vanishd.f2":"Decryption key stored in URL fragment (invisible to server)",
     "prod.vanishd.f3":"Password protection via PBKDF2 and atomic deletion on first read",
     "prod.vanishd.f4":"Per-IP rate limiting and security headers with CSP",
-    "prod.mfa.desc":"Centralized web platform for managing TOTP tokens across teams. Real-time code generation with a 30-second timer and demo mode for quick onboarding.",
+    "prod.mfa.sub":"centralized TOTP token management",
+    "prod.mfa.desc":"TOTP token manager for teams. Live codes with a 30-second timer, demo mode for quick onboarding.",
     "prod.mfa.f1":"Token registration via QR Code scanning",
     "prod.mfa.f2":"Password-protected edit mode",
-    "prod.mfa.f3":"Live TOTP code updates with progress indicators",
+    "prod.mfa.f3":"Live TOTP codes with progress bar",
     "prod.mfa.f4":"Instant deploy with SQLite or MySQL via Docker Compose",
-    "prod.gh":"$ view on GitHub →"
+    "contact.title":"Your next deploy starts here.",
+    "contact.sub":"We reply within 24h. First call is free — tell us what's hurting.",
+    "form.name":"Name","form.name.ph":"Your name","form.company":"Company","form.company.ph":"Your company",
+    "form.email":"E-mail","form.phone":"Phone",
+    "form.service":"What you need","form.service.ph":"Pick an option",
+    "form.opt.finops":"Cloud Optimization / FinOps","form.opt.msp":"Managed services (MSP)","form.opt.sec":"Security and compliance",
+    "form.message":"Message","form.message.ph":"What's on fire, or where are you stuck?","form.submit":"Send message",
+    "contact.aside.title":"Direct support, no runaround.","contact.aside.sub":"The first call is to understand where it hurts and propose a path. Nothing is charged at that stage.",
+    "contact.email":"E-mail","contact.email.sub":"response within 24h",
+    "contact.loc":"Location","contact.loc.sub":"Brazil — nationwide remote support",
+    "contact.hrs":"Hours","contact.hrs.val":"Monday–Friday, 8am–6pm","contact.hrs.sub":"Brasília time (BRT)",
+    "footer.tagline":"Cloud consultancy + MSP. Ponta Grossa, PR — Brazil.",
+    "footer.privacy":"Privacy","footer.rights":"All rights reserved.",
+    "cookie.text":"We use cookies to improve your experience. By continuing, you agree to our <a href=\"/politica-de-privacidade.html\">privacy policy</a>.",
+    "cookie.accept":"Accept","cookie.decline":"Decline"
   }
 };
 
 let currentLang = 'pt';
 
-(function() {
+/* Theme */
+(function(){
   const mq = window.matchMedia('(prefers-color-scheme: light)');
   const KEY = 'nc-theme';
   const icons = {dark:'◐', system:'⊙', light:'○'};
+  const labels = {dark:'Dark', system:'System', light:'Light'};
 
-  function applyTheme(pref) {
+  function applyTheme(pref){
     const resolved = pref === 'system' ? (mq.matches ? 'light' : 'dark') : pref;
     document.documentElement.dataset.theme = resolved;
     const iconEl = document.getElementById('theme-select-icon');
-    if (iconEl) iconEl.textContent = icons[pref];
+    const labelEl = document.getElementById('theme-select-label');
+    if(iconEl) iconEl.textContent = icons[pref];
+    if(labelEl){
+      const t = translations && translations[currentLang];
+      labelEl.textContent = pref === 'system' && t && t['theme.system'] ? t['theme.system'] : labels[pref];
+    }
     ['dark','system','light'].forEach(t => {
       const item = document.getElementById('tmitem-' + t);
-      if (item) item.classList.toggle('active', t === pref);
+      if(item) item.classList.toggle('active', t === pref);
     });
   }
-
-  window.setTheme = function(pref) {
-    localStorage.setItem(KEY, pref);
-    applyTheme(pref);
-  };
-
-  window.toggleThemeMenu = function() {
+  window.setTheme = function(pref){ localStorage.setItem(KEY, pref); applyTheme(pref); };
+  window.toggleThemeMenu = function(){
     const isOpen = document.getElementById('theme-menu').classList.toggle('open');
     document.getElementById('theme-select-btn').setAttribute('aria-expanded', isOpen);
   };
-
-  window.closeThemeMenu = function() {
+  window.closeThemeMenu = function(){
     document.getElementById('theme-menu').classList.remove('open');
+    document.getElementById('theme-select-btn').setAttribute('aria-expanded', 'false');
   };
-
-  document.addEventListener('click', function(e) {
-    if (!document.getElementById('theme-select').contains(e.target)) {
-      closeThemeMenu();
-    }
+  document.addEventListener('click', function(e){
+    if(!document.getElementById('theme-select').contains(e.target)) closeThemeMenu();
   });
-
-  mq.addEventListener('change', function() {
-    if (localStorage.getItem(KEY) === 'system') applyTheme('system');
+  mq.addEventListener('change', function(){
+    if(localStorage.getItem(KEY) === 'system') applyTheme('system');
   });
-
   applyTheme(localStorage.getItem(KEY) || 'system');
 })();
 
-function setLang(lang) {
+/* i18n */
+function setLang(lang){
   currentLang = lang;
   const t = translations[lang];
   document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
@@ -1359,26 +1825,86 @@ function setLang(lang) {
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) el.innerHTML = t[key];
+    if(t[key] !== undefined) el.innerHTML = t[key];
   });
-
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
-    if (t[key] !== undefined) el.placeholder = t[key];
+    if(t[key] !== undefined) el.placeholder = t[key];
   });
+  if(window.setTheme){
+    const savedTheme = localStorage.getItem('nc-theme') || 'system';
+    window.setTheme(savedTheme);
+  }
 }
-
 document.addEventListener('DOMContentLoaded', function(){ setLang('pt'); });
 
-(function() {
+/* Contact form */
+function sendEmail(e){
+  e.preventDefault();
+  const btn = document.getElementById('btn-submit');
+  const msg = document.getElementById('form-msg');
+  const form = document.getElementById('contact-form');
+  const originalLabel = translations[currentLang]['form.submit'];
+
+  const name    = document.getElementById('f-name').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const company = document.getElementById('f-company').value.trim();
+  const service = document.getElementById('f-service').value;
+  const message = document.getElementById('f-message').value.trim();
+  const phoneRegex = /^[+()\d][\d()\s\-+]{7,}$/;
+
+  function showErr(text, focusEl){
+    msg.className = 'form-msg err';
+    msg.textContent = text;
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+    if(focusEl) focusEl.focus();
+  }
+
+  if(!name){ return showErr(currentLang === 'pt' ? 'Informe seu nome.' : 'Please enter your name.', document.getElementById('f-name')); }
+  if(!company){ return showErr(currentLang === 'pt' ? 'Informe sua empresa.' : 'Please enter your company.', document.getElementById('f-company')); }
+  if(!email){ return showErr(currentLang === 'pt' ? 'Informe seu e-mail.' : 'Please enter your email.', document.getElementById('f-email')); }
+  if(!phone){ return showErr(currentLang === 'pt' ? 'Informe seu telefone.' : 'Please enter your phone.', document.getElementById('f-phone')); }
+  if(!phoneRegex.test(phone)){ return showErr(currentLang === 'pt' ? 'Telefone inválido. Inclua DDI/DDD.' : 'Invalid phone number. Include country/area code.', document.getElementById('f-phone')); }
+  if(!service){ return showErr(currentLang === 'pt' ? 'Escolha uma opção.' : 'Please select an option.', document.getElementById('f-service')); }
+  if(!message){ return showErr(currentLang === 'pt' ? 'Escreva uma mensagem.' : 'Please write a message.', document.getElementById('f-message')); }
+
+  btn.disabled = true;
+  btn.textContent = currentLang === 'pt' ? 'Enviando…' : 'Sending…';
+
+  emailjs.send("service_2lczufs", "template_04427c7", { name, company, email, phone, service, message })
+    .then(() => {
+      msg.className = 'form-msg ok';
+      msg.textContent = currentLang === 'pt' ? 'Mensagem enviada. Retorno em até 24h.' : 'Message sent. We respond within 24h.';
+      form.reset();
+    })
+    .catch(() => {
+      msg.className = 'form-msg err';
+      msg.textContent = currentLang === 'pt' ? 'Erro ao enviar. Tente novamente ou escreva para contato@nativos.cloud.' : 'Failed to send. Try again or email contato@nativos.cloud.';
+    })
+    .finally(() => {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    });
+}
+
+/* Logos marquee: duplicate track for seamless loop */
+(function(){
+  const track = document.querySelector('.logos-track');
+  if(track) track.innerHTML += track.innerHTML;
+})();
+
+/* Hero dashboard: system monitor canvas */
+(function(){
   const canvas = document.getElementById('sys-monitor');
-  if (!canvas) return;
+  if(!canvas) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const dpr = window.devicePixelRatio || 1;
   let cW = 0, cH = 0;
-  function resize() {
+  function resize(){
     const r = canvas.getBoundingClientRect();
     canvas.width  = r.width  * dpr;
     canvas.height = r.height * dpr;
@@ -1386,39 +1912,28 @@ document.addEventListener('DOMContentLoaded', function(){ setLang('pt'); });
     cH = canvas.height / dpr;
   }
   resize();
-  window.addEventListener('resize', resize, {passive: true});
+  window.addEventListener('resize', resize, {passive:true});
   const ctx = canvas.getContext('2d');
   ctx.scale(dpr, dpr);
-
   const streams = [
-    { data:[], color:'rgba(0,255,106,0.55)',  lw:1.2, bias:0.48 },
-    { data:[], color:'rgba(245,196,0,0.30)',  lw:1.0, bias:0.49 },
-    { data:[], color:'rgba(0,255,106,0.18)',  lw:0.8, bias:0.50 },
+    { data:[], color:'rgba(79,176,122,0.55)',  lw:1.2, bias:0.48 },
+    { data:[], color:'rgba(217,164,65,0.30)',  lw:1.0, bias:0.49 },
+    { data:[], color:'rgba(79,176,122,0.18)',  lw:0.8, bias:0.50 },
   ];
-
   streams.forEach(s => {
     let y = 0.4 + Math.random() * 0.3;
-    for (let i = 0; i < cW; i++) {
+    for(let i = 0; i < cW; i++){
       y = Math.max(0.15, Math.min(0.85, y + (Math.random() - s.bias) * 0.04));
       s.data.push(y);
     }
   });
-
-  let frame = 0;
-  let animId = null;
-  function tick() {
-    animId = requestAnimationFrame(tick);
-    if (++frame % 6 !== 0) return;
+  function draw(){
     ctx.clearRect(0, 0, cW, cH);
     streams.forEach(s => {
-      let last = s.data[s.data.length - 1];
-      last = Math.max(0.15, Math.min(0.85, last + (Math.random() - s.bias) * 0.04));
-      s.data.push(last);
-      if (s.data.length > cW) s.data.shift();
       ctx.beginPath();
       ctx.strokeStyle = s.color;
-      ctx.lineWidth   = s.lw;
-      ctx.lineJoin    = 'round';
+      ctx.lineWidth = s.lw;
+      ctx.lineJoin = 'round';
       s.data.forEach((v, i) => {
         const x = (i / (s.data.length - 1)) * cW;
         const y = v * cH;
@@ -1427,23 +1942,34 @@ document.addEventListener('DOMContentLoaded', function(){ setLang('pt'); });
       ctx.stroke();
     });
   }
-  const canvasObs = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting) {
-      if (!animId) tick();
+  if(reduced){ draw(); return; }
+  let frame = 0, animId = null;
+  function tick(){
+    animId = requestAnimationFrame(tick);
+    if(++frame % 6 !== 0) return;
+    streams.forEach(s => {
+      let last = s.data[s.data.length - 1];
+      last = Math.max(0.15, Math.min(0.85, last + (Math.random() - s.bias) * 0.04));
+      s.data.push(last);
+      if(s.data.length > cW) s.data.shift();
+    });
+    draw();
+  }
+  const io = new IntersectionObserver(entries => {
+    if(entries[0].isIntersecting){
+      if(!animId) tick();
     } else {
       cancelAnimationFrame(animId);
       animId = null;
     }
   });
-  canvasObs.observe(canvas);
+  io.observe(canvas);
 })();
 
-(function() {
-  const track = document.querySelector('.logos-track');
-  if (track) track.innerHTML += track.innerHTML;
-})();
-
-(function() {
+/* Hero dashboard: live monitor rolling events */
+(function(){
+  const el = document.getElementById('live-monitor');
+  if(!el) return;
   const entries = [
     { cloud:'aws',   msg:'EKS cluster health check',           ok:true  },
     { cloud:'oci',   msg:'OKE node pool autoscaling',          ok:true  },
@@ -1480,122 +2006,39 @@ document.addEventListener('DOMContentLoaded', function(){ setLang('pt'); });
     { cloud:'aws',   msg:'Prometheus alert: high CPU p95',     ok:false },
     { cloud:'azure', msg:'Grafana dashboard updated',          ok:true  },
     { cloud:'aws',   msg:'Datadog anomaly: p99 latency spike', ok:false },
-    { cloud:'oci',   msg:'Logging ingestion lag cleared',          ok:true  },
-    { cloud:'aws',   msg:'MySQL binlog replication: in sync',      ok:true  },
-    { cloud:'azure', msg:'MySQL replica lag: 0s — healthy',        ok:true  },
-    { cloud:'gcp',   msg:'Binlog position advancing — no gap',     ok:true  },
-    { cloud:'oci',   msg:'MySQL GTID replication: consistent',     ok:true  },
-    { cloud:'aws',   msg:'RDS replica: Seconds_Behind_Master 0',   ok:true  },
-    { cloud:'azure', msg:'Binlog retention set to 7d — compliant', ok:true  },
-    { cloud:'gcp',   msg:'MySQL replica lag spike: 42s',           ok:false },
-    { cloud:'aws',   msg:'Binlog event: DDL detected on prod',     ok:false },
-    { cloud:'oci',   msg:'Replica I/O thread stopped — alert',     ok:false },
-    { cloud:'aws',   msg:'Binlog purge: freed 18GB on primary',    ok:true  },
   ];
   let idx = Math.floor(Math.random() * entries.length);
-  const el = document.getElementById('live-monitor');
-  if (!el) return;
-
-  function ts() {
+  function ts(){
     return new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
   }
-  function push() {
+  function push(){
     const e = entries[idx++ % entries.length];
     const line = document.createElement('div');
     line.className = 'monitor-line new';
     line.innerHTML =
-      `<span class="monitor-time">${ts()}</span>` +
-      `<span class="monitor-cloud ${e.cloud}">${e.cloud.toUpperCase()}</span>` +
-      `<span class="monitor-msg">${e.msg}</span>` +
-      (e.ok ? `<span class="monitor-ok">✓ ok</span>` : `<span class="monitor-info">● info</span>`);
+      '<span class="monitor-time">' + ts() + '</span>' +
+      '<span class="monitor-cloud ' + e.cloud + '">' + e.cloud.toUpperCase() + '</span>' +
+      '<span class="monitor-msg">' + e.msg + '</span>' +
+      (e.ok ? '<span class="monitor-ok">✓ ok</span>' : '<span class="monitor-info">● info</span>');
     el.insertBefore(line, el.firstChild);
-    if (el.children.length > 3) el.removeChild(el.lastChild);
+    if(el.children.length > 3) el.removeChild(el.lastChild);
   }
   push(); push(); push();
-  setInterval(push, 2500);
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduced) setInterval(push, 2500);
 })();
 
-function sendEmail(e) {
-  e.preventDefault();
-  const btn = document.getElementById('btn-submit');
-  const msg = document.getElementById('form-msg');
-  const form = document.getElementById('contact-form');
-
-  btn.disabled = true;
-  btn.textContent = '$ Enviando...';
-
-  const name    = document.getElementById('f-name').value.trim();
-  const email   = document.getElementById('f-email').value.trim();
-  const phone   = document.getElementById('f-phone').value.trim();
-  const company = document.getElementById('f-company').value.trim();
-  const service = document.getElementById('f-service').value;
-  const message = document.getElementById('f-message').value.trim();
-
-  const phoneRegex = /^(\+55\s?)?(\(?\d{2}\)?[\s-]?)(\d{4,5}[\s-]?\d{4})$/;
-
-  if (!name || !email || !phone || !company || !service || !message) {
-    msg.className = 'form-msg err';
-    msg.style.display = 'block';
-    msg.textContent = '✗ Preencha todos os campos obrigatórios.';
-    btn.disabled = false;
-    btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
-    return;
-  }
-
-  if (!phoneRegex.test(phone)) {
-    msg.className = 'form-msg err';
-    msg.style.display = 'block';
-    msg.textContent = '✗ Telefone inválido. Use o formato (11) 99999-9999.';
-    btn.disabled = false;
-    btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
-    return;
-  }
-
-  const params = {
-    name,
-    company,
-    email,
-    phone,
-    service,
-    message,
-  };
-
-  emailjs.send("service_2lczufs", "template_04427c7", params)
-    .then(() => {
-      msg.className = 'form-msg ok';
-      msg.style.display = 'block';
-      msg.textContent = '✓ Mensagem enviada! Retorno em até 24h.';
-      form.reset();
-    })
-    .catch(() => {
-      msg.className = 'form-msg err';
-      msg.style.display = 'block';
-      msg.textContent = '✗ Erro ao enviar. Tente novamente ou use o e-mail direto.';
-    })
-    .finally(() => {
-      btn.disabled = false;
-      btn.textContent = currentLang === 'pt' ? '$ Enviar --mensagem' : '$ Send --message';
-    });
-}
-
-// Cookie consent
-function cookieConsent(choice) {
+/* Cookie consent */
+function cookieConsent(choice){
   localStorage.setItem('cookie_consent', choice);
   document.getElementById('cookie-banner').classList.add('hidden');
 }
-document.addEventListener('DOMContentLoaded', function() {
-  if (!localStorage.getItem('cookie_consent')) {
+document.addEventListener('DOMContentLoaded', function(){
+  if(!localStorage.getItem('cookie_consent')){
     document.getElementById('cookie-banner').classList.remove('hidden');
   }
 });
 </script>
 
-<div class="cookie-banner hidden" id="cookie-banner" role="region" aria-label="Aviso de cookies">
-  <p class="cookie-text">Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</p>
-  <div class="cookie-actions">
-    <button class="cookie-btn accept" onclick="cookieConsent('accept')">Aceitar</button>
-    <button class="cookie-btn decline" onclick="cookieConsent('decline')">Recusar</button>
-  </div>
-</div>
 </body>
 </html>
