@@ -6,3 +6,13 @@
 
 # Local dev server
 serve.py
+
+# Node modules for asset pipeline (resvg) — restored via `npm install`
+node_modules/
+
+# User-specific Claude Code permissions
+.claude/settings.local.json
+
+# Vendored skills — restored via `npx skills experimental_install` from skills-lock.json
+.agents/skills/
+.claude/skills/
