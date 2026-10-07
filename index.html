@@ -913,6 +913,21 @@ blockquote{
 }
 .form-msg.ok{background:rgba(75,174,120,0.08);color:var(--verde);border-color:var(--verde);display:block}
 .form-msg.err{background:rgba(192,76,76,0.08);color:#C04B4C;border-color:#C04B4C;display:block}
+.form-field.invalid input,
+.form-field.invalid textarea,
+.form-field.invalid select{border-color:#C04B4C}
+.form-field.invalid input:focus,
+.form-field.invalid textarea:focus,
+.form-field.invalid select:focus{border-color:#C04B4C}
+.field-error{
+  display:block;
+  min-height:1em;
+  font-family:var(--mono);
+  font-size:0.7rem;
+  color:#C04B4C;
+  margin-top:0.1rem;
+  line-height:1.3;
+}
 
 .contact-info h3{font-size:1.15rem;margin-bottom:0.4rem;letter-spacing:-0.015em}
 .contact-info > p{color:var(--texto-sec);line-height:1.65;font-size:0.95rem;margin-bottom:1.5rem}
@@ -1833,6 +1848,7 @@ function setLang(lang){
     const key = el.getAttribute('data-i18n-placeholder');
     if(t[key] !== undefined) el.placeholder = t[key];
   });
+  if(typeof retranslateFormStrings === 'function') retranslateFormStrings();
   if(window.setTheme){
     const savedTheme = localStorage.getItem('nc-theme') || 'system';
     window.setTheme(savedTheme);
@@ -1841,55 +1857,157 @@ function setLang(lang){
 document.addEventListener('DOMContentLoaded', function(){ setLang('pt'); });
 
 /* Contact form */
+const FORM_STRINGS = {
+  'name.required':   { pt:'Informe seu nome.', en:'Please enter your name.' },
+  'name.short':      { pt:'Nome muito curto.', en:'Name is too short.' },
+  'company.required':{ pt:'Informe sua empresa.', en:'Please enter your company.' },
+  'company.short':   { pt:'Empresa muito curta.', en:'Company name too short.' },
+  'email.required':  { pt:'Informe seu e-mail.', en:'Please enter your email.' },
+  'email.invalid':   { pt:'E-mail inválido.', en:'Invalid email address.' },
+  'phone.required':  { pt:'Informe seu telefone.', en:'Please enter your phone.' },
+  'phone.invalid':   { pt:'Telefone inválido. Inclua DDI/DDD.', en:'Invalid phone. Include country/area code.' },
+  'service.required':{ pt:'Escolha uma opção.', en:'Please select an option.' },
+  'message.required':{ pt:'Escreva uma mensagem.', en:'Please write a message.' },
+  'message.short':   { pt:'Mensagem muito curta (mín. 10 caracteres).', en:'Message too short (min 10 characters).' },
+  'form.sending':    { pt:'Enviando…', en:'Sending…' },
+  'form.sent':       { pt:'Mensagem enviada. Retorno em até 24h.', en:'Message sent. We respond within 24h.' },
+  'form.failed':     { pt:'Erro ao enviar. Tente novamente ou escreva para contato@nativos.cloud.', en:'Failed to send. Try again or email contato@nativos.cloud.' }
+};
+function formStr(key){
+  const entry = FORM_STRINGS[key];
+  if(!entry) return key;
+  return entry[currentLang] || entry.pt;
+}
+
+function setFieldError(el, errKey){
+  const field = el.closest('.form-field');
+  if(!field) return;
+  field.classList.add('invalid');
+  field.dataset.errorKey = errKey;
+  el.setAttribute('aria-invalid', 'true');
+  let err = field.querySelector('.field-error');
+  if(!err){
+    err = document.createElement('small');
+    err.className = 'field-error';
+    err.setAttribute('role', 'alert');
+    field.appendChild(err);
+  }
+  err.textContent = formStr(errKey);
+}
+function clearFieldError(el){
+  const field = el.closest('.form-field');
+  if(!field) return;
+  field.classList.remove('invalid');
+  delete field.dataset.errorKey;
+  el.removeAttribute('aria-invalid');
+  const err = field.querySelector('.field-error');
+  if(err) err.textContent = '';
+}
+function clearAllFieldErrors(form){
+  form.querySelectorAll('.form-field.invalid').forEach(f => {
+    f.classList.remove('invalid');
+    delete f.dataset.errorKey;
+    const err = f.querySelector('.field-error');
+    if(err) err.textContent = '';
+    f.querySelectorAll('[aria-invalid]').forEach(el => el.removeAttribute('aria-invalid'));
+  });
+}
+function setFormMsg(el, key, cls){
+  el.dataset.msgKey = key;
+  el.className = 'form-msg' + (cls ? ' ' + cls : '');
+  el.textContent = formStr(key);
+}
+function clearFormMsg(el){
+  delete el.dataset.msgKey;
+  el.className = 'form-msg';
+  el.textContent = '';
+}
+function retranslateFormStrings(){
+  document.querySelectorAll('.form-field.invalid').forEach(field => {
+    const key = field.dataset.errorKey;
+    const err = field.querySelector('.field-error');
+    if(key && err) err.textContent = formStr(key);
+  });
+  const msg = document.getElementById('form-msg');
+  if(msg && msg.dataset.msgKey) msg.textContent = formStr(msg.dataset.msgKey);
+  const btn = document.getElementById('btn-submit');
+  if(btn && btn.dataset.sending === '1') btn.textContent = formStr('form.sending');
+}
+
 function sendEmail(e){
   e.preventDefault();
   const btn = document.getElementById('btn-submit');
   const msg = document.getElementById('form-msg');
   const form = document.getElementById('contact-form');
-  const originalLabel = translations[currentLang]['form.submit'];
 
-  const name    = document.getElementById('f-name').value.trim();
-  const email   = document.getElementById('f-email').value.trim();
-  const phone   = document.getElementById('f-phone').value.trim();
-  const company = document.getElementById('f-company').value.trim();
-  const service = document.getElementById('f-service').value;
-  const message = document.getElementById('f-message').value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const phoneRegex = /^[+()\d][\d()\s\-+]{7,}$/;
 
-  function showErr(text, focusEl){
-    msg.className = 'form-msg err';
-    msg.textContent = text;
-    btn.disabled = false;
-    btn.textContent = originalLabel;
-    if(focusEl) focusEl.focus();
-  }
+  const fields = {
+    name:    document.getElementById('f-name'),
+    company: document.getElementById('f-company'),
+    email:   document.getElementById('f-email'),
+    phone:   document.getElementById('f-phone'),
+    service: document.getElementById('f-service'),
+    message: document.getElementById('f-message')
+  };
+  const values = Object.fromEntries(
+    Object.entries(fields).map(([k, el]) => [k, (el.value || '').trim()])
+  );
 
-  if(!name){ return showErr(currentLang === 'pt' ? 'Informe seu nome.' : 'Please enter your name.', document.getElementById('f-name')); }
-  if(!company){ return showErr(currentLang === 'pt' ? 'Informe sua empresa.' : 'Please enter your company.', document.getElementById('f-company')); }
-  if(!email){ return showErr(currentLang === 'pt' ? 'Informe seu e-mail.' : 'Please enter your email.', document.getElementById('f-email')); }
-  if(!phone){ return showErr(currentLang === 'pt' ? 'Informe seu telefone.' : 'Please enter your phone.', document.getElementById('f-phone')); }
-  if(!phoneRegex.test(phone)){ return showErr(currentLang === 'pt' ? 'Telefone inválido. Inclua DDI/DDD.' : 'Invalid phone number. Include country/area code.', document.getElementById('f-phone')); }
-  if(!service){ return showErr(currentLang === 'pt' ? 'Escolha uma opção.' : 'Please select an option.', document.getElementById('f-service')); }
-  if(!message){ return showErr(currentLang === 'pt' ? 'Escreva uma mensagem.' : 'Please write a message.', document.getElementById('f-message')); }
+  const checks = {
+    name:    v => !v ? 'name.required'    : v.length < 2  ? 'name.short'    : null,
+    company: v => !v ? 'company.required' : v.length < 2  ? 'company.short' : null,
+    email:   v => !v ? 'email.required'   : !emailRegex.test(v) ? 'email.invalid' : null,
+    phone:   v => !v ? 'phone.required'   : !phoneRegex.test(v) ? 'phone.invalid' : null,
+    service: v => !v ? 'service.required' : null,
+    message: v => !v ? 'message.required' : v.length < 10 ? 'message.short'  : null
+  };
+
+  clearAllFieldErrors(form);
+  clearFormMsg(msg);
+
+  let firstInvalid = null;
+  for(const key of Object.keys(fields)){
+    const errKey = checks[key](values[key]);
+    if(errKey){
+      setFieldError(fields[key], errKey);
+      if(!firstInvalid) firstInvalid = fields[key];
+    }
+  }
+  if(firstInvalid){ firstInvalid.focus(); return; }
 
   btn.disabled = true;
-  btn.textContent = currentLang === 'pt' ? 'Enviando…' : 'Sending…';
+  btn.dataset.sending = '1';
+  btn.textContent = formStr('form.sending');
 
-  emailjs.send("service_2lczufs", "template_04427c7", { name, company, email, phone, service, message })
+  emailjs.send("service_2lczufs", "template_04427c7", values)
     .then(() => {
-      msg.className = 'form-msg ok';
-      msg.textContent = currentLang === 'pt' ? 'Mensagem enviada. Retorno em até 24h.' : 'Message sent. We respond within 24h.';
+      setFormMsg(msg, 'form.sent', 'ok');
       form.reset();
+      clearAllFieldErrors(form);
     })
     .catch(() => {
-      msg.className = 'form-msg err';
-      msg.textContent = currentLang === 'pt' ? 'Erro ao enviar. Tente novamente ou escreva para contato@nativos.cloud.' : 'Failed to send. Try again or email contato@nativos.cloud.';
+      setFormMsg(msg, 'form.failed', 'err');
     })
     .finally(() => {
       btn.disabled = false;
-      btn.textContent = originalLabel;
+      delete btn.dataset.sending;
+      btn.textContent = translations[currentLang]['form.submit'];
     });
 }
+
+/* Clear field error as the user corrects it */
+(function(){
+  const form = document.getElementById('contact-form');
+  if(!form) return;
+  form.addEventListener('input', (e) => {
+    if(e.target.matches('input, textarea, select')) clearFieldError(e.target);
+  });
+  form.addEventListener('change', (e) => {
+    if(e.target.matches('select')) clearFieldError(e.target);
+  });
+})();
 
 /* Logos marquee: duplicate track for seamless loop */
 (function(){
