@@ -1997,7 +1997,7 @@ function sendEmail(e){
     });
 }
 
-/* Clear field error as the user corrects it */
+/* Clear field error as the user corrects it + strip non-tel chars from phone */
 (function(){
   const form = document.getElementById('contact-form');
   if(!form) return;
@@ -2007,6 +2007,27 @@ function sendEmail(e){
   form.addEventListener('change', (e) => {
     if(e.target.matches('select')) clearFieldError(e.target);
   });
+  const phoneEl = document.getElementById('f-phone');
+  if(phoneEl){
+    phoneEl.addEventListener('input', () => {
+      const cleaned = phoneEl.value.replace(/[^\d+()\s-]/g, '');
+      if(cleaned !== phoneEl.value){
+        const pos = phoneEl.selectionStart;
+        const removed = phoneEl.value.length - cleaned.length;
+        phoneEl.value = cleaned;
+        try { phoneEl.setSelectionRange(pos - removed, pos - removed); } catch(_){}
+      }
+    });
+    phoneEl.addEventListener('paste', (e) => {
+      e.preventDefault();
+      const text = (e.clipboardData || window.clipboardData).getData('text') || '';
+      const cleaned = text.replace(/[^\d+()\s-]/g, '');
+      const start = phoneEl.selectionStart, end = phoneEl.selectionEnd;
+      phoneEl.value = phoneEl.value.slice(0, start) + cleaned + phoneEl.value.slice(end);
+      try { phoneEl.setSelectionRange(start + cleaned.length, start + cleaned.length); } catch(_){}
+      phoneEl.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+  }
 })();
 
 /* Logos marquee: duplicate track for seamless loop */
