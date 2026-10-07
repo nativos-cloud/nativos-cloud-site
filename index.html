@@ -1096,7 +1096,7 @@ footer{
         <button class="lang-btn active" id="btn-pt" aria-label="Português" aria-pressed="true" onclick="setLang('pt')">PT</button>
         <button class="lang-btn" id="btn-en" aria-label="English" aria-pressed="false" onclick="setLang('en')">EN</button>
       </div>
-      <button class="nav-cta" data-i18n="nav.cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Mandar e-mail</button>
+      <button class="nav-cta" data-i18n="nav.cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Entre em contato</button>
     </div>
   </div>
 </nav>
@@ -1521,11 +1521,11 @@ footer{
         <div class="form-row">
           <div class="form-field">
             <label for="f-name" data-i18n="form.name">Nome</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" data-i18n-placeholder="form.name.ph" placeholder="Seu nome" required maxlength="100">
+            <input id="f-name" name="name" type="text" autocomplete="name" data-i18n-placeholder="form.name.ph" placeholder="Seu nome" required maxlength="50">
           </div>
           <div class="form-field">
             <label for="f-company" data-i18n="form.company">Empresa</label>
-            <input id="f-company" name="company" type="text" autocomplete="organization" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa" required maxlength="100">
+            <input id="f-company" name="company" type="text" autocomplete="organization" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa" required maxlength="50">
           </div>
         </div>
         <div class="form-row">
@@ -1614,7 +1614,7 @@ footer{
 <script>
 const translations = {
   pt: {
-    "nav.solutions":"Soluções","nav.about":"Sobre","nav.products":"Produtos","nav.contact":"Contato","nav.cta":"Mandar e-mail","theme.system":"Sistema",
+    "nav.solutions":"Soluções","nav.about":"Sobre","nav.products":"Produtos","nav.contact":"Contato","nav.cta":"Entre em contato","theme.system":"Sistema",
     "hero.kicker":"Ponta Grossa, PR",
     "hero.h1":"Somos <em>nativos.</em> A nuvem é nossa casa.",
     "hero.lede":"Kubernetes, multi-cloud e DevOps em produção. Pipeline que entrega, fatura que fecha.",
@@ -1701,7 +1701,7 @@ const translations = {
     "cookie.accept":"Aceitar","cookie.decline":"Recusar"
   },
   en: {
-    "nav.solutions":"Solutions","nav.about":"About","nav.products":"Products","nav.contact":"Contact","nav.cta":"Email us","theme.system":"System",
+    "nav.solutions":"Solutions","nav.about":"About","nav.products":"Products","nav.contact":"Contact","nav.cta":"Get in touch","theme.system":"System",
     "hero.kicker":"Ponta Grossa, PR",
     "hero.h1":"We're <em>natives.</em> Cloud is where we live.",
     "hero.lede":"Kubernetes, multi-cloud and DevOps in production. Pipelines that ship, invoices that stay in check.",
@@ -1860,10 +1860,10 @@ document.addEventListener('DOMContentLoaded', function(){ setLang('pt'); });
 const FORM_STRINGS = {
   'name.required':   { pt:'Informe seu nome.', en:'Please enter your name.' },
   'name.short':      { pt:'Nome muito curto.', en:'Name is too short.' },
-  'name.long':       { pt:'Nome muito longo (máx. 100 caracteres).', en:'Name too long (max 100 characters).' },
+  'name.long':       { pt:'Nome muito longo (máx. 50 caracteres).', en:'Name too long (max 50 characters).' },
   'company.required':{ pt:'Informe sua empresa.', en:'Please enter your company.' },
   'company.short':   { pt:'Empresa muito curta.', en:'Company name too short.' },
-  'company.long':    { pt:'Empresa muito longa (máx. 100 caracteres).', en:'Company name too long (max 100 characters).' },
+  'company.long':    { pt:'Empresa muito longa (máx. 50 caracteres).', en:'Company name too long (max 50 characters).' },
   'email.required':  { pt:'Informe seu e-mail.', en:'Please enter your email.' },
   'email.invalid':   { pt:'E-mail inválido.', en:'Invalid email address.' },
   'email.long':      { pt:'E-mail muito longo (máx. 254 caracteres).', en:'Email too long (max 254 characters).' },
@@ -1973,10 +1973,10 @@ function sendEmail(e){
 
   const checks = {
     name:    v => !v ? 'name.required'    : v.length < 2    ? 'name.short'
-                                          : v.length > 100  ? 'name.long'
+                                          : v.length > 50   ? 'name.long'
                                           : !letterRegex.test(v) ? 'name.invalid' : null,
     company: v => !v ? 'company.required' : v.length < 2    ? 'company.short'
-                                          : v.length > 100  ? 'company.long'
+                                          : v.length > 50   ? 'company.long'
                                           : !letterRegex.test(v) ? 'company.invalid' : null,
     email:   v => !v ? 'email.required'   : v.length > 254  ? 'email.long'
                                           : !emailRegex.test(v) ? 'email.invalid' : null,
