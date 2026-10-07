@@ -1521,21 +1521,21 @@ footer{
         <div class="form-row">
           <div class="form-field">
             <label for="f-name" data-i18n="form.name">Nome</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" data-i18n-placeholder="form.name.ph" placeholder="Seu nome" required>
+            <input id="f-name" name="name" type="text" autocomplete="name" data-i18n-placeholder="form.name.ph" placeholder="Seu nome" required maxlength="100">
           </div>
           <div class="form-field">
             <label for="f-company" data-i18n="form.company">Empresa</label>
-            <input id="f-company" name="company" type="text" autocomplete="organization" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa" required>
+            <input id="f-company" name="company" type="text" autocomplete="organization" data-i18n-placeholder="form.company.ph" placeholder="Sua empresa" required maxlength="100">
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
             <label for="f-email" data-i18n="form.email">E-mail</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="seu@email.com.br" required>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="seu@email.com.br" required maxlength="254">
           </div>
           <div class="form-field">
             <label for="f-phone" data-i18n="form.phone">Telefone</label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+55 11 99999-9999" required pattern="^[+()\d][\d()\s\-+]{7,}$" title="Informe um telefone válido com DDI/DDD">
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+55 11 99999-9999" required maxlength="20" pattern="^[+()\d][\d()\s\-+]{7,}$" title="Informe um telefone válido com DDI/DDD">
           </div>
         </div>
         <div class="form-field">
@@ -1552,7 +1552,7 @@ footer{
         </div>
         <div class="form-field">
           <label for="f-message" data-i18n="form.message">Mensagem</label>
-          <textarea id="f-message" name="message" data-i18n-placeholder="form.message.ph" placeholder="Conta o que tá pegando ou em que estágio você tá…" required></textarea>
+          <textarea id="f-message" name="message" data-i18n-placeholder="form.message.ph" placeholder="Conta o que tá pegando ou em que estágio você tá…" required maxlength="2000"></textarea>
         </div>
         <button type="submit" class="btn-submit" id="btn-submit" data-i18n="form.submit">Enviar mensagem</button>
         <div id="form-msg" class="form-msg" aria-live="polite" role="status"></div>
@@ -1860,15 +1860,20 @@ document.addEventListener('DOMContentLoaded', function(){ setLang('pt'); });
 const FORM_STRINGS = {
   'name.required':   { pt:'Informe seu nome.', en:'Please enter your name.' },
   'name.short':      { pt:'Nome muito curto.', en:'Name is too short.' },
+  'name.long':       { pt:'Nome muito longo (máx. 100 caracteres).', en:'Name too long (max 100 characters).' },
   'company.required':{ pt:'Informe sua empresa.', en:'Please enter your company.' },
   'company.short':   { pt:'Empresa muito curta.', en:'Company name too short.' },
+  'company.long':    { pt:'Empresa muito longa (máx. 100 caracteres).', en:'Company name too long (max 100 characters).' },
   'email.required':  { pt:'Informe seu e-mail.', en:'Please enter your email.' },
   'email.invalid':   { pt:'E-mail inválido.', en:'Invalid email address.' },
+  'email.long':      { pt:'E-mail muito longo (máx. 254 caracteres).', en:'Email too long (max 254 characters).' },
   'phone.required':  { pt:'Informe seu telefone.', en:'Please enter your phone.' },
   'phone.invalid':   { pt:'Telefone inválido. Inclua DDI/DDD.', en:'Invalid phone. Include country/area code.' },
+  'phone.long':      { pt:'Telefone muito longo (máx. 20 caracteres).', en:'Phone too long (max 20 characters).' },
   'service.required':{ pt:'Escolha uma opção.', en:'Please select an option.' },
   'message.required':{ pt:'Escreva uma mensagem.', en:'Please write a message.' },
   'message.short':   { pt:'Mensagem muito curta (mín. 10 caracteres).', en:'Message too short (min 10 characters).' },
+  'message.long':    { pt:'Mensagem muito longa (máx. 2000 caracteres).', en:'Message too long (max 2000 characters).' },
   'form.sending':    { pt:'Enviando…', en:'Sending…' },
   'form.sent':       { pt:'Mensagem enviada. Retorno em até 24h.', en:'Message sent. We respond within 24h.' },
   'form.failed':     { pt:'Erro ao enviar. Tente novamente ou escreva para contato@nativos.cloud.', en:'Failed to send. Try again or email contato@nativos.cloud.' }
@@ -1956,12 +1961,17 @@ function sendEmail(e){
   );
 
   const checks = {
-    name:    v => !v ? 'name.required'    : v.length < 2  ? 'name.short'    : null,
-    company: v => !v ? 'company.required' : v.length < 2  ? 'company.short' : null,
-    email:   v => !v ? 'email.required'   : !emailRegex.test(v) ? 'email.invalid' : null,
-    phone:   v => !v ? 'phone.required'   : !phoneRegex.test(v) ? 'phone.invalid' : null,
+    name:    v => !v ? 'name.required'    : v.length < 2    ? 'name.short'
+                                          : v.length > 100  ? 'name.long'    : null,
+    company: v => !v ? 'company.required' : v.length < 2    ? 'company.short'
+                                          : v.length > 100  ? 'company.long' : null,
+    email:   v => !v ? 'email.required'   : v.length > 254  ? 'email.long'
+                                          : !emailRegex.test(v) ? 'email.invalid' : null,
+    phone:   v => !v ? 'phone.required'   : v.length > 20   ? 'phone.long'
+                                          : !phoneRegex.test(v) ? 'phone.invalid' : null,
     service: v => !v ? 'service.required' : null,
-    message: v => !v ? 'message.required' : v.length < 10 ? 'message.short'  : null
+    message: v => !v ? 'message.required' : v.length < 10   ? 'message.short'
+                                          : v.length > 2000 ? 'message.long'  : null
   };
 
   clearAllFieldErrors(form);
