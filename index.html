@@ -1867,6 +1867,8 @@ const FORM_STRINGS = {
   'email.required':  { pt:'Informe seu e-mail.', en:'Please enter your email.' },
   'email.invalid':   { pt:'E-mail inválido.', en:'Invalid email address.' },
   'email.long':      { pt:'E-mail muito longo (máx. 254 caracteres).', en:'Email too long (max 254 characters).' },
+  'name.invalid':    { pt:'Informe um nome válido.', en:'Please enter a valid name.' },
+  'company.invalid': { pt:'Informe uma empresa válida.', en:'Please enter a valid company.' },
   'phone.required':  { pt:'Informe seu telefone.', en:'Please enter your phone.' },
   'phone.invalid':   { pt:'Telefone inválido. Inclua DDI/DDD.', en:'Invalid phone. Include country/area code.' },
   'phone.long':      { pt:'Telefone muito longo (máx. 20 caracteres).', en:'Phone too long (max 20 characters).' },
@@ -1874,6 +1876,7 @@ const FORM_STRINGS = {
   'message.required':{ pt:'Escreva uma mensagem.', en:'Please write a message.' },
   'message.short':   { pt:'Mensagem muito curta (mín. 10 caracteres).', en:'Message too short (min 10 characters).' },
   'message.long':    { pt:'Mensagem muito longa (máx. 2000 caracteres).', en:'Message too long (max 2000 characters).' },
+  'message.invalid': { pt:'Mensagem inválida.', en:'Invalid message.' },
   'form.sending':    { pt:'Enviando…', en:'Sending…' },
   'form.sent':       { pt:'Mensagem enviada. Retorno em até 24h.', en:'Message sent. We respond within 24h.' },
   'form.failed':     { pt:'Erro ao enviar. Tente novamente ou escreva para contato@nativos.cloud.', en:'Failed to send. Try again or email contato@nativos.cloud.' }
@@ -1947,6 +1950,14 @@ function sendEmail(e){
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const phoneRegex = /^[+()\d][\d()\s\-+]{7,}$/;
+  const letterRegex = /\p{L}/u;
+  const digitCount = v => (v.match(/\d/g) || []).length;
+  // Strip zero-width/bidi, normalise exotic whitespace (incl. Braille Blank U+2800) to ASCII space, collapse, trim.
+  const normalize = v => (v || '')
+    .replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u206F\uFEFF]/g, '')
+    .replace(/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\u2800]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 
   const fields = {
     name:    document.getElementById('f-name'),
@@ -1957,21 +1968,25 @@ function sendEmail(e){
     message: document.getElementById('f-message')
   };
   const values = Object.fromEntries(
-    Object.entries(fields).map(([k, el]) => [k, (el.value || '').trim()])
+    Object.entries(fields).map(([k, el]) => [k, normalize(el.value)])
   );
 
   const checks = {
     name:    v => !v ? 'name.required'    : v.length < 2    ? 'name.short'
-                                          : v.length > 100  ? 'name.long'    : null,
+                                          : v.length > 100  ? 'name.long'
+                                          : !letterRegex.test(v) ? 'name.invalid' : null,
     company: v => !v ? 'company.required' : v.length < 2    ? 'company.short'
-                                          : v.length > 100  ? 'company.long' : null,
+                                          : v.length > 100  ? 'company.long'
+                                          : !letterRegex.test(v) ? 'company.invalid' : null,
     email:   v => !v ? 'email.required'   : v.length > 254  ? 'email.long'
                                           : !emailRegex.test(v) ? 'email.invalid' : null,
     phone:   v => !v ? 'phone.required'   : v.length > 20   ? 'phone.long'
+                                          : digitCount(v) < 8 || digitCount(v) > 15 ? 'phone.invalid'
                                           : !phoneRegex.test(v) ? 'phone.invalid' : null,
     service: v => !v ? 'service.required' : null,
     message: v => !v ? 'message.required' : v.length < 10   ? 'message.short'
-                                          : v.length > 2000 ? 'message.long'  : null
+                                          : v.length > 2000 ? 'message.long'
+                                          : !letterRegex.test(v) ? 'message.invalid' : null
   };
 
   clearAllFieldErrors(form);
