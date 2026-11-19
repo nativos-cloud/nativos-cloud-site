@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100E0A" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F9F8F6" media="(prefers-color-scheme: light)">
 <title>Política de Privacidade — nativos.cloud</title>
 <meta name="description" content="Política de Privacidade e uso de cookies da nativos.cloud, em conformidade com a LGPD (Lei 13.709/2018).">
 <meta name="robots" content="index, follow">
@@ -16,53 +16,217 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>(function(){var s=localStorage.getItem('nc-theme')||'system';var resolved=s==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=resolved;})()</script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>(function(){var s=localStorage.getItem('nc-theme')||'system';var r=s==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=r;})()</script>
 <style>
-  :root{
-    color-scheme:dark light;
-    --bg:#100E0A;--card:#191511;--card-border:#2E2A24;--sep:#262219;
-    --texto:#F2EEE6;--texto-sec:#B5B0A8;--texto-muted:#9C988E;
-    --verde:#3FBF75;--amarelo:#F2C94C;
-    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-    --sans:'JetBrains Mono',var(--mono);
-  }
-  [data-theme="light"]{
-    color-scheme:light;
-    --bg:#F5F0E8;--card:#FDFAF5;--card-border:#D4CEC4;--sep:#D4CEC4;
-    --texto:#1A1714;--texto-sec:#3D3830;--texto-muted:#6B6560;
-    --verde:#1F7A48;--amarelo:#8A6A00;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  *:focus-visible{outline:2px solid var(--verde);outline-offset:2px;border-radius:2px}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--texto);font-family:var(--sans);font-size:0.95rem;line-height:1.65;padding:0 5%}
-  .flag-strip{height:3px;background:linear-gradient(90deg,#009C3B 0%,#009C3B 40%,#F2C94C 40%,#F2C94C 60%,#002776 60%,#002776 100%);margin:0 -5% 2rem}
-  header{padding:1rem 0 1.5rem;border-bottom:1px solid var(--sep);margin-bottom:2.5rem}
-  header a{color:var(--verde);text-decoration:none;font-size:1rem;font-weight:700;letter-spacing:-0.01em;font-family:var(--sans)}
-  main{max-width:720px;margin:0 auto;padding-bottom:4rem}
-  h1{font-size:1.75rem;color:var(--texto);margin-bottom:0.4rem;font-weight:700;letter-spacing:-0.02em;line-height:1.2}
-  .updated{font-size:0.78rem;color:var(--texto-muted);margin-bottom:2.5rem;font-family:var(--mono)}
-  h2{font-size:1rem;color:var(--verde);margin:2rem 0 0.6rem;font-weight:600;letter-spacing:0;font-family:var(--sans)}
-  p{margin-bottom:0.8rem;color:var(--texto-sec)}
-  ul{margin:0.5rem 0 0.8rem 1.5rem;color:var(--texto-sec)}
-  li{margin-bottom:0.3rem}
-  a{color:var(--verde);text-decoration:underline;text-decoration-color:rgba(63,191,117,0.4);text-underline-offset:3px}
-  a:hover{text-decoration-color:var(--verde)}
-  .back{display:inline-block;margin-top:3rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:3px;color:var(--texto);font-size:0.82rem;font-family:var(--sans);text-decoration:none;transition:border-color 0.15s,color 0.15s}
-  .back:hover{border-color:var(--verde);color:var(--verde);text-decoration:none}
-  strong{color:var(--texto);font-weight:600}
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0.01ms!important}}
+:root{
+  color-scheme:dark light;
+  --maxw:72rem;
+  --bg:#111110;--bg-elev:#1A1A18;--bg-sunk:#0A0A09;
+  --sep:#1E1E1C;
+  --texto:#EEECEA;--texto-sec:#8A8880;--texto-muted:#555350;
+  --verde:#22C55E;--verde-text:#052e16;--verde-btn:#16A34A;
+  --amarelo:#F59E0B;
+  --card:#1A1A18;--card-border:#2A2A27;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
+  --sans:'Outfit',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+[data-theme="light"]{
+  color-scheme:light;
+  --bg:#F9F8F6;--bg-elev:#FFFFFF;--bg-sunk:#F0EEE9;
+  --sep:#EAE7E0;
+  --texto:#111110;--texto-sec:#595751;--texto-muted:#9B9892;
+  --verde:#16A34A;--verde-text:#ffffff;--verde-btn:#16A34A;
+  --amarelo:#D97706;
+  --card:#FFFFFF;--card-border:#E4E1DA;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+*:focus-visible{outline:2px solid var(--verde);outline-offset:2px;border-radius:2px}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--texto);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--grain);
+  background-repeat:repeat;
+  background-size:180px 180px;
+  opacity:0.07;
+  mix-blend-mode:overlay;
+  z-index:0;
+}
+[data-theme="light"] body::before{opacity:0.09;mix-blend-mode:multiply}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 1.5rem;
+  height:3.5rem;
+  border-bottom:1px solid var(--sep);
+  background:color-mix(in oklab, var(--bg) 92%, transparent);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.nav-logo{
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:0.95rem;
+  letter-spacing:-0.015em;
+  color:var(--texto);
+  text-decoration:none;
+}
+.nav-logo em{color:var(--verde);font-style:normal}
+.nav-back{
+  font-family:var(--mono);
+  font-size:0.75rem;
+  color:var(--texto-muted);
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:0.4rem;
+  transition:color 0.15s;
+}
+.nav-back:hover{color:var(--verde)}
+
+/* LAYOUT */
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:3.5rem 1.5rem 5rem;
+  position:relative;
+  z-index:1;
+}
+
+/* HEADER */
+.doc-header{
+  margin-bottom:3rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--sep);
+}
+.doc-label{
+  font-family:var(--mono);
+  font-size:0.72rem;
+  color:var(--verde);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin-bottom:0.75rem;
+}
+h1{
+  font-family:var(--sans);
+  font-size:clamp(1.75rem,4vw,2.25rem);
+  font-weight:700;
+  letter-spacing:-0.025em;
+  line-height:1.15;
+  color:var(--texto);
+  margin-bottom:0.6rem;
+}
+.doc-meta{
+  font-family:var(--mono);
+  font-size:0.75rem;
+  color:var(--texto-muted);
+}
+
+/* CONTENT */
+h2{
+  font-family:var(--sans);
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--texto-muted);
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  margin:2.5rem 0 0.75rem;
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+}
+h2::before{
+  content:"";
+  display:inline-block;
+  width:3px;
+  height:0.9em;
+  background:var(--verde);
+  border-radius:2px;
+  flex-shrink:0;
+}
+p{
+  color:var(--texto-sec);
+  font-size:0.95rem;
+  line-height:1.7;
+  margin-bottom:0.75rem;
+}
+ul{
+  margin:0.5rem 0 0.75rem 0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:0.4rem;
+}
+li{
+  color:var(--texto-sec);
+  font-size:0.95rem;
+  line-height:1.65;
+  padding-left:1.25rem;
+  position:relative;
+}
+li::before{
+  content:"—";
+  position:absolute;
+  left:0;
+  color:var(--verde);
+  font-family:var(--mono);
+  font-size:0.8em;
+}
+strong{color:var(--texto);font-weight:600}
+a{color:var(--verde);text-decoration:underline;text-decoration-color:color-mix(in oklab,var(--verde) 40%,transparent);text-underline-offset:3px;transition:text-decoration-color 0.15s}
+a:hover{text-decoration-color:var(--verde)}
+
+/* BACK BUTTON */
+.back{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  margin-top:3rem;
+  padding:0.6rem 1.2rem;
+  border:1px solid var(--card-border);
+  border-radius:4px;
+  color:var(--texto-sec);
+  font-family:var(--mono);
+  font-size:0.78rem;
+  text-decoration:none;
+  transition:border-color 0.15s,color 0.15s;
+}
+.back:hover{border-color:var(--verde);color:var(--verde);text-decoration:none}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0.01ms!important}}
+@media(max-width:600px){main{padding:2.5rem 1.25rem 4rem}}
 </style>
 </head>
 <body>
-<div class="flag-strip" aria-hidden="true"></div>
-<header>
-  <a href="/" translate="no">nativos.cloud</a>
-</header>
+<nav>
+  <a class="nav-logo" href="/" translate="no">nativos<em>.cloud</em></a>
+  <a class="nav-back" href="/">← Voltar ao site</a>
+</nav>
 <main>
-  <h1>Política de privacidade</h1>
-  <p class="updated">Última atualização: <time datetime="2026-10-03">3 de outubro de 2026</time></p>
+  <div class="doc-header">
+    <p class="doc-label">Documento legal · LGPD</p>
+    <h1>Política de privacidade</h1>
+    <p class="doc-meta">Última atualização: <time datetime="2026-10-03">3 de outubro de 2026</time></p>
+  </div>
 
   <p>A <strong translate="no">nativos.cloud</strong> respeita sua privacidade e trata dados pessoais em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>.</p>
 
@@ -84,7 +248,7 @@
 
   <h2>3. Cookies</h2>
   <p>Usamos cookies estritamente necessários ao funcionamento do site. Cookies de análise e desempenho só são carregados após seu consentimento explícito no banner.</p>
-  <p>Você pode retirar o consentimento a qualquer momento limpando os dados do navegador ou clicando em “Recusar” no banner de cookies.</p>
+  <p>Você pode retirar o consentimento a qualquer momento limpando os dados do navegador ou clicando em "Recusar" no banner de cookies.</p>
 
   <h2>4. Base legal</h2>
   <ul>
