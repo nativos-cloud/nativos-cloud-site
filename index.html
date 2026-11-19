@@ -2056,8 +2056,7 @@ function sendEmail(e){
                                           : !letterRegex.test(v) ? 'company.invalid' : null,
     email:   v => !v ? 'email.required'   : v.length > 254  ? 'email.long'
                                           : !emailRegex.test(v) ? 'email.invalid' : null,
-    phone:   v => !v ? 'phone.required'   : v.length > 20   ? 'phone.long'
-                                          : digitCount(v) < 8 || digitCount(v) > 15 ? 'phone.invalid'
+    phone:   v => !v ? 'phone.required'   : digitCount(v) < 8 || digitCount(v) > 15 ? 'phone.invalid'
                                           : !phoneRegex.test(v) ? 'phone.invalid' : null,
     service: v => !v ? 'service.required' : null,
     message: v => !v ? 'message.required' : v.length < 10   ? 'message.short'
