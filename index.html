@@ -310,13 +310,14 @@ nav{
 .lang-btn.active{background:var(--texto);color:var(--bg)}
 
 .nav-cta{
-  background:var(--verde);
-  color:var(--verde-text);
-  border-color:var(--verde);
-  font-weight:600;
-  padding:0 0.95rem;
+  background:transparent;
+  color:var(--texto-muted);
+  border-color:transparent;
+  font-weight:500;
+  padding:0 0.75rem;
+  font-size:0.68rem;
 }
-.nav-cta:hover{background:transparent;color:var(--verde);border-color:var(--verde)}
+.nav-cta:hover{color:var(--verde);border-color:var(--sep)}
 
 /* ─── LAYOUT PRIMITIVES ──────────────────────────────────────────────── */
 section{padding:5rem 1.5rem}
@@ -1207,39 +1208,37 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 /* ─── COOKIE BANNER ──────────────────────────────────────────────────── */
 .cookie-banner{
   position:fixed;
-  bottom:1rem;
-  left:1rem;
-  right:1rem;
-  max-width:36rem;
-  margin:0 auto;
+  bottom:1.5rem;
+  left:1.5rem;
   z-index:500;
+  width:360px;
   background:var(--bg-elev);
-  border:1px solid var(--border);
-  border-radius:6px;
-  padding:1rem 1.1rem;
-  display:flex;
-  gap:1rem;
-  align-items:center;
-  flex-wrap:wrap;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  border:1px solid var(--sep);
+  border-top:2px solid var(--verde);
+  border-radius:10px;
+  padding:1.5rem;
+  box-shadow:0 12px 40px rgba(0,0,0,0.25),0 2px 8px rgba(0,0,0,0.12);
+  animation:cookie-in 0.4s cubic-bezier(0.16,1,0.3,1) both;
 }
+@keyframes cookie-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cookie-banner{animation:none}}
 .cookie-banner.hidden{display:none}
-.cookie-text{font-family:var(--mono);font-size:0.78rem;color:var(--texto-sec);line-height:1.5;flex:1;min-width:200px}
-.cookie-text a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
-.cookie-actions{display:flex;gap:0.5rem;flex-shrink:0}
+.cookie-head{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem}
+.cookie-icon{width:14px;height:14px;color:var(--verde);flex-shrink:0}
+.cookie-title{font-family:var(--mono);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--texto)}
+.cookie-text{font-size:0.78rem;color:var(--texto-sec);line-height:1.55}
+.cookie-text a{color:var(--verde);text-decoration:none;border-bottom:1px solid rgba(34,197,94,0.3);transition:border-color 0.15s}
+.cookie-text a:hover{border-color:var(--verde)}
+.cookie-actions{display:flex;gap:0.5rem;margin-top:1rem}
 .cookie-btn{
-  font-family:var(--mono);
-  font-size:0.76rem;
-  padding:0.42rem 0.9rem;
-  border-radius:4px;
-  cursor:pointer;
-  border:0;
-  transition:background 0.15s, border-color 0.15s;
+  font-family:var(--mono);font-size:0.72rem;font-weight:600;
+  padding:0.48rem 0.75rem;border-radius:6px;cursor:pointer;
+  border:1px solid transparent;transition:all 0.15s;
 }
-.cookie-btn.accept{background:var(--verde);color:var(--verde-text);font-weight:600}
-.cookie-btn.accept:hover{opacity:0.9}
-.cookie-btn.decline{background:transparent;color:var(--texto-sec);border:1px solid var(--border)}
-.cookie-btn.decline:hover{border-color:var(--texto-muted);color:var(--texto)}
+.cookie-btn.accept{flex:1;background:var(--verde);color:var(--verde-text);border-color:var(--verde)}
+.cookie-btn.accept:hover{opacity:0.88}
+.cookie-btn.decline{background:transparent;color:var(--texto-muted);border-color:var(--sep)}
+.cookie-btn.decline:hover{color:var(--texto);border-color:var(--texto-muted)}
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────────────── */
 @media (max-width: 900px){
@@ -2440,7 +2439,11 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 </footer>
 
 <div class="cookie-banner hidden" id="cookie-banner" role="region" aria-label="Aviso de cookies">
-  <p class="cookie-text" data-i18n="cookie.text">Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="/politica-de-privacidade.html">política de privacidade</a>.</p>
+  <div class="cookie-head">
+    <svg class="cookie-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <span class="cookie-title">Privacidade</span>
+  </div>
+  <p class="cookie-text" data-i18n="cookie.text">Usamos cookies para melhorar sua experiência. Leia nossa <a href="/politica-de-privacidade.html">política de privacidade</a>.</p>
   <div class="cookie-actions">
     <button class="cookie-btn decline" onclick="cookieConsent('decline')" data-i18n="cookie.decline">Recusar</button>
     <button class="cookie-btn accept" onclick="cookieConsent('accept')" data-i18n="cookie.accept">Aceitar</button>
@@ -2561,7 +2564,7 @@ const translations = {
     "contact.hrs":"Horário","contact.hrs.val":"Segunda a sexta, 08h às 18h","contact.hrs.sub":"horário de Brasília (BRT)",
     "footer.tagline":"Consultoria cloud + MSP. Consultoria Cloud — Ponta Grossa, PR.",
     "footer.privacy":"Privacidade","footer.rights":"Todos os direitos reservados.",
-    "cookie.text":"Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href=\"/politica-de-privacidade.html\">política de privacidade</a>.",
+    "cookie.text":"Usamos cookies para melhorar sua experiência. Leia nossa <a href=\"/politica-de-privacidade.html\">política de privacidade</a>.",
     "cookie.accept":"Aceitar","cookie.decline":"Recusar"
   },
   en: {
@@ -2676,7 +2679,7 @@ const translations = {
     "contact.hrs":"Hours","contact.hrs.val":"Monday–Friday, 8am–6pm","contact.hrs.sub":"Brasília time (BRT)",
     "footer.tagline":"Cloud consultancy + MSP. Consultoria Cloud — Ponta Grossa, PR — Brazil.",
     "footer.privacy":"Privacy","footer.rights":"All rights reserved.",
-    "cookie.text":"We use cookies to improve your experience. By continuing, you agree to our <a href=\"/politica-de-privacidade.html\">privacy policy</a>.",
+    "cookie.text":"We use cookies to improve your experience. Read our <a href=\"/politica-de-privacidade.html\">privacy policy</a>.",
     "cookie.accept":"Accept","cookie.decline":"Decline"
   }
 };
