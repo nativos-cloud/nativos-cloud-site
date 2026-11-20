@@ -898,6 +898,23 @@ blockquote{
   background:var(--verde);
 }
 
+/* ─── TECH TAGS (#hashtags) ─────────────────────────────────────────── */
+/* feature card inline tags */
+.ftags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.9rem;padding-top:0.75rem;border-top:1px solid var(--sep)}
+.ftag{font-family:var(--mono);font-size:0.63rem;font-weight:500;color:var(--texto-muted);transition:color 180ms;cursor:default;user-select:none;letter-spacing:0.02em}
+.ftag:hover{color:var(--verde)}
+
+/* about section tag cloud */
+.about-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem}
+.about-tag{font-family:var(--mono);font-size:0.68rem;color:var(--texto-muted);background:var(--bg-sunk);border:1px solid var(--sep);border-radius:4px;padding:0.2rem 0.5rem;transition:color 180ms,border-color 180ms;cursor:default;user-select:none}
+.about-tag:hover{color:var(--verde);border-color:rgba(34,197,94,0.3)}
+
+/* pre-footer ghost tags (background atmosphere) */
+.pre-footer{position:relative}
+.pf-bg-tags{position:absolute;inset:0;pointer-events:none;user-select:none;overflow:hidden;opacity:0.07}
+[data-theme="light"] .pf-bg-tags{opacity:0.12}
+.pf-bg-tag{position:absolute;font-family:var(--mono);font-size:0.72rem;font-weight:500;color:var(--verde);white-space:nowrap}
+
 /* ─── FAQ (native details) ───────────────────────────────────────────── */
 .faq{margin-top:1.5rem;display:flex;flex-direction:column}
 .faq details{border-bottom:1px solid var(--sep)}
@@ -1738,6 +1755,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         </div>
         <h3 data-i18n="why.f1.title">Engenheiro direto, sem PPT</h3>
         <p data-i18n="why.f1.desc">Do diagnóstico à operação, você tem contato direto com o engenheiro responsável. Sem camada de vendas, sem "vou verificar com o time técnico".</p>
+        <div class="ftags" translate="no" aria-hidden="true"><span class="ftag">#no-middleman</span><span class="ftag">#sla-real</span><span class="ftag">#async-first</span></div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
@@ -1745,6 +1763,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         </div>
         <h3 data-i18n="why.f2.title">Multi-cloud de verdade</h3>
         <p data-i18n="why.f2.desc">AWS, Azure, GCP e OCI operados simultaneamente. Sem preferência de vendor — a decisão é baseada em custo, compliance e necessidade técnica do seu projeto.</p>
+        <div class="ftags" translate="no" aria-hidden="true"><span class="ftag">#aws</span><span class="ftag">#azure</span><span class="ftag">#gcp</span><span class="ftag">#oci</span><span class="ftag">#multi-cloud</span></div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
@@ -1752,6 +1771,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         </div>
         <h3 data-i18n="why.f3.title">Postura de segurança desde o dia 1</h3>
         <p data-i18n="why.f3.desc">IAM com least privilege, Zero Trust, secrets com Vault e hardening de containers aplicados em cada projeto — não como add-on no final.</p>
+        <div class="ftags" translate="no" aria-hidden="true"><span class="ftag">#zero-trust</span><span class="ftag">#iam</span><span class="ftag">#vault</span><span class="ftag">#hardening</span></div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
@@ -1759,6 +1779,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         </div>
         <h3 data-i18n="why.f4.title">FinOps que aparece na fatura</h3>
         <p data-i18n="why.f4.desc">Rightsizing, reservas e FOCUS Reports entregues com meta de redução. Resultado médio de 35% de economia em 90 dias — e isso é rastreável no Cost Explorer.</p>
+        <div class="ftags" translate="no" aria-hidden="true"><span class="ftag">#finops</span><span class="ftag">#rightsizing</span><span class="ftag">#cost-explorer</span><span class="ftag">#reserved-instances</span></div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
@@ -1766,6 +1787,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         </div>
         <h3 data-i18n="why.f5.title">Resposta garantida ≤ 24h</h3>
         <p data-i18n="why.f5.desc">SLA com compromisso real de resposta. No MSP, plantão 24x7 com runbooks testados em produção — não em sandbox de demonstração.</p>
+        <div class="ftags" translate="no" aria-hidden="true"><span class="ftag">#msp</span><span class="ftag">#runbooks</span><span class="ftag">#on-call</span><span class="ftag">#24x7</span></div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
@@ -1773,6 +1795,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         </div>
         <h3 data-i18n="why.f6.title">Observability em produção</h3>
         <p data-i18n="why.f6.desc">Prometheus, Grafana, Datadog e OpenTelemetry configurados para o seu contexto — não só instalados. Alertas que acordam quem precisa, não quem está de plantão.</p>
+        <div class="ftags" translate="no" aria-hidden="true"><span class="ftag">#prometheus</span><span class="ftag">#grafana</span><span class="ftag">#opentelemetry</span><span class="ftag">#datadog</span></div>
       </div>
     </div>
   </div>
@@ -2087,6 +2110,21 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         <li data-i18n="about.cert4">Engenheiros com 15+ anos em infra e cloud</li>
         <li data-i18n="about.cert5">Atuação multi-cloud: AWS, Azure, GCP e OCI</li>
       </ul>
+      <div class="about-tags" translate="no" aria-label="Stack de tecnologias">
+        <span class="about-tag">#kubernetes</span>
+        <span class="about-tag">#terraform</span>
+        <span class="about-tag">#gitops</span>
+        <span class="about-tag">#argocd</span>
+        <span class="about-tag">#helm</span>
+        <span class="about-tag">#docker</span>
+        <span class="about-tag">#ci-cd</span>
+        <span class="about-tag">#iac</span>
+        <span class="about-tag">#zero-trust</span>
+        <span class="about-tag">#finops</span>
+        <span class="about-tag">#observability</span>
+        <span class="about-tag">#sre</span>
+        <span class="about-tag">#devops</span>
+      </div>
     </div>
   </div>
 </section>
@@ -2288,6 +2326,20 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 
 <!-- PRE-FOOTER CTA -->
 <div class="pre-footer">
+  <div class="pf-bg-tags" aria-hidden="true" translate="no">
+    <span class="pf-bg-tag" style="top:12%;left:4%">#kubernetes</span>
+    <span class="pf-bg-tag" style="top:28%;left:1%">#terraform</span>
+    <span class="pf-bg-tag" style="top:60%;left:3%">#gitops</span>
+    <span class="pf-bg-tag" style="top:78%;left:6%">#finops</span>
+    <span class="pf-bg-tag" style="top:8%;right:5%">#multi-cloud</span>
+    <span class="pf-bg-tag" style="top:22%;right:2%">#observability</span>
+    <span class="pf-bg-tag" style="top:50%;right:4%">#zero-trust</span>
+    <span class="pf-bg-tag" style="top:72%;right:3%">#devops</span>
+    <span class="pf-bg-tag" style="bottom:15%;left:18%">#ci-cd</span>
+    <span class="pf-bg-tag" style="bottom:15%;right:16%">#iac</span>
+    <span class="pf-bg-tag" style="top:40%;left:14%">#argocd</span>
+    <span class="pf-bg-tag" style="top:40%;right:12%">#sre</span>
+  </div>
   <div class="pre-footer-inner">
     <p class="pre-footer-label">Fale com um engenheiro</p>
     <h2>Sua nuvem do jeito<br><em>que tem que ser.</em></h2>
