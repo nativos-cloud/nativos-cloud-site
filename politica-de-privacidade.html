@@ -22,13 +22,11 @@
 :root{
   color-scheme:dark light;
   --maxw:72rem;
-  --bg:#111110;--bg-elev:#1A1A18;--bg-sunk:#0A0A09;
+  --bg:#111110;--bg-elev:#1A1A18;--bg-sunk:#070706;
   --sep:#1E1E1C;
   --texto:#EEECEA;--texto-sec:#8A8880;--texto-muted:#555350;
   --verde:#22C55E;--verde-text:#052e16;--verde-btn:#16A34A;
-  --amarelo:#F59E0B;
   --card:#1A1A18;--card-border:#2A2A27;
-  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
   --sans:'Outfit',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
 }
@@ -38,7 +36,6 @@
   --sep:#EAE7E0;
   --texto:#111110;--texto-sec:#595751;--texto-muted:#9B9892;
   --verde:#16A34A;--verde-text:#ffffff;--verde-btn:#16A34A;
-  --amarelo:#D97706;
   --card:#FFFFFF;--card-border:#E4E1DA;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -52,25 +49,12 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background-image:var(--grain);
-  background-repeat:repeat;
-  background-size:180px 180px;
-  opacity:0.07;
-  mix-blend-mode:overlay;
-  z-index:0;
-}
-[data-theme="light"] body::before{opacity:0.09;mix-blend-mode:multiply}
 
 /* NAV */
-nav{
+nav.site-nav{
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:50;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -201,9 +185,9 @@ a:hover{text-decoration-color:var(--verde)}
   align-items:center;
   gap:0.5rem;
   margin-top:3rem;
-  padding:0.6rem 1.2rem;
+  padding:0.6rem 1.4rem;
   border:1px solid var(--card-border);
-  border-radius:4px;
+  border-radius:999px;
   color:var(--texto-sec);
   font-family:var(--mono);
   font-size:0.78rem;
@@ -212,12 +196,101 @@ a:hover{text-decoration-color:var(--verde)}
 }
 .back:hover{border-color:var(--verde);color:var(--verde);text-decoration:none}
 
+/* FOOTER */
+footer{
+  background:var(--bg-sunk);
+  border-top:1px solid var(--sep);
+}
+.footer-new{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:4rem 1.5rem 0;
+}
+.footer-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  padding-bottom:3rem;
+  border-bottom:1px solid var(--sep);
+}
+.footer-logo-block{display:flex;flex-direction:column;gap:0.6rem}
+.footer-logo-name{
+  font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;
+  color:var(--texto);text-decoration:none;
+}
+.footer-logo-name em{color:var(--verde);font-style:normal}
+.footer-logo-tagline{font-family:var(--mono);font-size:0.74rem;color:var(--texto-muted)}
+.footer-social{display:flex;align-items:center;gap:0.5rem}
+.footer-social a{
+  display:flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--sep);
+  color:var(--texto-muted);text-decoration:none;
+  transition:border-color 0.15s,color 0.15s;
+}
+.footer-social a:hover{border-color:var(--verde);color:var(--verde)}
+.footer-social svg{width:22px;height:22px;fill:currentColor;display:block}
+
+.footer-cols{
+  display:grid;
+  grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;
+  gap:2rem 3rem;
+  padding:3rem 0;
+  border-bottom:1px solid var(--sep);
+}
+.footer-col-brand .about-blurb{
+  color:var(--texto-muted);font-size:0.88rem;line-height:1.65;
+  margin-top:0.75rem;max-width:28ch;
+}
+.footer-badges-row{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem}
+.footer-badge{
+  font-family:var(--mono);font-size:0.6rem;padding:0.22rem 0.6rem;
+  border:1px solid var(--sep);border-radius:3px;
+  color:var(--texto-muted);letter-spacing:0.06em;text-transform:uppercase;
+}
+.footer-col-title{
+  font-family:var(--sans);font-size:0.72rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--texto);margin-bottom:1rem;
+}
+.footer-nav{
+  display:flex;flex-direction:column;gap:0.6rem;
+  position:static;background:transparent;
+  backdrop-filter:none;border:none;
+}
+.footer-nav a{
+  color:var(--texto-muted);text-decoration:none;
+  font-size:0.9rem;transition:color 0.15s;
+}
+.footer-nav a:hover{color:var(--texto)}
+.footer-bottom-bar{
+  max-width:var(--maxw);margin:0 auto;
+  padding:1.5rem 1.5rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;
+}
+.footer-bottom-bar span,.footer-bottom-bar a{
+  font-family:var(--mono);font-size:0.74rem;
+  color:var(--texto-muted);text-decoration:none;
+}
+.footer-bottom-bar a:hover{color:var(--texto)}
+.footer-bottom-links{display:flex;gap:1.5rem}
+
+@media(max-width:1024px){
+  .footer-cols{grid-template-columns:1fr 1fr 1fr;gap:2rem}
+  .footer-col-brand{grid-column:1 / -1}
+}
+@media(max-width:640px){
+  .footer-cols{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .footer-topbar{flex-direction:column;align-items:flex-start}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0.01ms!important}}
 @media(max-width:600px){main{padding:2.5rem 1.25rem 4rem}}
 </style>
 </head>
 <body>
-<nav>
+<nav class="site-nav">
   <a class="nav-logo" href="/" translate="no">nativos<em>.cloud</em></a>
   <a class="nav-back" href="/">← Voltar ao site</a>
 </nav>
@@ -225,7 +298,7 @@ a:hover{text-decoration-color:var(--verde)}
   <div class="doc-header">
     <p class="doc-label">Documento legal · LGPD</p>
     <h1>Política de privacidade</h1>
-    <p class="doc-meta">Última atualização: <time datetime="2026-10-03">3 de outubro de 2026</time></p>
+    <p class="doc-meta">Última atualização: <time datetime="2026-11-20">20 de novembro de 2026</time></p>
   </div>
 
   <p>A <strong translate="no">nativos.cloud</strong> respeita sua privacidade e trata dados pessoais em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>.</p>
@@ -284,5 +357,97 @@ a:hover{text-decoration-color:var(--verde)}
 
   <a class="back" href="/">← Voltar ao site</a>
 </main>
+
+<footer>
+  <div class="footer-new">
+    <div class="footer-topbar">
+      <div class="footer-logo-block">
+        <a href="/" class="footer-logo-name">nativos<em>.cloud</em></a>
+        <span class="footer-logo-tagline">Consultoria cloud + MSP · Ponta Grossa, PR</span>
+      </div>
+      <div class="footer-social" aria-label="Redes sociais">
+        <a href="https://linkedin.com/company/nativos-cloud" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/nativos-cloud" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://instagram.com/nativos.cloud" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://youtube.com/@nativos-cloud" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://x.com/nativoscloud" aria-label="X (Twitter)" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col-brand">
+        <div class="footer-badges-row">
+          <span class="footer-badge">AWS partner</span>
+          <span class="footer-badge">Azure partner</span>
+          <span class="footer-badge">GCP partner</span>
+          <span class="footer-badge">OCI partner</span>
+          <span class="footer-badge">LGPD</span>
+          <span class="footer-badge">FinOps Foundation</span>
+        </div>
+        <p class="about-blurb">Consultoria cloud + MSP para empresas que precisam de resultado, não de apresentação.</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Empresa</p>
+        <nav class="footer-nav" aria-label="Empresa">
+          <a href="/#sobre">Sobre nós</a>
+          <a href="/#sobre">Nossa equipe</a>
+          <a href="/#produtos">Produtos</a>
+          <a href="/politica-de-privacidade.html">Privacidade</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Serviços</p>
+        <nav class="footer-nav" aria-label="Serviços">
+          <a href="/#solucoes">Cloud Consulting</a>
+          <a href="/#solucoes">Cloud Migration</a>
+          <a href="/#solucoes">DevOps &amp; Platform</a>
+          <a href="/#solucoes">FinOps</a>
+          <a href="/#solucoes">MSP 24x7</a>
+          <a href="/#solucoes">Segurança</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Recursos</p>
+        <nav class="footer-nav" aria-label="Recursos">
+          <a href="/#faq">FAQ</a>
+          <a href="/#journey">Como funciona</a>
+          <a href="/#parceiros">Stack &amp; parceiros</a>
+          <a href="/#produtos">Produtos</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contato</p>
+        <nav class="footer-nav" aria-label="Contato">
+          <a href="mailto:contato@nativos.cloud">contato@nativos.cloud</a>
+          <a href="/#contato">Agendar call</a>
+          <span style="color:var(--texto-muted);font-size:0.9rem">Ponta Grossa, PR<br>Brasil</span>
+          <span style="color:var(--texto-muted);font-size:0.88rem">Seg–Sex 08h–18h BRT</span>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-bar">
+    <span>© 2026 nativos.cloud. Todos os direitos reservados.</span>
+    <div class="footer-bottom-links">
+      <a href="/politica-de-privacidade.html">Política de privacidade</a>
+      <a href="mailto:contato@nativos.cloud">contato@nativos.cloud</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
