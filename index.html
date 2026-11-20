@@ -938,6 +938,30 @@ blockquote{
 }
 .faq summary:hover{color:var(--verde)}
 
+/* ─── TESTIMONIALS ───────────────────────────────────────────────────── */
+#depoimentos{overflow:hidden;padding:5rem 0;background:var(--bg);border-top:1px solid var(--sep)}
+.dep-header{text-align:center;padding:0 1.5rem 3rem}
+.dep-eyebrow{font-family:var(--mono);font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--verde);display:block;margin-bottom:0.75rem}
+.dep-header h2{font-weight:800;font-size:clamp(1.75rem,3.5vw,2.5rem);letter-spacing:-0.03em;color:var(--texto)}
+.dep-header p{color:var(--texto-sec);font-size:0.95rem;margin-top:0.5rem}
+.dep-tracks{display:flex;flex-direction:column;gap:1rem;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)}
+.dep-track{display:flex;gap:1rem;width:max-content}
+.dep-track-1{animation:dep-left 42s linear infinite}
+.dep-track-2{animation:dep-right 48s linear infinite}
+@keyframes dep-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes dep-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.dep-track:hover{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.dep-track-1,.dep-track-2{animation:none}}
+.dep-card{flex-shrink:0;width:300px;background:var(--bg-elev);border:1px solid var(--sep);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:0.9rem;transition:border-color 200ms}
+.dep-card:hover{border-color:rgba(34,197,94,0.3)}
+.dep-stars{display:flex;gap:2px;color:var(--verde)}
+.dep-stars svg{width:13px;height:13px;fill:currentColor}
+.dep-quote{font-size:0.875rem;line-height:1.7;color:var(--texto-sec);flex:1}
+.dep-author{display:flex;align-items:center;gap:0.65rem;padding-top:0.25rem;border-top:1px solid var(--sep)}
+.dep-avatar{width:34px;height:34px;border-radius:50%;background:var(--bg-sunk);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.68rem;font-weight:700;color:var(--verde);flex-shrink:0}
+.dep-info strong{display:block;font-size:0.8rem;font-weight:700;color:var(--texto);line-height:1.3}
+.dep-info span{font-size:0.68rem;color:var(--texto-muted);font-family:var(--mono)}
+
 /* ─── PRODUCTS ───────────────────────────────────────────────────────── */
 .products-wrap{background:var(--bg-elev);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
 .products{
@@ -2078,6 +2102,130 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
   </div>
 </section>
 
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="dep-header">
+    <span class="dep-eyebrow" data-i18n="dep.label">O que dizem nossos clientes</span>
+    <h2 data-i18n="dep.title">Resultado que aparece na prática</h2>
+    <p data-i18n="dep.sub">Empresas que pararam de apagar incêndio e passaram a crescer com a nuvem.</p>
+  </div>
+  <div class="dep-tracks" aria-hidden="true">
+
+    <!-- ROW 1 — scroll left -->
+    <div class="dep-track dep-track-1">
+      <!-- original set -->
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Migramos 40 workloads em 3 meses sem nenhum downtime. O assessment inicial foi cirúrgico — eles sabiam exatamente onde ia doer."</p>
+        <div class="dep-author"><div class="dep-avatar">CM</div><div class="dep-info"><strong>Carlos Mendes</strong><span>CTO · Fintech B2B</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Redução de 42% no custo de cloud em 60 dias. Sem cortar nada que importa — só rightsizing e reservas onde fazia sentido."</p>
+        <div class="dep-author"><div class="dep-avatar">AB</div><div class="dep-info"><strong>Ana Beatriz</strong><span>Head de Infra · E-commerce</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"MSP com SLA real. Resposta em minutos, não horas. Primeiro fornecedor que cumpriu o que estava no contrato."</p>
+        <div class="dep-author"><div class="dep-avatar">RT</div><div class="dep-info"><strong>Rafael Teixeira</strong><span>DevOps Lead · Logística</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Kubernetes com boas práticas que nunca tivemos internamente. Em duas semanas o time já sabia operar sozinho."</p>
+        <div class="dep-author"><div class="dep-avatar">MS</div><div class="dep-info"><strong>Mariana Silva</strong><span>VP de Tecnologia · SaaS</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Implantaram observability completo onde antes era ponto cego. Agora sei o que está acontecendo antes que o usuário reclame."</p>
+        <div class="dep-author"><div class="dep-avatar">DF</div><div class="dep-info"><strong>Diego Faria</strong><span>SRE · Varejo</span></div></div>
+      </article>
+      <!-- duplicate for seamless loop -->
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Migramos 40 workloads em 3 meses sem nenhum downtime. O assessment inicial foi cirúrgico — eles sabiam exatamente onde ia doer."</p>
+        <div class="dep-author"><div class="dep-avatar">CM</div><div class="dep-info"><strong>Carlos Mendes</strong><span>CTO · Fintech B2B</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Redução de 42% no custo de cloud em 60 dias. Sem cortar nada que importa — só rightsizing e reservas onde fazia sentido."</p>
+        <div class="dep-author"><div class="dep-avatar">AB</div><div class="dep-info"><strong>Ana Beatriz</strong><span>Head de Infra · E-commerce</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"MSP com SLA real. Resposta em minutos, não horas. Primeiro fornecedor que cumpriu o que estava no contrato."</p>
+        <div class="dep-author"><div class="dep-avatar">RT</div><div class="dep-info"><strong>Rafael Teixeira</strong><span>DevOps Lead · Logística</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Kubernetes com boas práticas que nunca tivemos internamente. Em duas semanas o time já sabia operar sozinho."</p>
+        <div class="dep-author"><div class="dep-avatar">MS</div><div class="dep-info"><strong>Mariana Silva</strong><span>VP de Tecnologia · SaaS</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Implantaram observability completo onde antes era ponto cego. Agora sei o que está acontecendo antes que o usuário reclame."</p>
+        <div class="dep-author"><div class="dep-avatar">DF</div><div class="dep-info"><strong>Diego Faria</strong><span>SRE · Varejo</span></div></div>
+      </article>
+    </div>
+
+    <!-- ROW 2 — scroll right -->
+    <div class="dep-track dep-track-2">
+      <!-- original set -->
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Zero surpresa na fatura desde o primeiro mês. SLA cumprido 100% — e isso a gente não tinha com nenhum fornecedor anterior."</p>
+        <div class="dep-author"><div class="dep-avatar">PA</div><div class="dep-info"><strong>Pedro Alves</strong><span>Dir. de Tecnologia · Educação</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"O assessment revelou brechas que passaram por duas auditorias internas sem ser detectadas. Vale muito o investimento."</p>
+        <div class="dep-author"><div class="dep-avatar">JC</div><div class="dep-info"><strong>Juliana Costa</strong><span>CISO · Financeiro</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Multi-cloud real: AWS e OCI integrados sem dor de cabeça. A arquitetura ficou mais resiliente e 30% mais barata."</p>
+        <div class="dep-author"><div class="dep-avatar">BL</div><div class="dep-info"><strong>Beatriz Lima</strong><span>Arquiteta Cloud · Indústria</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Passamos de deploy manual a pipeline CI/CD completo em 3 semanas. Time de dev ganhou autonomia sem perder controle."</p>
+        <div class="dep-author"><div class="dep-avatar">GO</div><div class="dep-info"><strong>Gabriel Oliveira</strong><span>Engineering Manager · Startup</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Conformidade LGPD e SOC 2 implementadas juntas, sem travar o desenvolvimento. Equilíbrio técnico exemplar."</p>
+        <div class="dep-author"><div class="dep-avatar">FR</div><div class="dep-info"><strong>Fernanda Rocha</strong><span>CPO · Healthtech</span></div></div>
+      </article>
+      <!-- duplicate for seamless loop -->
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Zero surpresa na fatura desde o primeiro mês. SLA cumprido 100% — e isso a gente não tinha com nenhum fornecedor anterior."</p>
+        <div class="dep-author"><div class="dep-avatar">PA</div><div class="dep-info"><strong>Pedro Alves</strong><span>Dir. de Tecnologia · Educação</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"O assessment revelou brechas que passaram por duas auditorias internas sem ser detectadas. Vale muito o investimento."</p>
+        <div class="dep-author"><div class="dep-avatar">JC</div><div class="dep-info"><strong>Juliana Costa</strong><span>CISO · Financeiro</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Multi-cloud real: AWS e OCI integrados sem dor de cabeça. A arquitetura ficou mais resiliente e 30% mais barata."</p>
+        <div class="dep-author"><div class="dep-avatar">BL</div><div class="dep-info"><strong>Beatriz Lima</strong><span>Arquiteta Cloud · Indústria</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Passamos de deploy manual a pipeline CI/CD completo em 3 semanas. Time de dev ganhou autonomia sem perder controle."</p>
+        <div class="dep-author"><div class="dep-avatar">GO</div><div class="dep-info"><strong>Gabriel Oliveira</strong><span>Engineering Manager · Startup</span></div></div>
+      </article>
+      <article class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-quote">"Conformidade LGPD e SOC 2 implementadas juntas, sem travar o desenvolvimento. Equilíbrio técnico exemplar."</p>
+        <div class="dep-author"><div class="dep-avatar">FR</div><div class="dep-info"><strong>Fernanda Rocha</strong><span>CPO · Healthtech</span></div></div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
 <!-- PRODUTOS -->
 <div class="products-wrap">
 <section id="produtos">
@@ -2382,6 +2530,7 @@ const translations = {
     "faq.q5":"A consultoria inicial é gratuita?",
     "faq.a5":"Sim. A primeira call serve pra entender o cenário, mapear o que dói e propor um caminho. Nada é cobrado nessa fase.",
     "faq.cta":"Ainda tem dúvida? Fale com um especialista",
+    "dep.label":"O que dizem nossos clientes","dep.title":"Resultado que aparece na prática","dep.sub":"Empresas que pararam de apagar incêndio e passaram a crescer com a nuvem.",
     "prod.title":"Produtos OpenSource",
     "prod.sub":"Open source que a gente escreveu porque precisava internamente. Depois abriu.",
     "prod.vanishd.sub":"zero-knowledge secret sharing",
@@ -2496,6 +2645,7 @@ const translations = {
     "faq.q5":"Is the initial consulting free?",
     "faq.a5":"Yes. The first call is for us to understand the situation, map what hurts and propose a path. Nothing is charged at that stage.",
     "faq.cta":"Still have questions? Talk to a specialist",
+    "dep.label":"What our clients say","dep.title":"Results that show up in practice","dep.sub":"Companies that stopped firefighting and started growing with the cloud.",
     "prod.title":"Open source products",
     "prod.sub":"Open source we wrote because we needed it internally. Then opened it up.",
     "prod.vanishd.sub":"zero-knowledge secret sharing",
