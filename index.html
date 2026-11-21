@@ -166,7 +166,7 @@
 /* ─── RESET + GLOBALS ────────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 *:focus-visible{outline:2px solid var(--verde);outline-offset:2px;border-radius:2px}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{
   background:var(--bg);
   color:var(--texto);
@@ -205,6 +205,7 @@ img{max-width:100%;display:block}
 .skip-link{position:absolute;top:0;left:0;padding:0.6rem 1rem;background:var(--verde);color:var(--verde-text);font-family:var(--mono);font-size:0.82rem;font-weight:500;z-index:1000;text-decoration:none;transform:translateY(-120%);transition:transform 0.15s}
 .skip-link:focus{transform:translateY(0)}
 section[id],main[id]{scroll-margin-top:5rem}
+@media(max-width:900px){section[id],main[id]{scroll-margin-top:72px}}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
@@ -225,7 +226,7 @@ nav{
   align-items:center;
   gap:0;
   padding:0;
-  min-height:3.25rem;
+  min-height:2.6rem;
   background:color-mix(in oklab, var(--bg) 90%, transparent);
   backdrop-filter:blur(20px);
   -webkit-backdrop-filter:blur(20px);
@@ -244,7 +245,7 @@ nav{
   color:var(--texto);
   text-decoration:none;
   padding:0 1.4rem;
-  height:3.25rem;
+  height:2.6rem;
   flex-shrink:0;
   border-right:1px solid var(--sep);
 }
@@ -260,11 +261,11 @@ nav{
   display:block;
   color:var(--texto-muted);
   text-decoration:none;
-  font-size:0.88rem;
+  font-size:0.82rem;
   font-weight:500;
-  padding:0 1.1rem;
-  height:3.25rem;
-  line-height:3.25rem;
+  padding:0 1rem;
+  height:2.6rem;
+  line-height:2.6rem;
   transition:color 0.15s, background 0.15s;
   border-radius:9999px;
   white-space:nowrap;
@@ -277,7 +278,7 @@ nav{
   gap:0;
   padding:0 0.4rem;
   border-left:1px solid var(--sep);
-  height:3.25rem;
+  height:2.6rem;
 }
 
 /* ─── FLOATING UTILITY CONTROLS ─────────────────────────────────────── */
@@ -289,7 +290,7 @@ nav{
   display:flex;
   align-items:center;
   gap:0.35rem;
-  height:3.25rem;
+  height:2.6rem;
 }
 .util-btn{
   width:2.25rem;
@@ -1004,14 +1005,28 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
 .about-body > p{color:var(--texto-sec);line-height:1.75;margin-bottom:1rem;max-width:var(--prose)}
 .about-body > p:first-of-type{color:var(--texto);font-size:1.08rem}
 blockquote{
-  border-left:4px solid var(--amarelo);
-  padding:0.5rem 0 0.5rem 1.75rem;
-  margin:2.5rem 0 1.5rem;
-  font-size:clamp(1.25rem,2vw,1.65rem);
-  line-height:1.45;
+  border-left:5px solid var(--verde);
+  padding:1rem 0 1rem 1.75rem;
+  margin:2.75rem 0 1.5rem;
+  font-size:clamp(1.4rem,2.2vw,1.75rem);
+  line-height:1.4;
   color:var(--texto);
-  font-weight:600;
-  letter-spacing:-0.02em;
+  font-weight:700;
+  letter-spacing:-0.025em;
+  position:relative;
+}
+blockquote::before{
+  content:"\201C";
+  position:absolute;
+  top:-0.5rem;
+  left:1.75rem;
+  font-size:4rem;
+  line-height:1;
+  color:var(--verde);
+  opacity:0.2;
+  font-family:Georgia,serif;
+  pointer-events:none;
+  user-select:none;
 }
 .about-sidebar{
   position:sticky;
@@ -1032,17 +1047,31 @@ blockquote{
 .certs{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
 .certs li{
   font-family:var(--mono);
-  font-size:0.75rem;
+  font-size:0.72rem;
   color:var(--texto-sec);
-  background:var(--bg-sunk);
-  border:1px solid var(--sep);
-  border-left:3px solid var(--verde);
-  border-radius:4px;
-  padding:0.5rem 0.75rem;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid var(--sep);
+  border-radius:0;
+  padding:0.4rem 0 0.4rem 0.75rem;
   line-height:1.4;
-  transition:border-left-color 0.15s, color 0.15s;
+  position:relative;
+  transition:color 0.15s;
 }
-.certs li:hover{color:var(--texto);border-left-color:var(--verde)}
+.certs li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:3px;
+  height:70%;
+  background:var(--verde);
+  opacity:0.5;
+  border-radius:2px;
+}
+.certs li:last-child{border-bottom:0}
+.certs li:hover{color:var(--texto)}
 .about-metric{
   background:var(--bg-sunk);
   border:1px solid var(--sep);
@@ -1051,13 +1080,13 @@ blockquote{
 }
 .about-metric-num{
   font-family:var(--display);
-  font-size:clamp(2.5rem,4vw,3.5rem);
+  font-size:clamp(3rem,5vw,4rem);
   font-weight:800;
   letter-spacing:-0.04em;
-  color:var(--texto);
+  color:var(--verde);
   line-height:1;
 }
-.about-metric-num em{color:var(--verde);font-style:normal}
+.about-metric-num em{color:var(--verde);font-style:normal;opacity:0.7}
 .about-metric-desc{
   font-family:var(--mono);
   font-size:0.7rem;
@@ -1077,11 +1106,8 @@ blockquote{
 .about-tag{font-family:var(--mono);font-size:0.68rem;color:var(--texto-muted);background:var(--bg-sunk);border:1px solid var(--sep);border-radius:4px;padding:0.2rem 0.5rem;transition:color 180ms,border-color 180ms;cursor:default;user-select:none}
 .about-tag:hover{color:var(--verde);border-color:rgba(34,197,94,0.3)}
 
-/* pre-footer ghost tags (background atmosphere) */
-.pre-footer{position:relative}
-.pf-bg-tags{position:absolute;inset:0;pointer-events:none;user-select:none;overflow:hidden;opacity:0.07}
-[data-theme="light"] .pf-bg-tags{opacity:0.12}
-.pf-bg-tag{position:absolute;font-family:var(--mono);font-size:0.72rem;font-weight:500;color:var(--verde);white-space:nowrap}
+/* pre-footer providers line */
+.pf-providers{font-family:var(--mono);font-size:0.72rem;font-weight:600;letter-spacing:0.14em;color:var(--texto-muted);opacity:0.45;margin-top:0.25rem}
 
 /* ─── FAQ (native details) ───────────────────────────────────────────── */
 .faq{margin-top:2rem;display:flex;flex-direction:column;counter-reset:faq}
@@ -1176,6 +1202,9 @@ blockquote{
 .dep-preview:hover{opacity:0.75;border-color:rgba(34,197,94,0.25)}
 @media(max-width:900px){.dep-preview{display:none}}
 .dep-prev-avatar{width:44px;height:44px;border-radius:50%;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.78rem;font-weight:700;color:var(--verde)}
+.dep-prev-stat-wrap{display:flex;flex-direction:column;gap:0.1rem;margin-bottom:0.75rem}
+.dep-prev-stat-num{font-family:var(--display);font-size:2.4rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--verde)}
+.dep-prev-stat-label{font-family:var(--mono);font-size:0.62rem;color:var(--texto-muted);letter-spacing:0.04em}
 .dep-prev-name{font-size:0.95rem;font-weight:700;color:var(--texto)}
 .dep-prev-role{font-size:0.72rem;color:var(--texto-muted);font-family:var(--mono);margin-top:0.15rem}
 .dep-prev-quote{font-size:0.82rem;color:var(--texto-sec);line-height:1.6;margin-top:0.5rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -1732,7 +1761,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 }
 .svc-panels{margin-top:0}
 .svc-panel{display:none;padding:2rem 0 1rem}
-.svc-panel[data-active]{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.svc-panel[data-active]{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;min-height:280px}
 .svc-panel-main{}
 .svc-panel-main h3{font-size:1.4rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem;line-height:1.2}
 .svc-panel-main p{color:var(--texto-sec);line-height:1.65;font-size:0.98rem;margin-bottom:1.25rem}
@@ -2427,7 +2456,10 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 
       <!-- Preview card (next) -->
       <aside class="dep-preview" id="dep-preview-card" role="button" tabindex="0" aria-label="Ver próximo depoimento">
-        <div class="dep-prev-avatar" id="dep-prev-av">AB</div>
+        <div id="dep-prev-stat-wrap" class="dep-prev-stat-wrap">
+          <span class="dep-prev-stat-num" id="dep-prev-stat">42%</span>
+          <span class="dep-prev-stat-label" id="dep-prev-stat-label">redução de custo Cloud</span>
+        </div>
         <div>
           <div class="dep-prev-name" id="dep-prev-name">Ana Beatriz</div>
           <div class="dep-prev-role" id="dep-prev-role">Head de Infra · E-commerce</div>
@@ -2561,25 +2593,12 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 
 <!-- PRE-FOOTER CTA -->
 <div class="pre-footer">
-  <div class="pf-bg-tags" aria-hidden="true" translate="no">
-    <span class="pf-bg-tag" style="top:12%;left:4%">#kubernetes</span>
-    <span class="pf-bg-tag" style="top:28%;left:1%">#terraform</span>
-    <span class="pf-bg-tag" style="top:60%;left:3%">#gitops</span>
-    <span class="pf-bg-tag" style="top:78%;left:6%">#finops</span>
-    <span class="pf-bg-tag" style="top:8%;right:5%">#multi-Cloud</span>
-    <span class="pf-bg-tag" style="top:22%;right:2%">#observability</span>
-    <span class="pf-bg-tag" style="top:50%;right:4%">#zero-trust</span>
-    <span class="pf-bg-tag" style="top:72%;right:3%">#devops</span>
-    <span class="pf-bg-tag" style="bottom:15%;left:18%">#ci-cd</span>
-    <span class="pf-bg-tag" style="bottom:15%;right:16%">#iac</span>
-    <span class="pf-bg-tag" style="top:40%;left:14%">#argocd</span>
-    <span class="pf-bg-tag" style="top:40%;right:12%">#sre</span>
-  </div>
   <div class="pre-footer-inner">
     <p class="pre-footer-label" data-i18n="pf.label">Fale com um engenheiro</p>
     <h2 data-i18n="pf.title">Sua nuvem do jeito<br><em>que tem que ser.</em></h2>
     <p class="pre-footer-sub" data-i18n="pf.sub">Primeira call gratuita. Diagnóstico claro e plano de ação — sem compromisso, direto com especialista.</p>
     <a href="#contato" class="btn-footer-cta" data-i18n="pf.cta">Agendar diagnóstico gratuito</a>
+    <p class="pf-providers" aria-hidden="true" translate="no">AWS · Azure · GCP · OCI</p>
   </div>
 </div>
 
@@ -2660,8 +2679,9 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         <nav class="footer-nav" aria-label="Contato">
           <a href="mailto:contato@nativos.cloud" translate="no">contato@nativos.cloud</a>
           <a href="#contato" data-i18n="footer.bookcall">Agendar call</a>
-          <span style="color:var(--texto-muted);font-size:0.9rem" data-i18n="footer.location">Ponta Grossa, PR<br>Brasil</span>
-          <span style="color:var(--texto-muted);font-size:0.88rem" data-i18n="footer.hours">Seg–Sex 08h–18h BRT</span>
+          <a href="https://github.com/nativos-cloud" target="_blank" rel="noopener" translate="no">GitHub</a>
+          <a href="https://linkedin.com/company/nativos-cloud" target="_blank" rel="noopener" translate="no">LinkedIn</a>
+          <a href="https://youtube.com/@nativos-cloud" target="_blank" rel="noopener" translate="no">YouTube</a>
         </nav>
       </div>
     </div>
