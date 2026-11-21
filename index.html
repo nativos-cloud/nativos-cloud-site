@@ -2194,7 +2194,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
             </div>
           </div>
           <div class="dep-resultado">
-            <span class="dep-resultado-label">Resultado</span>
+            <span class="dep-resultado-label" data-i18n="dep.resultado">Resultado</span>
             <span class="dep-resultado-value" id="dep-main-res">0 downtime em 3 meses</span>
           </div>
         </div>
@@ -2565,6 +2565,7 @@ const translations = {
     "footer.tagline":"Consultoria cloud + MSP. Consultoria Cloud — Ponta Grossa, PR.",
     "footer.privacy":"Privacidade","footer.rights":"Todos os direitos reservados.",
     "cookie.text":"Usamos cookies para melhorar sua experiência. Leia nossa <a href=\"/politica-de-privacidade.html\">política de privacidade</a>.",
+    "dep.resultado":"Resultado",
     "cookie.accept":"Aceitar","cookie.decline":"Recusar",
     "pf.label":"Fale com um engenheiro","pf.title":"Sua nuvem do jeito<br><em>que tem que ser.</em>","pf.sub":"Primeira call gratuita. Diagnóstico claro e plano de ação — sem compromisso, direto com especialista.","pf.cta":"Agendar diagnóstico gratuito"
   },
@@ -2681,6 +2682,7 @@ const translations = {
     "footer.tagline":"Cloud consultancy + MSP. Consultoria Cloud — Ponta Grossa, PR — Brazil.",
     "footer.privacy":"Privacy","footer.rights":"All rights reserved.",
     "cookie.text":"We use cookies to improve your experience. Read our <a href=\"/politica-de-privacidade.html\">privacy policy</a>.",
+    "dep.resultado":"Result",
     "cookie.accept":"Accept","cookie.decline":"Decline",
     "pf.label":"Talk to an engineer","pf.title":"Your cloud the way<br><em>it should be.</em>","pf.sub":"Free first call. Clear diagnosis and action plan — no commitment, straight to a specialist.","pf.cta":"Book a free assessment"
   }
@@ -2761,6 +2763,7 @@ function setLang(lang){
     if(t[key] !== undefined) el.placeholder = t[key];
   });
   if(typeof retranslateFormStrings === 'function') retranslateFormStrings();
+  if(typeof window.__depRetranslate === 'function') window.__depRetranslate(lang);
   if(window.setTheme){
     const savedTheme = localStorage.getItem('nc-theme') || 'system';
     window.setTheme(savedTheme);
@@ -3034,13 +3037,23 @@ function sendEmail(e){
 
 /* Testimonials carousel */
 (function(){
-  const data = [
-    { av:'CM', name:'Carlos Mendes',  role:'CTO · Fintech B2B',         quote:'Migramos 40 workloads em 3 meses sem nenhum downtime. O assessment foi cirúrgico — eles sabiam exatamente onde ia doer antes de começar.', res:'0 downtime em 3 meses' },
-    { av:'AB', name:'Ana Beatriz',    role:'Head de Infra · E-commerce', quote:'Redução de 42% no custo de cloud em 60 dias. Sem cortar nada que importa — só rightsizing e reservas onde fazia sentido.',               res:'-42% no custo de cloud' },
-    { av:'RT', name:'Rafael Teixeira',role:'DevOps Lead · Logística',    quote:'MSP com SLA real. Resposta em minutos, não horas. Primeiro fornecedor que cumpriu exatamente o que estava no contrato.',                 res:'SLA 100% cumprido' },
-    { av:'JC', name:'Juliana Costa',  role:'CISO · Financeiro',          quote:'O assessment revelou brechas que passaram por duas auditorias internas sem ser detectadas. Vale muito o investimento.',                     res:'2 brechas críticas corrigidas' },
-    { av:'BL', name:'Beatriz Lima',   role:'Arquiteta Cloud · Indústria',quote:'Multi-cloud real: AWS e OCI integrados sem dor de cabeça. A arquitetura ficou mais resiliente e 30% mais barata.',                        res:'-30% de custo + HA' }
-  ];
+  const dataByLang = {
+    pt: [
+      { av:'CM', name:'Carlos Mendes',  role:'CTO · Fintech B2B',         quote:'Migramos 40 workloads em 3 meses sem nenhum downtime. O assessment foi cirúrgico — eles sabiam exatamente onde ia doer antes de começar.', res:'0 downtime em 3 meses' },
+      { av:'AB', name:'Ana Beatriz',    role:'Head de Infra · E-commerce', quote:'Redução de 42% no custo de cloud em 60 dias. Sem cortar nada que importa — só rightsizing e reservas onde fazia sentido.',               res:'-42% no custo de cloud' },
+      { av:'RT', name:'Rafael Teixeira',role:'DevOps Lead · Logística',    quote:'MSP com SLA real. Resposta em minutos, não horas. Primeiro fornecedor que cumpriu exatamente o que estava no contrato.',                 res:'SLA 100% cumprido' },
+      { av:'JC', name:'Juliana Costa',  role:'CISO · Financeiro',          quote:'O assessment revelou brechas que passaram por duas auditorias internas sem ser detectadas. Vale muito o investimento.',                     res:'2 brechas críticas corrigidas' },
+      { av:'BL', name:'Beatriz Lima',   role:'Arquiteta Cloud · Indústria',quote:'Multi-cloud real: AWS e OCI integrados sem dor de cabeça. A arquitetura ficou mais resiliente e 30% mais barata.',                        res:'-30% de custo + HA' }
+    ],
+    en: [
+      { av:'CM', name:'Carlos Mendes',  role:'CTO · B2B Fintech',         quote:'We migrated 40 workloads in 3 months with zero downtime. The assessment was surgical — they knew exactly where it would hurt before we started.', res:'0 downtime in 3 months' },
+      { av:'AB', name:'Ana Beatriz',    role:'Head of Infra · E-commerce', quote:'42% reduction in cloud costs in 60 days. Without cutting anything that matters — just rightsizing and reservations where it made sense.',        res:'-42% cloud cost' },
+      { av:'RT', name:'Rafael Teixeira',role:'DevOps Lead · Logistics',    quote:'MSP with a real SLA. Response in minutes, not hours. First vendor that delivered exactly what was in the contract.',                            res:'SLA 100% met' },
+      { av:'JC', name:'Juliana Costa',  role:'CISO · Financial',           quote:'The assessment uncovered vulnerabilities that slipped through two internal audits undetected. Well worth the investment.',                       res:'2 critical gaps fixed' },
+      { av:'BL', name:'Beatriz Lima',   role:'Cloud Architect · Industry', quote:'Real multi-cloud: AWS and OCI integrated without headaches. The architecture became more resilient and 30% cheaper.',                            res:'-30% cost + HA' }
+    ]
+  };
+  let data = dataByLang[currentLang] || dataByLang.pt;
   let cur = 0;
   const total = data.length;
   const els = {
@@ -3096,6 +3109,11 @@ function sendEmail(e){
   els.btnPrev.addEventListener('click',()=>{ cur=(cur-1+total)%total; render(true); });
   els.preview.addEventListener('click',()=>{ cur=(cur+1)%total; render(true); });
   els.preview.addEventListener('keydown',(e)=>{ if(e.key==='Enter'||e.key===' '){ cur=(cur+1)%total; render(true); } });
+  window.__depRetranslate = function(lang){
+    data = dataByLang[lang] || dataByLang.pt;
+    cur = Math.min(cur, data.length - 1);
+    render(false);
+  };
   render(false);
 })();
 
