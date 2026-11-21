@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0E100F" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#EDEAE2" media="(prefers-color-scheme: light)">
-<title>nativos.cloud — consultoria cloud + MSP</title>
-<meta name="description" content="Consultoria cloud + MSP. A gente projeta, migra e opera Kubernetes, AWS, Azure, GCP e OCI em produção. Direto com engenheiro.">
-<meta name="keywords" content="consultoria cloud, msp cloud, kubernetes, devops, finops, terraform, aws, azure, gcp, oci, brasil, ponta grossa">
+<title>nativos.cloud — consultoria Cloud + MSP</title>
+<meta name="description" content="Consultoria Cloud + MSP. A gente projeta, migra e opera Kubernetes, AWS, Azure, GCP e OCI em produção. Direto com engenheiro.">
+<meta name="keywords" content="consultoria Cloud, msp Cloud, kubernetes, devops, finops, terraform, aws, azure, gcp, oci, brasil, ponta grossa">
 <meta name="author" content="nativos.cloud">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nativos.cloud/">
@@ -17,8 +17,8 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nativos.cloud/">
-<meta property="og:title" content="nativos.cloud — consultoria cloud + MSP">
-<meta property="og:description" content="Consultoria cloud + MSP. A gente projeta, migra e opera Kubernetes, AWS, Azure, GCP e OCI em produção.">
+<meta property="og:title" content="nativos.cloud — consultoria Cloud + MSP">
+<meta property="og:description" content="Consultoria Cloud + MSP. A gente projeta, migra e opera Kubernetes, AWS, Azure, GCP e OCI em produção.">
 <meta property="og:image" content="https://nativos.cloud/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,8 +26,8 @@
 <meta property="og:site_name" content="nativos.cloud">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="nativos.cloud — consultoria cloud + MSP">
-<meta name="twitter:description" content="Consultoria + MSP cloud. A gente projeta, migra e opera. Direto com engenheiro, sem PPT.">
+<meta name="twitter:title" content="nativos.cloud — consultoria Cloud + MSP">
+<meta name="twitter:description" content="Consultoria + MSP Cloud. A gente projeta, migra e opera. Direto com engenheiro, sem PPT.">
 <meta name="twitter:image" content="https://nativos.cloud/og-image.png">
 
 <link rel="icon" href="/favicon.ico">
@@ -44,7 +44,7 @@
   "name": "nativos.cloud",
   "url": "https://nativos.cloud",
   "logo": "https://nativos.cloud/og-image.png",
-  "description": "Consultoria cloud e MSP. Projetamos, migramos e operamos Kubernetes e multi-cloud (AWS, Azure, GCP, OCI) em produção.",
+  "description": "Consultoria Cloud e MSP. Projetamos, migramos e operamos Kubernetes e multi-Cloud (AWS, Azure, GCP, OCI) em produção.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Ponta Grossa",
@@ -141,6 +141,28 @@
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
 }
 
+/* ─── SCROLLBAR ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:9999px}
+::-webkit-scrollbar-thumb:hover{background:var(--texto-muted)}
+[data-theme="dark"] ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1)}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.22)}
+
+/* ─── SCROLL PROGRESS ────────────────────────────────────────────────── */
+#scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0%;
+  height:2px;
+  background:var(--verde);
+  z-index:200;
+  transition:width 0.08s linear;
+  pointer-events:none;
+  box-shadow:0 0 8px rgba(34,197,94,0.5);
+}
+
 /* ─── RESET + GLOBALS ────────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 *:focus-visible{outline:2px solid var(--verde);outline-offset:2px;border-radius:2px}
@@ -174,7 +196,7 @@ body::before{
   mix-blend-mode:overlay;
   z-index:1;
 }
-[data-theme="light"] body::before{opacity:0.09;mix-blend-mode:multiply}
+[data-theme="light"] body::before{opacity:0.14;mix-blend-mode:multiply}
 nav,main,footer,.cookie-banner,.skip-link{position:relative;z-index:2}
 ::selection{background:var(--amarelo);color:var(--bg-sunk)}
 a{color:inherit}
@@ -190,23 +212,27 @@ section[id],main[id]{scroll-margin-top:5rem}
 
 /* ─── NAV ────────────────────────────────────────────────────────────── */
 nav{
-  position:sticky;
-  top:0;
+  position:fixed;
+  top:1.1rem;
+  left:50%;
+  transform:translateX(-50%);
   z-index:50;
-  background:color-mix(in oklab, var(--bg) 92%, transparent);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--sep);
+  width:max-content;
+  max-width:calc(100vw - 2rem);
 }
 .nav-inner{
-  max-width:var(--maxw);
-  margin:0 auto;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  padding:0.75rem 1.5rem;
-  min-height:3.5rem;
+  gap:0;
+  padding:0;
+  min-height:3.25rem;
+  background:color-mix(in oklab, var(--bg) 90%, transparent);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--sep);
+  border-radius:9999px;
+  box-shadow:0 4px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(34,197,94,0.07), inset 0 1px 0 rgba(255,255,255,0.04);
+  overflow:hidden;
 }
 .nav-logo{
   display:flex;
@@ -217,13 +243,104 @@ nav{
   letter-spacing:-0.015em;
   color:var(--texto);
   text-decoration:none;
+  padding:0 1.4rem;
+  height:3.25rem;
+  flex-shrink:0;
+  border-right:1px solid var(--sep);
 }
 .nav-logo em{color:var(--verde);font-style:normal}
 .logo-mark{width:20px;height:20px;color:var(--verde);flex-shrink:0}
-.nav-links{display:flex;gap:1.75rem;list-style:none}
-.nav-links a{color:var(--texto-sec);text-decoration:none;font-size:0.86rem;font-weight:500;transition:color 0.15s}
-.nav-links a:hover{color:var(--texto)}
-.nav-right{display:flex;align-items:center;gap:0.4rem}
+.nav-links{
+  display:flex;
+  gap:0;
+  list-style:none;
+  padding:0 0.5rem;
+}
+.nav-links a{
+  display:block;
+  color:var(--texto-muted);
+  text-decoration:none;
+  font-size:0.88rem;
+  font-weight:500;
+  padding:0 1.1rem;
+  height:3.25rem;
+  line-height:3.25rem;
+  transition:color 0.15s, background 0.15s;
+  border-radius:9999px;
+  white-space:nowrap;
+}
+.nav-links a:hover{color:var(--texto);background:rgba(255,255,255,0.05)}
+[data-theme="light"] .nav-links a:hover{background:rgba(0,0,0,0.05)}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:0;
+  padding:0 0.4rem;
+  border-left:1px solid var(--sep);
+  height:3.25rem;
+}
+
+/* ─── FLOATING UTILITY CONTROLS ─────────────────────────────────────── */
+.util-cluster{
+  position:fixed;
+  top:1.1rem;
+  right:1.5rem;
+  z-index:51;
+  display:flex;
+  align-items:center;
+  gap:0.35rem;
+  height:3.25rem;
+}
+.util-btn{
+  width:2.25rem;
+  height:2.25rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:color-mix(in oklab, var(--bg) 85%, transparent);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--sep);
+  border-radius:50%;
+  cursor:pointer;
+  color:var(--texto-muted);
+  font-family:var(--mono);
+  font-size:0.75rem;
+  transition:color 0.15s, border-color 0.15s, background 0.15s;
+  box-shadow:0 2px 12px rgba(0,0,0,0.25);
+  line-height:1;
+  padding:0;
+}
+.util-btn:hover{color:var(--texto);border-color:rgba(255,255,255,0.18)}
+#theme-cycle-btn{font-size:0.85rem}
+.util-lang{
+  display:flex;
+  align-items:center;
+  background:color-mix(in oklab, var(--bg) 85%, transparent);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--sep);
+  border-radius:9999px;
+  overflow:hidden;
+  height:2.25rem;
+  box-shadow:0 2px 12px rgba(0,0,0,0.25);
+}
+.util-lang-btn{
+  height:100%;
+  padding:0 0.6rem;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  font-family:var(--mono);
+  font-size:0.65rem;
+  font-weight:600;
+  letter-spacing:0.04em;
+  color:var(--texto-muted);
+  transition:color 0.15s, background 0.15s;
+}
+.util-lang-btn + .util-lang-btn{border-left:1px solid var(--sep)}
+.util-lang-btn:hover{color:var(--texto)}
+.util-lang-btn.active{color:var(--bg);background:var(--texto)}
 
 /* Unified control family: same height, same family */
 .ctl-btn,.lang-btn,.nav-cta{
@@ -496,6 +613,7 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
   z-index:0;
   border-radius:50%;
 }
+.hero-right .dashboard{opacity:0.88}
 [data-theme="light"] .hero-right::before{background:radial-gradient(ellipse 85% 75% at 55% 50%, rgba(31,122,72,0.06) 0%, transparent 68%)}
 .hero-right .dashboard{position:relative;z-index:1}
 .dashboard{
@@ -629,18 +747,23 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
   height:48px;
   object-fit:contain;
   filter:brightness(0) invert(1);
-  opacity:0.4;
-  transition:opacity 0.2s;
+  opacity:0.72;
+  transition:opacity 0.25s, filter 0.25s;
 }
-.logo-item:hover .logo-img{opacity:1}
+.logo-item:hover .logo-img{
+  opacity:1;
+  filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(34,197,94,0.5));
+}
 .logo-name{
   font-family:var(--mono);
   font-size:0.68rem;
   color:var(--texto-muted);
-  opacity:0.7;
+  opacity:0.85;
+  transition:color 0.25s;
 }
-[data-theme="light"] .logo-img{filter:brightness(0);opacity:0.5}
-[data-theme="light"] .logo-item:hover .logo-img{opacity:0.9}
+.logo-item:hover .logo-name{color:var(--verde)}
+[data-theme="light"] .logo-img{filter:brightness(0);opacity:0.6}
+[data-theme="light"] .logo-item:hover .logo-img{opacity:0.95;filter:brightness(0) drop-shadow(0 0 8px rgba(21,128,61,0.4))}
 .btn-primary{
   background:var(--verde-btn);
   color:var(--verde-text);
@@ -734,6 +857,7 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
 
 /* ─── JOURNEY (vertical timeline) ────────────────────────────────────── */
 .journey-wrap{background:var(--bg-elev);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
+[data-theme="light"] .journey-wrap{background:#f4f7f4}
 .journey{
   list-style:none;
   margin-top:2.5rem;
@@ -743,27 +867,33 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
 }
 .journey li{
   display:grid;
-  grid-template-columns:4.5rem 1fr;
-  gap:1.25rem;
+  grid-template-columns:5.5rem 1fr;
+  gap:1.5rem;
   padding:1.75rem 0;
   border-bottom:1px solid var(--sep);
   align-items:start;
+  position:relative;
 }
 .journey li:first-child{padding-top:1rem}
 .journey li:last-child{border-bottom:0}
 .journey .step-num{
   font-family:var(--mono);
-  font-size:0.72rem;
-  font-weight:700;
-  color:var(--texto-muted);
-  letter-spacing:0.14em;
-  padding-top:0.3rem;
+  font-size:clamp(2.2rem,3.5vw,3rem);
+  font-weight:800;
+  color:transparent;
+  -webkit-text-stroke:1px var(--border);
+  letter-spacing:-0.04em;
+  line-height:1;
+  padding-top:0.1rem;
   display:flex;
-  align-items:center;
+  flex-direction:column;
+  align-items:flex-start;
   gap:0.5rem;
   font-variant-numeric:tabular-nums;
-  transition:color 180ms ease-out;
+  transition:color 180ms ease-out, -webkit-text-stroke-color 180ms ease-out;
+  user-select:none;
 }
+[data-theme="light"] .journey .step-num{-webkit-text-stroke:1.5px rgba(0,0,0,0.22)}
 .journey .step-num::before{
   content:"";
   width:6px;
@@ -773,8 +903,11 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
   opacity:0.55;
   flex-shrink:0;
   transition:opacity 180ms ease-out, transform 180ms ease-out;
+  display:none;
 }
-.journey li:hover .step-num{color:var(--verde)}
+[data-theme="light"] .journey li{border-bottom-color:rgba(0,0,0,0.08)}
+[data-theme="light"] .journey li:hover .step-num{-webkit-text-stroke-color:var(--verde)}
+.journey li:hover .step-num{color:var(--verde);-webkit-text-stroke-color:var(--verde)}
 .journey li:hover .step-num::before{opacity:1;transform:scale(1.25)}
 @media (prefers-reduced-motion: reduce){.journey li:hover .step-num::before{transform:none}}
 .step-body{display:flex;flex-direction:column;gap:0.5rem}
@@ -806,12 +939,15 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
 .provider-card{
   background:var(--bg-elev);
   border:1px solid var(--card-border);
+  border-left:3px solid var(--card-border);
   border-radius:6px;
   padding:1.1rem 1.1rem 1rem;
   display:flex;
   flex-direction:column;
   gap:0.55rem;
+  transition:border-left-color 0.2s, box-shadow 0.2s;
 }
+.provider-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.15)}
 .provider-head{display:flex;align-items:center;gap:0.55rem}
 .provider-head img{
   width:20px;height:20px;flex-shrink:0;
@@ -834,10 +970,14 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
   display:inline-block;
   width:fit-content;
 }
-.provider-card.aws .provider-tag{color:#FF9900;border-color:rgba(255,153,0,0.3)}
-.provider-card.azure .provider-tag{color:#0078D4;border-color:rgba(0,120,212,0.3)}
-.provider-card.gcp .provider-tag{color:#4285F4;border-color:rgba(66,133,244,0.3)}
-.provider-card.oci .provider-tag{color:var(--amarelo);border-color:rgba(217,164,65,0.3)}
+.provider-card.aws{border-left-color:#FF9900}
+.provider-card.azure{border-left-color:#0078D4}
+.provider-card.gcp{border-left-color:#4285F4}
+.provider-card.oci{border-left-color:var(--amarelo)}
+.provider-card.aws:hover{box-shadow:0 4px 24px rgba(255,153,0,0.08)}
+.provider-card.azure:hover{box-shadow:0 4px 24px rgba(0,120,212,0.08)}
+.provider-card.gcp:hover{box-shadow:0 4px 24px rgba(66,133,244,0.08)}
+.provider-card.oci:hover{box-shadow:0 4px 24px rgba(217,164,65,0.08)}
 
 .stack-groups{
   display:grid;
@@ -867,35 +1007,76 @@ h3{font-family:var(--display);font-size:1rem;font-weight:600;line-height:1.3}
 
 /* ─── ABOUT ──────────────────────────────────────────────────────────── */
 .about-wrap{background:var(--bg-elev);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
+.about-layout{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:5rem;
+  align-items:start;
+}
+@media(max-width:860px){.about-layout{grid-template-columns:1fr;gap:2.5rem}}
 .about-body > p{color:var(--texto-sec);line-height:1.75;margin-bottom:1rem;max-width:var(--prose)}
 .about-body > p:first-of-type{color:var(--texto);font-size:1.08rem}
 blockquote{
-  border-left:3px solid var(--amarelo);
-  padding:0.25rem 0 0.25rem 1.25rem;
-  margin:2rem 0;
-  font-size:1.1rem;
-  line-height:1.5;
+  border-left:4px solid var(--amarelo);
+  padding:0.5rem 0 0.5rem 1.75rem;
+  margin:2.5rem 0 1.5rem;
+  font-size:clamp(1.25rem,2vw,1.65rem);
+  line-height:1.45;
   color:var(--texto);
-  max-width:36rem;
-  font-weight:500;
+  font-weight:600;
+  letter-spacing:-0.02em;
 }
-.certs{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:0.4rem}
+.about-sidebar{
+  position:sticky;
+  top:5rem;
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+}
+.about-certs-label{
+  font-family:var(--mono);
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--texto-muted);
+  margin-bottom:0.75rem;
+}
+.certs{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
 .certs li{
   font-family:var(--mono);
-  font-size:0.82rem;
+  font-size:0.75rem;
   color:var(--texto-sec);
-  padding-left:1.1rem;
-  position:relative;
+  background:var(--bg-sunk);
+  border:1px solid var(--sep);
+  border-left:3px solid var(--verde);
+  border-radius:4px;
+  padding:0.5rem 0.75rem;
+  line-height:1.4;
+  transition:border-left-color 0.15s, color 0.15s;
 }
-.certs li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0.55rem;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:var(--verde);
+.certs li:hover{color:var(--texto);border-left-color:var(--verde)}
+.about-metric{
+  background:var(--bg-sunk);
+  border:1px solid var(--sep);
+  border-radius:8px;
+  padding:1.25rem 1.25rem 1rem;
+}
+.about-metric-num{
+  font-family:var(--display);
+  font-size:clamp(2.5rem,4vw,3.5rem);
+  font-weight:800;
+  letter-spacing:-0.04em;
+  color:var(--texto);
+  line-height:1;
+}
+.about-metric-num em{color:var(--verde);font-style:normal}
+.about-metric-desc{
+  font-family:var(--mono);
+  font-size:0.7rem;
+  color:var(--texto-muted);
+  margin-top:0.4rem;
+  line-height:1.5;
 }
 
 /* ─── TECH TAGS (#hashtags) ─────────────────────────────────────────── */
@@ -904,7 +1085,7 @@ blockquote{
 .ftag{font-family:var(--mono);font-size:0.63rem;font-weight:500;color:var(--texto-muted);transition:color 180ms;cursor:default;user-select:none;letter-spacing:0.02em}
 .ftag:hover{color:var(--verde)}
 
-/* about section tag cloud */
+/* about section tag Cloud */
 .about-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem}
 .about-tag{font-family:var(--mono);font-size:0.68rem;color:var(--texto-muted);background:var(--bg-sunk);border:1px solid var(--sep);border-radius:4px;padding:0.2rem 0.5rem;transition:color 180ms,border-color 180ms;cursor:default;user-select:none}
 .about-tag:hover{color:var(--verde);border-color:rgba(34,197,94,0.3)}
@@ -916,15 +1097,20 @@ blockquote{
 .pf-bg-tag{position:absolute;font-family:var(--mono);font-size:0.72rem;font-weight:500;color:var(--verde);white-space:nowrap}
 
 /* ─── FAQ (native details) ───────────────────────────────────────────── */
-.faq{margin-top:1.5rem;display:flex;flex-direction:column}
-.faq details{border-bottom:1px solid var(--sep)}
-.faq details:last-child{border-bottom:0}
+.faq{margin-top:2rem;display:flex;flex-direction:column;counter-reset:faq}
+.faq details{
+  border-bottom:1px solid var(--sep);
+  border-left:2px solid transparent;
+  padding-left:1.5rem;
+  transition:border-left-color 0.2s;
+}
+.faq details:first-child{border-top:1px solid var(--sep)}
+.faq details[open]{border-left-color:var(--verde)}
 .faq summary{
   display:flex;
-  justify-content:space-between;
   align-items:baseline;
-  gap:1rem;
-  padding:1.1rem 0;
+  gap:1.25rem;
+  padding:1.25rem 0;
   cursor:pointer;
   list-style:none;
   font-weight:500;
@@ -932,8 +1118,20 @@ blockquote{
   font-size:1rem;
   line-height:1.4;
   transition:color 0.15s;
+  counter-increment:faq;
 }
 .faq summary::-webkit-details-marker{display:none}
+.faq summary::before{
+  content:counter(faq,decimal-leading-zero);
+  font-family:var(--mono);
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  color:var(--texto-muted);
+  flex-shrink:0;
+  transition:color 0.15s;
+  padding-top:0.15em;
+}
 .faq summary::after{
   content:"+";
   font-family:var(--mono);
@@ -941,19 +1139,21 @@ blockquote{
   font-size:1.3rem;
   line-height:1;
   flex-shrink:0;
-  transition:transform 0.2s;
-  margin-top:0.1em;
+  margin-left:auto;
+  transition:color 0.2s;
 }
 .faq details[open] summary{color:var(--verde)}
+.faq details[open] summary::before{color:var(--verde)}
 .faq details[open] summary::after{content:"−";color:var(--verde)}
 .faq .faq-a{
-  padding:0 0 1.3rem;
+  padding:0 0 1.5rem 2.6rem;
   color:var(--texto-sec);
-  line-height:1.7;
+  line-height:1.75;
   max-width:var(--prose);
   font-size:0.95rem;
 }
 .faq summary:hover{color:var(--verde)}
+.faq summary:hover::before{color:var(--verde)}
 
 /* ─── TESTIMONIALS ───────────────────────────────────────────────────── */
 #depoimentos{padding:5rem 0 6rem;background:var(--bg-sunk);border-top:1px solid var(--sep)}
@@ -1003,14 +1203,40 @@ blockquote{
 
 /* ─── PRODUCTS ───────────────────────────────────────────────────────── */
 .products-wrap{background:var(--bg-elev);border-top:1px solid var(--sep);border-bottom:1px solid var(--sep)}
+[data-theme="light"] .products-wrap{background:#f0f4f0}
 .products{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:2rem;
   margin-top:2rem;
 }
-.product{padding:1.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg);transition:border-color 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out}
-.product:hover{border-color:rgba(79,176,122,0.4);transform:translateY(-2px);box-shadow:0 0 28px rgba(79,176,122,0.08), 0 8px 24px rgba(0,0,0,0.25)}
+.product{
+  padding:0;
+  border:1px solid var(--border);
+  border-top:2px solid var(--verde);
+  border-radius:6px;
+  background:var(--bg);
+  overflow:hidden;
+  transition:border-color 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+.product-header{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.6rem 1rem;
+  background:var(--bg-elev);
+  border-bottom:1px solid var(--border);
+}
+.product-header-dots{display:flex;gap:0.3rem}
+.product-header-dots span{
+  width:9px;height:9px;border-radius:50%;background:var(--sep);
+}
+.product-header-dots span:nth-child(1){background:#ff5f57}
+.product-header-dots span:nth-child(2){background:#febc2e}
+.product-header-dots span:nth-child(3){background:#28c840}
+.product-header-name{font-family:var(--mono);font-size:0.68rem;color:var(--texto-muted);margin-left:0.25rem}
+.product-body{padding:1.75rem}
+.product:hover{border-top-color:var(--verde);transform:translateY(-2px);box-shadow:0 0 28px rgba(79,176,122,0.08), 0 8px 24px rgba(0,0,0,0.25)}
 [data-theme="light"] .product:hover{box-shadow:0 0 28px rgba(31,122,72,0.07), 0 8px 24px rgba(0,0,0,0.08)}
 @media (prefers-reduced-motion: reduce){.product:hover{transform:none}}
 .product h3{
@@ -1049,11 +1275,15 @@ blockquote{
   display:flex;flex-direction:column;gap:1.25rem;
   background:var(--bg-elev);
   border:1px solid var(--card-border);
+  border-top:2px solid var(--verde);
   border-radius:12px;
   padding:2rem;
   box-shadow:0 4px 24px rgba(0,0,0,0.06);
+  position:relative;
 }
-[data-theme="dark"] .contact-form{box-shadow:0 4px 32px rgba(0,0,0,0.3)}
+[data-theme="dark"] .contact-form{
+  box-shadow:0 4px 40px rgba(0,0,0,0.35), 0 0 80px rgba(34,197,94,0.05);
+}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-field{display:flex;flex-direction:column;gap:0.4rem;position:relative}
 .form-field label{
@@ -1085,7 +1315,7 @@ blockquote{
 .form-field textarea:focus,
 .form-field select:focus{
   border-color:var(--verde);
-  box-shadow:0 0 0 3px rgba(34,197,94,0.1);
+  box-shadow:0 0 0 3px rgba(34,197,94,0.15), 0 0 20px rgba(34,197,94,0.06);
 }
 .form-field input::placeholder,
 .form-field textarea::placeholder{color:var(--texto-muted)}
@@ -1245,6 +1475,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
   section{padding:3.5rem 1.25rem}
   .nav-links{display:none}
   .nav-cta{display:none}
+  .util-cluster{display:none}
   .hero-inner{grid-template-columns:1fr;gap:2.5rem}
   .dashboard{position:static;top:auto}
   .hero-right{min-width:0;overflow-x:auto}
@@ -1296,7 +1527,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
   background:var(--bg-sunk);
   border-top:1px solid rgba(34,197,94,0.25);
   border-bottom:1px solid rgba(34,197,94,0.25);
-  padding:5rem 1.5rem;
+  padding:6rem 1.5rem;
 }
 [data-theme="light"] .stats-band{
   background:var(--bg2);
@@ -1326,7 +1557,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 .stat-item:not(:first-child):not(:last-child){padding:0 2rem}
 .stat-num{
   font-family:var(--display);
-  font-size:clamp(3rem,5.5vw,4.8rem);
+  font-size:clamp(3.5rem,6.5vw,5.5rem);
   font-weight:800;
   line-height:1;
   letter-spacing:-0.04em;
@@ -1380,6 +1611,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
   display:flex;
   flex-direction:column;
   gap:0.75rem;
+  min-height:260px;
   transition:border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   position:relative;
   counter-increment:feature-counter;
@@ -1432,30 +1664,35 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 
 /* ─── CTA BAND (intermediário) ───────────────────────────────────────── */
 .cta-band{
-  background:var(--bg-sunk);
-  border-top:1px solid rgba(34,197,94,0.2);
-  border-bottom:1px solid rgba(34,197,94,0.2);
-  padding:4.5rem 1.5rem;
+  background:
+    radial-gradient(ellipse 70% 100% at 50% 50%, rgba(34,197,94,0.07) 0%, transparent 70%),
+    var(--bg-sunk);
+  border-top:1px solid rgba(34,197,94,0.3);
+  border-bottom:1px solid rgba(34,197,94,0.3);
+  padding:7rem 1.5rem;
   text-align:center;
 }
 [data-theme="light"] .cta-band{
-  background:var(--bg2);
-  border-top-color:rgba(22,163,74,0.18);
-  border-bottom-color:rgba(22,163,74,0.18);
+  background:
+    radial-gradient(ellipse 70% 100% at 50% 50%, rgba(22,163,74,0.06) 0%, transparent 70%),
+    var(--bg2);
+  border-top-color:rgba(22,163,74,0.25);
+  border-bottom-color:rgba(22,163,74,0.25);
 }
-.cta-band-inner{max-width:46rem;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.25rem}
+.cta-band-inner{max-width:48rem;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
 .cta-band h2{
-  font-size:clamp(1.6rem,2.8vw,2.4rem);
+  font-size:clamp(2.2rem,4.5vw,3.8rem);
   font-weight:800;
-  letter-spacing:-0.03em;
+  letter-spacing:-0.04em;
   color:var(--texto);
-  line-height:1.15;
+  line-height:1.1;
   max-width:none;
 }
 .cta-band p{
   color:var(--texto-sec);
-  font-size:1.02rem;
+  font-size:1.08rem;
   line-height:1.6;
+  max-width:38ch;
 }
 .btn-white{
   background:var(--verde-btn);
@@ -1560,6 +1797,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 </head>
 <body>
 
+<div id="scroll-progress" aria-hidden="true"></div>
 <a href="#main" class="skip-link">Ir para o conteúdo</a>
 
 <nav>
@@ -1574,27 +1812,19 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
       <li><a href="#produtos" data-i18n="nav.products">Produtos</a></li>
       <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
     </ul>
-    <div class="nav-right">
-      <div class="theme-select" id="theme-select">
-        <button class="ctl-btn" id="theme-select-btn" aria-label="Alternar tema" aria-haspopup="true" aria-expanded="false" onclick="toggleThemeMenu()">
-          <span class="theme-select-icon" id="theme-select-icon">◐</span>
-          <span class="theme-select-label" id="theme-select-label">Dark</span>
-          <span class="theme-select-caret" aria-hidden="true">▾</span>
-        </button>
-        <div class="theme-menu" id="theme-menu">
-          <button id="tmitem-dark" onclick="setTheme('dark');closeThemeMenu()"><span class="tm-icon">◐</span>Dark</button>
-          <button id="tmitem-light" onclick="setTheme('light');closeThemeMenu()"><span class="tm-icon">○</span>Light</button>
-          <button id="tmitem-system" onclick="setTheme('system');closeThemeMenu()" data-i18n="theme.system"><span class="tm-icon">⊙</span>Sistema</button>
-        </div>
-      </div>
-      <div class="lang-toggle">
-        <button class="lang-btn active" id="btn-pt" aria-label="Português" aria-pressed="true" onclick="setLang('pt')">PT</button>
-        <button class="lang-btn" id="btn-en" aria-label="English" aria-pressed="false" onclick="setLang('en')">EN</button>
-      </div>
-      <button class="nav-cta" data-i18n="nav.cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Entre em contato</button>
-    </div>
   </div>
 </nav>
+
+<!-- Floating utility controls: theme cycle + lang toggle -->
+<div class="util-cluster" id="util-cluster">
+  <button class="util-btn" id="theme-cycle-btn" aria-label="Alternar tema" onclick="cycleTheme()" title="Tema">
+    <span id="theme-cycle-icon">◐</span>
+  </button>
+  <div class="util-lang">
+    <button class="util-lang-btn active" id="btn-pt" aria-label="Português" aria-pressed="true" onclick="setLang('pt')">PT</button>
+    <button class="util-lang-btn" id="btn-en" aria-label="English" aria-pressed="false" onclick="setLang('en')">EN</button>
+  </div>
+</div>
 
 <main id="main">
 
@@ -1604,7 +1834,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
     <div class="hero-text">
       <div class="hero-badge"><span class="hero-badge-dot"></span>Kubernetes · AWS · Azure · GCP · OCI</div>
       <h1 data-i18n="hero.h1">Somos nativos.<br>A nuvem é a nossa <em>casa</em>.</h1>
-      <p class="hero-lede" data-i18n="hero.lede">Soluções completas em Kubernetes, multi-cloud e DevOps para o seu negócio evoluir com segurança e previsibilidade.</p>
+      <p class="hero-lede" data-i18n="hero.lede">Soluções completas em Kubernetes, multi-Cloud e DevOps para o seu negócio evoluir com segurança e previsibilidade.</p>
       <p class="hero-sublede" data-i18n="hero.sublede">Do primeiro deploy ao ambiente em produção, você fala direto com engenheiros especialistas que já resolveram o seu desafio.</p>
       <div class="hero-cta">
         <a href="#contato" class="btn-primary" data-i18n="hero.cta1">Agendar diagnóstico gratuito</a>
@@ -1628,7 +1858,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
           </div>
         </div>
         <div class="dashboard-body">
-          <div class="h-sec-label" data-i18n="hero.stackLabel">// Stack multi-cloud</div>
+          <div class="h-sec-label" data-i18n="hero.stackLabel">// Stack multi-Cloud</div>
           <div class="h-card-wide">
             <div class="h-card-label" data-i18n="hero.platforms">Plataformas & ferramentas</div>
             <div class="cloud-tags" translate="no">
@@ -1759,9 +1989,9 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
         </div>
-        <h3 data-i18n="why.f2.title">Multi-cloud de verdade</h3>
+        <h3 data-i18n="why.f2.title">Multi-Cloud de verdade</h3>
         <p data-i18n="why.f2.desc">AWS, Azure, GCP e OCI operados simultaneamente. Sem preferência de vendor — a decisão é baseada em custo, compliance e necessidade técnica do seu projeto.</p>
-        <div class="ftags" translate="no" aria-hidden="true"><span class="ftag">#aws</span><span class="ftag">#azure</span><span class="ftag">#gcp</span><span class="ftag">#oci</span><span class="ftag">#multi-cloud</span></div>
+        <div class="ftags" translate="no" aria-hidden="true"><span class="ftag">#aws</span><span class="ftag">#azure</span><span class="ftag">#gcp</span><span class="ftag">#oci</span><span class="ftag">#multi-Cloud</span></div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
@@ -1803,7 +2033,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 <!-- SOLUÇÕES -->
 <section id="solucoes">
   <div class="wrap">
-    <h2 data-i18n="sol.title">Soluções cloud sob medida para a sua operação</h2>
+    <h2 data-i18n="sol.title">Soluções Cloud sob medida para a sua operação</h2>
     <p class="sub" data-i18n="sol.sub">Seis frentes de atuação, cada uma com engenheiro especialista dedicado — não gerente de conta.</p>
 
     <div class="svc-tabs" role="tablist" aria-label="Soluções">
@@ -1826,7 +2056,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         <div class="svc-panel-side">
           <p class="svc-panel-side-label" data-i18n="sol.side.fits">Ideal para</p>
           <ul class="svc-bullets">
-            <li data-i18n="sol.1.fit1">Times que querem adotar cloud mas não têm equipe especializada interna</li>
+            <li data-i18n="sol.1.fit1">Times que querem adotar Cloud mas não têm equipe especializada interna</li>
             <li data-i18n="sol.1.fit2">Empresas que precisam escolher o provedor certo e construir a fundação correta</li>
             <li data-i18n="sol.1.fit3">Projetos novos que exigem Well-Architected desde o início</li>
           </ul>
@@ -1883,9 +2113,9 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         <div class="svc-panel-side">
           <p class="svc-panel-side-label" data-i18n="sol.side.fits">Ideal para</p>
           <ul class="svc-bullets">
-            <li data-i18n="sol.4.fit1">Times com fatura cloud crescendo sem visibilidade do porquê</li>
+            <li data-i18n="sol.4.fit1">Times com fatura Cloud crescendo sem visibilidade do porquê</li>
             <li data-i18n="sol.4.fit2">Empresas que querem reservas e savings plans sem risco</li>
-            <li data-i18n="sol.4.fit3">CTOs que precisam apresentar ROI de cloud para o board</li>
+            <li data-i18n="sol.4.fit3">CTOs que precisam apresentar ROI de Cloud para o board</li>
           </ul>
           <div class="svc-tags" translate="no">
             <span class="ctag">FinOps Foundation</span><span class="ctag">FOCUS</span><span class="ctag">Rightsizing</span><span class="ctag">Cost Explorer</span>
@@ -2017,7 +2247,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 <!-- PARTNERS + STACK -->
 <section>
   <div class="wrap">
-    <h2 class="reveal" data-i18n="par.title">Parceria direta com os maiores provedores de nuvem</h2>
+    <h2 class="reveal" data-i18n="par.title">Trabalhamos diretamente com os maiores provedores de nuvem</h2>
     <p class="partners-prose" data-i18n="par.p1">Relacionamento direto com <strong translate="no">AWS, Azure, GCP e OCI</strong>: suporte técnico resolvido mais rápido, acesso a programas oficiais de migração e condições comerciais melhores para o seu projeto.</p>
     <div class="providers-grid" translate="no">
       <div class="provider-card aws">
@@ -2025,7 +2255,6 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="22" height="22" loading="lazy">
           <span class="name">AWS</span>
         </div>
-        <span class="provider-tag">partner</span>
         <p class="provider-note" data-i18n="par.aws.note" translate="yes">EKS, RDS, CloudFront, Well-Architected Review.</p>
       </div>
       <div class="provider-card azure">
@@ -2033,7 +2262,6 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg" alt="Azure" width="22" height="22" loading="lazy">
           <span class="name">Azure</span>
         </div>
-        <span class="provider-tag">partner</span>
         <p class="provider-note" data-i18n="par.azure.note" translate="yes">AKS, Entra ID, Defender, Blob Storage.</p>
       </div>
       <div class="provider-card gcp">
@@ -2041,7 +2269,6 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlecloud.svg" alt="Google Cloud" width="22" height="22" loading="lazy">
           <span class="name">Google Cloud</span>
         </div>
-        <span class="provider-tag">partner</span>
         <p class="provider-note" data-i18n="par.gcp.note" translate="yes">GKE, BigQuery, Cloud Run, FinOps.</p>
       </div>
       <div class="provider-card oci">
@@ -2049,11 +2276,10 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="Oracle Cloud" width="22" height="22" loading="lazy">
           <span class="name">Oracle Cloud</span>
         </div>
-        <span class="provider-tag">partner</span>
         <p class="provider-note" data-i18n="par.oci.note" translate="yes">OKE, HeatWave, Autonomous DB, FastConnect.</p>
       </div>
     </div>
-    <div class="stack-groups" translate="no" aria-label="Stack cloud-native">
+    <div class="stack-groups" translate="no" aria-label="Stack Cloud-native">
       <div>
         <div class="stack-group-label" data-i18n="par.stack.k8s">Container &amp; orchestration</div>
         <div class="stack-group-tags">
@@ -2096,33 +2322,44 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 <section id="sobre">
   <div class="wrap">
     <h2 class="reveal" data-i18n="about.title">Entregamos resultado, não apresentação.</h2>
-    <div class="about-body prose">
-      <p data-i18n="about.p1">A <span translate="no">nativos.cloud</span> nasceu da operação. Anos sustentando infraestrutura crítica em produção, resolvendo incidentes em ambientes multi-cloud e entregando projetos de ponta a ponta para clientes de todos os portes.</p>
-      <p data-i18n="about.p2">Nosso compromisso é fazer a nuvem funcionar com clareza, responsabilidade e resultado mensurável.</p>
-      <p data-i18n="about.sectors">Já operamos infraestrutura para empresas de financeiro, varejo, indústria, educação, logística e startups — cada setor com exigências específicas, todos atendidos com o mesmo padrão de excelência.</p>
-      <blockquote data-i18n="about.quote">Cloud entregue por quem opera: com método, transparência e engenheiros disponíveis quando o seu negócio precisa.</blockquote>
-      <ul class="certs">
-        <li translate="no">AWS Solutions Architect – Associate</li>
-        <li translate="no">AWS Cloud Practitioner</li>
-        <li translate="no">Oracle Cloud Infrastructure Certified</li>
-        <li data-i18n="about.cert4">Engenheiros com 15+ anos em infra e cloud</li>
-        <li data-i18n="about.cert5">Atuação multi-cloud: AWS, Azure, GCP e OCI</li>
-      </ul>
-      <div class="about-tags" translate="no" aria-label="Stack de tecnologias">
-        <span class="about-tag">#kubernetes</span>
-        <span class="about-tag">#terraform</span>
-        <span class="about-tag">#gitops</span>
-        <span class="about-tag">#argocd</span>
-        <span class="about-tag">#helm</span>
-        <span class="about-tag">#docker</span>
-        <span class="about-tag">#ci-cd</span>
-        <span class="about-tag">#iac</span>
-        <span class="about-tag">#zero-trust</span>
-        <span class="about-tag">#finops</span>
-        <span class="about-tag">#observability</span>
-        <span class="about-tag">#sre</span>
-        <span class="about-tag">#devops</span>
+    <div class="about-layout">
+      <div class="about-body prose">
+        <p data-i18n="about.p1">A <span translate="no">nativos.cloud</span> nasceu da operação. Anos sustentando infraestrutura crítica em produção, resolvendo incidentes em ambientes multi-Cloud e entregando projetos de ponta a ponta para clientes de todos os portes.</p>
+        <p data-i18n="about.p2">Nosso compromisso é fazer a nuvem funcionar com clareza, responsabilidade e resultado mensurável.</p>
+        <p data-i18n="about.sectors">Já operamos infraestrutura para empresas de financeiro, varejo, indústria, educação, logística e startups — cada setor com exigências específicas, todos atendidos com o mesmo padrão de excelência.</p>
+        <blockquote data-i18n="about.quote">Cloud entregue por quem opera: com método, transparência e engenheiros disponíveis quando o seu negócio precisa.</blockquote>
+        <div class="about-tags" translate="no" aria-label="Stack de tecnologias">
+          <span class="about-tag">#kubernetes</span>
+          <span class="about-tag">#terraform</span>
+          <span class="about-tag">#gitops</span>
+          <span class="about-tag">#argocd</span>
+          <span class="about-tag">#helm</span>
+          <span class="about-tag">#docker</span>
+          <span class="about-tag">#ci-cd</span>
+          <span class="about-tag">#iac</span>
+          <span class="about-tag">#zero-trust</span>
+          <span class="about-tag">#finops</span>
+          <span class="about-tag">#observability</span>
+          <span class="about-tag">#sre</span>
+          <span class="about-tag">#devops</span>
+        </div>
       </div>
+      <aside class="about-sidebar">
+        <div class="about-metric">
+          <div class="about-metric-num">15<em>+</em></div>
+          <div class="about-metric-desc" data-i18n="stats.exp.ctx">por engenheiro sênior</div>
+        </div>
+        <div>
+          <p class="about-certs-label" data-i18n="about.certs.label">Certificações</p>
+          <ul class="certs">
+            <li translate="no">AWS Solutions Architect – Associate</li>
+            <li translate="no">AWS Cloud Practitioner</li>
+            <li translate="no">Oracle Cloud Infrastructure Certified</li>
+            <li data-i18n="about.cert4">Engenheiros com 15+ anos em infra e Cloud</li>
+            <li data-i18n="about.cert5">Atuação multi-Cloud: AWS, Azure, GCP e OCI</li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
@@ -2134,20 +2371,20 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
     <h2 data-i18n="faq.title">Perguntas frequentes</h2>
     <div class="faq">
       <details>
-        <summary data-i18n="faq.q1">Qual é o prazo típico de uma migração cloud?</summary>
+        <summary data-i18n="faq.q1">Qual é o prazo típico de uma migração Cloud?</summary>
         <div class="faq-a" data-i18n="faq.a1">Depende da complexidade do ambiente. Migrações simples (lift &amp; shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.</div>
       </details>
       <details>
-        <summary data-i18n="faq.q2">Vocês atendem empresas que ainda não usam cloud?</summary>
+        <summary data-i18n="faq.q2">Vocês atendem empresas que ainda não usam Cloud?</summary>
         <div class="faq-a" data-i18n="faq.a2">Sim. A gente começa do zero: readiness assessment, escolha do provedor, desenho da estratégia e execução da migração. O processo foi feito pra reduzir risco em cada etapa, não pra empilhar burocracia.</div>
       </details>
       <details>
         <summary data-i18n="faq.q3">Como funciona o serviço de MSP (managed services)?</summary>
-        <div class="faq-a" data-i18n="faq.a3">Monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custo e suporte técnico com SLA. Contrato mensal, escopo fixo, então a fatura não te surpreende. A stack é Grafana, Prometheus e o observability nativo de cada cloud.</div>
+        <div class="faq-a" data-i18n="faq.a3">Monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custo e suporte técnico com SLA. Contrato mensal, escopo fixo, então a fatura não te surpreende. A stack é Grafana, Prometheus e o observability nativo de cada Cloud.</div>
       </details>
       <details>
-        <summary data-i18n="faq.q4">Vocês trabalham com mais de um provedor cloud simultaneamente?</summary>
-        <div class="faq-a" data-i18n="faq.a4">Sim. Multi-cloud é nosso dia a dia, com AWS, Azure, GCP e OCI. Boa parte dos clientes distribui workload entre dois provedores por custo, redundância ou requisito de compliance.</div>
+        <summary data-i18n="faq.q4">Vocês trabalham com mais de um provedor Cloud simultaneamente?</summary>
+        <div class="faq-a" data-i18n="faq.a4">Sim. Multi-Cloud é nosso dia a dia, com AWS, Azure, GCP e OCI. Boa parte dos clientes distribui workload entre dois provedores por custo, redundância ou requisito de compliance.</div>
       </details>
       <details>
         <summary data-i18n="faq.q5">A consultoria inicial é gratuita?</summary>
@@ -2207,7 +2444,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
           <div class="dep-prev-name" id="dep-prev-name">Ana Beatriz</div>
           <div class="dep-prev-role" id="dep-prev-role">Head de Infra · E-commerce</div>
         </div>
-        <p class="dep-prev-quote" id="dep-prev-quote">Redução de 42% no custo de cloud em 60 dias. Sem cortar nada que importa — só rightsizing e reservas onde fazia sentido.</p>
+        <p class="dep-prev-quote" id="dep-prev-quote">Redução de 42% no custo de Cloud em 60 dias. Sem cortar nada que importa — só rightsizing e reservas onde fazia sentido.</p>
         <div class="dep-dots" id="dep-dots"></div>
       </aside>
     </div>
@@ -2222,30 +2459,42 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
     <p class="sub reveal reveal-delay-1" data-i18n="prod.sub">Open source que a gente escreveu porque precisava internamente. Depois abriu.</p>
     <div class="products">
       <article class="product reveal reveal-delay-2">
-        <h3 translate="no">vanishd</h3>
-        <p class="product-sub" data-i18n="prod.vanishd.sub">zero-knowledge secret sharing</p>
-        <p class="product-desc" data-i18n="prod.vanishd.desc">Compartilhamento de segredo em que o servidor nunca vê o conteúdo. A cifragem acontece no navegador do remetente e o link se autodestrói na primeira leitura.</p>
-        <ul class="product-features">
-          <li data-i18n="prod.vanishd.f1">AES-256-GCM client-side via Web Crypto API</li>
-          <li data-i18n="prod.vanishd.f2">Chave de decifragem no fragmento da URL (invisível ao servidor)</li>
-          <li data-i18n="prod.vanishd.f3">Proteção por senha com PBKDF2 e deleção atômica na primeira leitura</li>
-          <li data-i18n="prod.vanishd.f4">Rate limiting por IP e headers de segurança com CSP</li>
-        </ul>
-        <p class="product-stack" translate="no">Python, Flask, Web Crypto API, Docker, SQLite</p>
-        <a class="product-link" href="https://github.com/NatanRigailo/vanishd" target="_blank" rel="noopener noreferrer" translate="no">github.com/NatanRigailo/vanishd</a>
+        <div class="product-header">
+          <div class="product-header-dots"><span></span><span></span><span></span></div>
+          <span class="product-header-name" translate="no">~/nativos/vanishd</span>
+        </div>
+        <div class="product-body">
+          <h3 translate="no">vanishd</h3>
+          <p class="product-sub" data-i18n="prod.vanishd.sub">zero-knowledge secret sharing</p>
+          <p class="product-desc" data-i18n="prod.vanishd.desc">Compartilhamento de segredo em que o servidor nunca vê o conteúdo. A cifragem acontece no navegador do remetente e o link se autodestrói na primeira leitura.</p>
+          <ul class="product-features">
+            <li data-i18n="prod.vanishd.f1">AES-256-GCM client-side via Web Crypto API</li>
+            <li data-i18n="prod.vanishd.f2">Chave de decifragem no fragmento da URL (invisível ao servidor)</li>
+            <li data-i18n="prod.vanishd.f3">Proteção por senha com PBKDF2 e deleção atômica na primeira leitura</li>
+            <li data-i18n="prod.vanishd.f4">Rate limiting por IP e headers de segurança com CSP</li>
+          </ul>
+          <p class="product-stack" translate="no">Python, Flask, Web Crypto API, Docker, SQLite</p>
+          <a class="product-link" href="https://github.com/NatanRigailo/vanishd" target="_blank" rel="noopener noreferrer" translate="no">github.com/NatanRigailo/vanishd</a>
+        </div>
       </article>
       <article class="product reveal reveal-delay-3">
-        <h3 translate="no">mfa-app</h3>
-        <p class="product-sub" data-i18n="prod.mfa.sub">gestão centralizada de tokens TOTP</p>
-        <p class="product-desc" data-i18n="prod.mfa.desc">Gestor de TOTP pra time. Códigos ao vivo com timer de 30s, modo demo pra onboarding.</p>
-        <ul class="product-features">
-          <li data-i18n="prod.mfa.f1">Registro de tokens via leitura de QR Code</li>
-          <li data-i18n="prod.mfa.f2">Modo de edição protegido por senha</li>
-          <li data-i18n="prod.mfa.f3">Códigos TOTP ao vivo, com barra de progresso</li>
-          <li data-i18n="prod.mfa.f4">Deploy imediato com SQLite ou MySQL via Docker Compose</li>
-        </ul>
-        <p class="product-stack" translate="no">Python, Flask, TOTP, Docker, SQLite, MySQL</p>
-        <a class="product-link" href="https://github.com/NatanRigailo/mfa-app" target="_blank" rel="noopener noreferrer" translate="no">github.com/NatanRigailo/mfa-app</a>
+        <div class="product-header">
+          <div class="product-header-dots"><span></span><span></span><span></span></div>
+          <span class="product-header-name" translate="no">~/nativos/mfa-app</span>
+        </div>
+        <div class="product-body">
+          <h3 translate="no">mfa-app</h3>
+          <p class="product-sub" data-i18n="prod.mfa.sub">gestão centralizada de tokens TOTP</p>
+          <p class="product-desc" data-i18n="prod.mfa.desc">Gestor de TOTP pra time. Códigos ao vivo com timer de 30s, modo demo pra onboarding.</p>
+          <ul class="product-features">
+            <li data-i18n="prod.mfa.f1">Registro de tokens via leitura de QR Code</li>
+            <li data-i18n="prod.mfa.f2">Modo de edição protegido por senha</li>
+            <li data-i18n="prod.mfa.f3">Códigos TOTP ao vivo, com barra de progresso</li>
+            <li data-i18n="prod.mfa.f4">Deploy imediato com SQLite ou MySQL via Docker Compose</li>
+          </ul>
+          <p class="product-stack" translate="no">Python, Flask, TOTP, Docker, SQLite, MySQL</p>
+          <a class="product-link" href="https://github.com/NatanRigailo/mfa-app" target="_blank" rel="noopener noreferrer" translate="no">github.com/NatanRigailo/mfa-app</a>
+        </div>
       </article>
     </div>
   </div>
@@ -2329,7 +2578,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
     <span class="pf-bg-tag" style="top:28%;left:1%">#terraform</span>
     <span class="pf-bg-tag" style="top:60%;left:3%">#gitops</span>
     <span class="pf-bg-tag" style="top:78%;left:6%">#finops</span>
-    <span class="pf-bg-tag" style="top:8%;right:5%">#multi-cloud</span>
+    <span class="pf-bg-tag" style="top:8%;right:5%">#multi-Cloud</span>
     <span class="pf-bg-tag" style="top:22%;right:2%">#observability</span>
     <span class="pf-bg-tag" style="top:50%;right:4%">#zero-trust</span>
     <span class="pf-bg-tag" style="top:72%;right:3%">#devops</span>
@@ -2351,7 +2600,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
     <div class="footer-topbar">
       <div class="footer-logo-block">
         <a href="/" class="footer-logo-name" translate="no">nativos<em>.cloud</em></a>
-        <span class="footer-logo-tagline" data-i18n="footer.tagline2">Consultoria cloud + MSP · Ponta Grossa, PR</span>
+        <span class="footer-logo-tagline" data-i18n="footer.tagline2">Consultoria Cloud + MSP · Ponta Grossa, PR</span>
       </div>
       <div class="footer-social" aria-label="Redes sociais">
         <a href="https://linkedin.com/company/nativos-cloud" aria-label="LinkedIn" target="_blank" rel="noopener">
@@ -2375,14 +2624,14 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
     <div class="footer-cols">
       <div class="footer-col-brand">
         <div class="footer-badges-row">
-          <span class="footer-badge">AWS partner</span>
-          <span class="footer-badge">Azure partner</span>
-          <span class="footer-badge">GCP partner</span>
-          <span class="footer-badge">OCI partner</span>
+          <span class="footer-badge">AWS</span>
+          <span class="footer-badge">Azure</span>
+          <span class="footer-badge">GCP</span>
+          <span class="footer-badge">OCI</span>
           <span class="footer-badge">LGPD</span>
           <span class="footer-badge">FinOps Foundation</span>
         </div>
-        <p class="about-blurb" data-i18n="footer.blurb">Consultoria cloud + MSP para empresas que precisam de resultado, não de apresentação.</p>
+        <p class="about-blurb" data-i18n="footer.blurb">Consultoria Cloud + MSP para empresas que precisam de resultado, não de apresentação.</p>
       </div>
 
       <div>
@@ -2412,7 +2661,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
         <nav class="footer-nav" aria-label="Recursos">
           <a href="#faq">FAQ</a>
           <a href="#journey" data-i18n="footer.how">Como funciona</a>
-          <a href="#parceiros" data-i18n="footer.stack">Stack &amp; parceiros</a>
+          <a href="#parceiros" data-i18n="footer.stack">Stack &amp; providers</a>
           <a href="#produtos" data-i18n="nav.products">Produtos</a>
         </nav>
       </div>
@@ -2456,11 +2705,11 @@ const translations = {
     "nav.solutions":"Soluções","nav.about":"Sobre","nav.products":"Produtos","nav.contact":"Contato","nav.cta":"Entre em contato","theme.system":"Sistema",
     "hero.kicker":"Consultoria Cloud — Ponta Grossa, PR",
     "hero.h1":"Somos nativos.<br>A nuvem é a nossa <em>casa</em>.",
-    "hero.lede":"Soluções completas em Kubernetes, multi-cloud e DevOps para o seu negócio evoluir com segurança e previsibilidade.",
+    "hero.lede":"Soluções completas em Kubernetes, multi-Cloud e DevOps para o seu negócio evoluir com segurança e previsibilidade.",
     "hero.sublede":"Do primeiro deploy ao ambiente em produção, você fala direto com engenheiros especialistas que já resolveram o seu desafio.",
     "hero.cta1":"Agendar diagnóstico gratuito","hero.cta2":"Conheça nossas soluções",
     "hero.trust1":"Sem contrato de fidelidade","hero.trust2":"Engenheiro direto, sem camadas","hero.trust3":"Setup em menos de 2 semanas",
-    "hero.stackLabel":"// Stack multi-cloud","hero.platforms":"Plataformas & ferramentas","hero.metricsLabel":"// Métricas",
+    "hero.stackLabel":"// Stack multi-Cloud","hero.platforms":"Plataformas & ferramentas","hero.metricsLabel":"// Métricas",
     "metric.exp":"Experiência","metric.exp.sub":"anos engenheiros",
     "metric.clouds":"Clouds","metric.clouds.sub":"provedores",
     "metric.resp":"Resposta","metric.resp.sub":"no e-mail",
@@ -2470,25 +2719,25 @@ const translations = {
     "why.title":"Por que a nativos.cloud?",
     "why.sub":"Engenharia sem intermediário, sem gerente de conta no meio. Você fala com quem resolve.",
     "why.f1.title":"Você fala com quem faz","why.f1.desc":"Quem atende o diagnóstico é quem executa o projeto. Sem gerente de conta no meio, sem handoff para um técnico que não estava na call.",
-    "why.f2.title":"Multi-cloud de verdade","why.f2.desc":"AWS, Azure, GCP e OCI operados simultaneamente. Sem preferência de vendor — a decisão é baseada em custo, compliance e necessidade técnica do seu projeto.",
+    "why.f2.title":"Multi-Cloud de verdade","why.f2.desc":"AWS, Azure, GCP e OCI operados simultaneamente. Sem preferência de vendor — a decisão é baseada em custo, compliance e necessidade técnica do seu projeto.",
     "why.f3.title":"Postura de segurança desde o dia 1","why.f3.desc":"IAM com least privilege, Zero Trust, secrets com Vault e hardening de containers aplicados em cada projeto — não como add-on no final.",
     "why.f4.title":"FinOps que aparece na fatura","why.f4.desc":"Rightsizing, reservas e FOCUS Reports entregues com meta de redução. Resultado médio de 35% de economia em 90 dias — e isso é rastreável no Cost Explorer.",
     "why.f5.title":"Resposta garantida ≤ 24h","why.f5.desc":"SLA com compromisso real de resposta. No MSP, plantão 24x7 com runbooks testados em produção — não em sandbox de demonstração.",
     "why.f6.title":"Observability em produção","why.f6.desc":"Prometheus, Grafana, Datadog e OpenTelemetry configurados para o seu contexto — não só instalados. Alertas que acordam quem precisa, não quem está de plantão.",
     "ctaband.title":"Pronto para resolver sua infra de uma vez?","ctaband.sub":"Primeira call gratuita. Você sai com um diagnóstico claro e um caminho de ação — sem compromisso.","ctaband.cta":"Falar com especialista",
     "footer.col.nav":"Navegação","footer.col.services":"Serviços","footer.col.contact":"Contato",
-    "sol.title":"Soluções cloud sob medida para a sua operação",
+    "sol.title":"Soluções Cloud sob medida para a sua operação",
     "sol.sub":"Seis frentes de atuação, cada uma com engenheiro especialista dedicado — não gerente de conta.",
     "sol.cta":"Solicitar orçamento",
     "sol.side.fits":"Ideal para",
     "sol.1.title":"Cloud Consulting","sol.1.desc":"Acelere sua adoção de nuvem com arquitetura e implantação sob medida. Da primeira call ao go-live, atendimento direto com engenheiro responsável pelo seu projeto.",
-    "sol.1.fit1":"Times que querem adotar cloud mas não têm equipe especializada interna","sol.1.fit2":"Empresas que precisam escolher o provedor certo e construir a fundação correta","sol.1.fit3":"Projetos novos que exigem Well-Architected desde o início",
+    "sol.1.fit1":"Times que querem adotar Cloud mas não têm equipe especializada interna","sol.1.fit2":"Empresas que precisam escolher o provedor certo e construir a fundação correta","sol.1.fit3":"Projetos novos que exigem Well-Architected desde o início",
     "sol.2.title":"Cloud Migration","sol.2.desc":"Migre com segurança e o menor downtime possível. Estratégia por workload baseada nos 7 R's (Rehost, Replatform, Refactor e demais), com riscos mapeados antes do cutover.",
     "sol.2.fit1":"Empresas saindo de datacenter próprio ou co-location","sol.2.fit2":"Times que precisam migrar sem parar a operação","sol.2.fit3":"Projetos com compliance e auditoria exigindo rastreabilidade total",
     "sol.3.title":"DevOps & Platform Engineering","sol.3.desc":"Entregue mais rápido sem comprometer estabilidade. Pipelines completos do commit ao deploy com Kubernetes, Terraform e GitOps aplicados em produção.",
     "sol.3.fit1":"Times de engenharia que querem aumentar frequência de deploy","sol.3.fit2":"Empresas que precisam de Kubernetes em produção sem risco","sol.3.fit3":"Squads que precisam de Internal Developer Platform",
     "sol.4.title":"Cloud Optimization & FinOps","sol.4.desc":"Reduza custos e ganhe previsibilidade financeira na nuvem. Rightsizing, reservas e FOCUS Reports com a metodologia FinOps Foundation até a governança virar pauta de board.",
-    "sol.4.fit1":"Times com fatura cloud crescendo sem visibilidade do porquê","sol.4.fit2":"Empresas que querem reservas e savings plans sem risco","sol.4.fit3":"CTOs que precisam apresentar ROI de cloud para o board",
+    "sol.4.fit1":"Times com fatura Cloud crescendo sem visibilidade do porquê","sol.4.fit2":"Empresas que querem reservas e savings plans sem risco","sol.4.fit3":"CTOs que precisam apresentar ROI de Cloud para o board",
     "sol.5.title":"MSP — Operação Cloud 24x7","sol.5.desc":"Elimine o risco operacional com monitoramento e suporte contínuo. Plantão 24x7, DevOps gerenciado e modelo comercial previsível.",
     "sol.5.fit1":"Empresas sem time interno para suportar infra em produção","sol.5.fit2":"Times que precisam de resposta garantida fora do horário comercial","sol.5.fit3":"Negócios que precisam de fatura previsível sem surpresas",
     "sol.6.title":"Segurança e Compliance","sol.6.desc":"Proteja sua operação com uma postura que aguenta auditoria e pentest. IAM, VPN/IPSec, Zero Trust e hardening aplicados end-to-end.",
@@ -2506,7 +2755,7 @@ const translations = {
     "journey.s4.title":"Otimização","journey.s4.desc":"FinOps, performance e rightsizing contínuos para manter o ambiente eficiente.","journey.s4.time":"ciclos mensais","journey.s4.out":"↓ custo médio em 90d",
     "journey.s5.title":"Operação","journey.s5.desc":"MSP com monitoramento 24x7 e suporte proativo para evoluir junto com seu negócio.","journey.s5.time":"contínuo","journey.s5.out":"SLA mensal, incidentes resolvidos",
     "journey.cta":"Fale com especialista",
-    "par.title":"Parceria direta com os maiores provedores de nuvem",
+    "par.title":"Trabalhamos diretamente com os maiores provedores de nuvem",
     "par.p1":"Relacionamento direto com <strong translate=\"no\">AWS, Azure, GCP e OCI</strong>: suporte técnico resolvido mais rápido, acesso a programas oficiais de migração e condições comerciais melhores para o seu projeto.",
     "par.aws.note":"EKS, RDS, CloudFront, Well-Architected Review.",
     "par.azure.note":"AKS, Entra ID, Defender, Blob Storage.",
@@ -2519,20 +2768,20 @@ const translations = {
     "par.stack.sec":"Secrets &amp; base",
     "par.cta":"Agendar primeira call",
     "about.title":"Entregamos resultado, não apresentação.",
-    "about.p1":"A <span translate=\"no\">nativos.cloud</span> nasceu da operação. Anos sustentando infraestrutura crítica em produção, resolvendo incidentes em ambientes multi-cloud e entregando projetos de ponta a ponta para clientes de todos os portes.",
+    "about.p1":"A <span translate=\"no\">nativos.cloud</span> nasceu da operação. Anos sustentando infraestrutura crítica em produção, resolvendo incidentes em ambientes multi-Cloud e entregando projetos de ponta a ponta para clientes de todos os portes.",
     "about.p2":"Nosso compromisso é fazer a nuvem funcionar com clareza, responsabilidade e resultado mensurável.",
     "about.sectors":"Já operamos infraestrutura para empresas de financeiro, varejo, indústria, educação, logística e startups — cada setor com exigências específicas, todos atendidos com o mesmo padrão de excelência.",
     "about.quote":"Cloud entregue por quem opera: com método, transparência e engenheiros disponíveis quando o seu negócio precisa.",
-    "about.cert4":"Engenheiros com 15+ anos em infra e cloud","about.cert5":"Atuação multi-cloud: AWS, Azure, GCP e OCI",
+    "about.cert4":"Engenheiros com 15+ anos em infra e Cloud","about.cert5":"Atuação multi-Cloud: AWS, Azure, GCP e OCI","about.certs.label":"Certificações &amp; experiência",
     "faq.title":"Perguntas frequentes",
-    "faq.q1":"Qual é o prazo típico de uma migração cloud?",
+    "faq.q1":"Qual é o prazo típico de uma migração Cloud?",
     "faq.a1":"Depende da complexidade do ambiente. Migrações simples (lift & shift de workloads menores) levam de 2 a 4 semanas. Projetos maiores com refatoração, segurança e integração podem levar de 2 a 6 meses. Sempre iniciamos com um assessment para estimar com precisão.",
-    "faq.q2":"Vocês atendem empresas que ainda não usam cloud?",
+    "faq.q2":"Vocês atendem empresas que ainda não usam Cloud?",
     "faq.a2":"Sim. A gente começa do zero: readiness assessment, escolha do provedor, desenho da estratégia e execução da migração. O processo foi feito pra reduzir risco em cada etapa, não pra empilhar burocracia.",
     "faq.q3":"Como funciona o serviço de MSP (managed services)?",
-    "faq.a3":"Monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custo e suporte técnico com SLA. Contrato mensal, escopo fixo, então a fatura não te surpreende. A stack é Grafana, Prometheus e o observability nativo de cada cloud.",
-    "faq.q4":"Vocês trabalham com mais de um provedor cloud simultaneamente?",
-    "faq.a4":"Sim. Multi-cloud é nosso dia a dia, com AWS, Azure, GCP e OCI. Boa parte dos clientes distribui workload entre dois provedores por custo, redundância ou requisito de compliance.",
+    "faq.a3":"Monitoramento 24x7, gestão proativa de incidentes, otimização contínua de custo e suporte técnico com SLA. Contrato mensal, escopo fixo, então a fatura não te surpreende. A stack é Grafana, Prometheus e o observability nativo de cada Cloud.",
+    "faq.q4":"Vocês trabalham com mais de um provedor Cloud simultaneamente?",
+    "faq.a4":"Sim. Multi-Cloud é nosso dia a dia, com AWS, Azure, GCP e OCI. Boa parte dos clientes distribui workload entre dois provedores por custo, redundância ou requisito de compliance.",
     "faq.q5":"A consultoria inicial é gratuita?",
     "faq.a5":"Sim. A primeira call serve pra entender o cenário, mapear o que dói e propor um caminho. Nada é cobrado nessa fase.",
     "faq.cta":"Ainda tem dúvida? Fale com um especialista",
@@ -2562,16 +2811,16 @@ const translations = {
     "contact.email":"E-mail","contact.email.sub":"resposta em até 24h",
     "contact.loc":"Localização","contact.loc.sub":"Brasil — atendimento remoto nacional",
     "contact.hrs":"Horário","contact.hrs.val":"Segunda a sexta, 08h às 18h","contact.hrs.sub":"horário de Brasília (BRT)",
-    "footer.tagline":"Consultoria cloud + MSP. Consultoria Cloud — Ponta Grossa, PR.",
+    "footer.tagline":"Consultoria Cloud + MSP. Consultoria Cloud — Ponta Grossa, PR.",
     "footer.privacy":"Privacidade","footer.rights":"Todos os direitos reservados.",
     "cookie.text":"Usamos cookies para melhorar sua experiência. Leia nossa <a href=\"/politica-de-privacidade.html\">política de privacidade</a>.",
     "dep.resultado":"Resultado","cookie.title":"Privacidade",
-    "footer.tagline2":"Consultoria cloud + MSP · Ponta Grossa, PR",
-    "footer.blurb":"Consultoria cloud + MSP para empresas que precisam de resultado, não de apresentação.",
+    "footer.tagline2":"Consultoria Cloud + MSP · Ponta Grossa, PR",
+    "footer.blurb":"Consultoria Cloud + MSP para empresas que precisam de resultado, não de apresentação.",
     "footer.team":"Nossa equipe",
     "footer.col.resources":"Recursos",
     "footer.how":"Como funciona",
-    "footer.stack":"Stack &amp; parceiros",
+    "footer.stack":"Stack &amp; providers",
     "footer.bookcall":"Agendar call",
     "footer.location":"Ponta Grossa, PR<br>Brasil",
     "footer.hours":"Seg–Sex 08h–18h BRT",
@@ -2582,12 +2831,12 @@ const translations = {
   en: {
     "nav.solutions":"Solutions","nav.about":"About","nav.products":"Products","nav.contact":"Contact","nav.cta":"Get in touch","theme.system":"System",
     "hero.kicker":"Cloud Consulting — Ponta Grossa, Brazil",
-    "hero.h1":"We are native. The cloud is our <em>home</em>.",
-    "hero.lede":"Complete solutions in Kubernetes, multi-cloud and DevOps to help your business scale with confidence and predictability.",
+    "hero.h1":"We are native. The Cloud is our <em>home</em>.",
+    "hero.lede":"Complete solutions in Kubernetes, multi-Cloud and DevOps to help your business scale with confidence and predictability.",
     "hero.sublede":"From first deploy to production at scale, you talk directly with senior engineers who have solved your challenge before.",
     "hero.cta1":"Book a free assessment","hero.cta2":"Explore our solutions",
     "hero.trust1":"No lock-in contract","hero.trust2":"Direct engineer, no layers","hero.trust3":"Setup in under 2 weeks",
-    "hero.stackLabel":"// Multi-cloud stack","hero.platforms":"Platforms & tools","hero.metricsLabel":"// Metrics",
+    "hero.stackLabel":"// Multi-Cloud stack","hero.platforms":"Platforms & tools","hero.metricsLabel":"// Metrics",
     "metric.exp":"Experience","metric.exp.sub":"engineer years",
     "metric.clouds":"Clouds","metric.clouds.sub":"providers",
     "metric.resp":"Response","metric.resp.sub":"by email",
@@ -2597,7 +2846,7 @@ const translations = {
     "why.title":"Why nativos.cloud?",
     "why.sub":"Engineering without intermediaries. You talk directly to the person who solves it.",
     "why.f1.title":"You talk to who builds it","why.f1.desc":"The engineer who handles the diagnosis is the one who executes the project. No account manager in between, no handoff to a tech who wasn't on the call.",
-    "why.f2.title":"Multi-cloud for real","why.f2.desc":"AWS, Azure, GCP and OCI operated simultaneously. No vendor preference — decisions are based on cost, compliance and your project's technical requirements.",
+    "why.f2.title":"Multi-Cloud for real","why.f2.desc":"AWS, Azure, GCP and OCI operated simultaneously. No vendor preference — decisions are based on cost, compliance and your project's technical requirements.",
     "why.f3.title":"Security posture from day 1","why.f3.desc":"Least-privilege IAM, Zero Trust, Vault for secrets and container hardening applied in every project — not as a late add-on.",
     "why.f4.title":"FinOps that shows up on the bill","why.f4.desc":"Rightsizing, reservations and FOCUS Reports delivered with a reduction target. Average 35% savings in 90 days — traceable in Cost Explorer.",
     "why.f5.title":"Guaranteed response ≤ 24h","why.f5.desc":"SLA with a real response commitment. In MSP, 24x7 on-call with runbooks tested in production — not in a demo sandbox.",
@@ -2608,20 +2857,20 @@ const translations = {
     "sol.sub":"Six focus areas, each led by a dedicated senior engineer — not an account manager.",
     "sol.cta":"Request a quote",
     "sol.side.fits":"Best fit for",
-    "sol.1.title":"Cloud Consulting","sol.1.desc":"Accelerate your cloud adoption with tailored architecture and implementation. From first call to go-live, direct access to the engineer running your project.",
-    "sol.1.fit1":"Teams wanting to adopt cloud without in-house specialists","sol.1.fit2":"Companies needing to pick the right provider and build on a solid foundation","sol.1.fit3":"New projects requiring Well-Architected from day one",
+    "sol.1.title":"Cloud Consulting","sol.1.desc":"Accelerate your Cloud adoption with tailored architecture and implementation. From first call to go-live, direct access to the engineer running your project.",
+    "sol.1.fit1":"Teams wanting to adopt Cloud without in-house specialists","sol.1.fit2":"Companies needing to pick the right provider and build on a solid foundation","sol.1.fit3":"New projects requiring Well-Architected from day one",
     "sol.2.title":"Cloud Migration","sol.2.desc":"Migrate safely with the least possible downtime. Workload-level strategy based on the 7 R's (Rehost, Replatform, Refactor and others), with risks mapped before cutover.",
     "sol.2.fit1":"Companies moving out of on-prem datacenters or co-location","sol.2.fit2":"Teams needing to migrate without taking the operation offline","sol.2.fit3":"Projects with compliance and audit requirements needing full traceability",
     "sol.3.title":"DevOps & Platform Engineering","sol.3.desc":"Ship faster without compromising stability. End-to-end pipelines from commit to deploy with Kubernetes, Terraform and GitOps in production.",
     "sol.3.fit1":"Engineering teams looking to increase deployment frequency","sol.3.fit2":"Companies running Kubernetes in production without in-house expertise","sol.3.fit3":"Squads needing an Internal Developer Platform",
-    "sol.4.title":"Cloud Optimization & FinOps","sol.4.desc":"Cut costs and gain financial predictability in the cloud. Rightsizing, reservations and FOCUS Reports with FinOps Foundation methodology — until governance becomes a board-level topic.",
-    "sol.4.fit1":"Teams whose cloud bill is growing without understanding why","sol.4.fit2":"Companies wanting reservations and savings plans without financial risk","sol.4.fit3":"CTOs who need to present cloud ROI to the board",
+    "sol.4.title":"Cloud Optimization & FinOps","sol.4.desc":"Cut costs and gain financial predictability in the Cloud. Rightsizing, reservations and FOCUS Reports with FinOps Foundation methodology — until governance becomes a board-level topic.",
+    "sol.4.fit1":"Teams whose Cloud bill is growing without understanding why","sol.4.fit2":"Companies wanting reservations and savings plans without financial risk","sol.4.fit3":"CTOs who need to present Cloud ROI to the board",
     "sol.5.title":"MSP — 24x7 Cloud Operations","sol.5.desc":"Eliminate operational risk with continuous monitoring and support. 24x7 on-call, managed DevOps and predictable commercial terms.",
     "sol.5.fit1":"Companies without an internal team to support production infrastructure","sol.5.fit2":"Teams needing guaranteed response outside business hours","sol.5.fit3":"Businesses that need predictable invoicing without surprises",
     "sol.6.title":"Security and Compliance","sol.6.desc":"Protect your operation with a security posture that holds up to audits and pentests. IAM, VPN/IPSec, Zero Trust and hardening applied end-to-end.",
     "sol.6.fit1":"Companies pursuing ISO 27001 or SOC 2 certification","sol.6.fit2":"Teams needing Zero Trust in place before an external pentest","sol.6.fit3":"Environments with sensitive data subject to LGPD or GDPR obligations",
     "stats.label":"// Production results",
-    "stats.finops":"average reduction in cloud spend","stats.finops.ctx":"within 90 days with FinOps",
+    "stats.finops":"average reduction in Cloud spend","stats.finops.ctx":"within 90 days with FinOps",
     "stats.exp":"years operating critical infra in production","stats.exp.ctx":"per senior engineer",
     "stats.clouds":"clouds operated simultaneously","stats.clouds.ctx":"AWS, Azure, GCP and OCI",
     "stats.resp":"maximum guaranteed response time","stats.resp.ctx":"MSP with monthly SLA",
@@ -2633,7 +2882,7 @@ const translations = {
     "journey.s4.title":"Optimization","journey.s4.desc":"Continuous FinOps, performance tuning and rightsizing to keep the environment efficient.","journey.s4.time":"monthly cycles","journey.s4.out":"↓ avg cost in 90 days",
     "journey.s5.title":"Operations","journey.s5.desc":"MSP with 24x7 monitoring and proactive support to evolve alongside your business.","journey.s5.time":"continuous","journey.s5.out":"monthly SLA, incidents resolved",
     "journey.cta":"Talk to a specialist",
-    "par.title":"Direct partnerships with the top cloud providers",
+    "par.title":"We work directly with the top Cloud providers",
     "par.p1":"Direct relationships with <strong translate=\"no\">AWS, Azure, GCP and OCI</strong>: faster technical escalation, access to official migration programs and better commercial terms for your project.",
     "par.aws.note":"EKS, RDS, CloudFront, Well-Architected Review.",
     "par.azure.note":"AKS, Entra ID, Defender, Blob Storage.",
@@ -2646,24 +2895,24 @@ const translations = {
     "par.stack.sec":"Secrets &amp; base",
     "par.cta":"Schedule a first call",
     "about.title":"We deliver results, not slides.",
-    "about.p1":"<span translate=\"no\">nativos.cloud</span> was born from operations. Years sustaining mission-critical infrastructure in production, resolving incidents in multi-cloud environments and delivering end-to-end projects for clients of every size.",
-    "about.p2":"Our commitment is making the cloud work with clarity, accountability and measurable results.",
+    "about.p1":"<span translate=\"no\">nativos.cloud</span> was born from operations. Years sustaining mission-critical infrastructure in production, resolving incidents in multi-Cloud environments and delivering end-to-end projects for clients of every size.",
+    "about.p2":"Our commitment is making the Cloud work with clarity, accountability and measurable results.",
     "about.sectors":"We have operated infrastructure for companies across finance, retail, industry, education, logistics and startups — each sector with specific demands, all served with the same standard of excellence.",
     "about.quote":"Cloud delivered by operators: with method, transparency and engineers available when your business needs them.",
-    "about.cert4":"Engineers with 15+ years in infra and cloud","about.cert5":"Multi-cloud expertise: AWS, Azure, GCP and OCI",
+    "about.cert4":"Engineers with 15+ years in infra and Cloud","about.cert5":"Multi-Cloud expertise: AWS, Azure, GCP and OCI","about.certs.label":"Certifications &amp; experience",
     "faq.title":"Frequently asked questions",
-    "faq.q1":"What is the typical timeline for a cloud migration?",
+    "faq.q1":"What is the typical timeline for a Cloud migration?",
     "faq.a1":"It depends on the complexity of the environment. Simple migrations (lift & shift of smaller workloads) take 2 to 4 weeks. Larger projects involving refactoring, security and integration can take 2 to 6 months. We always start with an assessment to estimate accurately.",
-    "faq.q2":"Do you work with companies that don't use cloud yet?",
+    "faq.q2":"Do you work with companies that don't use Cloud yet?",
     "faq.a2":"Yes. We start from zero: readiness assessment, provider selection, strategy design and migration execution. The process is built to reduce risk at every step, not to pile on paperwork.",
     "faq.q3":"How does the MSP (managed services) offering work?",
-    "faq.a3":"24x7 monitoring, proactive incident management, continuous cost optimization and technical support with an SLA. Monthly contract, fixed scope, so the invoice doesn't surprise you. The stack is Grafana, Prometheus and each cloud's native observability.",
-    "faq.q4":"Do you work with more than one cloud provider at the same time?",
-    "faq.a4":"Yes. Multi-cloud is our day-to-day, with AWS, Azure, GCP and OCI. Most clients distribute workloads across two providers for cost, redundancy or compliance reasons.",
+    "faq.a3":"24x7 monitoring, proactive incident management, continuous cost optimization and technical support with an SLA. Monthly contract, fixed scope, so the invoice doesn't surprise you. The stack is Grafana, Prometheus and each Cloud's native observability.",
+    "faq.q4":"Do you work with more than one Cloud provider at the same time?",
+    "faq.a4":"Yes. Multi-Cloud is our day-to-day, with AWS, Azure, GCP and OCI. Most clients distribute workloads across two providers for cost, redundancy or compliance reasons.",
     "faq.q5":"Is the initial consulting free?",
     "faq.a5":"Yes. The first call is for us to understand the situation, map what hurts and propose a path. Nothing is charged at that stage.",
     "faq.cta":"Still have questions? Talk to a specialist",
-    "dep.label":"What our clients say","dep.title":"Results that show up in practice","dep.sub":"Companies that stopped firefighting and started growing with the cloud.",
+    "dep.label":"What our clients say","dep.title":"Results that show up in practice","dep.sub":"Companies that stopped firefighting and started growing with the Cloud.",
     "prod.title":"Open source products",
     "prod.sub":"Open source we wrote because we needed it internally. Then opened it up.",
     "prod.vanishd.sub":"zero-knowledge secret sharing",
@@ -2678,7 +2927,7 @@ const translations = {
     "prod.mfa.f2":"Password-protected edit mode",
     "prod.mfa.f3":"Live TOTP codes with progress bar",
     "prod.mfa.f4":"Instant deploy with SQLite or MySQL via Docker Compose",
-    "contact.title":"Ready to start your cloud journey?",
+    "contact.title":"Ready to start your Cloud journey?",
     "contact.sub":"We reply within 24h. The first call is free — we map your scenario and propose the best path forward.",
     "form.name":"Name","form.name.ph":"Your name","form.company":"Company","form.company.ph":"Your company",
     "form.email":"E-mail","form.phone":"Phone",
@@ -2698,13 +2947,13 @@ const translations = {
     "footer.team":"Our team",
     "footer.col.resources":"Resources",
     "footer.how":"How it works",
-    "footer.stack":"Stack &amp; partners",
+    "footer.stack":"Stack &amp; providers",
     "footer.bookcall":"Book a call",
     "footer.location":"Ponta Grossa, PR<br>Brazil",
     "footer.hours":"Mon–Fri 08h–18h BRT",
     "footer.sec":"Security",
     "cookie.accept":"Accept","cookie.decline":"Decline",
-    "pf.label":"Talk to an engineer","pf.title":"Your cloud the way<br><em>it should be.</em>","pf.sub":"Free first call. Clear diagnosis and action plan — no commitment, straight to a specialist.","pf.cta":"Book a free assessment"
+    "pf.label":"Talk to an engineer","pf.title":"Your Cloud the way<br><em>it should be.</em>","pf.sub":"Free first call. Clear diagnosis and action plan — no commitment, straight to a specialist.","pf.cta":"Book a free assessment"
   }
 };
 
@@ -2717,33 +2966,22 @@ let currentLang = 'pt';
   const icons = {dark:'◐', system:'⊙', light:'○'};
   const labels = {dark:'Dark', system:'System', light:'Light'};
 
+  const themeOrder = ['dark','light','system'];
   function applyTheme(pref){
     const resolved = pref === 'system' ? (mq.matches ? 'light' : 'dark') : pref;
     document.documentElement.dataset.theme = resolved;
-    const iconEl = document.getElementById('theme-select-icon');
-    const labelEl = document.getElementById('theme-select-label');
+    const iconEl = document.getElementById('theme-cycle-icon');
     if(iconEl) iconEl.textContent = icons[pref];
-    if(labelEl){
-      const t = translations && translations[currentLang];
-      labelEl.textContent = pref === 'system' && t && t['theme.system'] ? t['theme.system'] : labels[pref];
-    }
-    ['dark','system','light'].forEach(t => {
-      const item = document.getElementById('tmitem-' + t);
-      if(item) item.classList.toggle('active', t === pref);
-    });
   }
   window.setTheme = function(pref){ localStorage.setItem(KEY, pref); applyTheme(pref); };
-  window.toggleThemeMenu = function(){
-    const isOpen = document.getElementById('theme-menu').classList.toggle('open');
-    document.getElementById('theme-select-btn').setAttribute('aria-expanded', isOpen);
+  window.cycleTheme = function(){
+    const cur = localStorage.getItem(KEY) || 'system';
+    const next = themeOrder[(themeOrder.indexOf(cur) + 1) % themeOrder.length];
+    window.setTheme(next);
   };
-  window.closeThemeMenu = function(){
-    document.getElementById('theme-menu').classList.remove('open');
-    document.getElementById('theme-select-btn').setAttribute('aria-expanded', 'false');
-  };
-  document.addEventListener('click', function(e){
-    if(!document.getElementById('theme-select').contains(e.target)) closeThemeMenu();
-  });
+  /* keep legacy no-ops so any stale references don't throw */
+  window.toggleThemeMenu = function(){};
+  window.closeThemeMenu = function(){};
   mq.addEventListener('change', function(){
     if(localStorage.getItem(KEY) === 'system') applyTheme('system');
   });
@@ -3060,17 +3298,17 @@ function sendEmail(e){
   const dataByLang = {
     pt: [
       { av:'CM', name:'Carlos Mendes',  role:'CTO · Fintech B2B',         quote:'Migramos 40 workloads em 3 meses sem nenhum downtime. O assessment foi cirúrgico — eles sabiam exatamente onde ia doer antes de começar.', res:'0 downtime em 3 meses' },
-      { av:'AB', name:'Ana Beatriz',    role:'Head de Infra · E-commerce', quote:'Redução de 42% no custo de cloud em 60 dias. Sem cortar nada que importa — só rightsizing e reservas onde fazia sentido.',               res:'-42% no custo de cloud' },
+      { av:'AB', name:'Ana Beatriz',    role:'Head de Infra · E-commerce', quote:'Redução de 42% no custo de Cloud em 60 dias. Sem cortar nada que importa — só rightsizing e reservas onde fazia sentido.',               res:'-42% no custo de Cloud' },
       { av:'RT', name:'Rafael Teixeira',role:'DevOps Lead · Logística',    quote:'MSP com SLA real. Resposta em minutos, não horas. Primeiro fornecedor que cumpriu exatamente o que estava no contrato.',                 res:'SLA 100% cumprido' },
       { av:'JC', name:'Juliana Costa',  role:'CISO · Financeiro',          quote:'O assessment revelou brechas que passaram por duas auditorias internas sem ser detectadas. Vale muito o investimento.',                     res:'2 brechas críticas corrigidas' },
-      { av:'BL', name:'Beatriz Lima',   role:'Arquiteta Cloud · Indústria',quote:'Multi-cloud real: AWS e OCI integrados sem dor de cabeça. A arquitetura ficou mais resiliente e 30% mais barata.',                        res:'-30% de custo + HA' }
+      { av:'BL', name:'Beatriz Lima',   role:'Arquiteta Cloud · Indústria',quote:'Multi-Cloud real: AWS e OCI integrados sem dor de cabeça. A arquitetura ficou mais resiliente e 30% mais barata.',                        res:'-30% de custo + HA' }
     ],
     en: [
       { av:'CM', name:'Carlos Mendes',  role:'CTO · B2B Fintech',         quote:'We migrated 40 workloads in 3 months with zero downtime. The assessment was surgical — they knew exactly where it would hurt before we started.', res:'0 downtime in 3 months' },
-      { av:'AB', name:'Ana Beatriz',    role:'Head of Infra · E-commerce', quote:'42% reduction in cloud costs in 60 days. Without cutting anything that matters — just rightsizing and reservations where it made sense.',        res:'-42% cloud cost' },
+      { av:'AB', name:'Ana Beatriz',    role:'Head of Infra · E-commerce', quote:'42% reduction in Cloud costs in 60 days. Without cutting anything that matters — just rightsizing and reservations where it made sense.',        res:'-42% Cloud cost' },
       { av:'RT', name:'Rafael Teixeira',role:'DevOps Lead · Logistics',    quote:'MSP with a real SLA. Response in minutes, not hours. First vendor that delivered exactly what was in the contract.',                            res:'SLA 100% met' },
       { av:'JC', name:'Juliana Costa',  role:'CISO · Financial',           quote:'The assessment uncovered vulnerabilities that slipped through two internal audits undetected. Well worth the investment.',                       res:'2 critical gaps fixed' },
-      { av:'BL', name:'Beatriz Lima',   role:'Cloud Architect · Industry', quote:'Real multi-cloud: AWS and OCI integrated without headaches. The architecture became more resilient and 30% cheaper.',                            res:'-30% cost + HA' }
+      { av:'BL', name:'Beatriz Lima',   role:'Cloud Architect · Industry', quote:'Real multi-Cloud: AWS and OCI integrated without headaches. The architecture became more resilient and 30% cheaper.',                            res:'-30% cost + HA' }
     ]
   };
   let data = dataByLang[currentLang] || dataByLang.pt;
@@ -3306,6 +3544,17 @@ document.addEventListener('DOMContentLoaded', function(){
       setTimeout(function(){ document.documentElement.classList.remove('theme-switching'); }, 350);
     };
   }
+})();
+
+(function(){
+  var bar = document.getElementById('scroll-progress');
+  if(!bar) return;
+  function update(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
 })();
 </script>
 
