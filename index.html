@@ -1398,11 +1398,12 @@ blockquote{
 [data-theme="light"] .pre-footer-sub{color:#111110!important;opacity:0.55}
 footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
 .footer-new{max-width:var(--maxw);margin:0 auto;padding:4rem 1.5rem 0}
-.footer-topbar{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding-bottom:3rem;border-bottom:1px solid var(--sep)}
+.footer-topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;padding-bottom:3rem;border-bottom:1px solid var(--sep)}
 .footer-logo-block{display:flex;flex-direction:column;gap:0.6rem}
 .footer-logo-name{display:flex;align-items:center;gap:0.6rem;font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--texto);text-decoration:none}
 .footer-logo-name em{color:var(--verde);font-style:normal}
 .footer-logo-tagline{font-family:var(--mono);font-size:0.74rem;color:var(--texto-muted)}
+.footer-logo-desc{font-size:0.875rem;color:var(--texto-muted);max-width:30ch;line-height:1.65;margin-top:0.25rem}
 .footer-social{display:flex;align-items:center;gap:0.5rem}
 .footer-social a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--sep);color:var(--texto-muted);text-decoration:none;transition:border-color 0.15s,color 0.15s}
 .footer-social a:hover{border-color:var(--verde);color:var(--verde)}
@@ -2588,6 +2589,7 @@ footer{background:var(--bg-sunk);border-top:1px solid var(--sep)}
       <div class="footer-logo-block">
         <a href="/" class="footer-logo-name" translate="no"><svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="color:var(--verde);flex-shrink:0"><rect x="4" y="4" width="22" height="11" rx="2.5" fill="currentColor"/><rect x="13" y="19" width="22" height="11" rx="2.5" fill="currentColor"/><rect x="22" y="34" width="22" height="11" rx="2.5" fill="currentColor"/></svg><span>nativos<em>.cloud</em></span></a>
         <span class="footer-logo-tagline" data-i18n="footer.tagline2">Consultoria Cloud + MSP · Ponta Grossa, PR</span>
+        <p class="footer-logo-desc" data-i18n="footer.desc">Ajudamos empresas a migrar, operar e escalar infraestrutura em nuvem — com suporte contínuo e custos previsíveis.</p>
       </div>
       <div class="footer-social" aria-label="Redes sociais">
         <a href="https://linkedin.com/company/nativos-cloud" aria-label="LinkedIn" target="_blank" rel="noopener">
@@ -2804,6 +2806,7 @@ const translations = {
     "dep.resultado":"Resultado","cookie.title":"Privacidade",
     "footer.tagline2":"Consultoria Cloud + MSP · Ponta Grossa, PR",
     "footer.blurb":"Consultoria Cloud + MSP para empresas que precisam de resultado, não de apresentação.",
+    "footer.desc":"Ajudamos empresas a migrar, operar e escalar infraestrutura em nuvem — com suporte contínuo e custos previsíveis.",
     "footer.team":"Nossa equipe",
     "footer.col.resources":"Recursos",
     "footer.how":"Como funciona",
@@ -2931,6 +2934,7 @@ const translations = {
     "dep.resultado":"Result","cookie.title":"Privacy",
     "footer.tagline2":"Cloud Consulting + MSP · Ponta Grossa, Brazil",
     "footer.blurb":"Cloud consulting + MSP for companies that need results, not slides.",
+    "footer.desc":"We help companies migrate, operate, and scale cloud infrastructure — with continuous support and predictable costs.",
     "footer.team":"Our team",
     "footer.col.resources":"Resources",
     "footer.how":"How it works",
